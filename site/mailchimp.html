@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!-- BRAND: The Connector Store — tagline: "Real connectors for your Muse." -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mailchimp Connector for Muse — The Connector Store</title>
+<meta name="description" content="Connect Mailchimp to your Muse agent: audience growth, campaign reports (opens, clicks, bounces) in plain numbers, top campaigns, list health checks, and draft campaigns that are never sent without you. Free for 1 month.">
+<meta property="og:title" content="Mailchimp Connector for Muse">
+<meta property="og:description" content="Ask your Muse how your email marketing is really doing — audience growth, opens, clicks, bounces — in plain numbers.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://connector-store.example.com/mailchimp.html">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">The <span>Connector</span> Store</a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="index.html#connectors">Connectors</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="faq.html">FAQ</a>
+      <a href="about.html">About</a>
+    </nav>
+    <form class="header-search" action="index.html" method="get" role="search">
+      <label class="small" for="header-search-input" style="position:absolute;left:-9999px">Search connectors</label>
+      <input id="header-search-input" name="q" type="search" placeholder="Search connectors…" autocomplete="off">
+      <button class="btn" type="submit">Search</button>
+    </form>
+  </div>
+</header>
+
+<main>
+  <div class="wrap detail-hero">
+    <span class="badge">Email marketing</span>
+    <h1 style="margin-top:10px">Mailchimp Connector</h1>
+    <p class="muted" style="max-width:700px">Connect your Mailchimp account to your Muse personal AI agent. Ask “Is my list growing?”, “How did my last campaign actually do?”, “Which campaign performed best this quarter?” — and get plain numbers, not a dashboard tour. Looking for steps? See <a href="how-to-connect-mailchimp-to-claude.html">how to connect Mailchimp to Muse</a>.</p>
+    <p class="independence">Independent store. Not affiliated with Meta, WooCommerce, Automattic, Etsy, or Mailchimp.</p>
+  </div>
+
+  <section class="block" aria-labelledby="features-h">
+    <div class="wrap">
+      <h2 id="features-h">What it does</h2>
+      <div class="feature-grid">
+        <div class="feature"><h3>Audience growth</h3><p>Subscriber counts per audience, growth or shrinkage over any period, and where the change came from — signups vs unsubscribes.</p></div>
+        <div class="feature"><h3>Campaign reports in plain numbers</h3><p>Opens, clicks, and bounces for any campaign, stated plainly and compared with your own averages — so “good” actually means something.</p></div>
+        <div class="feature"><h3>Top campaigns</h3><p>Your best campaigns by opens, clicks, or engagement over any period — the ones worth learning from and repeating.</p></div>
+        <div class="feature"><h3>List health checks</h3><p>Bounce and unsubscribe patterns, stale segments, and audiences that need attention — flagged before they hurt your deliverability.</p></div>
+        <div class="feature"><h3>Draft campaigns — never sent</h3><p>Your Muse can prepare a draft campaign in Mailchimp for you to review. Drafts are never sent, scheduled, or published without you doing it yourself.</p></div>
+        <div class="feature"><h3>Period summaries</h3><p>“This month vs last month” across sends, opens, clicks, and list growth — your whole email program in one short read.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="connect-h">
+    <div class="wrap">
+      <h2 id="connect-h">How connecting works</h2>
+      <div class="steps">
+        <div class="step"><span class="step-num" aria-hidden="true">1</span><h3>Copy the install prompt</h3><p class="muted">Use the copy button in the install box below and paste the prompt into your Muse chat. Your Muse installs the connector from our public repository.</p></div>
+        <div class="step"><span class="step-num" aria-hidden="true">2</span><h3>Create a Mailchimp API key</h3><p class="muted">In Mailchimp, create an API key in your account settings (your Muse gives you the exact clicks). You enter the key through Muse’s secure connection flow — never in chat.</p></div>
+        <div class="step"><span class="step-num" aria-hidden="true">3</span><h3>Confirm with a live snapshot</h3><p class="muted">Your Muse runs a health check and proves the connection with a live snapshot: your audiences, subscriber counts, and your most recent campaign’s numbers.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="install-h">
+    <div class="wrap">
+      <div class="install-box">
+        <h2 id="install-h">Install prompt</h2>
+        <p>Copy this, paste it into your Muse chat, and your Muse handles the rest:</p>
+        <pre id="install-mailchimp">Install the Mailchimp Connector from The Connector Store.
+
+1. Fetch the connector package from the store's public repository (The Connector Store — Mailchimp Connector, latest release) and install it as a custom connector in my workspace, following its CONNECTOR.md exactly.
+2. Start the free 1-month trial activation for this connector and tell me the activation date and the date the trial ends.
+3. Walk me through connecting Mailchimp: tell me how to create an API key in my Mailchimp account settings, and have me enter the key through the secure connection flow — never ask me to paste the key or my password into this chat.
+4. Run the connector's health check. If anything fails, tell me in plain words what is wrong and what to fix.
+5. Confirm the connection by showing me a live snapshot: my audiences with subscriber counts and recent growth, plus my most recent campaign's opens, clicks, and bounces in plain numbers.
+6. Hard rule for this connector: it may create draft campaigns only. It must never send, schedule, or publish a campaign.</pre>
+        <button class="btn" type="button" data-copy-target="install-mailchimp">Copy install prompt</button>
+        <p class="copy-status" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="req-h">
+    <div class="wrap">
+      <div class="two-col">
+        <div class="panel">
+          <h3 id="req-h">Requirements</h3>
+          <ul>
+            <li>A Muse personal AI agent (the one you already chat with).</li>
+            <li>A Mailchimp account where you can create API keys (account admin access).</li>
+            <li>A couple of minutes to create the key when your Muse asks.</li>
+            <li>No card needed for the free month.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Pricing</h3>
+          <p><strong>Free for 1 month</strong> from activation — full features, no card required to start.</p>
+          <p style="margin:0">Then a per-connector monthly price. <strong>$15/month per account</strong> and shown here before subscriptions open. When the trial ends without a subscription, the connector pauses — it never charges silently. See <a href="pricing.html">Pricing</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="safety-h">
+    <div class="wrap">
+      <h2 id="safety-h">Safety notes</h2>
+      <div class="safety">
+        <ul>
+          <li><strong>Credentials never pass through chat.</strong> Your API key goes through Muse’s secure connection flow only.</li>
+          <li><strong>Reports are read-only.</strong> Reading audiences and campaign reports changes nothing in your account.</li>
+          <li><strong>Drafts only — never sends.</strong> The connector can prepare a draft campaign for your review. Sending, scheduling, and publishing always stay in your hands, inside Mailchimp.</li>
+          <li><strong>Your data stays yours.</strong> The connector runs inside your own Muse. This store never receives your subscriber lists or campaign data — only install and trial/subscription status.</li>
+          <li><strong>Revoke anytime.</strong> Delete the API key in Mailchimp and ask your Muse to remove the connector; access ends immediately.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="faq-h">
+    <div class="wrap">
+      <h2 id="faq-h">Mailchimp Connector — questions</h2>
+      <div class="faq-item"><h3>Can this connector send a campaign by accident?</h3><p>No. It is built to create drafts only. There is no send, schedule, or publish action in the connector — those buttons stay in Mailchimp, under your hand.</p></div>
+      <div class="faq-item"><h3>What does “plain numbers” mean?</h3><p>Instead of a dashboard, you get sentences: “Your last campaign reached 4,120 subscribers: 38% opened, 3.1% clicked, 0.4% bounced — opens above your 31% average.” Compared with your own history, so the numbers mean something.</p></div>
+      <div class="faq-item"><h3>Does it work with multiple audiences?</h3><p>Yes. Ask about one audience or all of them; your Muse will name which audience each number belongs to.</p></div>
+      <div class="faq-item"><h3>What happens at the end of the free month?</h3><p>The connector pauses until you subscribe. Your key and setup stay in place, so subscribing resumes everything instantly.</p></div>
+      <p><a href="faq.html">More questions in the store FAQ →</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-links">
+      <a href="index.html#connectors">Connectors</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="faq.html">FAQ</a>
+      <a href="about.html">About</a>
+    </div>
+    <p class="small muted" style="margin:0">Independent store. Not affiliated with Meta, WooCommerce, Automattic, Etsy, or Mailchimp.</p>
+    <p class="small muted" style="margin:0">The Connector Store is a product of CALL SNAP SYSTEMS LLC, Eureka, Missouri, USA. © 2026 CALL SNAP SYSTEMS LLC</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

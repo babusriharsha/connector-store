@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- TODO: replace https://connector-store.example.com/ with the real domain at launch. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://connector-store.example.com/</loc></url>
+  <url><loc>https://connector-store.example.com/woocommerce.html</loc></url>
+  <url><loc>https://connector-store.example.com/etsy.html</loc></url>
+  <url><loc>https://connector-store.example.com/mailchimp.html</loc></url>
+  <url><loc>https://connector-store.example.com/how-it-works.html</loc></url>
+  <url><loc>https://connector-store.example.com/pricing.html</loc></url>
+  <url><loc>https://connector-store.example.com/faq.html</loc></url>
+  <url><loc>https://connector-store.example.com/about.html</loc></url>
+  <url><loc>https://connector-store.example.com/how-to-connect-woocommerce-to-claude.html</loc></url>
+  <url><loc>https://connector-store.example.com/how-to-connect-etsy-to-claude.html</loc></url>
+  <url><loc>https://connector-store.example.com/how-to-connect-mailchimp-to-claude.html</loc></url>
+</urlset>

@@ -1,0 +1,45 @@
+# WooCommerce connector for Muse -- descriptor.
+#
+# - id: the provider slug. The credential for this connector is
+#   registered under exactly this name (custom.woocommerce) through
+#   Muse's secure API-access flow.
+# - description: what connector search matches on. The aliases below
+#   carry the phrases store owners actually use, so a Muse asked
+#   "how do I connect my WooCommerce store?" finds this connector.
+# - api_hosts: DYNAMIC for this connector. There is no single
+#   WooCommerce host -- the API lives on the customer's own store
+#   domain (<store>/wp-json/wc/v3/). At install time the installing
+#   Muse MUST register the customer's store hostname as the
+#   connection's API host (see INSTALL.md, step 3). The placeholder
+#   below documents that requirement; it is replaced per install.
+id: "custom.woocommerce"
+title: "WooCommerce"
+description: "Connect a WooCommerce store to Muse: check today's sales, orders, refunds, best sellers, low stock and customers, and make approval-gated changes to coupons, prices and stock. For store owners who want to ask their Muse 'what sold today?' and get a real answer from their own store."
+include_in_prompt: true
+require_auth: true
+aliases:
+  - "WooCommerce for Muse"
+  - "connect WooCommerce to Muse"
+  - "connect my WooCommerce store"
+  - "WooCommerce orders in Muse"
+  - "check my WooCommerce store with Muse"
+  - "WooCommerce inventory alerts"
+  - "WooCommerce sales report in Muse"
+  - "WordPress store connector"
+# Auth scheme: api_key -- but a PAIR. WooCommerce issues a Consumer Key
+# and a Consumer Secret. Register two api_key entries on this
+# connection, named consumer_key and consumer_secret, each with
+# query-parameter placement under its own name. The helper applies
+# both as query parameters over HTTPS via Muse's surrogate flow;
+# the real values never touch files, chat or logs (see CONNECTOR.md).
+auth_scheme: "api_key"
+auth_entries:
+  - name: "consumer_key"
+    placement: { query_param: "consumer_key" }
+  - name: "consumer_secret"
+    placement: { query_param: "consumer_secret" }
+  - name: "license_key"
+    placement: { query_param: "license_key" }
+    optional: true
+api_hosts:
+  - "<customer-store-domain>"  # replaced at install with the store's real hostname

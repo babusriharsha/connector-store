@@ -1,0 +1,18 @@
+id: "custom.etsy"
+title: "Etsy"
+description: "Connect an Etsy shop to Muse. Check Etsy orders, sales snapshots, listings, inventory levels, reviews and the shop payment ledger, and make approval-gated price and quantity changes. For anyone who asks how to connect Etsy to Muse, check my Etsy shop with Muse, see Etsy orders in Muse, or watch Etsy inventory and reviews."
+aliases: ["Etsy shop", "Etsy seller", "Etsy store", "connect Etsy to Muse", "Etsy orders in Muse", "check my Etsy shop with Muse", "Etsy inventory alerts", "Etsy sales snapshot"]
+include_in_prompt: true
+require_auth: true
+api_hosts: ["openapi.etsy.com", "www.etsy.com", "etsy.com"]
+auth:
+  scheme: "oauth2_code + api_key"
+  notes: "Etsy Open API v3 requires two credentials on every scoped call: an OAuth 2.0 access token sent as a bearer Authorization header, and the registered app keystring sent as the x-api-key header. Both live in the registered connection custom.etsy. The keystring is the app OAuth client_id and is public by design. The app shared secret is never used (public-client PKCE flow)."
+  authorization_url: "https://www.etsy.com/oauth/connect"
+  token_url: "https://openapi.etsy.com/v3/public/oauth/token"
+  issuer_domain: "etsy.com"
+  scopes: "shops_r listings_r listings_w transactions_r"
+  placements:
+    access_token: "bearer_header"
+    api_key: "custom_header:x-api-key"
+publisher: "CALL SNAP SYSTEMS LLC"

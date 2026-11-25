@@ -1,0 +1,16 @@
+# Mailchimp connector for Muse (Connector Store, CALL SNAP SYSTEMS LLC).
+# id equals the folder/connection slug used with credentials.request_api_access.
+id: "custom.mailchimp"
+title: "Mailchimp"
+description: "Connect Mailchimp to Muse. Read Mailchimp audiences, subscriber counts and growth, campaign lists, and full Mailchimp campaign reports (opens, clicks, click-through rate, bounces, unsubscribes, revenue) in plain numbers, and create draft campaigns, tag members, and add opted-in members with approval. Also known as: Mailchimp for Muse, Mailchimp campaign reports in Muse, check my Mailchimp audience with Muse, email marketing reports, newsletter analytics, audience growth, Mailchimp API."
+include_in_prompt: true
+require_auth: true
+aliases: ["Mailchimp for Muse", "Mailchimp campaign reports", "Email marketing", "Newsletter analytics", "Audience growth"]
+# Hosts: every Mailchimp account lives in one datacenter. API keys end with
+# a datacenter suffix (for example -us21) and the API host is built from it.
+# At install time the installing Muse registers the user's own host
+# (<dc>.api.mailchimp.com) for the connection. The pattern below documents
+# the family of hosts; the datacenter itself is routing info, not a secret.
+api_hosts: ["*.api.mailchimp.com"]
+auth_scheme: "api_key"
+placement: "bearer_header"

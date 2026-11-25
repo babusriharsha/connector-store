@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<!-- BRAND: The Connector Store — tagline: "Real connectors for your Muse." -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Etsy Connector for Muse — The Connector Store</title>
+<meta name="description" content="Connect your Etsy shop to your Muse agent: shop snapshot from receipts, orders, listings and inventory quantities with low-quantity alerts, reviews, payment ledger, and a Morning Shop Brief. Free for 1 month.">
+<meta property="og:title" content="Etsy Connector for Muse">
+<meta property="og:description" content="Ask your Muse how your Etsy shop is doing — sales, orders, low quantities, reviews, and your payment ledger — from your real shop data.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://connector-store.example.com/etsy.html">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">The <span>Connector</span> Store</a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="index.html#connectors">Connectors</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="faq.html">FAQ</a>
+      <a href="about.html">About</a>
+    </nav>
+    <form class="header-search" action="index.html" method="get" role="search">
+      <label class="small" for="header-search-input" style="position:absolute;left:-9999px">Search connectors</label>
+      <input id="header-search-input" name="q" type="search" placeholder="Search connectors…" autocomplete="off">
+      <button class="btn" type="submit">Search</button>
+    </form>
+  </div>
+</header>
+
+<main>
+  <div class="wrap detail-hero">
+    <span class="badge">Online stores</span>
+    <h1 style="margin-top:10px">Etsy Connector</h1>
+    <p class="muted" style="max-width:700px">Connect your Etsy shop to your Muse personal AI agent. Ask “How did my shop do this week?”, “Which listings are running low?”, “What did buyers say?” — and your Muse answers from your real shop data. Looking for steps? See <a href="how-to-connect-etsy-to-claude.html">how to connect Etsy to Muse</a>.</p>
+    <p class="independence">Independent store. Not affiliated with Meta, WooCommerce, Automattic, Etsy, or Mailchimp.</p>
+  </div>
+
+  <section class="block" aria-labelledby="features-h">
+    <div class="wrap">
+      <h2 id="features-h">What it does</h2>
+      <div class="feature-grid">
+        <div class="feature"><h3>Shop snapshot</h3><p>Built from your receipts: sales and order count for today, this week, or any period — compared with the period before, in plain words.</p></div>
+        <div class="feature"><h3>Orders</h3><p>Recent orders and their status, lookup by buyer or item, and a clear list of what still needs to ship.</p></div>
+        <div class="feature"><h3>Listings &amp; inventory</h3><p>Your active listings with their quantities, so you can see at a glance what’s stocked, what’s thin, and what has sold out.</p></div>
+        <div class="feature"><h3>Low-quantity alerts</h3><p>Tell your Muse your comfort level per listing; it flags anything at or below it — before a best seller quietly hits zero.</p></div>
+        <div class="feature"><h3>Reviews</h3><p>Recent reviews in one place, with an honest read on the pattern — what buyers love, and what keeps coming up.</p></div>
+        <div class="feature"><h3>Payment ledger</h3><p>Your Etsy payment ledger summarized: what came in, what fees took, and what’s due to you — without opening five dashboard screens.</p></div>
+        <div class="feature"><h3>Morning Shop Brief</h3><p>A daily summary from your Muse: yesterday’s sales, orders to ship, low quantities, and new reviews — the whole shop in one short message.</p></div>
+        <div class="feature"><h3>Period reports</h3><p>“This month vs last month” for sales, orders, and top listings — compared for you, in plain English.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="connect-h">
+    <div class="wrap">
+      <h2 id="connect-h">How connecting works</h2>
+      <div class="steps">
+        <div class="step"><span class="step-num" aria-hidden="true">1</span><h3>Copy the install prompt</h3><p class="muted">Use the copy button in the install box below and paste the prompt into your Muse chat. Your Muse installs the connector from our public repository.</p></div>
+        <div class="step"><span class="step-num" aria-hidden="true">2</span><h3>Sign in with Etsy</h3><p class="muted">Your Muse sends you to Etsy’s own secure OAuth sign-in page, where you approve the connection yourself. Your Etsy password never passes through chat — Etsy hands your Muse a limited access token instead.</p></div>
+        <div class="step"><span class="step-num" aria-hidden="true">3</span><h3>Confirm with a live snapshot</h3><p class="muted">Your Muse runs a health check and proves the connection with a live snapshot of your shop. If the numbers match your Etsy dashboard, you’re connected.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="install-h">
+    <div class="wrap">
+      <div class="install-box">
+        <h2 id="install-h">Install prompt</h2>
+        <p>Copy this, paste it into your Muse chat, and your Muse handles the rest:</p>
+        <pre id="install-etsy">Install the Etsy Connector from The Connector Store.
+
+1. Fetch the connector package from the store's public repository (The Connector Store — Etsy Connector, latest release) and install it as a custom connector in my workspace, following its CONNECTOR.md exactly.
+2. Start the free 1-month trial activation for this connector and tell me the activation date and the date the trial ends.
+3. Connect my Etsy shop using Etsy's secure OAuth sign-in: send me to Etsy's own sign-in page to approve access. Never ask me to paste my Etsy password or any token into this chat.
+4. Run the connector's health check. If anything fails, tell me in plain words what is wrong and what to fix.
+5. Confirm the connection by showing me a live shop snapshot: sales and orders for the last 7 days from my receipts, my listings with the lowest quantities, and my most recent review.
+6. Ask me whether I want the Morning Shop Brief scheduled, and at what time.</pre>
+        <button class="btn" type="button" data-copy-target="install-etsy">Copy install prompt</button>
+        <p class="copy-status" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="req-h">
+    <div class="wrap">
+      <div class="two-col">
+        <div class="panel">
+          <h3 id="req-h">Requirements</h3>
+          <ul>
+            <li>A Muse personal AI agent (the one you already chat with).</li>
+            <li>An Etsy shop where you are the owner.</li>
+            <li>A minute to approve the connection on Etsy’s sign-in page.</li>
+            <li>No card needed for the free month.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Pricing</h3>
+          <p><strong>Free for 1 month</strong> from activation — full features, no card required to start.</p>
+          <p style="margin:0">Then a per-connector monthly price. <strong>$9/month per shop</strong> and shown here before subscriptions open. When the trial ends without a subscription, the connector pauses — it never charges silently. See <a href="pricing.html">Pricing</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="safety-h">
+    <div class="wrap">
+      <h2 id="safety-h">Safety notes</h2>
+      <div class="safety">
+        <ul>
+          <li><strong>Credentials never pass through chat.</strong> You sign in on Etsy’s own page; Etsy issues a limited token, and your password is never shared with the connector or this store.</li>
+          <li><strong>Read-only by default.</strong> The connector reads your shop — receipts, listings, reviews, ledger. It does not change listings, prices, or orders.</li>
+          <li><strong>Your data stays yours.</strong> The connector runs inside your own Muse. This store never receives your sales, buyers, or reviews — only install and trial/subscription status.</li>
+          <li><strong>Revoke anytime.</strong> Disconnect the app from your Etsy account settings and ask your Muse to remove the connector; access ends immediately.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="faq-h">
+    <div class="wrap">
+      <h2 id="faq-h">Etsy Connector — questions</h2>
+      <div class="faq-item"><h3>Does Etsy allow this?</h3><p>The connector uses Etsy’s official API with the sign-in approval Etsy provides for connected apps. You grant access yourself, and you can revoke it in your Etsy settings at any time.</p></div>
+      <div class="faq-item"><h3>Can it change my listings or prices?</h3><p>No. The Etsy Connector is read-only: snapshots, orders, quantities, reviews, and your ledger. Nothing in your shop is edited.</p></div>
+      <div class="faq-item"><h3>What counts as the “shop snapshot”?</h3><p>A summary built from your receipts for the period you ask about — sales total, order count, and top items — compared with the previous period when you ask for a comparison.</p></div>
+      <div class="faq-item"><h3>What happens at the end of the free month?</h3><p>The connector pauses until you subscribe. Your connection stays in place, so subscribing resumes everything instantly.</p></div>
+      <p><a href="faq.html">More questions in the store FAQ →</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-links">
+      <a href="index.html#connectors">Connectors</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="faq.html">FAQ</a>
+      <a href="about.html">About</a>
+    </div>
+    <p class="small muted" style="margin:0">Independent store. Not affiliated with Meta, WooCommerce, Automattic, Etsy, or Mailchimp.</p>
+    <p class="small muted" style="margin:0">The Connector Store is a product of CALL SNAP SYSTEMS LLC, Eureka, Missouri, USA. © 2026 CALL SNAP SYSTEMS LLC</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

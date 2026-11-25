@@ -1,0 +1,605 @@
+{
+  "store": {
+    "name": "Prairie Pantry Co. (DEMO)",
+    "url": "https://demo.prairiepantry.example",
+    "currency": "USD",
+    "timezone": "America/Chicago",
+    "woocommerce_version": "9.4.0 (simulated)",
+    "note": "All data in this file is fictional sample data for --demo mode."
+  },
+  "products": [
+    {
+      "id": 101,
+      "name": "Stone-Ground Wheat Flour 5lb",
+      "sku": "PP-FLOUR-5",
+      "price": "8.50",
+      "regular_price": "8.50",
+      "stock_quantity": 140,
+      "low_stock_amount": 20,
+      "manage_stock": true,
+      "stock_status": "instock",
+      "status": "publish",
+      "total_sales": 312
+    },
+    {
+      "id": 102,
+      "name": "Raw Wildflower Honey 12oz",
+      "sku": "PP-HONEY-12",
+      "price": "12.00",
+      "regular_price": "12.00",
+      "stock_quantity": 6,
+      "low_stock_amount": 10,
+      "manage_stock": true,
+      "stock_status": "instock",
+      "status": "publish",
+      "total_sales": 205
+    },
+    {
+      "id": 103,
+      "name": "Heirloom Tomato Seeds (30 ct)",
+      "sku": "PP-SEED-TOM",
+      "price": "4.25",
+      "regular_price": "4.25",
+      "stock_quantity": 0,
+      "low_stock_amount": 15,
+      "manage_stock": true,
+      "stock_status": "outofstock",
+      "status": "publish",
+      "total_sales": 98
+    },
+    {
+      "id": 104,
+      "name": "Cold-Pressed Sunflower Oil 750ml",
+      "sku": "PP-OIL-750",
+      "price": "14.75",
+      "regular_price": "14.75",
+      "stock_quantity": 58,
+      "low_stock_amount": 12,
+      "manage_stock": true,
+      "stock_status": "instock",
+      "status": "publish",
+      "total_sales": 141
+    },
+    {
+      "id": 105,
+      "name": "Dried Lavender Bundle",
+      "sku": "PP-LAV-BUN",
+      "price": "9.99",
+      "regular_price": "11.99",
+      "stock_quantity": 3,
+      "low_stock_amount": 8,
+      "manage_stock": true,
+      "stock_status": "instock",
+      "status": "publish",
+      "total_sales": 167
+    },
+    {
+      "id": 106,
+      "name": "Farmhouse Pickling Spice 4oz",
+      "sku": "PP-SPC-PKL",
+      "price": "6.50",
+      "regular_price": "6.50",
+      "stock_quantity": 87,
+      "low_stock_amount": 10,
+      "manage_stock": true,
+      "stock_status": "instock",
+      "status": "publish",
+      "total_sales": 76
+    },
+    {
+      "id": 107,
+      "name": "Pasture Eggs - One Dozen (Local Pickup)",
+      "sku": "PP-EGG-DZ",
+      "price": "7.00",
+      "regular_price": "7.00",
+      "stock_quantity": 24,
+      "low_stock_amount": 24,
+      "manage_stock": true,
+      "stock_status": "instock",
+      "status": "publish",
+      "total_sales": 428
+    },
+    {
+      "id": 108,
+      "name": "Beeswax Pantry Candle",
+      "sku": "PP-CND-BWX",
+      "price": "16.00",
+      "regular_price": "16.00",
+      "stock_quantity": 41,
+      "low_stock_amount": 5,
+      "manage_stock": true,
+      "stock_status": "instock",
+      "status": "publish",
+      "total_sales": 59
+    }
+  ],
+  "customers": [
+    {
+      "id": 201,
+      "email": "mabel.t@example.com",
+      "first_name": "Mabel",
+      "last_name": "Thompson",
+      "orders_count": 3,
+      "total_spent": "83.35",
+      "date_created": "2026-05-08T14:05:00"
+    },
+    {
+      "id": 202,
+      "email": "doug.h@example.com",
+      "first_name": "Doug",
+      "last_name": "Herrera",
+      "orders_count": 2,
+      "total_spent": "43.14",
+      "date_created": "2026-05-08T14:13:00"
+    },
+    {
+      "id": 203,
+      "email": "priya.n@example.com",
+      "first_name": "Priya",
+      "last_name": "Nair",
+      "orders_count": 3,
+      "total_spent": "99.43",
+      "date_created": "2026-05-08T14:14:00"
+    },
+    {
+      "id": 204,
+      "email": "june.c@example.com",
+      "first_name": "June",
+      "last_name": "Callahan",
+      "orders_count": 3,
+      "total_spent": "71.90",
+      "date_created": "2026-05-08T14:32:00"
+    },
+    {
+      "id": 205,
+      "email": "w.boone@example.com",
+      "first_name": "Walter",
+      "last_name": "Boone",
+      "orders_count": 2,
+      "total_spent": "40.39",
+      "date_created": "2026-05-08T14:38:00"
+    },
+    {
+      "id": 206,
+      "email": "ana.s@example.com",
+      "first_name": "Ana",
+      "last_name": "Serrano",
+      "orders_count": 2,
+      "total_spent": "57.70",
+      "date_created": "2026-05-08T14:01:00"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1001,
+      "number": "1001",
+      "status": "processing",
+      "currency": "USD",
+      "total": "28.95",
+      "customer_id": 201,
+      "days_ago": 0,
+      "date_created": "2026-11-24T14:40:00",
+      "line_items": [
+        {
+          "product_id": 101,
+          "name": "Stone-Ground Wheat Flour 5lb",
+          "quantity": 2,
+          "total": "17.00"
+        },
+        {
+          "product_id": 107,
+          "name": "Pasture Eggs - One Dozen (Local Pickup)",
+          "quantity": 1,
+          "total": "7.00"
+        }
+      ],
+      "refunds": []
+    },
+    {
+      "id": 1002,
+      "number": "1002",
+      "status": "completed",
+      "currency": "USD",
+      "total": "31.98",
+      "customer_id": 203,
+      "days_ago": 0,
+      "date_created": "2026-11-24T14:07:00",
+      "line_items": [
+        {
+          "product_id": 102,
+          "name": "Raw Wildflower Honey 12oz",
+          "quantity": 1,
+          "total": "12.00"
+        },
+        {
+          "product_id": 105,
+          "name": "Dried Lavender Bundle",
+          "quantity": 2,
+          "total": "19.98"
+        }
+      ],
+      "refunds": []
+    },
+    {
+      "id": 1003,
+      "number": "1003",
+      "status": "processing",
+      "currency": "USD",
+      "total": "19.70",
+      "customer_id": 202,
+      "days_ago": 0,
+      "date_created": "2026-11-24T14:01:00",
+      "line_items": [
+        {
+          "product_id": 104,
+          "name": "Cold-Pressed Sunflower Oil 750ml",
+          "quantity": 1,
+          "total": "14.75"
+        }
+      ],
+      "refunds": []
+    },
+    {
+      "id": 1004,
+      "number": "1004",
+      "status": "completed",
+      "currency": "USD",
+      "total": "25.45",
+      "customer_id": 201,
+      "days_ago": 1,
+      "date_created": "2026-11-23T14:47:00",
+      "line_items": [
+        {
+          "product_id": 107,
+          "name": "Pasture Eggs - One Dozen (Local Pickup)",
+          "quantity": 2,
+          "total": "14.00"
+        },
+        {
+          "product_id": 106,
+          "name": "Farmhouse Pickling Spice 4oz",
+          "quantity": 1,
+          "total": "6.50"
+        }
+      ],
+      "refunds": []
+    },
+    {
+      "id": 1005,
+      "number": "1005",
+      "status": "completed",
+      "currency": "USD",
+      "total": "28.00",
+      "customer_id": 204,
+      "days_ago": 1,
+      "date_created": "2026-11-23T14:17:00",
+      "line_items": [
+        {
+          "product_id": 108,
+          "name": "Beeswax Pantry Candle",
+          "quantity": 1,
+          "total": "16.00"
+        },
+        {
+          "product_id": 102,
+          "name": "Raw Wildflower Honey 12oz",
+          "quantity": 1,
+          "total": "12.00"
+        }
+      ],
+      "refunds": []
+    },
+    {
+      "id": 1006,
+      "number": "1006",
+      "status": "completed",
+      "currency": "USD",
+      "total": "28.20",
+      "customer_id": 206,
+      "days_ago": 2,
+      "date_created": "2026-11-22T14:15:00",
+      "line_items": [
+        {
+          "product_id": 101,
+          "name": "Stone-Ground Wheat Flour 5lb",
+          "quantity": 1,
+          "total": "8.50"
+        },
+        {
+          "product_id": 104,
+          "name": "Cold-Pressed Sunflower Oil 750ml",
+          "quantity": 1,
+          "total": "14.75"
+        }
+      ],
+      "refunds": []
+    },
+    {
+      "id": 1007,
+      "number": "1007",
+      "status": "completed",
+      "currency": "USD",
+      "total": "25.95",
+      "customer_id": 203,
+      "days_ago": 3,
+      "date_created": "2026-11-21T14:14:00",
+      "line_items": [
+        {
+          "product_id": 107,
+          "name": "Pasture Eggs - One Dozen (Local Pickup)",
+          "quantity": 3,
+          "total": "21.00"
+        }
+      ],
+      "refunds": []
+    },
+    {
+      "id": 1008,
+      "number": "1008",
+      "status": "completed",
+      "currency": "USD",
+      "total": "23.44",
+      "customer_id": 202,
+      "days_ago": 4,
+      "date_created": "2026-11-20T14:08:00",
+      "line_items": [
+        {
+          "product_id": 105,
+          "name": "Dried Lavender Bundle",
+          "quantity": 1,
+          "total": "9.99"
+        },
+        {
+          "product_id": 101,
+          "name": "Stone-Ground Wheat Flour 5lb",
+          "quantity": 1,
+          "total": "8.50"
+        }
+      ],
+      "refunds": []
+    },
+    {
+      "id": 1009,
+      "number": "1009",
+      "status": "completed",
+      "currency": "USD",
+      "total": "28.95",
+      "customer_id": 201,
+      "days_ago": 5,
+      "date_created": "2026-11-19T14:47:00",
+      "line_items": [
+        {
+          "product_id": 102,
+          "name": "Raw Wildflower Honey 12oz",
+          "quantity": 2,
+          "total": "24.00"
+        }
+      ],
+      "refunds": [
+        {
+          "id": 502,
+          "total": "-24.00",
+          "reason": "Customer ordered twice by mistake"
+        }
+      ]
+    },
+    {
+      "id": 1010,
+      "number": "1010",
+      "status": "on-hold",
+      "currency": "USD",
+      "total": "21.95",
+      "customer_id": 205,
+      "days_ago": 5,
+      "date_created": "2026-11-19T14:06:00",
+      "line_items": [
+        {
+          "product_id": 103,
+          "name": "Heirloom Tomato Seeds (30 ct)",
+          "quantity": 4,
+          "total": "17.00"
+        }
+      ],
+      "refunds": []
+    },
+    {
+      "id": 1011,
+      "number": "1011",
+      "status": "completed",
+      "currency": "USD",
+      "total": "24.95",
+      "customer_id": 204,
+      "days_ago": 6,
+      "date_created": "2026-11-18T14:43:00",
+      "line_items": [
+        {
+          "product_id": 106,
+          "name": "Farmhouse Pickling Spice 4oz",
+          "quantity": 2,
+          "total": "13.00"
+        },
+        {
+          "product_id": 107,
+          "name": "Pasture Eggs - One Dozen (Local Pickup)",
+          "quantity": 1,
+          "total": "7.00"
+        }
+      ],
+      "refunds": []
+    },
+    {
+      "id": 1012,
+      "number": "1012",
+      "status": "completed",
+      "currency": "USD",
+      "total": "29.50",
+      "customer_id": 206,
+      "days_ago": 12,
+      "date_created": "2026-11-12T14:47:00",
+      "line_items": [
+        {
+          "product_id": 104,
+          "name": "Cold-Pressed Sunflower Oil 750ml",
+          "quantity": 2,
+          "total": "29.50"
+        }
+      ],
+      "refunds": []
+    },
+    {
+      "id": 1013,
+      "number": "1013",
+      "status": "completed",
+      "currency": "USD",
+      "total": "41.50",
+      "customer_id": 203,
+      "days_ago": 20,
+      "date_created": "2026-11-04T14:57:00",
+      "line_items": [
+        {
+          "product_id": 101,
+          "name": "Stone-Ground Wheat Flour 5lb",
+          "quantity": 3,
+          "total": "25.50"
+        },
+        {
+          "product_id": 108,
+          "name": "Beeswax Pantry Candle",
+          "quantity": 1,
+          "total": "16.00"
+        }
+      ],
+      "refunds": [
+        {
+          "id": 501,
+          "total": "-12.00",
+          "reason": "Jar arrived cracked"
+        }
+      ]
+    },
+    {
+      "id": 1014,
+      "number": "1014",
+      "status": "completed",
+      "currency": "USD",
+      "total": "26.94",
+      "customer_id": 205,
+      "days_ago": 45,
+      "date_created": "2026-10-10T14:34:00",
+      "line_items": [
+        {
+          "product_id": 102,
+          "name": "Raw Wildflower Honey 12oz",
+          "quantity": 1,
+          "total": "12.00"
+        },
+        {
+          "product_id": 105,
+          "name": "Dried Lavender Bundle",
+          "quantity": 1,
+          "total": "9.99"
+        }
+      ],
+      "refunds": [
+        {
+          "id": 503,
+          "total": "-9.99",
+          "reason": "Item not as described"
+        }
+      ]
+    },
+    {
+      "id": 1015,
+      "number": "1015",
+      "status": "completed",
+      "currency": "USD",
+      "total": "18.95",
+      "customer_id": 204,
+      "days_ago": 75,
+      "date_created": "2026-09-10T14:05:00",
+      "line_items": [
+        {
+          "product_id": 107,
+          "name": "Pasture Eggs - One Dozen (Local Pickup)",
+          "quantity": 2,
+          "total": "14.00"
+        }
+      ],
+      "refunds": []
+    },
+    {
+      "id": 1016,
+      "number": "1016",
+      "status": "completed",
+      "currency": "USD",
+      "total": "13.45",
+      "customer_id": 205,
+      "days_ago": 130,
+      "date_created": "2026-07-17T14:37:00",
+      "line_items": [
+        {
+          "product_id": 101,
+          "name": "Stone-Ground Wheat Flour 5lb",
+          "quantity": 1,
+          "total": "8.50"
+        }
+      ],
+      "refunds": []
+    }
+  ],
+  "refunds": [
+    {
+      "id": 501,
+      "order_id": 1013,
+      "days_ago": 2,
+      "date_created": "2026-11-22T14:27:00",
+      "total": "12.00",
+      "reason": "Jar arrived cracked"
+    },
+    {
+      "id": 502,
+      "order_id": 1009,
+      "days_ago": 5,
+      "date_created": "2026-11-19T14:02:00",
+      "total": "24.00",
+      "reason": "Customer ordered twice by mistake"
+    },
+    {
+      "id": 503,
+      "order_id": 1014,
+      "days_ago": 44,
+      "date_created": "2026-10-11T14:01:00",
+      "total": "9.99",
+      "reason": "Item not as described"
+    }
+  ],
+  "coupons": [
+    {
+      "id": 301,
+      "code": "PANTRY10",
+      "amount": "10.00",
+      "discount_type": "percent",
+      "usage_count": 47,
+      "date_expires": null,
+      "description": "10% off for newsletter subscribers"
+    },
+    {
+      "id": 302,
+      "code": "FIRSTORDER5",
+      "amount": "5.00",
+      "discount_type": "fixed_cart",
+      "usage_count": 112,
+      "date_expires": null,
+      "description": "$5 off a first order"
+    },
+    {
+      "id": 303,
+      "code": "HARVEST2026",
+      "amount": "15.00",
+      "discount_type": "percent",
+      "usage_count": 23,
+      "date_expires": "2026-12-31T23:59:59",
+      "description": "Harvest season sale"
+    }
+  ]
+}

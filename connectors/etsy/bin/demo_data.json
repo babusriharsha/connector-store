@@ -1,0 +1,1218 @@
+{
+ "demo_notice": "Fictional sample data for the Etsy connector demo mode. Willow & Fern Studio is not a real shop. Receipts, reviews and ledger entries store created_days_ago and created_hour; the demo loader turns those into real timestamps relative to today so snapshot periods always behave like a live shop.",
+ "inventories": {
+  "1601000001": {
+   "listing_id": 1601000001,
+   "price_on_property": [
+    200
+   ],
+   "products": [
+    {
+     "is_deleted": false,
+     "offerings": [
+      {
+       "is_deleted": false,
+       "is_enabled": true,
+       "offering_id": 6101000001,
+       "price": {
+        "amount": 2900,
+        "currency_code": "USD",
+        "divisor": 100
+       },
+       "quantity": 20
+      }
+     ],
+     "product_id": 5101000001,
+     "property_values": [
+      {
+       "property_id": 200,
+       "property_name": "Color",
+       "scale_id": null,
+       "value_ids": [
+        201
+       ],
+       "values": [
+        "Speckled Cream"
+       ]
+      }
+     ],
+     "sku": "MUG-CRM"
+    },
+    {
+     "is_deleted": false,
+     "offerings": [
+      {
+       "is_deleted": false,
+       "is_enabled": true,
+       "offering_id": 6101000002,
+       "price": {
+        "amount": 2900,
+        "currency_code": "USD",
+        "divisor": 100
+       },
+       "quantity": 14
+      }
+     ],
+     "product_id": 5101000002,
+     "property_values": [
+      {
+       "property_id": 200,
+       "property_name": "Color",
+       "scale_id": null,
+       "value_ids": [
+        202
+       ],
+       "values": [
+        "Matte Sage"
+       ]
+      }
+     ],
+     "sku": "MUG-SGE"
+    }
+   ],
+   "quantity_on_property": [
+    200
+   ],
+   "sku_on_property": [
+    200
+   ]
+  },
+  "1601000002": {
+   "listing_id": 1601000002,
+   "price_on_property": [],
+   "products": [
+    {
+     "is_deleted": false,
+     "offerings": [
+      {
+       "is_deleted": false,
+       "is_enabled": true,
+       "offering_id": 6101000003,
+       "price": {
+        "amount": 9600,
+        "currency_code": "USD",
+        "divisor": 100
+       },
+       "quantity": 9
+      }
+     ],
+     "product_id": 5101000003,
+     "property_values": [],
+     "sku": "VASE-SGE-DUO"
+    }
+   ],
+   "quantity_on_property": [],
+   "sku_on_property": []
+  },
+  "1601000003": {
+   "listing_id": 1601000003,
+   "price_on_property": [],
+   "products": [
+    {
+     "is_deleted": false,
+     "offerings": [
+      {
+       "is_deleted": false,
+       "is_enabled": true,
+       "offering_id": 6101000004,
+       "price": {
+        "amount": 3700,
+        "currency_code": "USD",
+        "divisor": 100
+       },
+       "quantity": 21
+      }
+     ],
+     "product_id": 5101000004,
+     "property_values": [],
+     "sku": "PLNT-TRC"
+    }
+   ],
+   "quantity_on_property": [],
+   "sku_on_property": []
+  },
+  "1601000004": {
+   "listing_id": 1601000004,
+   "price_on_property": [],
+   "products": [
+    {
+     "is_deleted": false,
+     "offerings": [
+      {
+       "is_deleted": false,
+       "is_enabled": true,
+       "offering_id": 6101000005,
+       "price": {
+        "amount": 13200,
+        "currency_code": "USD",
+        "divisor": 100
+       },
+       "quantity": 6
+      }
+     ],
+     "product_id": 5101000005,
+     "property_values": [],
+     "sku": "PLATE-RST-4"
+    }
+   ],
+   "quantity_on_property": [],
+   "sku_on_property": []
+  },
+  "1601000005": {
+   "listing_id": 1601000005,
+   "price_on_property": [],
+   "products": [
+    {
+     "is_deleted": false,
+     "offerings": [
+      {
+       "is_deleted": false,
+       "is_enabled": true,
+       "offering_id": 6101000006,
+       "price": {
+        "amount": 4200,
+        "currency_code": "USD",
+        "divisor": 100
+       },
+       "quantity": 2
+      }
+     ],
+     "product_id": 5101000006,
+     "property_values": [],
+     "sku": "BOWL-OCN"
+    }
+   ],
+   "quantity_on_property": [],
+   "sku_on_property": []
+  },
+  "1601000006": {
+   "listing_id": 1601000006,
+   "price_on_property": [],
+   "products": [
+    {
+     "is_deleted": false,
+     "offerings": [
+      {
+       "is_deleted": false,
+       "is_enabled": true,
+       "offering_id": 6101000007,
+       "price": {
+        "amount": 3200,
+        "currency_code": "USD",
+        "divisor": 100
+       },
+       "quantity": 1
+      }
+     ],
+     "product_id": 5101000007,
+     "property_values": [],
+     "sku": "ESP-CHR"
+    }
+   ],
+   "quantity_on_property": [],
+   "sku_on_property": []
+  },
+  "1601000007": {
+   "listing_id": 1601000007,
+   "price_on_property": [],
+   "products": [
+    {
+     "is_deleted": false,
+     "offerings": [
+      {
+       "is_deleted": false,
+       "is_enabled": true,
+       "offering_id": 6101000008,
+       "price": {
+        "amount": 21000,
+        "currency_code": "USD",
+        "divisor": 100
+       },
+       "quantity": 3
+      }
+     ],
+     "product_id": 5101000008,
+     "property_values": [],
+     "sku": "CUSTOM-DEP"
+    }
+   ],
+   "quantity_on_property": [],
+   "sku_on_property": []
+  },
+  "1601000008": {
+   "listing_id": 1601000008,
+   "price_on_property": [],
+   "products": [
+    {
+     "is_deleted": false,
+     "offerings": [
+      {
+       "is_deleted": false,
+       "is_enabled": true,
+       "offering_id": 6101000009,
+       "price": {
+        "amount": 1800,
+        "currency_code": "USD",
+        "divisor": 100
+       },
+       "quantity": 12
+      }
+     ],
+     "product_id": 5101000009,
+     "property_values": [],
+     "sku": "TILE-TST"
+    }
+   ],
+   "quantity_on_property": [],
+   "sku_on_property": []
+  }
+ },
+ "ledger_entries": [
+  {
+   "amount": {
+    "amount": 6600,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "balance": {
+    "amount": 38808,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "created_days_ago": 0,
+   "created_hour": 9,
+   "description": "Sale - Hand-Thrown Stoneware Mug x2, receipt 3101000001",
+   "entry_id": 7101000008,
+   "entry_type": "sale",
+   "reference_id": 3101000001,
+   "reference_type": "receipt"
+  },
+  {
+   "amount": {
+    "amount": 9600,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "balance": {
+    "amount": 32208,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "created_days_ago": 0,
+   "created_hour": 7,
+   "description": "Sale - Ceramic Bud Vase Duo, receipt 3101000002",
+   "entry_id": 7101000007,
+   "entry_type": "sale",
+   "reference_id": 3101000002,
+   "reference_type": "receipt"
+  },
+  {
+   "amount": {
+    "amount": 13200,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "balance": {
+    "amount": 22608,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "created_days_ago": 1,
+   "created_hour": 11,
+   "description": "Sale - Dinner Plate Set of Four, receipt 3101000004",
+   "entry_id": 7101000006,
+   "entry_type": "sale",
+   "reference_id": 3101000004,
+   "reference_type": "receipt"
+  },
+  {
+   "amount": {
+    "amount": -50000,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "balance": {
+    "amount": 5208,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "created_days_ago": 3,
+   "created_hour": 6,
+   "description": "Deposit to bank account ending 4417",
+   "entry_id": 7101000005,
+   "entry_type": "deposit",
+   "reference_id": null,
+   "reference_type": "deposit"
+  },
+  {
+   "amount": {
+    "amount": 4200,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "balance": {
+    "amount": 9408,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "created_days_ago": 3,
+   "created_hour": 13,
+   "description": "Sale - Serving Bowl, receipt 3101000005",
+   "entry_id": 7101000004,
+   "entry_type": "sale",
+   "reference_id": 3101000005,
+   "reference_type": "receipt"
+  },
+  {
+   "amount": {
+    "amount": -812,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "balance": {
+    "amount": 43608,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "created_days_ago": 6,
+   "created_hour": 23,
+   "description": "Etsy transaction and processing fees",
+   "entry_id": 7101000003,
+   "entry_type": "fee",
+   "reference_id": null,
+   "reference_type": "bill"
+  },
+  {
+   "amount": {
+    "amount": 11600,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "balance": {
+    "amount": 55208,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "created_days_ago": 5,
+   "created_hour": 10,
+   "description": "Sale - Stoneware Mug x4, receipt 3101000006",
+   "entry_id": 7101000002,
+   "entry_type": "sale",
+   "reference_id": 3101000006,
+   "reference_type": "receipt"
+  },
+  {
+   "amount": {
+    "amount": 6400,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "balance": {
+    "amount": 44420,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "created_days_ago": 12,
+   "created_hour": 12,
+   "description": "Sale - Espresso Cup Pair x2, receipt 3101000008",
+   "entry_id": 7101000001,
+   "entry_type": "sale",
+   "reference_id": 3101000008,
+   "reference_type": "receipt"
+  }
+ ],
+ "listings": [
+  {
+   "created_timestamp": 1700000000,
+   "description": "A sturdy 12 oz stoneware mug, thrown on the wheel and glazed in speckled cream. Each one is slightly different, which is the point.",
+   "is_customizable": false,
+   "is_digital": false,
+   "last_modified_timestamp": 1730000000,
+   "listing_id": 1601000001,
+   "materials": [
+    "stoneware clay",
+    "lead-free glaze"
+   ],
+   "num_favorers": 214,
+   "price": {
+    "amount": 2900,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "quantity": 34,
+   "shop_id": 44882177,
+   "sku": [
+    "MUG-CRM",
+    "MUG-SGE"
+   ],
+   "state": "active",
+   "tags": [
+    "stoneware mug",
+    "handmade mug",
+    "coffee mug",
+    "pottery"
+   ],
+   "title": "Hand-Thrown Stoneware Mug - Speckled Cream",
+   "url": "https://www.etsy.com/listing/1601000001/hand-thrown-stoneware-mug-speckled-cream",
+   "views": 1873
+  },
+  {
+   "created_timestamp": 1705000000,
+   "description": "Two small bud vases in a matte sage glaze, sold as a pair. Lovely for single stems and windowsills.",
+   "is_customizable": false,
+   "is_digital": false,
+   "last_modified_timestamp": 1731000000,
+   "listing_id": 1601000002,
+   "materials": [
+    "stoneware clay",
+    "lead-free glaze"
+   ],
+   "num_favorers": 96,
+   "price": {
+    "amount": 9600,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "quantity": 9,
+   "shop_id": 44882177,
+   "sku": [
+    "VASE-SGE-DUO"
+   ],
+   "state": "active",
+   "tags": [
+    "bud vase",
+    "ceramic vase",
+    "sage green",
+    "pottery"
+   ],
+   "title": "Ceramic Bud Vase Duo - Matte Sage",
+   "url": "https://www.etsy.com/listing/1601000002/ceramic-bud-vase-duo-matte-sage",
+   "views": 942
+  },
+  {
+   "created_timestamp": 1710000000,
+   "description": "Two planters with drainage holes and a shared tray, finished in a warm terracotta wash.",
+   "is_customizable": false,
+   "is_digital": false,
+   "last_modified_timestamp": 1732000000,
+   "listing_id": 1601000003,
+   "materials": [
+    "stoneware clay",
+    "lead-free glaze"
+   ],
+   "num_favorers": 131,
+   "price": {
+    "amount": 3700,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "quantity": 21,
+   "shop_id": 44882177,
+   "sku": [
+    "PLNT-TRC"
+   ],
+   "state": "active",
+   "tags": [
+    "planter",
+    "terracotta",
+    "plant pot",
+    "pottery"
+   ],
+   "title": "Planter Duo with Drainage Tray - Terracotta Wash",
+   "url": "https://www.etsy.com/listing/1601000003/planter-duo-with-drainage-tray",
+   "views": 1204
+  },
+  {
+   "created_timestamp": 1715000000,
+   "description": "Four dinner plates with a hand-finished rustic rim. Food, microwave and dishwasher safe.",
+   "is_customizable": false,
+   "is_digital": false,
+   "last_modified_timestamp": 1730500000,
+   "listing_id": 1601000004,
+   "materials": [
+    "stoneware clay",
+    "lead-free glaze"
+   ],
+   "num_favorers": 88,
+   "price": {
+    "amount": 13200,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "quantity": 6,
+   "shop_id": 44882177,
+   "sku": [
+    "PLATE-RST-4"
+   ],
+   "state": "active",
+   "tags": [
+    "dinner plates",
+    "plate set",
+    "stoneware",
+    "pottery"
+   ],
+   "title": "Dinner Plate Set of Four - Rustic Rim",
+   "url": "https://www.etsy.com/listing/1601000004/dinner-plate-set-of-four-rustic-rim",
+   "views": 763
+  },
+  {
+   "created_timestamp": 1720000000,
+   "description": "A generous serving bowl in a layered ocean glaze - deep blue breaking to seafoam at the rim.",
+   "is_customizable": false,
+   "is_digital": false,
+   "last_modified_timestamp": 1731500000,
+   "listing_id": 1601000005,
+   "materials": [
+    "stoneware clay",
+    "lead-free glaze"
+   ],
+   "num_favorers": 74,
+   "price": {
+    "amount": 4200,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "quantity": 2,
+   "shop_id": 44882177,
+   "sku": [
+    "BOWL-OCN"
+   ],
+   "state": "active",
+   "tags": [
+    "serving bowl",
+    "blue glaze",
+    "pottery bowl"
+   ],
+   "title": "Serving Bowl - Ocean Glaze",
+   "url": "https://www.etsy.com/listing/1601000005/serving-bowl-ocean-glaze",
+   "views": 689
+  },
+  {
+   "created_timestamp": 1725000000,
+   "description": "Two small espresso cups in a charcoal matte glaze with a cream interior.",
+   "is_customizable": false,
+   "is_digital": false,
+   "last_modified_timestamp": 1731800000,
+   "listing_id": 1601000006,
+   "materials": [
+    "stoneware clay",
+    "lead-free glaze"
+   ],
+   "num_favorers": 39,
+   "price": {
+    "amount": 3200,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "quantity": 1,
+   "shop_id": 44882177,
+   "sku": [
+    "ESP-CHR"
+   ],
+   "state": "active",
+   "tags": [
+    "espresso cup",
+    "demitasse",
+    "pottery"
+   ],
+   "title": "Espresso Cup Pair - Charcoal",
+   "url": "https://www.etsy.com/listing/1601000006/espresso-cup-pair-charcoal",
+   "views": 431
+  },
+  {
+   "created_timestamp": 1728000000,
+   "description": "Deposit listing for custom dinnerware commissions. Please convo the studio before purchasing.",
+   "is_customizable": true,
+   "is_digital": false,
+   "last_modified_timestamp": 1731900000,
+   "listing_id": 1601000007,
+   "materials": [
+    "stoneware clay"
+   ],
+   "num_favorers": 12,
+   "price": {
+    "amount": 21000,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "quantity": 3,
+   "shop_id": 44882177,
+   "sku": [
+    "CUSTOM-DEP"
+   ],
+   "state": "active",
+   "tags": [
+    "custom pottery",
+    "commission",
+    "dinnerware"
+   ],
+   "title": "Custom Dinnerware Commission - Deposit",
+   "url": "https://www.etsy.com/listing/1601000007/custom-dinnerware-commission-deposit",
+   "views": 158
+  },
+  {
+   "created_timestamp": 1732000000,
+   "description": "Draft listing for glaze test tiles. Not yet photographed.",
+   "is_customizable": false,
+   "is_digital": false,
+   "last_modified_timestamp": 1732000000,
+   "listing_id": 1601000008,
+   "materials": [
+    "stoneware clay"
+   ],
+   "num_favorers": 0,
+   "price": {
+    "amount": 1800,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "quantity": 12,
+   "shop_id": 44882177,
+   "sku": [
+    "TILE-TST"
+   ],
+   "state": "draft",
+   "tags": [
+    "glaze test",
+    "samples"
+   ],
+   "title": "Prototype Glaze Test Tiles - Set of Six",
+   "url": "https://www.etsy.com/listing/1601000008/prototype-glaze-test-tiles",
+   "views": 0
+  }
+ ],
+ "receipts": [
+  {
+   "buyer_email": "maya.lindqvist@example.com",
+   "city": "Portland",
+   "country_iso": "US",
+   "created_days_ago": 0,
+   "created_hour": 9,
+   "grandtotal": {
+    "amount": 6600,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "is_delivered": false,
+   "is_paid": true,
+   "is_shipped": false,
+   "message_from_buyer": "These are a gift - please leave out the price slip. Thank you!",
+   "name": "Maya Lindqvist",
+   "payment_method": "cc",
+   "receipt_id": 3101000001,
+   "state": "OR",
+   "status": "Paid",
+   "subtotal": {
+    "amount": 5800,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "total_shipping_cost": {
+    "amount": 800,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "total_tax_cost": {
+    "amount": 0,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "transactions": [
+    {
+     "listing_id": 1601000001,
+     "price": {
+      "amount": 2900,
+      "currency_code": "USD",
+      "divisor": 100
+     },
+     "quantity": 2,
+     "sku": "MUG-CRM",
+     "title": "Hand-Thrown Stoneware Mug - Speckled Cream",
+     "transaction_id": 4101000001
+    }
+   ]
+  },
+  {
+   "buyer_email": "d.okafor@example.com",
+   "city": "Austin",
+   "country_iso": "US",
+   "created_days_ago": 0,
+   "created_hour": 7,
+   "grandtotal": {
+    "amount": 10400,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "is_delivered": false,
+   "is_paid": true,
+   "is_shipped": true,
+   "message_from_buyer": "",
+   "name": "Daniel Okafor",
+   "payment_method": "cc",
+   "receipt_id": 3101000002,
+   "state": "TX",
+   "status": "Shipped",
+   "subtotal": {
+    "amount": 9600,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "total_shipping_cost": {
+    "amount": 800,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "total_tax_cost": {
+    "amount": 0,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "transactions": [
+    {
+     "listing_id": 1601000002,
+     "price": {
+      "amount": 9600,
+      "currency_code": "USD",
+      "divisor": 100
+     },
+     "quantity": 1,
+     "sku": "VASE-SGE-DUO",
+     "title": "Ceramic Bud Vase Duo - Matte Sage",
+     "transaction_id": 4101000002
+    }
+   ]
+  },
+  {
+   "buyer_email": "sofia.marino@example.com",
+   "city": "Chicago",
+   "country_iso": "US",
+   "created_days_ago": 1,
+   "created_hour": 15,
+   "grandtotal": {
+    "amount": 8200,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "is_delivered": false,
+   "is_paid": true,
+   "is_shipped": false,
+   "message_from_buyer": "",
+   "name": "Sofia Marino",
+   "payment_method": "cc",
+   "receipt_id": 3101000003,
+   "state": "IL",
+   "status": "Paid",
+   "subtotal": {
+    "amount": 7400,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "total_shipping_cost": {
+    "amount": 800,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "total_tax_cost": {
+    "amount": 0,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "transactions": [
+    {
+     "listing_id": 1601000003,
+     "price": {
+      "amount": 3700,
+      "currency_code": "USD",
+      "divisor": 100
+     },
+     "quantity": 2,
+     "sku": "PLNT-TRC",
+     "title": "Planter Duo with Drainage Tray - Terracotta Wash",
+     "transaction_id": 4101000003
+    }
+   ]
+  },
+  {
+   "buyer_email": "june.callahan@example.com",
+   "city": "Nashville",
+   "country_iso": "US",
+   "created_days_ago": 1,
+   "created_hour": 11,
+   "grandtotal": {
+    "amount": 14000,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "is_delivered": true,
+   "is_paid": true,
+   "is_shipped": true,
+   "message_from_buyer": "Cannot wait to set the Thanksgiving table with these.",
+   "name": "June Callahan",
+   "payment_method": "cc",
+   "receipt_id": 3101000004,
+   "state": "TN",
+   "status": "Completed",
+   "subtotal": {
+    "amount": 13200,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "total_shipping_cost": {
+    "amount": 800,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "total_tax_cost": {
+    "amount": 0,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "transactions": [
+    {
+     "listing_id": 1601000004,
+     "price": {
+      "amount": 13200,
+      "currency_code": "USD",
+      "divisor": 100
+     },
+     "quantity": 1,
+     "sku": "PLATE-RST-4",
+     "title": "Dinner Plate Set of Four - Rustic Rim",
+     "transaction_id": 4101000004
+    }
+   ]
+  },
+  {
+   "buyer_email": "priya.raman@example.com",
+   "city": "Seattle",
+   "country_iso": "US",
+   "created_days_ago": 3,
+   "created_hour": 13,
+   "grandtotal": {
+    "amount": 5000,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "is_delivered": false,
+   "is_paid": true,
+   "is_shipped": true,
+   "message_from_buyer": "",
+   "name": "Priya Raman",
+   "payment_method": "cc",
+   "receipt_id": 3101000005,
+   "state": "WA",
+   "status": "Shipped",
+   "subtotal": {
+    "amount": 4200,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "total_shipping_cost": {
+    "amount": 800,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "total_tax_cost": {
+    "amount": 0,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "transactions": [
+    {
+     "listing_id": 1601000005,
+     "price": {
+      "amount": 4200,
+      "currency_code": "USD",
+      "divisor": 100
+     },
+     "quantity": 1,
+     "sku": "BOWL-OCN",
+     "title": "Serving Bowl - Ocean Glaze",
+     "transaction_id": 4101000005
+    }
+   ]
+  },
+  {
+   "buyer_email": "tom.beckett@example.com",
+   "city": "Denver",
+   "country_iso": "US",
+   "created_days_ago": 5,
+   "created_hour": 10,
+   "grandtotal": {
+    "amount": 12400,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "is_delivered": true,
+   "is_paid": true,
+   "is_shipped": true,
+   "message_from_buyer": "",
+   "name": "Tom Beckett",
+   "payment_method": "cc",
+   "receipt_id": 3101000006,
+   "state": "CO",
+   "status": "Completed",
+   "subtotal": {
+    "amount": 11600,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "total_shipping_cost": {
+    "amount": 800,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "total_tax_cost": {
+    "amount": 0,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "transactions": [
+    {
+     "listing_id": 1601000001,
+     "price": {
+      "amount": 2900,
+      "currency_code": "USD",
+      "divisor": 100
+     },
+     "quantity": 4,
+     "sku": "MUG-CRM",
+     "title": "Hand-Thrown Stoneware Mug - Speckled Cream",
+     "transaction_id": 4101000006
+    }
+   ]
+  },
+  {
+   "buyer_email": "alina.petrova@example.com",
+   "city": "Brooklyn",
+   "country_iso": "US",
+   "created_days_ago": 6,
+   "created_hour": 16,
+   "grandtotal": {
+    "amount": 21800,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "is_delivered": false,
+   "is_paid": true,
+   "is_shipped": false,
+   "message_from_buyer": "Custom glaze request sent by convo - the deep green we discussed.",
+   "name": "Alina Petrova",
+   "payment_method": "cc",
+   "receipt_id": 3101000007,
+   "state": "NY",
+   "status": "Paid",
+   "subtotal": {
+    "amount": 21000,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "total_shipping_cost": {
+    "amount": 800,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "total_tax_cost": {
+    "amount": 0,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "transactions": [
+    {
+     "listing_id": 1601000007,
+     "price": {
+      "amount": 21000,
+      "currency_code": "USD",
+      "divisor": 100
+     },
+     "quantity": 1,
+     "sku": "CUSTOM-DEP",
+     "title": "Custom Dinnerware Commission - Deposit",
+     "transaction_id": 4101000007
+    }
+   ]
+  },
+  {
+   "buyer_email": "grace.whitfield@example.com",
+   "city": "Charleston",
+   "country_iso": "US",
+   "created_days_ago": 12,
+   "created_hour": 12,
+   "grandtotal": {
+    "amount": 7200,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "is_delivered": true,
+   "is_paid": true,
+   "is_shipped": true,
+   "message_from_buyer": "",
+   "name": "Grace Whitfield",
+   "payment_method": "cc",
+   "receipt_id": 3101000008,
+   "state": "SC",
+   "status": "Completed",
+   "subtotal": {
+    "amount": 6400,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "total_shipping_cost": {
+    "amount": 800,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "total_tax_cost": {
+    "amount": 0,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "transactions": [
+    {
+     "listing_id": 1601000006,
+     "price": {
+      "amount": 3200,
+      "currency_code": "USD",
+      "divisor": 100
+     },
+     "quantity": 2,
+     "sku": "ESP-CHR",
+     "title": "Espresso Cup Pair - Charcoal",
+     "transaction_id": 4101000008
+    }
+   ]
+  },
+  {
+   "buyer_email": "pending.buyer@example.com",
+   "city": "Phoenix",
+   "country_iso": "US",
+   "created_days_ago": 0,
+   "created_hour": 12,
+   "grandtotal": {
+    "amount": 4500,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "is_delivered": false,
+   "is_paid": false,
+   "is_shipped": false,
+   "message_from_buyer": "",
+   "name": "Unpaid Order",
+   "payment_method": "cc",
+   "receipt_id": 3101000009,
+   "state": "AZ",
+   "status": "Open",
+   "subtotal": {
+    "amount": 3700,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "total_shipping_cost": {
+    "amount": 800,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "total_tax_cost": {
+    "amount": 0,
+    "currency_code": "USD",
+    "divisor": 100
+   },
+   "transactions": [
+    {
+     "listing_id": 1601000003,
+     "price": {
+      "amount": 3700,
+      "currency_code": "USD",
+      "divisor": 100
+     },
+     "quantity": 1,
+     "sku": "PLNT-TRC",
+     "title": "Planter Duo with Drainage Tray - Terracotta Wash",
+     "transaction_id": 4101000009
+    }
+   ]
+  }
+ ],
+ "reviews": [
+  {
+   "buyer_user_id": 88110006,
+   "created_days_ago": 1,
+   "created_hour": 18,
+   "image_url_fullxfull": null,
+   "language": "en-US",
+   "listing_id": 1601000001,
+   "rating": 5,
+   "review": "Bought four for our cabin and they are perfect - heavy in the hand, beautiful glaze, arrived packed like they were shipping eggs. Already ordered more.",
+   "shop_id": 44882177,
+   "transaction_id": 4101000006
+  },
+  {
+   "buyer_user_id": 88110004,
+   "created_days_ago": 2,
+   "created_hour": 9,
+   "image_url_fullxfull": null,
+   "language": "en-US",
+   "listing_id": 1601000004,
+   "rating": 5,
+   "review": "The plates made our whole table look like a magazine photo. Sturdy, gorgeous rim, zero chips after a month of daily use.",
+   "shop_id": 44882177,
+   "transaction_id": 4101000004
+  },
+  {
+   "buyer_user_id": 88110005,
+   "created_days_ago": 4,
+   "created_hour": 20,
+   "image_url_fullxfull": null,
+   "language": "en-US",
+   "listing_id": 1601000005,
+   "rating": 4,
+   "review": "Beautiful bowl and the glaze is even better in person. Took a day longer to ship than estimated, but worth the wait.",
+   "shop_id": 44882177,
+   "transaction_id": 4101000005
+  },
+  {
+   "buyer_user_id": 88110008,
+   "created_days_ago": 6,
+   "created_hour": 8,
+   "image_url_fullxfull": null,
+   "language": "en-US",
+   "listing_id": 1601000006,
+   "rating": 5,
+   "review": "Tiny, perfect espresso cups. The charcoal outside and cream inside is such a nice contrast.",
+   "shop_id": 44882177,
+   "transaction_id": 4101000008
+  },
+  {
+   "buyer_user_id": 88110099,
+   "created_days_ago": 9,
+   "created_hour": 14,
+   "image_url_fullxfull": null,
+   "language": "en-US",
+   "listing_id": 1601000003,
+   "rating": 3,
+   "review": "Planter is lovely but smaller than I pictured - check the measurements before ordering. Seller was kind and quick to reply.",
+   "shop_id": 44882177,
+   "transaction_id": 4101000099
+  }
+ ],
+ "shop": {
+  "accepts_custom_requests": true,
+  "announcement": "Every piece is thrown, glazed and fired in our Oregon studio. Please allow 3-5 business days before shipping.",
+  "created_timestamp": 1610000000,
+  "currency_code": "USD",
+  "digital_listing_count": 0,
+  "is_etsy_payments_onboarded": true,
+  "is_vacation": false,
+  "listing_active_count": 7,
+  "login_name": "willowandfern",
+  "num_favorited": 1284,
+  "review_average": 4.8,
+  "review_count": 312,
+  "shop_id": 44882177,
+  "shop_name": "WillowAndFernStudio",
+  "title": "Willow & Fern Studio - hand-thrown stoneware, made slowly",
+  "url": "https://www.etsy.com/shop/WillowAndFernStudio",
+  "user_id": 99120034,
+  "vacation_message": null
+ }
+}

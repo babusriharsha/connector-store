@@ -1,0 +1,1 @@
+{"_comment":"Copy this file to store_config.json in the connector root (beside connector.yaml) and replace the value with the store's real HTTPS URL. This file holds no secrets -- the Consumer Key/Secret live only in the Muse connection custom.woocommerce.","store_url":"https://your-store.example"}

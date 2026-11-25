@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<!-- BRAND: The Connector Store — tagline: "Real connectors for your Muse." -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WooCommerce Connector for Muse — The Connector Store</title>
+<meta name="description" content="Connect your WooCommerce store to your Muse agent: sales snapshots, orders and refunds, inventory and low-stock alerts, best sellers, customers, and a Morning Store Brief. Free for 1 month.">
+<meta property="og:title" content="WooCommerce Connector for Muse">
+<meta property="og:description" content="Ask your Muse what sold today, what's running low, and who hasn't ordered in 90 days — from your real WooCommerce data.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://connector-store.example.com/woocommerce.html">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">The <span>Connector</span> Store</a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="index.html#connectors">Connectors</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="faq.html">FAQ</a>
+      <a href="about.html">About</a>
+    </nav>
+    <form class="header-search" action="index.html" method="get" role="search">
+      <label class="small" for="header-search-input" style="position:absolute;left:-9999px">Search connectors</label>
+      <input id="header-search-input" name="q" type="search" placeholder="Search connectors…" autocomplete="off">
+      <button class="btn" type="submit">Search</button>
+    </form>
+  </div>
+</header>
+
+<main>
+  <div class="wrap detail-hero">
+    <span class="badge">Online stores</span>
+    <h1 style="margin-top:10px">WooCommerce Connector</h1>
+    <p class="muted" style="max-width:700px">Connect your WooCommerce store (on WordPress) to your Muse personal AI agent. Then just ask — “What sold today?”, “What’s about to run out?”, “Who are my best customers?” — and your Muse answers from your real store data, in plain words. Looking for steps? See <a href="how-to-connect-woocommerce-to-claude.html">how to connect WooCommerce to Muse</a>.</p>
+    <p class="independence">Independent store. Not affiliated with Meta, WooCommerce, Automattic, Etsy, or Mailchimp.</p>
+  </div>
+
+  <section class="block" aria-labelledby="features-h">
+    <div class="wrap">
+      <h2 id="features-h">What it does</h2>
+      <div class="feature-grid">
+        <div class="feature"><h3>Store snapshot</h3><p>Today vs yesterday vs last week: revenue, order count, and average order value — one question, one clear answer.</p></div>
+        <div class="feature"><h3>Orders &amp; refunds</h3><p>Recent orders, lookup by order number, customer name, or email; unfulfilled orders; refund totals for any period, with a flag when the refund rate spikes.</p></div>
+        <div class="feature"><h3>Products &amp; best sellers</h3><p>Search your catalog, check any product’s details and variants, see best sellers by period, and spot dead stock that hasn’t sold in weeks.</p></div>
+        <div class="feature"><h3>Inventory &amp; low-stock alerts</h3><p>Stock levels by product and variant, an out-of-stock list, and low-stock alerts against a threshold you set — before you sell something you don’t have.</p></div>
+        <div class="feature"><h3>Customers &amp; win-back list</h3><p>Top customers by spend, repeat-buyer picture, and the lapsed list — customers who haven’t ordered in 60 or 90 days — ready for a win-back offer.</p></div>
+        <div class="feature"><h3>Morning Store Brief</h3><p>A daily summary from your Muse: yesterday’s numbers, unfulfilled orders, low stock, and anything unusual — silent on the routine, loud on the exceptions.</p></div>
+        <div class="feature"><h3>Coupons &amp; edits — with your approval</h3><p>Create a coupon, or adjust a price or stock level. Your Muse shows you the exact change first; nothing runs until you approve it.</p></div>
+        <div class="feature"><h3>Period reports</h3><p>“Last month vs the month before” across sales, products, and customers — compared for you, in plain English, not raw tables.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="connect-h">
+    <div class="wrap">
+      <h2 id="connect-h">How connecting works</h2>
+      <div class="steps">
+        <div class="step"><span class="step-num" aria-hidden="true">1</span><h3>Copy the install prompt</h3><p class="muted">Use the copy button in the install box below and paste the prompt into your Muse chat. Your Muse installs the connector from our public repository.</p></div>
+        <div class="step"><span class="step-num" aria-hidden="true">2</span><h3>Create your store keys</h3><p class="muted">In WP Admin, go to WooCommerce → Settings → Advanced → REST API and create keys for your store. Your Muse tells you exactly which permissions to choose, and you enter the keys through Muse’s secure connection flow — never in chat.</p></div>
+        <div class="step"><span class="step-num" aria-hidden="true">3</span><h3>Confirm with a live snapshot</h3><p class="muted">Your Muse runs a health check and proves the connection with a live snapshot of your store. If it matches your dashboard, you’re connected.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="install-h">
+    <div class="wrap">
+      <div class="install-box">
+        <h2 id="install-h">Install prompt</h2>
+        <p>Copy this, paste it into your Muse chat, and your Muse handles the rest:</p>
+        <pre id="install-woocommerce">Install the WooCommerce Connector from The Connector Store.
+
+1. Fetch the connector package from the store's public repository (The Connector Store — WooCommerce Connector, latest release) and install it as a custom connector in my workspace, following its CONNECTOR.md exactly.
+2. Start the free 1-month trial activation for this connector and tell me the activation date and the date the trial ends.
+3. Walk me through connecting my WooCommerce store: tell me how to create REST API keys in WP Admin (WooCommerce → Settings → Advanced → REST API), and have me enter the keys through the secure connection flow — never ask me to paste keys or passwords into this chat.
+4. Run the connector's health check. If anything fails, tell me in plain words what is wrong and what to fix.
+5. Confirm the connection by showing me a live store snapshot: today's revenue, order count, and top product, next to yesterday's numbers.
+6. Ask me whether I want the Morning Store Brief scheduled, and at what time.</pre>
+        <button class="btn" type="button" data-copy-target="install-woocommerce">Copy install prompt</button>
+        <p class="copy-status" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="req-h">
+    <div class="wrap">
+      <div class="two-col">
+        <div class="panel">
+          <h3 id="req-h">Requirements</h3>
+          <ul>
+            <li>A Muse personal AI agent (the one you already chat with).</li>
+            <li>A WooCommerce store on WordPress that you administer.</li>
+            <li>Five minutes to create REST API keys in WP Admin when your Muse asks.</li>
+            <li>No card needed for the free month.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Pricing</h3>
+          <p><strong>Free for 1 month</strong> from activation — full features, no card required to start.</p>
+          <p style="margin:0">Then a per-connector monthly price. <strong>$19/month per store</strong> and shown here before subscriptions open. When the trial ends without a subscription, the connector pauses — it never charges silently. See <a href="pricing.html">Pricing</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="safety-h">
+    <div class="wrap">
+      <h2 id="safety-h">Safety notes</h2>
+      <div class="safety">
+        <ul>
+          <li><strong>Credentials never pass through chat.</strong> Your REST API keys go through Muse’s secure connection flow only.</li>
+          <li><strong>Read-only by default.</strong> The connector reads your store. Write actions (coupons, price or stock edits) are offered only when you ask, shown to you first, and run only after your approval.</li>
+          <li><strong>Your data stays yours.</strong> The connector runs inside your own Muse. This store never receives your orders, customers, or revenue figures — only install and trial/subscription status.</li>
+          <li><strong>Revoke anytime.</strong> Delete the API keys in WP Admin and ask your Muse to remove the connector; access ends immediately.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="faq-h">
+    <div class="wrap">
+      <h2 id="faq-h">WooCommerce Connector — questions</h2>
+      <div class="faq-item"><h3>Do I need to install a WordPress plugin?</h3><p>No. The connector uses WooCommerce’s built-in REST API. You create API keys in WP Admin — nothing is installed on your site.</p></div>
+      <div class="faq-item"><h3>Can it work with more than one store?</h3><p>Yes — connect each store with its own keys, and your Muse will ask which store you mean when a question is ambiguous.</p></div>
+      <div class="faq-item"><h3>Will it slow my site down?</h3><p>No. It makes the same kind of requests your own admin dashboard makes, only when you ask your Muse something.</p></div>
+      <div class="faq-item"><h3>What happens at the end of the free month?</h3><p>The connector pauses until you subscribe. Your keys and setup stay in place, so subscribing resumes everything instantly.</p></div>
+      <p><a href="faq.html">More questions in the store FAQ →</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-links">
+      <a href="index.html#connectors">Connectors</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="faq.html">FAQ</a>
+      <a href="about.html">About</a>
+    </div>
+    <p class="small muted" style="margin:0">Independent store. Not affiliated with Meta, WooCommerce, Automattic, Etsy, or Mailchimp.</p>
+    <p class="small muted" style="margin:0">The Connector Store is a product of CALL SNAP SYSTEMS LLC, Eureka, Missouri, USA. © 2026 CALL SNAP SYSTEMS LLC</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
