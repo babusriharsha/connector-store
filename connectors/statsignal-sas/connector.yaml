@@ -1,0 +1,33 @@
+# StatSignal for SAS connector for Muse -- descriptor.
+#
+# - id: the provider slug (custom.statsignal-sas). This is a local
+#   file-analysis tool: require_auth is false and the only connection
+#   entry is the OPTIONAL license_key, used after the free trial.
+# - description: what connector search matches on. The aliases below
+#   carry the phrases owners actually use, so a Muse asked "how do
+#   I connect my SAS codebase?" finds this connector.
+id: "custom.statsignal-sas"
+title: "StatSignal for SAS"
+description: "Estate inventory, log digest and data lineage for a whole SAS codebase — every program catalogued, every dataset traced from creation to use, every macro documented, and run logs scanned for errors and warnings, on your own files. Local analysis tools by Plugvana — no account, runs on your own machine, read-only by design."
+include_in_prompt: true
+require_auth: false
+aliases:
+  - "StatSignal for SAS"
+  - "Connect my SAS codebase with Plugvana"
+  - "SAS program inventory"
+  - "scan my SAS log"
+  - "SAS data lineage"
+  - "which programs use this dataset"
+  - "SAS macro documentation"
+  - "SAS estate report"
+  - "SAS code documentation"
+  - "SAS log error digest"
+  - "find my orphan SAS programs"
+auth_entries:
+  - name: "license_key"
+    placement: { query_param: "license_key" }
+    optional: true
+# This connector makes no network calls except the license check
+# (bin/license_check.py, whose endpoint host is registered at deploy
+# time). All analysis is local.
+api_hosts: []
