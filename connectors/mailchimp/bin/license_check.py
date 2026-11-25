@@ -15,20 +15,33 @@ How licensing works
        (a surrogate is fetched through Muse's dynamic-credential flow; the
        real key is swapped in only on the request to the validation host,
        which the installing Muse must register for that connection).
-- Validation is a single POST to VALIDATION_ENDPOINT (below). Results are
-  cached locally for 24 hours. If the endpoint cannot be reached, a 7-day
-  offline grace applies from the last successful check (or from activation
-  when no check has succeeded yet).
+- Validation is a single POST to the license server's /v1/check endpoint
+  (below). Results are cached locally for 24 hours. If the endpoint cannot
+  be reached, a 7-day offline grace applies from the last successful check
+  (or from activation when no check has succeeded yet).
+- On the first live run this module also POSTs /v1/activate with
+  {product, install_id, shop_hash, version} and adopts the server's
+  trial_start as the authoritative trial start (activation is idempotent
+  per account server-side, so a trial cannot be restarted for the same
+  account). install_id is a random uuid4 persisted in the local state
+  file (this module has always kept one). shop_hash is a one-way SHA-256
+  of the Mailchimp account id, computed locally -- the raw account id is
+  never sent; when the account id is not known yet at check time,
+  shop_hash is sent empty rather than blocking the command. If the
+  license server is unreachable, the local trial / grace rules below
+  govern and activation is retried on a later run.
 - After the trial with no valid license, live commands stop with a polite
-  refusal and a subscribe message. Demo mode (--demo) never checks a license.
+  refusal and a subscribe message. Demo mode (--demo) never checks a
+  license and never touches the network.
 
 Zero-cost note: this runs entirely on the customer's own Muse. The store
-stores nothing about the customer; the only network call is the license
-validation POST above, and only when a key is present.
+stores nothing about the customer; the only network calls are the license
+activation/validation POSTs above.
 """
 
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import sys
@@ -37,18 +50,39 @@ import urllib.request
 import uuid
 from datetime import datetime, timedelta, timezone
 
-# TODO(store-owner): replace this placeholder with the production license
-# endpoint before distributing the connector. Until then, validation calls
-# fail as "unreachable" and the trial / offline-grace rules below govern.
+# TODO(store-owner): replace this placeholder base URL with the production
+# license service URL before distributing the connector (deploy time).
+# Both endpoint URLs are built from this one base constant. Until then,
+# remote calls fail as "unreachable" and the trial / offline-grace rules
+# below govern. NOTE (deploy time): the host of LICENSE_API_BASE must be
+# registered in the custom.mailchimp connection, or Muse will refuse
+# the outbound license requests and never swap in the real license_key
+# on egress.
+LICENSE_API_BASE = os.environ.get(
+    "MAILCHIMP_LICENSE_API_BASE", "https://licenses.example.com"
+)
 VALIDATION_ENDPOINT = os.environ.get(
-    "MAILCHIMP_LICENSE_ENDPOINT", "https://licenses.example.com/v1/check"
+    "MAILCHIMP_LICENSE_ENDPOINT", LICENSE_API_BASE.rstrip("/") + "/v1/check"
 )
 
+
+def _activate_url() -> str:
+    return LICENSE_API_BASE.rstrip("/") + "/v1/activate"
+
+
 PRODUCT = "mailchimp"
+CONNECTOR_VERSION = "1.0.0"
 TRIAL_DAYS = 30
 CACHE_HOURS = 24
 GRACE_DAYS = 7
 SUBSCRIBE_URL = "https://connector-store.example.com/mailchimp"  # TODO: real store URL
+BOUND_ELSEWHERE_MESSAGE = (
+    "This license key is already bound to a different Mailchimp "
+    "account. A license covers one account, so it cannot be used for "
+    "this account. Subscribe for this account at the Connector Store "
+    "by CALL SNAP SYSTEMS LLC, or contact support if you believe this "
+    "is a mistake."
+)
 
 PKG_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATE_PATH = os.path.join(PKG_DIR, "license_state.json")
@@ -85,6 +119,69 @@ def _save_state(state: dict) -> None:
         pass  # a read-only install still gets trial behaviour from memory
 
 
+def shop_hash_for(account_id) -> str:
+    """One-way SHA-256 of the Mailchimp account id ("" when unknown).
+
+    The raw account id never leaves this machine -- only this hash is
+    sent to the license server.
+    """
+    if not account_id:
+        return ""
+    return hashlib.sha256(str(account_id).strip().encode("utf-8")).hexdigest()
+
+
+def _post_json(url: str, payload: dict, timeout: int = 15) -> dict | None:
+    """POST JSON and return the parsed body, or None on any failure."""
+    request = urllib.request.Request(
+        url, data=json.dumps(payload).encode("utf-8"), method="POST"
+    )
+    request.add_header("Content-Type", "application/json")
+    try:
+        with urllib.request.urlopen(request, timeout=timeout) as response:
+            body = json.loads(response.read().decode("utf-8"))
+        return body if isinstance(body, dict) else None
+    except Exception:
+        return None
+
+
+def _ensure_activation(state: dict, shop_hash: str) -> None:
+    """POST /v1/activate once, on the first live run.
+
+    Adopts the server's trial_start as the local first_activation. If
+    the server is unreachable, local trial rules govern and we retry
+    on a later run (throttled to one attempt per CACHE_HOURS) -- a
+    license-server outage must never crash or block a command.
+    """
+    if state.get("activation"):
+        return
+    last_attempt = _parse(state.get("activation_last_attempt_at"))
+    if last_attempt and _now() - last_attempt < timedelta(hours=CACHE_HOURS):
+        return
+    state["activation_last_attempt_at"] = _now().isoformat()
+    _save_state(state)
+    body = _post_json(_activate_url(), {
+        "product": PRODUCT,
+        "install_id": state["install_id"],
+        "shop_hash": shop_hash,
+        "version": CONNECTOR_VERSION,
+    })
+    if body and body.get("trial_start"):
+        state["activation"] = {
+            "trial_start": body["trial_start"],
+            "trial_days_left": body.get("trial_days_left"),
+            "status": body.get("status"),
+            "at": _now().isoformat(),
+        }
+        try:
+            start = datetime.fromisoformat(str(body["trial_start"])[:10])
+            state["first_activation"] = start.replace(
+                tzinfo=timezone.utc
+            ).isoformat()
+        except ValueError:
+            pass
+        _save_state(state)
+
+
 def get_license_key():
     """Return the license key from env, license.json, or the Muse connection."""
     env_key = os.environ.get("MAILCHIMP_CONNECTOR_LICENSE_KEY", "").strip()
@@ -113,10 +210,15 @@ def get_license_key():
     return None
 
 
-def _validate_online(key: str, install_id: str) -> dict:
-    """POST the key to the validation endpoint. Raises on network failure."""
+def _validate_online(key: str, install_id: str, shop_hash: str = "") -> dict:
+    """POST the key to the validation endpoint. Raises on network failure.
+
+    The payload carries install_id and shop_hash (when known) so the
+    server can apply its one-account binding and trial records.
+    """
     body = json.dumps(
-        {"license_key": key, "product": PRODUCT, "install_id": install_id}
+        {"license_key": key, "product": PRODUCT, "install_id": install_id,
+         "shop_hash": shop_hash}
     ).encode("utf-8")
     request = urllib.request.Request(
         VALIDATION_ENDPOINT, data=body, method="POST"
@@ -126,8 +228,13 @@ def _validate_online(key: str, install_id: str) -> dict:
         return json.loads(response.read().decode("utf-8"))
 
 
-def check(demo: bool = False) -> dict:
-    """Return the license status dict. Never raises for licensing reasons."""
+def check(demo: bool = False, shop_identity=None) -> dict:
+    """Return the license status dict. Never raises for licensing reasons.
+
+    ``shop_identity`` is the Mailchimp account id when the caller
+    already knows it (the status command does, from its account call);
+    it is hashed locally and only the hash is ever sent.
+    """
     if demo:
         return {"status": "demo", "active": True,
                 "message": "Demo mode. No license check."}
@@ -135,10 +242,14 @@ def check(demo: bool = False) -> dict:
     state = _load_state()
     now = _now()
     if not state.get("install_id"):
-        state["install_id"] = uuid.uuid4().hex
+        state["install_id"] = str(uuid.uuid4())
     if not state.get("first_activation"):
         state["first_activation"] = now.isoformat()
         _save_state(state)
+    shop_hash = shop_hash_for(shop_identity)
+    # First live run: register the trial with the license server and
+    # adopt its trial_start (may rewrite first_activation above).
+    _ensure_activation(state, shop_hash)
     first_activation = _parse(state.get("first_activation")) or now
     trial_ends = first_activation + timedelta(days=TRIAL_DAYS)
     trial_days_left = max(0, (trial_ends - now).days)
@@ -158,16 +269,23 @@ def check(demo: bool = False) -> dict:
                     "message": "License valid (cached check).",
                     "checked_at": state.get("last_check_at")}
         try:
-            result = _validate_online(key, state["install_id"])
+            result = _validate_online(key, state["install_id"], shop_hash)
             valid = bool(result.get("valid"))
             state["last_check_at"] = now.isoformat()
             state["last_check_valid"] = valid
+            state["last_check_reason"] = result.get("reason")
             _save_state(state)
             if valid:
                 return {"status": "licensed", "active": True,
                         "message": "License valid.",
                         "plan": result.get("plan"),
                         "checked_at": state["last_check_at"]}
+            if result.get("reason") == "bound_elsewhere":
+                # The key belongs to a different account. Say exactly
+                # that -- not a generic "key not accepted".
+                return {"status": "bound_elsewhere", "active": False,
+                        "reason": "bound_elsewhere",
+                        "message": BOUND_ELSEWHERE_MESSAGE}
             return {"status": "invalid", "active": False,
                     "message": "That license key was not accepted. "
                                f"Subscribe or check your key: {SUBSCRIBE_URL}"}
@@ -202,9 +320,9 @@ def check(demo: bool = False) -> dict:
                        f"it, subscribe here: {SUBSCRIBE_URL}"}
 
 
-def ensure_active(demo: bool = False) -> dict:
+def ensure_active(demo: bool = False, shop_identity=None) -> dict:
     """Return the status dict when active. Print a refusal and exit(3) if not."""
-    status = check(demo=demo)
+    status = check(demo=demo, shop_identity=shop_identity)
     if not status.get("active"):
         print(json.dumps({
             "error": "license_inactive",

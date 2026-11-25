@@ -421,7 +421,10 @@ def cmd_status(client, args):
         "health_status": ping.get("health_status"),
         "account": account_view,
         "ecommerce_stores_connected": stores.get("total_items", 0),
-        "license": license_check.check(demo=args.demo),
+        # Pass the account id as the shop identity: the license check
+        # hashes it locally; the raw id never leaves this machine.
+        "license": license_check.check(demo=args.demo,
+                                       shop_identity=account.get("account_id")),
         "demo": bool(args.demo),
     }
 

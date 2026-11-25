@@ -676,8 +676,12 @@ def main(argv=None) -> int:
         if getattr(args, "demo", False):
             backend = DemoBackend()
         else:
-            license_check.enforce()
-            backend = LiveBackend(resolve_store_url(getattr(args, "store_url", None)))
+            store_url = resolve_store_url(getattr(args, "store_url", None))
+            # Pass the store URL as the shop identity so the license
+            # check can hash it locally for server activation/binding.
+            # The raw URL never leaves this machine (hash only).
+            license_check.enforce(shop_identity=store_url)
+            backend = LiveBackend(store_url)
         COMMANDS[args.command](backend, args)
     except CliError as exc:
         emit({"ok": False, "error": str(exc)}, exit_code=1)

@@ -4,54 +4,97 @@
 How licensing works (honest summary)
 ------------------------------------
 This connector runs entirely on the customer's own Muse. Nothing about
-licensing changes that. This module is a *hook* for a hosted license
-checker that the store operator will run later:
+licensing changes that. This module talks to the hosted Connector Store
+license server (see ``LICENSE_API_BASE`` below):
 
-* ``VALIDATION_ENDPOINT`` below is a PLACEHOLDER. Until the operator
-  replaces it with the real hosted checker URL, remote validation will
-  simply fail, and this module falls back to the local rules below.
+* On the first live (non-demo) run, this module POSTs ``/v1/activate``
+  with {product, install_id, shop_hash, version} and adopts the server's
+  ``trial_start`` as the authoritative trial start. Activation is
+  idempotent per shop on the server, so reinstalling cannot restart a
+  shop's trial. ``shop_hash`` is a one-way SHA-256 of the store's base
+  URL, computed locally -- the raw URL is never sent.
+* ``LICENSE_API_BASE`` below is a PLACEHOLDER. Until the operator
+  replaces it with the real hosted license service URL, remote calls
+  will simply fail, and this module falls back to the local rules below.
   That fallback is deliberate, so the connector works during development
-  and for the bundled demo.
+  and for the bundled demo, and a license-server outage never blocks a
+  command on its own.
 
 Local rules (always enforced, online or offline):
 
 * A 30-day free trial starts on the first day any live (non-demo) CLI
-  command runs. The first-activation date is stored in a local state
-  file next to this module (``.license_state.json``). Deleting the
-  state file restarts the trial; the operator knows this and accepts
-  it for v1 -- the hosted checker is the real enforcement point.
+  command runs (or on the server's ``trial_start`` once activation has
+  succeeded). The first-activation date is stored in a local state
+  file next to this module (``.license_state.json``).
 * If a license key is present (read from the Muse connection
   ``custom.woocommerce``, entry ``license_key``, when available, or
-  from the state file), this module asks the validation endpoint
-  whether the subscription is active. A successful answer is cached
-  for 24 hours. If the endpoint is unreachable, the last successful
-  "active" answer is honoured for a 7-day offline grace period.
+  from the state file), this module asks the license server's
+  ``/v1/check`` endpoint whether the subscription is active, sending
+  the install_id and shop_hash alongside the key. A successful answer
+  is cached for 24 hours. If the endpoint is unreachable, the last
+  successful "active" answer is honoured for a 7-day offline grace
+  period.
 * After the trial, with no active license, live commands refuse
-  politely and print how to subscribe. Demo mode never checks.
+  politely and print how to subscribe. Demo mode never checks and
+  never touches the network.
 
-State file fields: first_activation (YYYY-MM-DD), license_key (str or
-null), last_check_at (ISO timestamp), last_check_result
-("active"/"inactive"/"error"), last_success_at (ISO timestamp or null).
+State file fields: first_activation (YYYY-MM-DD), install_id (uuid4,
+generated once and reused), activation (server activation record or
+null), license_key (str or null), last_check_at (ISO timestamp),
+last_check_result ("active"/"inactive"/"bound_elsewhere"/"error"),
+last_check_reason (server reason string or null), last_success_at
+(ISO timestamp or null).
 """
 
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import sys
 import urllib.request
+import uuid
 from datetime import datetime, timedelta, timezone
 
 # ---------------------------------------------------------------------------
-# OPERATOR: replace this placeholder with the real hosted license checker
-# URL before selling subscriptions. Until then remote checks fail soft and
-# the local trial rules below are what actually gate live use.
-VALIDATION_ENDPOINT = "https://licenses.example.com/v1/check"  # TO BE REPLACED
+# OPERATOR: replace this placeholder base URL with the real hosted
+# license service URL before selling subscriptions (deploy time). Until
+# then remote checks fail soft and the local trial rules below are what
+# actually gate live use. Both endpoint URLs are built from this one
+# constant. NOTE (deploy time): the host of LICENSE_API_BASE must be
+# registered in the custom.woocommerce connection's api_hosts, or Muse
+# will refuse the outbound license requests (and never swap in the real
+# license_key credential on egress).
+LICENSE_API_BASE = os.environ.get(
+    "WOOCOMMERCE_LICENSE_API_BASE", "https://licenses.example.com"
+)  # TODO: real license service URL at deploy time
 # ---------------------------------------------------------------------------
+
+
+def _check_url() -> str:
+    return LICENSE_API_BASE.rstrip("/") + "/v1/check"
+
+
+def _activate_url() -> str:
+    return LICENSE_API_BASE.rstrip("/") + "/v1/activate"
+
+
+# Back-compat alias: the full /v1/check URL.
+VALIDATION_ENDPOINT = _check_url()
+
+PRODUCT = "woocommerce"
+CONNECTOR_VERSION = "1.0.0"
 
 TRIAL_DAYS = 30
 CACHE_HOURS = 24
 OFFLINE_GRACE_DAYS = 7
+BOUND_ELSEWHERE_MESSAGE = (
+    "This license key is already bound to a different shop. A license "
+    "covers one shop, so it cannot be used for this store. Subscribe "
+    "for this shop at the Connector Store by CALL SNAP SYSTEMS LLC, or "
+    "contact support if you believe this is a mistake (for example if "
+    "you moved your store to a new address)."
+)
 SUBSCRIBE_MESSAGE = (
     "Your 30-day free trial of the WooCommerce connector for Muse has ended. "
     "To keep using it, subscribe at the Connector Store by CALL SNAP SYSTEMS LLC "
@@ -88,6 +131,104 @@ def _save_state(state: dict) -> None:
         pass
 
 
+def _ensure_install_id(state: dict) -> str:
+    """Return the persisted random install id, generating it once."""
+    install_id = state.get("install_id")
+    if not install_id:
+        install_id = str(uuid.uuid4())
+        state["install_id"] = install_id
+    return install_id
+
+
+def _known_store_url(shop_identity: str | None = None) -> str:
+    """Best-effort: the store base URL this install talks to.
+
+    Uses the identity passed by the CLI when given, else mirrors
+    woo.py's resolution: WC_STORE_URL env, then store_config.json
+    beside connector.yaml. Returns "" when unknown -- callers then
+    send an empty shop_hash rather than blocking the command.
+    """
+    url = shop_identity or os.environ.get("WC_STORE_URL") or ""
+    if not url:
+        config_path = os.path.join(
+            os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+            "store_config.json",
+        )
+        try:
+            with open(config_path, "r", encoding="utf-8") as fh:
+                url = json.load(fh).get("store_url") or ""
+        except (OSError, json.JSONDecodeError, AttributeError):
+            url = ""
+    return str(url).strip()
+
+
+def shop_hash_for(store_url: str | None) -> str:
+    """One-way SHA-256 of the normalised store URL ("" when unknown).
+
+    Normalisation: trim, lowercase, no trailing slash. The raw URL
+    never leaves this machine -- only this hash is sent to the server.
+    """
+    if not store_url:
+        return ""
+    normalised = str(store_url).strip().lower().rstrip("/")
+    if not normalised:
+        return ""
+    return hashlib.sha256(normalised.encode("utf-8")).hexdigest()
+
+
+def _post_json(url: str, payload: dict, timeout: int = 5) -> dict | None:
+    """POST JSON and return the parsed body, or None on any failure."""
+    request = urllib.request.Request(
+        url,
+        data=json.dumps(payload).encode("utf-8"),
+        headers={"Content-Type": "application/json"},
+        method="POST",
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=timeout) as response:
+            body = json.loads(response.read().decode("utf-8"))
+        return body if isinstance(body, dict) else None
+    except Exception:
+        return None
+
+
+def _ensure_activation(state: dict, shop_hash: str) -> None:
+    """POST /v1/activate once, on the first live run.
+
+    Adopts the server's trial_start/trial_days_left into local state.
+    If the server is unreachable, local trial rules govern and we retry
+    on a later run (throttled to one attempt per CACHE_HOURS) -- a
+    license-server outage must never crash or block a command.
+    """
+    if state.get("activation"):
+        return
+    last_attempt = state.get("activation_last_attempt_at")
+    if last_attempt:
+        try:
+            if _now() - datetime.fromisoformat(last_attempt) < timedelta(hours=CACHE_HOURS):
+                return
+        except ValueError:
+            pass
+    state["activation_last_attempt_at"] = _now().isoformat()
+    body = _post_json(_activate_url(), {
+        "product": PRODUCT,
+        "install_id": _ensure_install_id(state),
+        "shop_hash": shop_hash,
+        "version": CONNECTOR_VERSION,
+    })
+    if body and body.get("trial_start"):
+        state["activation"] = {
+            "trial_start": body["trial_start"],
+            "trial_days_left": body.get("trial_days_left"),
+            "status": body.get("status"),
+            "at": _now().isoformat(),
+        }
+        # The server's trial start is authoritative (idempotent per
+        # shop): adopt it as the local trial start.
+        state["first_activation"] = str(body["trial_start"])[:10]
+    _save_state(state)
+
+
 def _license_key_from_connection() -> str | None:
     """Best-effort: read the license key surrogate entry name only.
 
@@ -109,31 +250,41 @@ def _license_key_from_connection() -> str | None:
         return None
 
 
-def _remote_check(license_key: str) -> str:
-    """Ask the hosted checker. Returns 'active', 'inactive' or 'error'."""
-    payload = json.dumps({"license_key": license_key, "product": "woocommerce"}).encode("utf-8")
-    request = urllib.request.Request(
-        VALIDATION_ENDPOINT,
-        data=payload,
-        headers={"Content-Type": "application/json"},
-        method="POST",
-    )
-    try:
-        with urllib.request.urlopen(request, timeout=5) as response:
-            body = json.loads(response.read().decode("utf-8"))
-        return "active" if body.get("active") else "inactive"
-    except Exception:
-        return "error"
+def _remote_check(license_key: str, install_id: str = "",
+                  shop_hash: str = "") -> tuple[str, dict | None]:
+    """Ask the license server. Returns (result, body).
+
+    Result is 'active', 'inactive', 'bound_elsewhere' or 'error'.
+    The payload carries install_id and shop_hash (when known) so the
+    server can apply its one-shop binding and trial records.
+    """
+    body = _post_json(_check_url(), {
+        "license_key": license_key,
+        "product": PRODUCT,
+        "install_id": install_id,
+        "shop_hash": shop_hash,
+    })
+    if body is None:
+        return "error", None
+    if body.get("reason") == "bound_elsewhere":
+        return "bound_elsewhere", body
+    return ("active" if body.get("active") else "inactive"), body
 
 
-def check_license() -> dict:
+def check_license(shop_identity: str | None = None) -> dict:
     """Return the current license status and record first activation.
 
-    Result keys: allowed (bool), mode ("licensed" | "trial" | "expired"),
-    trial_days_left (int or None), detail (human-readable str).
+    Result keys: allowed (bool), mode ("licensed" | "trial" | "expired" |
+    "bound_elsewhere"), trial_days_left (int or None), detail
+    (human-readable str).
     """
     state = _load_state()
     today = _now().date()
+    install_id = _ensure_install_id(state)
+    shop_hash = shop_hash_for(_known_store_url(shop_identity))
+    # First live run: register the trial with the license server and
+    # adopt its trial_start. Failures fall back to local rules below.
+    _ensure_activation(state, shop_hash)
     if not state.get("first_activation"):
         state["first_activation"] = today.isoformat()
         _save_state(state)
@@ -156,12 +307,20 @@ def check_license() -> dict:
             except ValueError:
                 fresh = False
         if not fresh:
-            result = _remote_check(license_key)
+            result, body = _remote_check(license_key, install_id, shop_hash)
             state["last_check_at"] = _now().isoformat()
             state["last_check_result"] = result
+            state["last_check_reason"] = (body or {}).get("reason")
             if result == "active":
                 state["last_success_at"] = _now().isoformat()
             _save_state(state)
+        if state.get("last_check_result") == "bound_elsewhere":
+            # The key belongs to a different shop. Say exactly that --
+            # not a generic "invalid key" -- and do not let the local
+            # trial or offline grace mask it: the server has refused
+            # this key for this shop.
+            return {"allowed": False, "mode": "bound_elsewhere",
+                    "trial_days_left": None, "detail": BOUND_ELSEWHERE_MESSAGE}
         if state.get("last_check_result") == "active":
             return {"allowed": True, "mode": "licensed", "trial_days_left": None,
                     "detail": "Active subscription on file."}
@@ -188,13 +347,15 @@ def check_license() -> dict:
             "detail": SUBSCRIBE_MESSAGE}
 
 
-def enforce() -> dict:
+def enforce(shop_identity: str | None = None) -> dict:
     """Gate a live CLI command. Exits the process politely if not allowed."""
-    status = check_license()
+    status = check_license(shop_identity=shop_identity)
     if not status["allowed"]:
         print(json.dumps({
             "ok": False,
-            "error": "trial_expired",
+            "error": ("license_bound_elsewhere"
+                      if status.get("mode") == "bound_elsewhere"
+                      else "trial_expired"),
             "message": status["detail"],
         }, indent=2))
         raise SystemExit(3)
