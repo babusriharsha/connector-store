@@ -1,4 +1,4 @@
-/* The Connector Store — shared JS: front-page Connect buttons and the
+/* Plugvana — shared JS: front-page Connect buttons and the
    home catalog search/filter. There is deliberately NO copying
    behaviour on this site: connecting happens inside the user's own Muse,
    so a Connect button simply tells the visitor the one sentence to say.
@@ -22,19 +22,19 @@
   /* ---------- Home catalog: live search + category chips ---------- */
   var SEARCH_INDEX = [
     {
-      id: "woocommerce", name: "WooCommerce Connector", category: "Online stores",
+      id: "woocommerce", name: "ShopSignal for WooCommerce", category: "Online stores",
       page: "woocommerce.html",
-      keywords: "woocommerce wordpress wp store shop orders refunds products inventory stock low stock alerts best sellers customers lapsed customers coupons morning store brief connect my shop connect my store connect my woocommerce store with the connector store sales snapshot revenue"
+      keywords: "woocommerce wordpress wp store shop orders refunds products inventory stock low stock alerts best sellers customers lapsed customers coupons morning store brief connect my shop connect my store connect my woocommerce store with plugvana sales snapshot revenue"
     },
     {
-      id: "etsy", name: "Etsy Connector", category: "Online stores",
+      id: "etsy", name: "SellSignal for Etsy", category: "Online stores",
       page: "etsy.html",
-      keywords: "etsy shop seller receipts orders listings inventory quantities low quantity alerts reviews payment ledger morning shop brief connect my shop connect my etsy connect my etsy shop with the connector store sales snapshot"
+      keywords: "etsy shop seller receipts orders listings inventory quantities low quantity alerts reviews payment ledger morning shop brief connect my shop connect my etsy connect my etsy shop with plugvana sales snapshot"
     },
     {
-      id: "mailchimp", name: "Mailchimp Connector", category: "Email marketing",
+      id: "mailchimp", name: "ListSignal for Mailchimp", category: "Email marketing",
       page: "mailchimp.html",
-      keywords: "mailchimp email marketing audience subscribers growth campaign reports opens clicks bounces top campaigns list health draft campaign newsletter connect mailchimp connect my mailchimp account with the connector store"
+      keywords: "mailchimp email marketing audience subscribers growth campaign reports opens clicks bounces top campaigns list health draft campaign newsletter connect mailchimp connect my mailchimp account with plugvana"
     }
   ];
 
