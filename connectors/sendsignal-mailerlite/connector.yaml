@@ -7,4 +7,4 @@ require_auth: true
 aliases: ["MailerLite for Muse", "MailerLite campaign reports", "Email marketing", "Newsletter analytics", "Audience growth", "Connect my MailerLite with Plugvana"]
 auth_scheme: "api_key"
 placement: "bearer_header"
-api_hosts: ["connect.mailerlite.com"]
+api_hosts: ["plugvana-licenses.vercel.app", "connect.mailerlite.com"]

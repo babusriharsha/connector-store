@@ -59,7 +59,7 @@ from datetime import datetime, timedelta, timezone
 # the outbound license requests and never swap in the real license_key
 # on egress.
 LICENSE_API_BASE = os.environ.get(
-    "KIT_LICENSE_API_BASE", "https://licenses.example.com"
+    "KIT_LICENSE_API_BASE", "https://plugvana-licenses.vercel.app"
 )
 VALIDATION_ENDPOINT = os.environ.get(
     "KIT_LICENSE_ENDPOINT", LICENSE_API_BASE.rstrip("/") + "/v1/check"
@@ -75,7 +75,8 @@ CONNECTOR_VERSION = "1.0.0"
 TRIAL_DAYS = 30
 CACHE_HOURS = 24
 GRACE_DAYS = 7
-SUBSCRIBE_URL = "https://plugvana.com/postsignal-kit"  # TODO: real store URL
+# Monthly plan checkout (Stripe Payment Link). Annual plans are not offered yet.
+SUBSCRIBE_URL = "https://buy.stripe.com/fZu28redVcEq1zua0da3u0y"
 BOUND_ELSEWHERE_MESSAGE = (
     "This license key is already bound to a different Kit "
     "account. A license covers one account, so it cannot be used for "
@@ -305,7 +306,7 @@ def check(demo: bool = False, shop_identity=None) -> dict:
             return {"status": "expired", "active": False,
                     "message": "License server unreachable and the free "
                                "trial has ended. Reconnect to the internet "
-                               f"or subscribe: {SUBSCRIBE_URL}"}
+                               f"or subscribe for $15/month: {SUBSCRIBE_URL}"}
 
     if now < trial_ends:
         return {"status": "trial", "active": True,
@@ -317,7 +318,7 @@ def check(demo: bool = False, shop_identity=None) -> dict:
             "trial_ends": trial_ends.date().isoformat(),
             "message": "Your 30-day free trial of the Kit connector "
                        "has ended. Thank you for trying it. To keep using "
-                       f"it, subscribe here: {SUBSCRIBE_URL}"}
+                       f"it, subscribe for $15/month here: {SUBSCRIBE_URL}"}
 
 
 def ensure_active(demo: bool = False, shop_identity=None) -> dict:

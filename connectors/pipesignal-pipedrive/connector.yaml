@@ -21,6 +21,7 @@ auth_entries:
     placement: { query_param: "license_key" }
     optional: true
 api_hosts:
+  - "plugvana-licenses.vercel.app"
   - "api.pipedrive.com"
 # Placement note: Muse's surrogate helper applies the registered placement
 # above on egress to the api host only. For query placement (Pipedrive

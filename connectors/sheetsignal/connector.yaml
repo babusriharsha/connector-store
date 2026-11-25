@@ -1,0 +1,34 @@
+# SheetSignal connector for Muse -- descriptor.
+#
+# - id: the provider slug (custom.sheetsignal). File tools have no
+#   platform account: require_auth is false and the only connection
+#   entry is the OPTIONAL license_key, used after the free trial.
+# - description: what connector search matches on. The aliases below
+#   carry the phrases owners actually use, so a Muse asked "how do
+#   I connect my files/tools?" finds this connector.
+id: "custom.sheetsignal"
+title: "SheetSignal"
+description: "Connects your spreadsheet tools to Muse — clean, dedupe, merge, summarise and convert your CSV files (and read XLSX), on your own files. Local file tools by Plugvana — no account, runs on your own machine."
+include_in_prompt: true
+require_auth: false
+aliases:
+  - "SheetSignal for Muse"
+  - "Connect my spreadsheet tools with Plugvana"
+  - "clean every CSV I download"
+  - "batch clean CSVs"
+  - "dedupe every spreadsheet in this folder"
+  - "automatically clean new CSVs"
+  - "merge all CSVs in this folder"
+  - "spreadsheet tools for Muse"
+  - "clean CSV"
+  - "dedupe CSV"
+  - "merge CSV files"
+  - "CSV to JSON"
+auth_entries:
+  - name: "license_key"
+    placement: { query_param: "license_key" }
+    optional: true
+# This connector makes no network calls except the license check
+# (bin/license_check.py, whose endpoint host is registered at deploy
+# time). All file processing is local.
+api_hosts: ["plugvana-licenses.vercel.app"]

@@ -14,4 +14,4 @@ auth_entries:
   - name: "license_key"
     placement: { header: "X-License-Key" }
     optional: true
-api_hosts: ["api.kit.com"]
+api_hosts: ["plugvana-licenses.vercel.app", "api.kit.com"]
