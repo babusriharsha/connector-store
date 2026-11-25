@@ -93,7 +93,7 @@ Live use runs on a **30-day free trial** that starts the first day a live comman
 
 ## Connector log
 
-Installs, subscription changes and disconnects for this connector are recorded in the user's "My Plugvana Connectors" log chat (see INSTALL.md, "Record the install in the connector log"). The log is append-only: entries survive disconnects, and the log chat is never deleted or archived. Never print a full license key in the log — after subscribing, the entry reads "License key: active (full key is in your checkout email)". If the log chat is missing or was deleted, recreate it and backfill entries for every Plugvana connector installed on this Muse from their live license status (see INSTALL.md) — the license server and the installed connectors are the record; the chat is a view.
+Installs, subscription changes and disconnects for this connector are recorded in the user's "My Plugvana Connectors" log chat (see INSTALL.md, "Record the install in the connector log"). The log is append-only: entries survive disconnects, and the log chat is never deleted or archived. Never print a full license key in the log — after subscribing, the entry reads "License key: active (full key is in your checkout email)". If the log chat is missing or was deleted, recreate it and backfill entries for every Plugvana connector installed on this Muse from their live license status (see INSTALL.md) — the license server and the installed connectors are the record; the chat is a view. The log opens with a statement asking the user not to delete the chat, and noting it can be rebuilt from the license server and the installed connectors if it ever is.
 
 ## Limits and notes
 
