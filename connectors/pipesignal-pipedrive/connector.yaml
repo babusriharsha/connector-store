@@ -13,16 +13,6 @@ aliases:
   - "stalled deals in Muse"
   - "sales activities in Muse"
   - "Connect my Pipedrive with Plugvana"
-auth_scheme: "api_key"
-auth_entries:
-  - name: "api_token"
-    placement: { query_param: "api_token" }
-  - name: "license_key"
-    placement: { query_param: "license_key" }
-    optional: true
-api_hosts:
-  - "plugvana-licenses.vercel.app"
-  - "api.pipedrive.com"
 # Placement note: Muse's surrogate helper applies the registered placement
 # above on egress to the api host only. For query placement (Pipedrive
 # api_token) the parameter is applied as a query parameter; for header

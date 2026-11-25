@@ -32,7 +32,7 @@ Credentials never pass through chat and never live in files. The OAuth consent /
 
 1. Register the credential through Muse's secure API-access flow (`credentials.request_api_access`) with:
    - provider slug: `custom.ledgersignal-sage`
-   - api_hosts: **api.accounting.sage.com**
+   - api_hosts: **api.accounting.sage.com** Also register **plugvana-licenses.vercel.app** (the Plugvana license service) so the license_key entry can be validated on egress.
    - auth_scheme: `bearer`
    - one entry: `access_token` with bearer-header placement (`Authorization: Bearer <token>`). The installing Muse registers exactly this placement; the CLI's LiveClient calls Muse's surrogate helper (`add_surrogate_to_request`) for connection `custom.ledgersignal-sage`, and the helper applies the registered bearer placement — the real token never appears in the helper process, files, arguments, or logs.
 2. The owner completes the platform's own OAuth sign-in/consent through that secure flow (or, where the platform offers one, pastes a self-created access token on the secure capture page only).
@@ -93,7 +93,7 @@ Scheduled briefs (the Weekly Cash Brief) are defined in the companion **SKILL.md
 
 ## Licensing
 
-Live use runs on a **30-day free trial** that starts the first day a live command runs (`bin/license_check.py` keeps the date in a local state file). After the trial, live commands refuse politely and print how to subscribe; demo mode always works. Subscribers add their license key to the `custom.ledgersignal-sage` connection (entry `license_key`) or save it with `python3 bin/license_check.py set-key <KEY>`. Validation is cached for 24 hours with a 7-day offline grace period. The validation endpoint in `license_check.py` is currently a clearly marked placeholder for the operator's hosted checker — until it is replaced, the local trial rules are what actually gate use. One license covers one business: the license check hashes the connected account/business identity from `config.json` locally; the raw identity is never sent.
+Live use runs on a **30-day free trial** that starts the first day a live command runs (`bin/license_check.py` keeps the date in a local state file). After the trial, live commands refuse politely and print how to subscribe; demo mode always works. Subscribers add their license key to the `custom.ledgersignal-sage` connection (entry `license_key`) or save it with `python3 bin/license_check.py set-key <KEY>`. Validation is cached for 24 hours with a 7-day offline grace period. Validation runs against the live Plugvana license service (plugvana-licenses.vercel.app); the local trial rules gate use only when the service is unreachable. One license covers one business: the license check hashes the connected account/business identity from `config.json` locally; the raw identity is never sent.
 
 ## Limits and notes
 

@@ -6,11 +6,3 @@ description: "Connect Mailchimp to Muse. Read Mailchimp audiences, subscriber co
 include_in_prompt: true
 require_auth: true
 aliases: ["Mailchimp for Muse", "Mailchimp campaign reports", "Email marketing", "Newsletter analytics", "Audience growth", "Connect my Mailchimp account with Plugvana"]
-# Hosts: every Mailchimp account lives in one datacenter. API keys end with
-# a datacenter suffix (for example -us21) and the API host is built from it.
-# At install time the installing Muse registers the user's own host
-# (<dc>.api.mailchimp.com) for the connection. The pattern below documents
-# the family of hosts; the datacenter itself is routing info, not a secret.
-api_hosts: ["plugvana-licenses.vercel.app", "*.api.mailchimp.com"]
-auth_scheme: "api_key"
-placement: "bearer_header"

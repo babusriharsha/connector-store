@@ -29,7 +29,7 @@ If the user says 'Connect my Constant Contact with Plugvana', this is the connec
   "provider": "constant_contact",
   "auth_scheme": "oauth2",
   "placement": "bearer_header",
-  "api_hosts": ["api.cc.email"]
+  "api_hosts": ["api.cc.email", "plugvana-licenses.vercel.app"]
 }
 ```
 

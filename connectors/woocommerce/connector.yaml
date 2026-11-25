@@ -33,15 +33,3 @@ aliases:
 # query-parameter placement under its own name. The helper applies
 # both as query parameters over HTTPS via Muse's surrogate flow;
 # the real values never touch files, chat or logs (see CONNECTOR.md).
-auth_scheme: "api_key"
-auth_entries:
-  - name: "consumer_key"
-    placement: { query_param: "consumer_key" }
-  - name: "consumer_secret"
-    placement: { query_param: "consumer_secret" }
-  - name: "license_key"
-    placement: { query_param: "license_key" }
-    optional: true
-api_hosts:
-  - "plugvana-licenses.vercel.app"
-  - "<customer-store-domain>"  # replaced at install with the store's real hostname

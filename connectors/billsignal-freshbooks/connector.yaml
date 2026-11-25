@@ -19,13 +19,3 @@ aliases:
 # LiveClient calls Muse's surrogate helper (add_surrogate_to_request),
 # which applies whatever placement was registered for the connection;
 # the real token never touches files, chat or logs (see CONNECTOR.md).
-auth_scheme: "bearer"
-auth_entries:
-  - name: "access_token"
-    placement: { bearer_header: "Authorization" }
-  - name: "license_key"
-    placement: { bearer_header: "Authorization" }
-    optional: true
-api_hosts:
-  - "plugvana-licenses.vercel.app"
-  - "api.freshbooks.com"
