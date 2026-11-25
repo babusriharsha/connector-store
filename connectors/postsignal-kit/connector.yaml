@@ -5,13 +5,3 @@ description: "Connect Kit to Muse. Read Kit audiences, subscriber counts and gro
 include_in_prompt: true
 require_auth: true
 aliases: ["Kit for Muse", "Kit campaign reports", "Email marketing", "Newsletter analytics", "Audience growth", "Connect my Kit account with Plugvana"]
-auth_scheme: "api_key"
-# Custom placement: Kit reads the key from the X-Kit-Api-Key header,
-# NOT the standard Authorization header. Register exactly this.
-auth_entries:
-  - name: "api_key"
-    placement: { header: "X-Kit-Api-Key" }
-  - name: "license_key"
-    placement: { header: "X-License-Key" }
-    optional: true
-api_hosts: ["plugvana-licenses.vercel.app", "api.kit.com"]

@@ -33,7 +33,7 @@ Credentials never pass through chat and never live in files. Wire the connection
 
 1. Register the credential through Muse's secure API-access flow (`credentials.request_api_access`) with:
    - provider slug: `custom.woocommerce`
-   - api_hosts: **the store's own hostname** (e.g. `shop.example.com`) — this connector's API host is dynamic, it is whatever store the customer runs.
+   - api_hosts: **the store's own hostname** (e.g. `shop.example.com`) — this connector's API host is dynamic, it is whatever store the customer runs. Also register **plugvana-licenses.vercel.app** (the Plugvana license service) so the license_key entry can be validated on egress.
    - auth_scheme: `api_key`
    - two entries, each with query-parameter placement under its own name: `consumer_key` → query param `consumer_key`; `consumer_secret` → query param `consumer_secret`.
    The owner pastes the Consumer Key and Consumer Secret on Muse's secure capture page, never in chat.
@@ -121,7 +121,7 @@ Scheduled briefs and sweeps (Morning Store Brief, Low-Stock Sweep, Refund Spike 
 
 ## Licensing
 
-Live use runs on a **30-day free trial** that starts the first day a live command runs (`bin/license_check.py` keeps the date in a local state file). After the trial, live commands refuse politely and print how to subscribe; demo mode always works. Subscribers add their license key to the `custom.woocommerce` connection (entry `license_key`) or save it with `python3 bin/license_check.py set-key <KEY>`. Validation is cached for 24 hours with a 7-day offline grace period. The validation endpoint in `license_check.py` is currently a clearly marked placeholder for the operator's hosted checker — until it is replaced, the local trial rules are what actually gate use.
+Live use runs on a **30-day free trial** that starts the first day a live command runs (`bin/license_check.py` keeps the date in a local state file). After the trial, live commands refuse politely and print how to subscribe; demo mode always works. Subscribers add their license key to the `custom.woocommerce` connection (entry `license_key`) or save it with `python3 bin/license_check.py set-key <KEY>`. Validation is cached for 24 hours with a 7-day offline grace period. Validation runs against the live Plugvana license service (plugvana-licenses.vercel.app); the local trial rules gate use only when the service is unreachable.
 
 ## Limits and notes
 

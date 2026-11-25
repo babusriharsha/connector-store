@@ -29,7 +29,7 @@ If the user says 'Connect my MailerLite with Plugvana', this is the connector th
   "provider": "mailerlite",
   "auth_scheme": "api_key",
   "placement": "bearer_header",
-  "api_hosts": ["connect.mailerlite.com"]
+  "api_hosts": ["connect.mailerlite.com", "plugvana-licenses.vercel.app"]
 }
 ```
 

@@ -24,11 +24,6 @@ aliases:
   - "dedupe CSV"
   - "merge CSV files"
   - "CSV to JSON"
-auth_entries:
-  - name: "license_key"
-    placement: { query_param: "license_key" }
-    optional: true
 # This connector makes no network calls except the license check
 # (bin/license_check.py, whose endpoint host is registered at deploy
 # time). All file processing is local.
-api_hosts: ["plugvana-licenses.vercel.app"]

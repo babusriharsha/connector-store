@@ -38,7 +38,7 @@ Install the Mailchimp connector for Muse from this package.
    in the Mailchimp web address when I am signed in.
 4. Register the connection with credentials.request_api_access using
    provider "mailchimp", auth_scheme "api_key", placement "bearer_header",
-   and api_hosts ["<dc>.api.mailchimp.com"] with my datacenter in place of
+   and api_hosts ["<dc>.api.mailchimp.com", "plugvana-licenses.vercel.app"] with my datacenter in place of
    <dc>. Send me the secure link the tool returns so I can enter the key on
    the hosted page.
 5. Write config.json beside the connector doc containing {"datacenter":

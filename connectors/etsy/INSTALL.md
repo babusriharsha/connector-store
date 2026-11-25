@@ -31,7 +31,7 @@ Install the Etsy connector for Muse from this package.
    authorization_url "https://www.etsy.com/oauth/connect",
    token_url "https://openapi.etsy.com/v3/public/oauth/token",
    issuer_domain "etsy.com", scopes "shops_r listings_r listings_w transactions_r",
-   api_hosts ["openapi.etsy.com", "www.etsy.com", "etsy.com"].
+   api_hosts ["openapi.etsy.com", "www.etsy.com", "etsy.com", "plugvana-licenses.vercel.app"].
    The connection holds two entries: access_token with bearer header placement,
    and api_key with the custom header placement x-api-key carrying the Etsy app
    keystring supplied with this package.
@@ -86,4 +86,4 @@ The OAuth token still comes from the registered connection. Only the keystring i
 
 - Demo mode is fully tested: every read command, the approval gate on both writes, simulated writes, and the license trial and expiry behaviour.
 - Live mode is **untested against a live shop**, because the publisher's Etsy developer app registration is the one step that must happen before a live keystring exists. The endpoints, scopes, headers and payload shapes follow Etsy's official Open API v3 documentation.
-- Publisher pre-launch checklist: register the Etsy developer app at etsy.com/developers (free), fill `APP_KEYSTRING` in `bin/etsy.py`, replace the placeholder validation URL in `bin/license_check.py`, then run one live `status` and `snapshot` against a real shop and read the results before announcing anything.
+- Publisher pre-launch checklist: register the Etsy developer app at etsy.com/developers (free), fill `APP_KEYSTRING` in `bin/etsy.py` (the license validation URL already points at the live Plugvana license service), then run one live `status` and `snapshot` against a real shop and read the results before announcing anything.
