@@ -11,13 +11,23 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://plugvana.com/sheetsignal.html">
 <link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 </head>
 <body>
 
 <header class="site-header">
   <div class="wrap header-inner">
-    <a class="brand" href="index.html">Plug<span>vana</span></a>
-    <nav class="main-nav" aria-label="Main">
+    <a class="brand" href="index.html" aria-label="Plugvana — home">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="19" height="19"><path d="M9.2 3.2v3.1M14.8 3.2v3.1" stroke="#fff" stroke-width="2.1" stroke-linecap="round"/><path d="M6.7 6.3h10.6v3.3c0 3.1-2.3 5.3-5.3 5.3s-5.3-2.2-5.3-5.3V6.3z" fill="#fff"/><path d="M12 14.9v5.6" stroke="#fff" stroke-width="2.1" stroke-linecap="round"/></svg></span>
+      <span class="brand-word">Plugvana</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation menu">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="main-nav" id="site-nav" aria-label="Main">
       <a href="index.html#connectors">Connectors</a>
       <a href="how-it-works.html">How it works</a>
       <a href="pricing.html">Pricing</a>
@@ -25,7 +35,7 @@
       <a href="about.html">About</a>
     </nav>
     <form class="header-search" action="index.html" method="get" role="search">
-      <label class="small" for="header-search-input" style="position:absolute;left:-9999px">Search connectors</label>
+      <label class="sr-only" for="header-search-input">Search connectors</label>
       <input id="header-search-input" name="q" type="search" placeholder="Search connectors…" autocomplete="off">
       <button class="btn" type="submit">Search</button>
     </form>
@@ -83,7 +93,8 @@
         <div class="panel">
           <h3>Pricing</h3>
           <p><strong>Free for 1 month</strong> from activation — full features, no card required to start.</p>
-          <p style="margin:0">Then a per-connector monthly price. <strong>$5/month per user</strong> (or $50/year — two months free). When the trial ends without a subscription, the connector pauses — it never charges silently. See <a href="pricing.html">Pricing</a>.</p>
+          <p style="margin:0">Then a per-connector monthly price. <strong>$5/month per user</strong>. When the trial ends without a subscription, the connector pauses — it never charges silently. See <a href="pricing.html">Pricing</a>.</p>
+          <p style="margin-top:12px"><a class="btn" href="https://buy.stripe.com/5kQ8wPgm36g2guo5JXa3u08" target="_blank" rel="noopener">Subscribe — $5/month</a></p>
         </div>
       </div>
     </div>
@@ -114,19 +125,39 @@
 </main>
 
 <footer class="site-footer">
-  <div class="wrap footer-inner">
-    <div class="footer-links">
-      <a href="index.html#connectors">Connectors</a>
-      <a href="how-it-works.html">How it works</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="faq.html">FAQ</a>
-      <a href="about.html">About</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a class="brand brand-light" href="index.html" aria-label="Plugvana — home">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="19" height="19"><path d="M9.2 3.2v3.1M14.8 3.2v3.1" stroke="#fff" stroke-width="2.1" stroke-linecap="round"/><path d="M6.7 6.3h10.6v3.3c0 3.1-2.3 5.3-5.3 5.3s-5.3-2.2-5.3-5.3V6.3z" fill="#fff"/><path d="M12 14.9v5.6" stroke="#fff" stroke-width="2.1" stroke-linecap="round"/></svg></span>
+        <span class="brand-word">Plugvana</span>
+      </a>
+      <p class="footer-tag">Real connectors for your Muse.</p>
+      <p class="small">Plugvana is a product of CALL SNAP SYSTEMS LLC, Eureka, Missouri, USA. © 2026 CALL SNAP SYSTEMS LLC</p>
     </div>
-    <p class="small muted" style="margin:0">Independent store. Not affiliated with Meta or with any platform our connectors work with.</p>
-    <p class="small muted" style="margin:0">Plugvana is a product of CALL SNAP SYSTEMS LLC, Eureka, Missouri, USA. © 2026 CALL SNAP SYSTEMS LLC</p>
-    <p class="small muted" style="margin:0">All platform names mentioned are trademarks of their respective owners and are used descriptively only; no affiliation or endorsement is implied.</p>
+    <nav class="footer-col" aria-label="Connectors">
+      <h4>Connectors</h4>
+      <a href="index.html#connectors">Browse all connectors</a>
+      <a href="woocommerce.html">ShopSignal for WooCommerce</a>
+      <a href="etsy.html">SellSignal for Etsy</a>
+      <a href="mailchimp.html">ListSignal for Mailchimp</a>
+      <a href="pricing.html">Pricing</a>
+    </nav>
+    <nav class="footer-col" aria-label="Company">
+      <h4>Company</h4>
+      <a href="about.html">About</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="faq.html">FAQ</a>
+      <a href="manage.html">Manage subscription</a>
+    </nav>
+    <nav class="footer-col" aria-label="Legal">
+      <h4>Legal</h4>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </nav>
+  </div>
+  <div class="wrap footer-legal">
+    <p class="small">Independent store. Not affiliated with Meta or with any platform our connectors work with.</p>
+    <p class="small">All platform names mentioned are trademarks of their respective owners and are used descriptively only; no affiliation or endorsement is implied.</p>
   </div>
 </footer>
 

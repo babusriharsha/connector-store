@@ -11,13 +11,23 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://plugvana.com/terms.html">
 <link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 </head>
 <body>
 
 <header class="site-header">
   <div class="wrap header-inner">
-    <a class="brand" href="index.html">Plug<span>vana</span></a>
-    <nav class="main-nav" aria-label="Main">
+    <a class="brand" href="index.html" aria-label="Plugvana — home">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="19" height="19"><path d="M9.2 3.2v3.1M14.8 3.2v3.1" stroke="#fff" stroke-width="2.1" stroke-linecap="round"/><path d="M6.7 6.3h10.6v3.3c0 3.1-2.3 5.3-5.3 5.3s-5.3-2.2-5.3-5.3V6.3z" fill="#fff"/><path d="M12 14.9v5.6" stroke="#fff" stroke-width="2.1" stroke-linecap="round"/></svg></span>
+      <span class="brand-word">Plugvana</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation menu">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="main-nav" id="site-nav" aria-label="Main">
       <a href="index.html#connectors">Connectors</a>
       <a href="how-it-works.html">How it works</a>
       <a href="pricing.html">Pricing</a>
@@ -25,7 +35,7 @@
       <a href="about.html">About</a>
     </nav>
     <form class="header-search" action="index.html" method="get" role="search">
-      <label class="small" for="header-search-input" style="position:absolute;left:-9999px">Search connectors</label>
+      <label class="sr-only" for="header-search-input">Search connectors</label>
       <input id="header-search-input" name="q" type="search" placeholder="Search connectors…" autocomplete="off">
       <button class="btn" type="submit">Search</button>
     </form>
@@ -42,23 +52,24 @@
   <section class="block">
     <div class="wrap" style="max-width:760px">
       <h2>1. What you are licensing</h2>
-      <p>Each connector is software published by CALL SNAP SYSTEMS LLC that runs inside your own Muse and connects to a platform account you own or administer. Subject to these terms and an active trial or subscription, we grant you a limited, non-exclusive, non-transferable license to install and use one copy of a connector <strong>for one shop, store, or account</strong> (as the connector&rsquo;s pricing states). The software is licensed, not sold. You may not copy it except as needed to install it for the licensed shop, redistribute it, resell it, sublicense it, share your license key, or use it to provide a connector service to others.</p>
+      <p>Each connector is software published by CALL SNAP SYSTEMS LLC that runs inside your own Muse and connects to a platform account you own or administer. Subject to these terms and an active trial or subscription, we grant you a limited, non-exclusive, non-transferable license to install and use one copy of a connector <strong>for one shop, store, or account</strong> (as the connector&rsquo;s pricing states). The software is licensed, not sold.</p>
+      <p><strong>United States only.</strong> Plugvana connectors are offered for sale only in the United States. If you are located outside the United States, please do not purchase a subscription. You may not copy it except as needed to install it for the licensed shop, redistribute it, resell it, sublicense it, share your license key, or use it to provide a connector service to others.</p>
 
       <h2>2. Free trial</h2>
-      <p>Every connector starts with a <strong>30-day free trial</strong>. <strong>No payment card is required to start a trial, and a trial never converts into a paid subscription on its own.</strong> When the trial ends, the connector simply pauses until you choose to subscribe. Nothing is charged unless you subscribe.</p>
+      <p>Every connector starts with a <strong>30-day free trial</strong>. <strong>No payment card is required to start a trial, and a trial never converts into a paid subscription on its own.</strong> When the trial ends, the connector simply pauses until you choose to subscribe. Nothing is charged unless you subscribe. <strong>Trials are anonymous: we collect no email address for a trial, and a trial requires no account and no payment card.</strong></p>
 
       <h2>3. Subscriptions, prices, and auto-renewal</h2>
       <ul>
-        <li><strong>ShopSignal for WooCommerce:</strong> $19/month per store. <strong>SellSignal for Etsy:</strong> $9/month per shop. <strong>ListSignal for Mailchimp:</strong> $15/month per account.</li>
+        <li><strong>ShopSignal for WooCommerce:</strong> $19/month per store. <strong>SellSignal for Etsy:</strong> coming soon — not yet available for purchase (planned $9/month per shop). <strong>ListSignal for Mailchimp:</strong> $15/month per account.</li>
                 <li><strong>PDFSignal:</strong> $5/month per user. <strong>SheetSignal:</strong> $5/month per user. <strong>ImageSignal:</strong> $5/month per user. <strong>ConvertSignal:</strong> $5/month per user.</li>
         <li><strong>LedgerSignal for Sage:</strong> $19/month per business. <strong>BookSignal for Xero:</strong> $19/month per organisation. <strong>BillSignal for FreshBooks:</strong> $15/month per account. <strong>CashSignal for Wave:</strong> $9/month per business.</li>
         <li><strong>DealSignal for HubSpot:</strong> $19/month per account. <strong>PipeSignal for Pipedrive:</strong> $15/month per company. <strong>ClientSignal for Zoho CRM:</strong> $15/month per organisation. <strong>BaseSignal for Airtable:</strong> $15/month per base.</li>
         <li><strong>SendSignal for MailerLite:</strong> $15/month per account. <strong>PostSignal for Kit:</strong> $15/month per account. <strong>ReachSignal for Constant Contact:</strong> $15/month per account. <strong>NewsSignal for AWeber:</strong> $15/month per account.</li>
         <li><strong>BoardSignal for Trello:</strong> $9/month per account. <strong>TaskSignal for monday.com:</strong> $15/month per account. <strong>WorkSignal for ClickUp:</strong> $15/month per workspace. <strong>DoneSignal for TickTick:</strong> $5/month per account. <strong>MeetSignal for Cal.com:</strong> $9/month per account. <strong>FormSignal for Typeform:</strong> $15/month per account.</li>
         <li><strong>LegacySignal for COBOL:</strong> $49/month per user. <strong>CodeSignal for Python:</strong> $29/month per user. <strong>StatSignal for SAS:</strong> $39/month per user.</li>
-        <li><strong>Annual billing</strong> for any connector costs the price of 10 months, billed once per year (two months free).</li>
+        <li><strong>Monthly billing only.</strong> Subscriptions are billed monthly. Annual plans are not offered yet.</li>
         <li>Each subscription is separate. There is no bundle and no all-access pass.</li>
-        <li><strong>Auto-renewal disclosure:</strong> your subscription <strong>renews automatically</strong> at the end of each billing period (monthly or annual, as you chose) and your payment method is charged the then-current price, until you cancel. Your subscription is with CALL SNAP SYSTEMS LLC, and that is the name that appears on your card statement.</li>
+        <li><strong>Auto-renewal disclosure:</strong> your subscription <strong>renews automatically</strong> at the end of each monthly billing period and your payment method is charged the then-current price, until you cancel. Your subscription is with CALL SNAP SYSTEMS LLC, and that is the name that appears on your card statement.</li>
         <li>Payments are processed by Stripe. We never receive or store your card details.</li>
         <li>If we change a price, we will notify subscribers by email before the change applies to them.</li>
       </ul>
@@ -78,6 +89,7 @@
         <li>Write actions are approval-gated: the connector shows you a proposed change and runs it only after you approve. You are responsible for the changes you approve.</li>
         <li>If you use a connector for email marketing or customer outreach, you are responsible for complying with the laws that apply to you (for example, consent and anti-spam rules). Only add or contact people who have opted in.</li>
         <li>Keep your platform credentials in Muse&rsquo;s secure connection flow. Never paste them into chat.</li>
+        <li><strong>Code-analysis connectors:</strong> you may only analyse code you own or are authorised to analyse. One responsibility stays with you: only analyse code you have the rights to analyse. Checking an employer&rsquo;s or a client&rsquo;s codebase with any tool is your own compliance responsibility — the connectors do not grant rights to anyone&rsquo;s code, and you are responsible for complying with your employer&rsquo;s policies and any third-party rights in the code you analyse.</li>
       </ul>
 
       <h2>8. SellSignal for Etsy — additional terms</h2>
@@ -95,24 +107,47 @@
 
       <h2>12. Contact</h2>
       <p>CALL SNAP SYSTEMS LLC, Eureka, Missouri, USA. Support and all notices under these terms: <a href="mailto:vbshmedia@gmail.com">vbshmedia@gmail.com</a>.</p>
+
+      <h2>13. Governing law</h2>
+      <p>These terms are governed by the laws of the State of Missouri, USA, without regard to its conflict-of-laws rules.</p>
     </div>
   </section>
 </main>
 
 <footer class="site-footer">
-  <div class="wrap footer-inner">
-    <div class="footer-links">
-      <a href="index.html#connectors">Connectors</a>
-      <a href="how-it-works.html">How it works</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="faq.html">FAQ</a>
-      <a href="about.html">About</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a class="brand brand-light" href="index.html" aria-label="Plugvana — home">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="19" height="19"><path d="M9.2 3.2v3.1M14.8 3.2v3.1" stroke="#fff" stroke-width="2.1" stroke-linecap="round"/><path d="M6.7 6.3h10.6v3.3c0 3.1-2.3 5.3-5.3 5.3s-5.3-2.2-5.3-5.3V6.3z" fill="#fff"/><path d="M12 14.9v5.6" stroke="#fff" stroke-width="2.1" stroke-linecap="round"/></svg></span>
+        <span class="brand-word">Plugvana</span>
+      </a>
+      <p class="footer-tag">Real connectors for your Muse.</p>
+      <p class="small">Plugvana is a product of CALL SNAP SYSTEMS LLC, Eureka, Missouri, USA. © 2026 CALL SNAP SYSTEMS LLC</p>
     </div>
-    <p class="small muted" style="margin:0">Independent store. Not affiliated with Meta or with any platform our connectors work with.</p>
-    <p class="small muted" style="margin:0">Plugvana is a product of CALL SNAP SYSTEMS LLC, Eureka, Missouri, USA. © 2026 CALL SNAP SYSTEMS LLC</p>
-    <p class="small muted" style="margin:0">All platform names mentioned are trademarks of their respective owners and are used descriptively only; no affiliation or endorsement is implied.</p>
+    <nav class="footer-col" aria-label="Connectors">
+      <h4>Connectors</h4>
+      <a href="index.html#connectors">Browse all connectors</a>
+      <a href="woocommerce.html">ShopSignal for WooCommerce</a>
+      <a href="etsy.html">SellSignal for Etsy</a>
+      <a href="mailchimp.html">ListSignal for Mailchimp</a>
+      <a href="pricing.html">Pricing</a>
+    </nav>
+    <nav class="footer-col" aria-label="Company">
+      <h4>Company</h4>
+      <a href="about.html">About</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="faq.html">FAQ</a>
+      <a href="manage.html">Manage subscription</a>
+    </nav>
+    <nav class="footer-col" aria-label="Legal">
+      <h4>Legal</h4>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </nav>
+  </div>
+  <div class="wrap footer-legal">
+    <p class="small">Independent store. Not affiliated with Meta or with any platform our connectors work with.</p>
+    <p class="small">All platform names mentioned are trademarks of their respective owners and are used descriptively only; no affiliation or endorsement is implied.</p>
   </div>
 </footer>
 

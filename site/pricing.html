@@ -11,13 +11,23 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://plugvana.com/pricing.html">
 <link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 </head>
 <body>
 
 <header class="site-header">
   <div class="wrap header-inner">
-    <a class="brand" href="index.html">Plug<span>vana</span></a>
-    <nav class="main-nav" aria-label="Main">
+    <a class="brand" href="index.html" aria-label="Plugvana — home">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="19" height="19"><path d="M9.2 3.2v3.1M14.8 3.2v3.1" stroke="#fff" stroke-width="2.1" stroke-linecap="round"/><path d="M6.7 6.3h10.6v3.3c0 3.1-2.3 5.3-5.3 5.3s-5.3-2.2-5.3-5.3V6.3z" fill="#fff"/><path d="M12 14.9v5.6" stroke="#fff" stroke-width="2.1" stroke-linecap="round"/></svg></span>
+      <span class="brand-word">Plugvana</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation menu">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="main-nav" id="site-nav" aria-label="Main">
       <a href="index.html#connectors">Connectors</a>
       <a href="how-it-works.html">How it works</a>
       <a href="pricing.html">Pricing</a>
@@ -25,7 +35,7 @@
       <a href="about.html">About</a>
     </nav>
     <form class="header-search" action="index.html" method="get" role="search">
-      <label class="small" for="header-search-input" style="position:absolute;left:-9999px">Search connectors</label>
+      <label class="sr-only" for="header-search-input">Search connectors</label>
       <input id="header-search-input" name="q" type="search" placeholder="Search connectors…" autocomplete="off">
       <button class="btn" type="submit">Search</button>
     </form>
@@ -44,7 +54,7 @@
     <div class="wrap">
       <div class="section-head center">
         <h2 id="prices-h">Per-connector prices</h2>
-        <p>Every connector starts with a free month. Annual billing costs 10 months — two months free.</p>
+        <p>Every connector starts with a free month.</p>
       </div>
       <div class="price-grid">
         <article class="price-card">
@@ -53,17 +63,15 @@
           <div class="price-name">ShopSignal for WooCommerce</div>
           <p class="price-amount">$19<span> /month</span></p>
           <p class="price-per">per store</p>
-          <p class="price-annual">or $190/year — two months free</p>
-          <div class="price-foot"><a class="btn" href="woocommerce.html">Start free month</a></div>
+          <div class="price-foot"><a class="btn" href="woocommerce.html">Start free month</a><a class="btn secondary" style="margin-top:8px" href="https://buy.stripe.com/28E4gzedV47U91Wc8la3u00" target="_blank" rel="noopener">Subscribe — $19/month</a></div>
         </article>
         <article class="price-card">
           <span class="icon-box"><img src="assets/icons/etsy.svg" alt="SellSignal for Etsy" width="48" height="48"></span>
-          <span class="price-free">Free for 1 month</span>
+          <span class="price-free">Coming soon</span>
           <div class="price-name">SellSignal for Etsy</div>
-          <p class="price-amount">$9<span> /month</span></p>
-          <p class="price-per">per shop</p>
-          <p class="price-annual">or $90/year — two months free</p>
-          <div class="price-foot"><a class="btn" href="etsy.html">Start free month</a></div>
+          <p class="price-amount">Coming soon</p>
+          <p class="price-per">Not yet available</p>
+          <div class="price-foot"><span class="badge">Coming soon</span></div>
         </article>
         <article class="price-card">
           <span class="icon-box"><img src="assets/icons/mailchimp.svg" alt="ListSignal for Mailchimp" width="48" height="48"></span>
@@ -71,8 +79,7 @@
           <div class="price-name">ListSignal for Mailchimp</div>
           <p class="price-amount">$15<span> /month</span></p>
           <p class="price-per">per account</p>
-          <p class="price-annual">or $150/year — two months free</p>
-          <div class="price-foot"><a class="btn" href="mailchimp.html">Start free month</a></div>
+          <div class="price-foot"><a class="btn" href="mailchimp.html">Start free month</a><a class="btn secondary" style="margin-top:8px" href="https://buy.stripe.com/eVqdR9d9R0VIdicgoBa3u04" target="_blank" rel="noopener">Subscribe — $15/month</a></div>
         </article>
         <article class="price-card">
           <span class="icon-box"><img src="assets/icons/pdfsignal.svg" alt="PDFSignal" width="48" height="48"></span>
@@ -80,8 +87,7 @@
           <div class="price-name">PDFSignal</div>
           <p class="price-amount">$5<span> /month</span></p>
           <p class="price-per">per user</p>
-          <p class="price-annual">or $50/year — two months free</p>
-          <div class="price-foot"><a class="btn" href="pdfsignal.html">Start free month</a></div>
+          <div class="price-foot"><a class="btn" href="pdfsignal.html">Start free month</a><a class="btn secondary" style="margin-top:8px" href="https://buy.stripe.com/4gM9AT7Px1ZMguo7S5a3u06" target="_blank" rel="noopener">Subscribe — $5/month</a></div>
         </article>
         <article class="price-card">
           <span class="icon-box"><img src="assets/icons/sheetsignal.svg" alt="SheetSignal" width="48" height="48"></span>
@@ -89,8 +95,7 @@
           <div class="price-name">SheetSignal</div>
           <p class="price-amount">$5<span> /month</span></p>
           <p class="price-per">per user</p>
-          <p class="price-annual">or $50/year — two months free</p>
-          <div class="price-foot"><a class="btn" href="sheetsignal.html">Start free month</a></div>
+          <div class="price-foot"><a class="btn" href="sheetsignal.html">Start free month</a><a class="btn secondary" style="margin-top:8px" href="https://buy.stripe.com/5kQ8wPgm36g2guo5JXa3u08" target="_blank" rel="noopener">Subscribe — $5/month</a></div>
         </article>
         <article class="price-card">
           <span class="icon-box"><img src="assets/icons/imagesignal.svg" alt="ImageSignal" width="48" height="48"></span>
@@ -98,8 +103,7 @@
           <div class="price-name">ImageSignal</div>
           <p class="price-amount">$5<span> /month</span></p>
           <p class="price-per">per user</p>
-          <p class="price-annual">or $50/year — two months free</p>
-          <div class="price-foot"><a class="btn" href="imagesignal.html">Start free month</a></div>
+          <div class="price-foot"><a class="btn" href="imagesignal.html">Start free month</a><a class="btn secondary" style="margin-top:8px" href="https://buy.stripe.com/bJe3cv9XFgUG1zu5JXa3u0c" target="_blank" rel="noopener">Subscribe — $5/month</a></div>
         </article>
         <article class="price-card">
           <span class="icon-box"><img src="assets/icons/convertsignal.svg" alt="ConvertSignal" width="48" height="48"></span>
@@ -107,8 +111,7 @@
           <div class="price-name">ConvertSignal</div>
           <p class="price-amount">$5<span> /month</span></p>
           <p class="price-per">per user</p>
-          <p class="price-annual">or $50/year — two months free</p>
-          <div class="price-foot"><a class="btn" href="convertsignal.html">Start free month</a></div>
+          <div class="price-foot"><a class="btn" href="convertsignal.html">Start free month</a><a class="btn secondary" style="margin-top:8px" href="https://buy.stripe.com/cNibJ1b1J7k6fqk7S5a3u0e" target="_blank" rel="noopener">Subscribe — $5/month</a></div>
         </article>
         <article class="price-card">
           <span class="icon-box"><img src="assets/icons/ledgersignal-sage.svg" alt="LedgerSignal for Sage" width="48" height="48"></span>
@@ -116,8 +119,7 @@
           <div class="price-name">LedgerSignal for Sage</div>
           <p class="price-amount">$19<span> /month</span></p>
           <p class="price-per">per business</p>
-          <p class="price-annual">or $190/year — two months free</p>
-          <div class="price-foot"><a class="btn" href="ledgersignal-sage.html">Start free month</a></div>
+          <div class="price-foot"><a class="btn" href="ledgersignal-sage.html">Start free month</a><a class="btn secondary" style="margin-top:8px" href="https://buy.stripe.com/7sY28r8TBeMyguofkxa3u0g" target="_blank" rel="noopener">Subscribe — $19/month</a></div>
         </article>
         <article class="price-card">
           <span class="icon-box"><img src="assets/icons/booksignal-xero.svg" alt="BookSignal for Xero" width="48" height="48"></span>
@@ -125,8 +127,7 @@
           <div class="price-name">BookSignal for Xero</div>
           <p class="price-amount">$19<span> /month</span></p>
           <p class="price-per">per organisation</p>
-          <p class="price-annual">or $190/year — two months free</p>
-          <div class="price-foot"><a class="btn" href="booksignal-xero.html">Start free month</a></div>
+          <div class="price-foot"><a class="btn" href="booksignal-xero.html">Start free month</a><a class="btn secondary" style="margin-top:8px" href="https://buy.stripe.com/aFa8wPb1J47Ufqkc8la3u0i" target="_blank" rel="noopener">Subscribe — $19/month</a></div>
         </article>
         <article class="price-card">
           <span class="icon-box"><img src="assets/icons/billsignal-freshbooks.svg" alt="BillSignal for FreshBooks" width="48" height="48"></span>
@@ -134,8 +135,7 @@
           <div class="price-name">BillSignal for FreshBooks</div>
           <p class="price-amount">$15<span> /month</span></p>
           <p class="price-per">per account</p>
-          <p class="price-annual">or $150/year — two months free</p>
-          <div class="price-foot"><a class="btn" href="billsignal-freshbooks.html">Start free month</a></div>
+          <div class="price-foot"><a class="btn" href="billsignal-freshbooks.html">Start free month</a><a class="btn secondary" style="margin-top:8px" href="https://buy.stripe.com/cNi4gz5HpdIu7XS3BPa3u0k" target="_blank" rel="noopener">Subscribe — $15/month</a></div>
         </article>
         <article class="price-card">
           <span class="icon-box"><img src="assets/icons/cashsignal-wave.svg" alt="CashSignal for Wave" width="48" height="48"></span>
@@ -143,8 +143,7 @@
           <div class="price-name">CashSignal for Wave</div>
           <p class="price-amount">$9<span> /month</span></p>
           <p class="price-per">per business</p>
-          <p class="price-annual">or $90/year — two months free</p>
-          <div class="price-foot"><a class="btn" href="cashsignal-wave.html">Start free month</a></div>
+          <div class="price-foot"><a class="btn" href="cashsignal-wave.html">Start free month</a><a class="btn secondary" style="margin-top:8px" href="https://buy.stripe.com/6oU3cvc5N7k66TOegta3u0m" target="_blank" rel="noopener">Subscribe — $9/month</a></div>
         </article>
         <article class="price-card">
           <span class="icon-box"><img src="assets/icons/dealsignal-hubspot.svg" alt="DealSignal for HubSpot" width="48" height="48"></span>
@@ -152,8 +151,7 @@
           <div class="price-name">DealSignal for HubSpot</div>
           <p class="price-amount">$19<span> /month</span></p>
           <p class="price-per">per account</p>
-          <p class="price-annual">or $190/year — two months free</p>
-          <div class="price-foot"><a class="btn" href="dealsignal-hubspot.html">Start free month</a></div>
+          <div class="price-foot"><a class="btn" href="dealsignal-hubspot.html">Start free month</a><a class="btn secondary" style="margin-top:8px" href="https://buy.stripe.com/fZu5kDd9R5bY5PKfkxa3u0o" target="_blank" rel="noopener">Subscribe — $19/month</a></div>
         </article>
         <article class="price-card">
           <span class="icon-box"><img src="assets/icons/pipesignal-pipedrive.svg" alt="PipeSignal for Pipedrive" width="48" height="48"></span>
@@ -161,8 +159,7 @@
           <div class="price-name">PipeSignal for Pipedrive</div>
           <p class="price-amount">$15<span> /month</span></p>
           <p class="price-per">per company</p>
-          <p class="price-annual">or $150/year — two months free</p>
-          <div class="price-foot"><a class="btn" href="pipesignal-pipedrive.html">Start free month</a></div>
+          <div class="price-foot"><a class="btn" href="pipesignal-pipedrive.html">Start free month</a><a class="btn secondary" style="margin-top:8px" href="https://buy.stripe.com/fZu28r5Hp0VI7XS0pDa3u0q" target="_blank" rel="noopener">Subscribe — $15/month</a></div>
         </article>
         <article class="price-card">
           <span class="icon-box"><img src="assets/icons/clientsignal-zoho.svg" alt="ClientSignal for Zoho CRM" width="48" height="48"></span>
@@ -170,8 +167,7 @@
           <div class="price-name">ClientSignal for Zoho CRM</div>
           <p class="price-amount">$15<span> /month</span></p>
           <p class="price-per">per organisation</p>
-          <p class="price-annual">or $150/year — two months free</p>
-          <div class="price-foot"><a class="btn" href="clientsignal-zoho.html">Start free month</a></div>
+          <div class="price-foot"><a class="btn" href="clientsignal-zoho.html">Start free month</a><a class="btn secondary" style="margin-top:8px" href="https://buy.stripe.com/14A14nedVbAm0vqegta3u0s" target="_blank" rel="noopener">Subscribe — $15/month</a></div>
         </article>
         <article class="price-card">
           <span class="icon-box"><img src="assets/icons/basesignal-airtable.svg" alt="BaseSignal for Airtable" width="48" height="48"></span>
@@ -179,8 +175,7 @@
           <div class="price-name">BaseSignal for Airtable</div>
           <p class="price-amount">$15<span> /month</span></p>
           <p class="price-per">per base</p>
-          <p class="price-annual">or $150/year — two months free</p>
-          <div class="price-foot"><a class="btn" href="basesignal-airtable.html">Start free month</a></div>
+          <div class="price-foot"><a class="btn" href="basesignal-airtable.html">Start free month</a><a class="btn secondary" style="margin-top:8px" href="https://buy.stripe.com/cNi3cvgm36g25PK4FTa3u0u" target="_blank" rel="noopener">Subscribe — $15/month</a></div>
         </article>
         <article class="price-card">
           <span class="icon-box"><img src="assets/icons/sendsignal-mailerlite.svg" alt="SendSignal for MailerLite" width="48" height="48"></span>
@@ -188,8 +183,7 @@
           <div class="price-name">SendSignal for MailerLite</div>
           <p class="price-amount">$15<span> /month</span></p>
           <p class="price-per">per account</p>
-          <p class="price-annual">or $150/year — two months free</p>
-          <div class="price-foot"><a class="btn" href="sendsignal-mailerlite.html">Start free month</a></div>
+          <div class="price-foot"><a class="btn" href="sendsignal-mailerlite.html">Start free month</a><a class="btn secondary" style="margin-top:8px" href="https://buy.stripe.com/28EdR96Ltawi5PK0pDa3u0w" target="_blank" rel="noopener">Subscribe — $15/month</a></div>
         </article>
         <article class="price-card">
           <span class="icon-box"><img src="assets/icons/postsignal-kit.svg" alt="PostSignal for Kit" width="48" height="48"></span>
@@ -197,8 +191,7 @@
           <div class="price-name">PostSignal for Kit</div>
           <p class="price-amount">$15<span> /month</span></p>
           <p class="price-per">per account</p>
-          <p class="price-annual">or $150/year — two months free</p>
-          <div class="price-foot"><a class="btn" href="postsignal-kit.html">Start free month</a></div>
+          <div class="price-foot"><a class="btn" href="postsignal-kit.html">Start free month</a><a class="btn secondary" style="margin-top:8px" href="https://buy.stripe.com/fZu28redVcEq1zua0da3u0y" target="_blank" rel="noopener">Subscribe — $15/month</a></div>
         </article>
         <article class="price-card">
           <span class="icon-box"><img src="assets/icons/reachsignal-constantcontact.svg" alt="ReachSignal for Constant Contact" width="48" height="48"></span>
@@ -206,8 +199,7 @@
           <div class="price-name">ReachSignal for Constant Contact</div>
           <p class="price-amount">$15<span> /month</span></p>
           <p class="price-per">per account</p>
-          <p class="price-annual">or $150/year — two months free</p>
-          <div class="price-foot"><a class="btn" href="reachsignal-constantcontact.html">Start free month</a></div>
+          <div class="price-foot"><a class="btn" href="reachsignal-constantcontact.html">Start free month</a><a class="btn secondary" style="margin-top:8px" href="https://buy.stripe.com/bJe7sLb1JeMy91Wc8la3u0A" target="_blank" rel="noopener">Subscribe — $15/month</a></div>
         </article>
         <article class="price-card">
           <span class="icon-box"><img src="assets/icons/newssignal-aweber.svg" alt="NewsSignal for AWeber" width="48" height="48"></span>
@@ -215,8 +207,7 @@
           <div class="price-name">NewsSignal for AWeber</div>
           <p class="price-amount">$15<span> /month</span></p>
           <p class="price-per">per account</p>
-          <p class="price-annual">or $150/year — two months free</p>
-          <div class="price-foot"><a class="btn" href="newssignal-aweber.html">Start free month</a></div>
+          <div class="price-foot"><a class="btn" href="newssignal-aweber.html">Start free month</a><a class="btn secondary" style="margin-top:8px" href="https://buy.stripe.com/28EeVdgm333Qfqka0da3u0C" target="_blank" rel="noopener">Subscribe — $15/month</a></div>
         </article>
         <article class="price-card">
           <span class="icon-box"><img src="assets/icons/boardsignal-trello.svg" alt="BoardSignal for Trello" width="48" height="48"></span>
@@ -224,8 +215,7 @@
           <div class="price-name">BoardSignal for Trello</div>
           <p class="price-amount">$9<span> /month</span></p>
           <p class="price-per">per account</p>
-          <p class="price-annual">or $90/year — two months free</p>
-          <div class="price-foot"><a class="btn" href="boardsignal-trello.html">Start free month</a></div>
+          <div class="price-foot"><a class="btn" href="boardsignal-trello.html">Start free month</a><a class="btn secondary" style="margin-top:8px" href="https://buy.stripe.com/8x2dR9gm36g2dic4FTa3u0E" target="_blank" rel="noopener">Subscribe — $9/month</a></div>
         </article>
         <article class="price-card">
           <span class="icon-box"><img src="assets/icons/tasksignal-monday.svg" alt="TaskSignal for monday.com" width="48" height="48"></span>
@@ -233,8 +223,7 @@
           <div class="price-name">TaskSignal for monday.com</div>
           <p class="price-amount">$15<span> /month</span></p>
           <p class="price-per">per account</p>
-          <p class="price-annual">or $150/year — two months free</p>
-          <div class="price-foot"><a class="btn" href="tasksignal-monday.html">Start free month</a></div>
+          <div class="price-foot"><a class="btn" href="tasksignal-monday.html">Start free month</a><a class="btn secondary" style="margin-top:8px" href="https://buy.stripe.com/8x27sL0n51ZMce8goBa3u0G" target="_blank" rel="noopener">Subscribe — $15/month</a></div>
         </article>
         <article class="price-card">
           <span class="icon-box"><img src="assets/icons/worksignal-clickup.svg" alt="WorkSignal for ClickUp" width="48" height="48"></span>
@@ -242,8 +231,7 @@
           <div class="price-name">WorkSignal for ClickUp</div>
           <p class="price-amount">$15<span> /month</span></p>
           <p class="price-per">per workspace</p>
-          <p class="price-annual">or $150/year — two months free</p>
-          <div class="price-foot"><a class="btn" href="worksignal-clickup.html">Start free month</a></div>
+          <div class="price-foot"><a class="btn" href="worksignal-clickup.html">Start free month</a><a class="btn secondary" style="margin-top:8px" href="https://buy.stripe.com/6oU6oH2vdcEqdic6O1a3u0I" target="_blank" rel="noopener">Subscribe — $15/month</a></div>
         </article>
         <article class="price-card">
           <span class="icon-box"><img src="assets/icons/donesignal-ticktick.svg" alt="DoneSignal for TickTick" width="48" height="48"></span>
@@ -251,8 +239,7 @@
           <div class="price-name">DoneSignal for TickTick</div>
           <p class="price-amount">$5<span> /month</span></p>
           <p class="price-per">per account</p>
-          <p class="price-annual">or $50/year — two months free</p>
-          <div class="price-foot"><a class="btn" href="donesignal-ticktick.html">Start free month</a></div>
+          <div class="price-foot"><a class="btn" href="donesignal-ticktick.html">Start free month</a><a class="btn secondary" style="margin-top:8px" href="https://buy.stripe.com/aFa28rgm3cEqba4fkxa3u0K" target="_blank" rel="noopener">Subscribe — $5/month</a></div>
         </article>
         <article class="price-card">
           <span class="icon-box"><img src="assets/icons/meetsignal-calcom.svg" alt="MeetSignal for Cal.com" width="48" height="48"></span>
@@ -260,8 +247,7 @@
           <div class="price-name">MeetSignal for Cal.com</div>
           <p class="price-amount">$9<span> /month</span></p>
           <p class="price-per">per account</p>
-          <p class="price-annual">or $90/year — two months free</p>
-          <div class="price-foot"><a class="btn" href="meetsignal-calcom.html">Start free month</a></div>
+          <div class="price-foot"><a class="btn" href="meetsignal-calcom.html">Start free month</a><a class="btn secondary" style="margin-top:8px" href="https://buy.stripe.com/28E8wPd9R5bY0vq0pDa3u0M" target="_blank" rel="noopener">Subscribe — $9/month</a></div>
         </article>
         <article class="price-card">
           <span class="icon-box"><img src="assets/icons/formsignal-typeform.svg" alt="FormSignal for Typeform" width="48" height="48"></span>
@@ -269,8 +255,7 @@
           <div class="price-name">FormSignal for Typeform</div>
           <p class="price-amount">$15<span> /month</span></p>
           <p class="price-per">per account</p>
-          <p class="price-annual">or $150/year — two months free</p>
-          <div class="price-foot"><a class="btn" href="formsignal-typeform.html">Start free month</a></div>
+          <div class="price-foot"><a class="btn" href="formsignal-typeform.html">Start free month</a><a class="btn secondary" style="margin-top:8px" href="https://buy.stripe.com/14AdR94Dl5bYce83BPa3u0O" target="_blank" rel="noopener">Subscribe — $15/month</a></div>
         </article>
         <article class="price-card">
           <span class="icon-box"><img src="assets/icons/legacysignal-cobol.svg" alt="LegacySignal for COBOL" width="48" height="48"></span>
@@ -278,8 +263,7 @@
           <div class="price-name">LegacySignal for COBOL</div>
           <p class="price-amount">$49<span> /month</span></p>
           <p class="price-per">per user</p>
-          <p class="price-annual">or $490/year — two months free</p>
-          <div class="price-foot"><a class="btn" href="legacysignal-cobol.html">Start free month</a></div>
+          <div class="price-foot"><a class="btn" href="legacysignal-cobol.html">Start free month</a><a class="btn secondary" style="margin-top:8px" href="https://buy.stripe.com/dRm28r8TBgUG91W5JXa3u0Q" target="_blank" rel="noopener">Subscribe — $49/month</a></div>
         </article>
         <article class="price-card">
           <span class="icon-box"><img src="assets/icons/codesignal-python.svg" alt="CodeSignal for Python" width="48" height="48"></span>
@@ -287,8 +271,7 @@
           <div class="price-name">CodeSignal for Python</div>
           <p class="price-amount">$29<span> /month</span></p>
           <p class="price-per">per user</p>
-          <p class="price-annual">or $290/year — two months free</p>
-          <div class="price-foot"><a class="btn" href="codesignal-python.html">Start free month</a></div>
+          <div class="price-foot"><a class="btn" href="codesignal-python.html">Start free month</a><a class="btn secondary" style="margin-top:8px" href="https://buy.stripe.com/fZu8wPgm35bY6TO3BPa3u0S" target="_blank" rel="noopener">Subscribe — $29/month</a></div>
         </article>
         <article class="price-card">
           <span class="icon-box"><img src="assets/icons/statsignal-sas.svg" alt="StatSignal for SAS" width="48" height="48"></span>
@@ -296,12 +279,12 @@
           <div class="price-name">StatSignal for SAS</div>
           <p class="price-amount">$39<span> /month</span></p>
           <p class="price-per">per user</p>
-          <p class="price-annual">or $390/year — two months free</p>
-          <div class="price-foot"><a class="btn" href="statsignal-sas.html">Start free month</a></div>
+          <div class="price-foot"><a class="btn" href="statsignal-sas.html">Start free month</a><a class="btn secondary" style="margin-top:8px" href="https://buy.stripe.com/dRm8wP7PxgUG5PKc8la3u0U" target="_blank" rel="noopener">Subscribe — $39/month</a></div>
         </article>
       </div>
     </div>
   </section>
+  <div class="wrap"><p class="muted" style="margin-top:18px">Monthly billing only for now — annual plans are coming later. Already subscribed? <a href="manage.html">Manage your subscription</a>.</p></div>
 
 <section class="block" aria-labelledby="model-h">
     <div class="wrap">
@@ -315,7 +298,7 @@
         <div class="step">
           <span class="step-num" aria-hidden="true">2</span>
           <h3>Per-connector monthly price</h3>
-          <p class="muted">After the trial, each connector has its own monthly price, because the value differs — a store connector that saves you hours a week is priced differently from a small utility. You subscribe only to the ones you keep. <strong>ShopSignal for WooCommerce: $19/month per store. SellSignal for Etsy: $9/month per shop. ListSignal for Mailchimp: $15/month per account.</strong> Annual billing costs 10 months — two months free. There is no bundle and no all-access pass: as the catalog grows toward 100+ connectors, each one is priced and subscribed to on its own.</p>
+          <p class="muted">After the trial, each connector has its own monthly price, because the value differs — a store connector that saves you hours a week is priced differently from a small utility. You subscribe only to the ones you keep. <strong>ShopSignal for WooCommerce: $19/month per store. SellSignal for Etsy: coming soon (planned $9/month per shop). ListSignal for Mailchimp: $15/month per account.</strong> There is no bundle and no all-access pass: as the catalog grows toward 100+ connectors, each one is priced and subscribed to on its own.</p>
         </div>
         
       </div>
@@ -349,19 +332,39 @@
 </main>
 
 <footer class="site-footer">
-  <div class="wrap footer-inner">
-    <div class="footer-links">
-      <a href="index.html#connectors">Connectors</a>
-      <a href="how-it-works.html">How it works</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="faq.html">FAQ</a>
-      <a href="about.html">About</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a class="brand brand-light" href="index.html" aria-label="Plugvana — home">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="19" height="19"><path d="M9.2 3.2v3.1M14.8 3.2v3.1" stroke="#fff" stroke-width="2.1" stroke-linecap="round"/><path d="M6.7 6.3h10.6v3.3c0 3.1-2.3 5.3-5.3 5.3s-5.3-2.2-5.3-5.3V6.3z" fill="#fff"/><path d="M12 14.9v5.6" stroke="#fff" stroke-width="2.1" stroke-linecap="round"/></svg></span>
+        <span class="brand-word">Plugvana</span>
+      </a>
+      <p class="footer-tag">Real connectors for your Muse.</p>
+      <p class="small">Plugvana is a product of CALL SNAP SYSTEMS LLC, Eureka, Missouri, USA. © 2026 CALL SNAP SYSTEMS LLC</p>
     </div>
-    <p class="small muted" style="margin:0">Independent store. Not affiliated with Meta or with any platform our connectors work with.</p>
-    <p class="small muted" style="margin:0">Plugvana is a product of CALL SNAP SYSTEMS LLC, Eureka, Missouri, USA. © 2026 CALL SNAP SYSTEMS LLC</p>
-    <p class="small muted" style="margin:0">All platform names mentioned are trademarks of their respective owners and are used descriptively only; no affiliation or endorsement is implied.</p>
+    <nav class="footer-col" aria-label="Connectors">
+      <h4>Connectors</h4>
+      <a href="index.html#connectors">Browse all connectors</a>
+      <a href="woocommerce.html">ShopSignal for WooCommerce</a>
+      <a href="etsy.html">SellSignal for Etsy</a>
+      <a href="mailchimp.html">ListSignal for Mailchimp</a>
+      <a href="pricing.html">Pricing</a>
+    </nav>
+    <nav class="footer-col" aria-label="Company">
+      <h4>Company</h4>
+      <a href="about.html">About</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="faq.html">FAQ</a>
+      <a href="manage.html">Manage subscription</a>
+    </nav>
+    <nav class="footer-col" aria-label="Legal">
+      <h4>Legal</h4>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </nav>
+  </div>
+  <div class="wrap footer-legal">
+    <p class="small">Independent store. Not affiliated with Meta or with any platform our connectors work with.</p>
+    <p class="small">All platform names mentioned are trademarks of their respective owners and are used descriptively only; no affiliation or endorsement is implied.</p>
   </div>
 </footer>
 
