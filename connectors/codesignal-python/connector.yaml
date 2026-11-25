@@ -1,0 +1,34 @@
+# CodeSignal for Python connector for Muse -- descriptor.
+#
+# - id: the provider slug (custom.codesignal-python). Local code tools
+#   have no platform account: require_auth is false and the only
+#   connection entry is the OPTIONAL license_key, used after the free
+#   trial.
+# - description: what connector search matches on. The aliases below
+#   carry the phrases owners actually use, so a Muse asked "how do
+#   I connect my code?" finds this connector.
+id: "custom.codesignal-python"
+title: "CodeSignal for Python"
+description: "Repo documentation and health sweeps for your Python codebase — repo maps, generated module docs and docstring coverage, dependency inventories, dead-code and complexity reports, and TODO inventories, all from real AST analysis on your own machine. Local code tools by Plugvana — no account, your code never leaves your machine."
+include_in_prompt: true
+require_auth: false
+aliases:
+  - "CodeSignal for Python"
+  - "Connect my Python codebase with Plugvana"
+  - "document my Python project"
+  - "repo map"
+  - "find dead code in my Python"
+  - "dependency inventory"
+  - "docstring coverage"
+  - "most complex functions"
+  - "TODO inventory"
+  - "Python repo health check"
+  - "analyse my Python project"
+auth_entries:
+  - name: "license_key"
+    placement: { query_param: "license_key" }
+    optional: true
+# This connector makes no network calls except the license check
+# (bin/license_check.py, whose endpoint host is registered at deploy
+# time). All code analysis is local.
+api_hosts: []

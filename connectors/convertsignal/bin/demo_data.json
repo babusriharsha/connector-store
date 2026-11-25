@@ -1,0 +1,9 @@
+{
+  "note": "Fictional demo data. Demo mode operates on bin/samples/ fixtures. sample.docx is generated locally by bin/make_samples.py (demo mode runs it automatically if missing).",
+  "samples": [
+    "sample.md",
+    "sample.txt",
+    "sample.html",
+    "sample.docx"
+  ]
+}
