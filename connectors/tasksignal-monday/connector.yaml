@@ -1,0 +1,28 @@
+# monday.com connector for Muse -- descriptor (Plugvana, CALL SNAP SYSTEMS LLC).
+# id: the provider slug; the credential is registered under exactly this
+# name (custom.monday) through Muse's secure API-access flow.
+id: "custom.monday"
+title: "TaskSignal for monday.com"
+description: "Connect a monday.com account to Muse over its GraphQL API: list boards, read board items and groups, see the latest updates across boards, and create items with approval. For teams who want to ask their Muse 'what changed on my boards?' and get a real answer."
+include_in_prompt: true
+require_auth: true
+aliases:
+  - "monday.com for Muse"
+  - "connect monday.com to Muse"
+  - "connect my monday.com"
+  - "monday boards in Muse"
+  - "check my monday.com boards with Muse"
+  - "monday.com items report"
+  - "monday updates digest"
+  - "Connect my monday.com with Plugvana"
+# Auth: A personal API token registered as an api_key entry with bearer_header placement (entry name access_token). Every request is a POST to https://api.monday.com/v2 with the header API-Version: 2023-10, exactly as monday.com documents.
+auth_scheme: "api_key"
+auth_entries:
+  - name: "access_token"
+    placement: "bearer_header"
+  - name: "license_key"
+    placement: { query_param: "license_key" }
+    optional: true
+api_hosts:
+  - "plugvana-licenses.vercel.app"
+  - "api.monday.com"

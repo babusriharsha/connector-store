@@ -43,4 +43,5 @@ auth_entries:
     placement: { query_param: "license_key" }
     optional: true
 api_hosts:
+  - "plugvana-licenses.vercel.app"
   - "<customer-store-domain>"  # replaced at install with the store's real hostname

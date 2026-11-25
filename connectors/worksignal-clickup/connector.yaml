@@ -1,0 +1,28 @@
+# ClickUp connector for Muse -- descriptor (Plugvana, CALL SNAP SYSTEMS LLC).
+# id: the provider slug; the credential is registered under exactly this
+# name (custom.clickup) through Muse's secure API-access flow.
+id: "custom.clickup"
+title: "WorkSignal for ClickUp"
+description: "Connect a ClickUp workspace to Muse: list spaces and lists, read tasks with status filters, inspect one task, and add tasks with approval. For people who want to ask their Muse 'what is overdue in ClickUp?' and get a real answer from their own workspace."
+include_in_prompt: true
+require_auth: true
+aliases:
+  - "ClickUp for Muse"
+  - "connect ClickUp to Muse"
+  - "connect my ClickUp"
+  - "ClickUp tasks in Muse"
+  - "check my ClickUp workspace with Muse"
+  - "ClickUp overdue tasks"
+  - "ClickUp task report in Muse"
+  - "Connect my ClickUp with Plugvana"
+# Auth: A personal token registered as an api_key entry whose placement is a custom header named Authorization (entry name access_token). ClickUp expects the raw token in the Authorization header with NO 'Bearer' prefix, so the helper applies the surrogate as the Authorization header value exactly, and the CLI adds no prefix of its own.
+auth_scheme: "api_key"
+auth_entries:
+  - name: "access_token"
+    placement: { custom_header: "Authorization" }  # raw token, NO Bearer prefix (ClickUp requirement)
+  - name: "license_key"
+    placement: { query_param: "license_key" }
+    optional: true
+api_hosts:
+  - "plugvana-licenses.vercel.app"
+  - "api.clickup.com"
