@@ -1,5 +1,4 @@
-# TODO: replace https://connector-store.example.com/ with the real domain at launch.
 User-agent: *
 Allow: /
 
-Sitemap: https://connector-store.example.com/sitemap.xml
+Sitemap: https://connector-store.vercel.app/sitemap.xml

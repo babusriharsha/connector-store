@@ -2,6 +2,8 @@
 
 **Independent connectors that link the services you use to your Muse personal AI agent.**
 
+**The store website is the public front door: [connector-store.vercel.app](https://connector-store.vercel.app/)** — this repository is the distribution package behind it, not the storefront.
+
 Published by **CALL SNAP SYSTEMS LLC**, Eureka, Missouri, USA.
 *Independent store. Not affiliated with Meta, WooCommerce, Automattic, Etsy, or Mailchimp.*
 
