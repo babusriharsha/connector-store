@@ -36,8 +36,9 @@
   <div class="wrap detail-hero">
     <span class="badge">Online stores</span>
     <h1 style="margin-top:10px">WooCommerce Connector</h1>
-    <p class="muted" style="max-width:700px">Connect your WooCommerce store (on WordPress) to your Muse personal AI agent. Then just ask — “What sold today?”, “What’s about to run out?”, “Who are my best customers?” — and your Muse answers from your real store data, in plain words. Looking for steps? See <a href="how-to-connect-woocommerce-to-claude.html">how to connect WooCommerce to Muse</a>.</p>
+    <p class="muted" style="max-width:700px">Connect your WooCommerce store (on WordPress) to your Muse personal AI agent. Then just ask — “What sold today?”, “What’s about to run out?”, “Who are my best customers?” — and your Muse answers from your real store data, in plain words. Looking for steps? See <a href="how-to-connect-woocommerce-to-muse.html">how to connect WooCommerce to Muse</a>.</p>
     <p class="independence">Independent store. Not affiliated with Meta, WooCommerce, Automattic, Etsy, or Mailchimp.</p>
+    <p class="small muted" style="max-width:700px">WooCommerce and its associated designs are trademarks of Automattic Inc.</p>
   </div>
 
   <section class="block" aria-labelledby="features-h">
@@ -97,7 +98,7 @@
       <div class="safety">
         <ul>
           <li><strong>Credentials never pass through chat.</strong> Your REST API keys go through Muse’s secure connection flow only.</li>
-          <li><strong>Read-only by default.</strong> The connector reads your store. Write actions (coupons, price or stock edits) are offered only when you ask, shown to you first, and run only after your approval.</li>
+          <li><strong>Read-only by default.</strong> The connector reads your store. Write actions (coupons, price or stock edits) are offered only when you ask, shown to you first, and run only after your approval. One honest detail about the key itself: the standard WooCommerce REST API key this connector asks you to create is a <strong>Read/Write</strong> key. The connector only ever reads unless you approve a specific write action first — but the key itself can write. If you never want writes at all, create a <strong>Read</strong> key instead: every read feature works, and the write actions simply won&rsquo;t be available.</li>
           <li><strong>Your data stays yours.</strong> The connector runs inside your own Muse. This store never receives your orders, customers, or revenue figures — only install and trial/subscription status.</li>
           <li><strong>Revoke anytime.</strong> Delete the API keys in WP Admin and ask your Muse to remove the connector; access ends immediately.</li>
         </ul>
@@ -125,9 +126,12 @@
       <a href="pricing.html">Pricing</a>
       <a href="faq.html">FAQ</a>
       <a href="about.html">About</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
     </div>
     <p class="small muted" style="margin:0">Independent store. Not affiliated with Meta, WooCommerce, Automattic, Etsy, or Mailchimp.</p>
     <p class="small muted" style="margin:0">The Connector Store is a product of CALL SNAP SYSTEMS LLC, Eureka, Missouri, USA. © 2026 CALL SNAP SYSTEMS LLC</p>
+    <p class="small muted" style="margin:0">Trademarks: Muse is a trademark of Meta Platforms, Inc. WooCommerce is a trademark of Automattic Inc. Etsy is a trademark of Etsy, Inc. Mailchimp is a trademark of Intuit Inc. All trademarks belong to their respective owners and are used descriptively only; no affiliation or endorsement is implied.</p>
   </div>
 </footer>
 

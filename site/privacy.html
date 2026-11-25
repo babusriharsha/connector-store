@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!-- BRAND: The Connector Store — tagline: "Real connectors for your Muse." -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — The Connector Store</title>
+<meta name="description" content="Privacy Policy for The Connector Store (CALL SNAP SYSTEMS LLC): what our license service collects, what it never collects, and how your store data stays inside your own Muse.">
+<meta property="og:title" content="Privacy Policy — The Connector Store">
+<meta property="og:description" content="What we collect (license metadata only), what we never collect (your store data and credentials), and your deletion rights.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://connector-store.vercel.app/privacy.html">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">The <span>Connector</span> Store</a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="index.html#connectors">Connectors</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="faq.html">FAQ</a>
+      <a href="about.html">About</a>
+    </nav>
+    <form class="header-search" action="index.html" method="get" role="search">
+      <label class="small" for="header-search-input" style="position:absolute;left:-9999px">Search connectors</label>
+      <input id="header-search-input" name="q" type="search" placeholder="Search connectors…" autocomplete="off">
+      <button class="btn" type="submit">Search</button>
+    </form>
+  </div>
+</header>
+
+<main>
+  <div class="wrap detail-hero">
+    <h1>Privacy Policy</h1>
+    <p class="muted" style="max-width:700px">The Connector Store is a product of <strong>CALL SNAP SYSTEMS LLC</strong>, Eureka, Missouri, USA. Questions about this policy or your data: <a href="mailto:vbshmedia@gmail.com">vbshmedia@gmail.com</a>.</p>
+    <p class="small muted">Last updated: November 24, 2026</p>
+  </div>
+
+  <section class="block">
+    <div class="wrap" style="max-width:760px">
+      <h2>How our connectors work — and why we see so little</h2>
+      <p>Our connectors run <strong>inside your own Muse, on your machine</strong>. When a connector reads your store, shop, or account, that data moves between the platform and your Muse. It does not pass through our servers. Your platform credentials (API keys, sign-ins) are entered only through Muse&rsquo;s secure connection flow and are never sent to us, never shown in chat, and never written to our systems.</p>
+
+      <h2>What we collect</h2>
+      <p>To run trials and subscriptions, our license service collects only licensing metadata:</p>
+      <ul>
+        <li><strong>Install ID</strong> — a random identifier generated on your machine when a connector is installed.</li>
+        <li><strong>Shop hash</strong> — a one-way cryptographic hash of your store URL, shop ID, or account ID. It lets us tie a trial or license to one shop without storing the shop&rsquo;s identity itself; it cannot be reversed to recover your store&rsquo;s address or ID.</li>
+        <li><strong>Product and version</strong> of the connector, its <strong>activation and trial dates</strong>, and <strong>check-in timestamps</strong> (the connector confirms its license status at most once a day).</li>
+        <li><strong>License key hash</strong> — we store a hash of your license key, not the key itself.</li>
+        <li><strong>Subscription status</strong> mirrored from Stripe (for example: trialing, active, cancelled), so the connector knows whether to run.</li>
+        <li><strong>Your email address</strong>, captured from Stripe Checkout, used to deliver your license key and for billing support. The key-delivery record is deleted once your key has been delivered.</li>
+      </ul>
+      <p>An install ID and a shop hash are pseudonymous identifiers — we treat them as personal data under this policy, and we do not claim we &ldquo;collect nothing&rdquo;.</p>
+
+      <h2>Payments</h2>
+      <p>All payments are processed by <strong>Stripe</strong>. We never see, receive, or store your card number or other payment-card details. Stripe&rsquo;s own privacy policy governs the payment information it holds.</p>
+
+      <h2>What we do NOT collect</h2>
+      <ul>
+        <li>Your store&rsquo;s, shop&rsquo;s, or account&rsquo;s business data — orders, sales, revenue, listings, campaigns, or customer lists. That data stays in your own Muse.</li>
+        <li>Your platform credentials or API keys.</li>
+        <li>The contents of your conversations with your Muse.</li>
+      </ul>
+
+      <h2>Data processed inside your Muse</h2>
+      <p>When you use a connector, business data — including, for example, your buyers&rsquo; names and addresses on Etsy receipts, or your Mailchimp contacts&rsquo; details — is fetched and processed by the connector <strong>inside your Muse, in your environment, on your instructions</strong>. We act only as the provider of the software you run; we do not receive that data, and we process it only as your instructions through the connector direct. You remain responsible for that data and for complying with the privacy laws that apply to your business.</p>
+
+      <h2>This website</h2>
+      <p>This website is a static site hosted on Vercel. Our hosting provider keeps standard server logs (such as IP address and browser type) to operate and secure the site. We do not sell personal information, and we do not share it for advertising.</p>
+
+      <h2>Your choices and deletion</h2>
+      <p>You may ask us at any time what licensing data we hold about you, and you may ask us to delete it. Email <a href="mailto:vbshmedia@gmail.com">vbshmedia@gmail.com</a> and we will delete your license and install records, except any records we are required to keep for tax, accounting, or legal purposes. Deleting your records ends the associated trial or subscription.</p>
+
+      <h2>Security</h2>
+      <p>License keys are stored only as hashes, license check-ins travel over encrypted connections, and access to the license service is restricted. No system is perfectly secure, but our design goal is simple: the less we hold, the less can ever be exposed.</p>
+
+      <h2>Changes to this policy</h2>
+      <p>If we change this policy, we will update this page and the &ldquo;Last updated&rdquo; date above. Material changes will be announced on this site before they take effect.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-links">
+      <a href="index.html#connectors">Connectors</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="faq.html">FAQ</a>
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+    <p class="small muted" style="margin:0">Independent store. Not affiliated with Meta, WooCommerce, Automattic, Etsy, or Mailchimp.</p>
+    <p class="small muted" style="margin:0">The Connector Store is a product of CALL SNAP SYSTEMS LLC, Eureka, Missouri, USA. © 2026 CALL SNAP SYSTEMS LLC</p>
+    <p class="small muted" style="margin:0">Trademarks: Muse is a trademark of Meta Platforms, Inc. WooCommerce is a trademark of Automattic Inc. Etsy is a trademark of Etsy, Inc. Mailchimp is a trademark of Intuit Inc. All trademarks belong to their respective owners and are used descriptively only; no affiliation or endorsement is implied.</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
