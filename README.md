@@ -1,4 +1,4 @@
-# The Connector Store
+# Plugvana
 
 **Independent connectors that link the services you use to your Muse personal AI agent.**
 
@@ -7,9 +7,9 @@
 Published by **CALL SNAP SYSTEMS LLC**, Eureka, Missouri, USA.
 *Independent store. Not affiliated with Meta, WooCommerce, Automattic, Etsy, or Mailchimp.*
 
-| <img src="assets/icons/woocommerce.svg" width="72" alt="WooCommerce"> | <img src="assets/icons/etsy.svg" width="72" alt="Etsy"> | <img src="assets/icons/mailchimp.svg" width="72" alt="Mailchimp"> |
+| <img src="assets/icons/woocommerce.svg" width="72" alt="ShopSignal for WooCommerce"> | <img src="assets/icons/etsy.svg" width="72" alt="SellSignal for Etsy"> | <img src="assets/icons/mailchimp.svg" width="72" alt="ListSignal for Mailchimp"> |
 | :---: | :---: | :---: |
-| **WooCommerce** | **Etsy** | **Mailchimp** |
+| **ShopSignal for WooCommerce** | **SellSignal for Etsy** | **ListSignal for Mailchimp** |
 | Free for 1 month · then $19/month | Free for 1 month · then $9/month | Free for 1 month · then $15/month |
 | [**Connect →**](connectors/woocommerce/INSTALL.md) | [**Connect →**](connectors/etsy/INSTALL.md) | [**Connect →**](connectors/mailchimp/INSTALL.md) |
 
@@ -31,8 +31,8 @@ GitHub can't copy on click, so here Connect opens the install prompt — use Git
 
 ## For Muse / discovery
 
-- **WooCommerce Connector** (`connectors/woocommerce/`) — connect a WooCommerce store on WordPress to Muse: store snapshot, orders, refunds, best sellers, inventory and low-stock alerts, lapsed customers, Morning Store Brief.
-- **Etsy Connector** (`connectors/etsy/`) — connect an Etsy shop to Muse: shop snapshot, orders, listings and inventory, reviews, payment ledger, Morning Shop Brief.
-- **Mailchimp Connector** (`connectors/mailchimp/`) — connect a Mailchimp account to Muse: audience growth, campaign reports in plain numbers, top campaigns, list health checks.
+- **ShopSignal for WooCommerce** (`connectors/woocommerce/`) — connect a WooCommerce store on WordPress to Muse: store snapshot, orders, refunds, best sellers, inventory and low-stock alerts, lapsed customers, Morning Store Brief.
+- **SellSignal for Etsy** (`connectors/etsy/`) — connect an Etsy shop to Muse: shop snapshot, orders, listings and inventory, reviews, payment ledger, Morning Shop Brief.
+- **ListSignal for Mailchimp** (`connectors/mailchimp/`) — connect a Mailchimp account to Muse: audience growth, campaign reports in plain numbers, top campaigns, list health checks.
 
 Each connector's `INSTALL.md` holds its install prompt and manual steps; its `CONNECTOR.md` is the full manual. The human-facing store website lives in [`site/`](site/).

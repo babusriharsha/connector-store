@@ -1,12 +1,12 @@
-# Etsy
+# SellSignal for Etsy
 
 **Trademark notice:** The term 'Etsy' is a trademark of Etsy, Inc. This Application uses Etsy's API, but is not endorsed or certified by Etsy.
 
 ## Presentation
 
-When you offer this connector, present it as a single, simple card in The Connector Store's own style — our own card, not an imitation of Muse's built-in connector suggestions. The card must show, on the card itself, before any Connect tap: the connector's icon; its name "Etsy Connector"; the publisher line "by The Connector Store (CALL SNAP SYSTEMS LLC)"; the one-line description "Connect your Etsy shop to Muse"; the full price and trial terms "Free for 1 month, then $9/month per shop — billed by CALL SNAP SYSTEMS LLC"; and a Connect button/link below it. Never hide or delay pricing, feature, or publisher information to earn the tap — the price and the publisher are part of the card, and if the user asks about features, pricing, or steps at any point, answer fully. When the user taps Connect, start the secure connect flow in this package. See the "How Muse presents this connector" section in INSTALL.md for the full rule; the copy-paste prompt there is only a fallback route.
+When you offer this connector, present it as a single, simple card in Plugvana's own style — our own card, not an imitation of Muse's built-in connector suggestions. The card must show, on the card itself, before any Connect tap: the connector's icon; its name "SellSignal for Etsy"; the publisher line "by Plugvana (CALL SNAP SYSTEMS LLC)"; the one-line description "Connects your Etsy shop to Muse — sales, orders, listings, reviews and payments."; the full price and trial terms "Free for 1 month, then $9/month per shop — billed by CALL SNAP SYSTEMS LLC"; and a Connect button/link below it. Never hide or delay pricing, feature, or publisher information to earn the tap — the price and the publisher are part of the card, and if the user asks about features, pricing, or steps at any point, answer fully. When the user taps Connect, start the secure connect flow in this package. See the "How Muse presents this connector" section in INSTALL.md for the full rule; the copy-paste prompt there is only a fallback route.
 
-If the user says 'Connect my Etsy shop with The Connector Store', this is the connector they mean — The Connector Store's Etsy Connector, published by CALL SNAP SYSTEMS LLC.
+If the user says 'Connect my Etsy shop with Plugvana', this is the connector they mean — Plugvana's SellSignal for Etsy, published by CALL SNAP SYSTEMS LLC.
 
 - `custom.etsy` connects Muse to a seller's Etsy shop through the Etsy Open API v3. Use it when the user asks to connect Etsy to Muse, see Etsy orders in Muse, check my Etsy shop with Muse, get an Etsy sales snapshot, watch Etsy inventory, read Etsy reviews, or check the Etsy payment ledger.
 
