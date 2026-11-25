@@ -1,0 +1,92 @@
+{
+  "account": {
+    "name": "Bayview Fitness Studio",
+    "total_contacts": 4380,
+    "plan": "Email Plus"
+  },
+  "contacts": [
+    {
+      "id": "con_01",
+      "email": "kate.donovan@example.com",
+      "name": "Kate Donovan",
+      "status": "active",
+      "open_rate": 0.42,
+      "click_rate": 0.06,
+      "subscribed_at": "2026-08-14"
+    },
+    {
+      "id": "con_02",
+      "email": "marcus.lee@example.com",
+      "name": "Marcus Lee",
+      "status": "active",
+      "open_rate": 0.49,
+      "click_rate": 0.09,
+      "subscribed_at": "2026-08-14"
+    },
+    {
+      "id": "con_03",
+      "email": "sofia.rossi@example.com",
+      "name": "Sofia Rossi",
+      "status": "suspended",
+      "open_rate": 0.0,
+      "click_rate": 0.0,
+      "subscribed_at": "2026-08-14"
+    }
+  ],
+  "lists": [
+    {
+      "id": "lst_01",
+      "name": "General Interest",
+      "membership_count": 3210
+    },
+    {
+      "id": "lst_02",
+      "name": "Members",
+      "membership_count": 1170
+    }
+  ],
+  "campaigns": [
+    {
+      "id": "ec_801",
+      "name": "November Schedule",
+      "subject": "New classes start Monday",
+      "status": "sent",
+      "emails_sent": 3150,
+      "open_rate": 0.36,
+      "click_rate": 0.041,
+      "unique_opens": 929,
+      "unique_clicks": 103,
+      "bounces": 23,
+      "unsubscribes": 9,
+      "sent_at": "2026-11-18T15:00:00Z"
+    },
+    {
+      "id": "ec_802",
+      "name": "Member Offer",
+      "subject": "Members: bring a friend free",
+      "status": "sent",
+      "emails_sent": 1160,
+      "open_rate": 0.44,
+      "click_rate": 0.068,
+      "unique_opens": 418,
+      "unique_clicks": 63,
+      "bounces": 23,
+      "unsubscribes": 9,
+      "sent_at": "2026-11-10T16:00:00Z"
+    },
+    {
+      "id": "ec_803",
+      "name": "Holiday Hours",
+      "subject": "Holiday hours (draft)",
+      "status": "draft",
+      "emails_sent": 0,
+      "open_rate": 0,
+      "click_rate": 0,
+      "unique_opens": 0,
+      "unique_clicks": 0,
+      "bounces": 23,
+      "unsubscribes": 9,
+      "sent_at": null
+    }
+  ]
+}

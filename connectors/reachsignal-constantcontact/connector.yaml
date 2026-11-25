@@ -1,0 +1,10 @@
+# Constant Contact connector for Muse (Plugvana, CALL SNAP SYSTEMS LLC).
+id: "custom.reachsignal-constantcontact"
+title: "ReachSignal for Constant Contact"
+description: "Connect Constant Contact to Muse. Read Constant Contact audiences, subscriber counts and growth, campaign/broadcast lists and full campaign reports (opens, clicks, bounces, unsubscribes) in plain numbers, with approval-gated writes. Also known as: Constant Contact for Muse, Constant Contact campaign reports in Muse, check my Constant Contact audience with Muse, email marketing reports, newsletter analytics, audience growth, Constant Contact API."
+include_in_prompt: true
+require_auth: true
+aliases: ["Constant Contact for Muse", "Constant Contact campaign reports", "Email marketing", "Newsletter analytics", "Audience growth", "Connect my Constant Contact with Plugvana"]
+auth_scheme: "oauth2"
+placement: "bearer_header"
+api_hosts: ["api.cc.email"]
