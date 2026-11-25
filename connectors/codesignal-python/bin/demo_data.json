@@ -1,0 +1,1 @@
+{"note":"Fictional demo data. Demo mode operates on bin/samples/ — a small fictional Python package called shopkit. No real code is included.","samples":["shopkit/__init__.py","shopkit/models.py","shopkit/services.py","shopkit/utils.py","shopkit/api.py","requirements.txt","tests/test_services.py","tests/test_models.py"]}
