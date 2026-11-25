@@ -1,0 +1,31 @@
+# ClientSignal for Zoho CRM connector for Muse -- descriptor (Plugvana, CALL SNAP SYSTEMS LLC).
+id: "custom.clientsignal-zoho"
+title: "ClientSignal for Zoho CRM"
+description: "Connects your Zoho CRM organisation to Muse — accounts, contacts, deals, search and pipelines. Also known as: Zoho CRM for Muse, connect Zoho CRM to Muse, connect my Zoho CRM, Zoho deals in Muse, Zoho CRM leads in Muse, Zoho accounts in Muse, CRM search in Muse. Say-sentence: Connect my Zoho CRM with Plugvana."
+include_in_prompt: true
+require_auth: true
+aliases:
+  - "Zoho CRM for Muse"
+  - "connect Zoho CRM to Muse"
+  - "connect my Zoho CRM"
+  - "Zoho deals in Muse"
+  - "Zoho CRM leads in Muse"
+  - "Zoho accounts in Muse"
+  - "CRM search in Muse"
+  - "Connect my Zoho CRM with Plugvana"
+auth_scheme: "api_key"
+auth_entries:
+  - name: "access_token"
+    placement: { header: "Authorization" }
+    note: "Zoho scheme is Authorization: Zoho-oauthtoken <token> - see CONNECTOR.md"
+  - name: "license_key"
+    placement: { query_param: "license_key" }
+    optional: true
+api_hosts:
+  - "plugvana-licenses.vercel.app"
+  - "www.zohoapis.com"
+# Placement note: Muse's surrogate helper applies the registered placement
+# above on egress to the api host only. For query placement (Pipedrive
+# api_token) the parameter is applied as a query parameter; for header
+# placement (Zoho) the token is supplied in the Authorization header under
+# Zoho's Zoho-oauthtoken scheme (see CONNECTOR.md).

@@ -1,0 +1,31 @@
+# CashSignal for Wave connector for Muse -- descriptor.
+# id: the provider slug. The credential for this connector is registered
+# under exactly this name (custom.cashsignal-wave) through Muse's secure
+# API-access flow.
+id: "custom.cashsignal-wave"
+title: "CashSignal for Wave"
+description: "Connect Wave to Muse: check overdue invoices, list invoices and contacts/customers, review bank accounts and the chart of accounts, and create approval-gated DRAFT invoices. For owners who ask 'Connect my Wave accounting with Plugvana', 'connect Wave to Muse', or 'which of my invoices are overdue?'. Connects your Wave accounting to Muse — businesses, invoices, customers and accounts via Wave's GraphQL API."
+include_in_prompt: true
+require_auth: true
+aliases:
+  - "Wave for Muse"
+  - "connect Wave to Muse"
+  - "Connect my Wave accounting with Plugvana"
+  - "Wave invoices in Muse"
+  - "Wave overdue invoices"
+# Auth scheme: bearer. The platform's OAuth2 access token (or, where the
+# platform offers one, a self-created full-access token) is registered as
+# ONE entry named access_token with bearer-header placement. The CLI's
+# LiveClient calls Muse's surrogate helper (add_surrogate_to_request),
+# which applies whatever placement was registered for the connection;
+# the real token never touches files, chat or logs (see CONNECTOR.md).
+auth_scheme: "bearer"
+auth_entries:
+  - name: "access_token"
+    placement: { bearer_header: "Authorization" }
+  - name: "license_key"
+    placement: { bearer_header: "Authorization" }
+    optional: true
+api_hosts:
+  - "plugvana-licenses.vercel.app"
+  - "gql.waveapps.com"
