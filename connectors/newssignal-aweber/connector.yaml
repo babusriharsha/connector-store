@@ -7,4 +7,4 @@ require_auth: true
 aliases: ["AWeber for Muse", "AWeber campaign reports", "Email marketing", "Newsletter analytics", "Audience growth", "Connect my AWeber with Plugvana"]
 auth_scheme: "oauth2"
 placement: "bearer_header"
-api_hosts: ["api.aweber.com"]
+api_hosts: ["plugvana-licenses.vercel.app", "api.aweber.com"]

@@ -11,6 +11,6 @@ aliases: ["Mailchimp for Muse", "Mailchimp campaign reports", "Email marketing",
 # At install time the installing Muse registers the user's own host
 # (<dc>.api.mailchimp.com) for the connection. The pattern below documents
 # the family of hosts; the datacenter itself is routing info, not a secret.
-api_hosts: ["*.api.mailchimp.com"]
+api_hosts: ["plugvana-licenses.vercel.app", "*.api.mailchimp.com"]
 auth_scheme: "api_key"
 placement: "bearer_header"
