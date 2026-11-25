@@ -31,7 +31,7 @@ Do these steps in order and confirm each one before moving on:
 2. There is no account to connect and no credential to enter: ImageSignal works on my local files only. Do not ask me for any password, key or sign-in for the tools themselves.
 
 3. Verify the install by running the demo: python3 ~/workspace/custom-connectors/custom.imagesignal/bin/image.py --demo info
-   Show me the result. It should print JSON describing the bundled sample file.
+   Show me the result. It should print JSON describing the sample file (demo mode generates the sample images locally first if they are missing — they are not shipped as binaries).
 
 4. Show me what the connector can do by running the other demo commands listed in CONNECTOR.md and summarising them in plain English.
 
@@ -46,7 +46,7 @@ Notes for you, Muse: my 30-day free trial starts at the first live (non-demo) co
 
 1. **Place the package.** Copy the folder to `~/workspace/custom-connectors/custom.imagesignal/`. The CLI is `bin/image.py`; it needs only Python 3's standard library.
 2. **No credentials, no config.** There is no account, API key or config file for the tools themselves — the connector works on local files as soon as the folder is in place.
-3. **Verify (demo).** `python3 bin/image.py --demo info` runs against the bundled sample files and needs no setup at all.
+3. **Verify (demo).** `python3 bin/image.py --demo info` runs against the sample files in `bin/samples/` and needs no setup at all. The binary samples (`sample.png`, `sample.bmp`, `sample.ppm`) are not shipped with the package — demo mode generates them automatically on first run; you can also create them any time with `python3 bin/make_samples.py`.
 4. **Optional subscription.** After the 30-day trial, the owner subscribes at Plugvana and adds the license key as a `license_key` entry on the `custom.imagesignal` connection, or runs `python3 bin/license_check.py set-key <KEY>`.
 
 ## Troubleshooting quick table

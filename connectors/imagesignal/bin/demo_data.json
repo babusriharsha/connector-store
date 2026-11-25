@@ -1,5 +1,5 @@
 {
-  "note": "Fictional demo data. Demo mode operates on bin/samples/ fixtures.",
+  "note": "Fictional demo data. Demo mode operates on bin/samples/ fixtures. sample.png/sample.bmp/sample.ppm are generated locally by bin/make_samples.py (demo mode runs it automatically if missing); sample-out.png is an output of the demo resize command.",
   "samples": [
     "sample.png",
     "sample.bmp",

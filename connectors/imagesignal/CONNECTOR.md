@@ -16,7 +16,7 @@ Also known as / owners search for: "connect image tools to Muse", "image tools i
 
 ## Honest status
 
-- **Demo mode is tested.** Every command below has been run against the bundled sample files (`--demo`) and works.
+- **Demo mode is tested.** Every command below has been run against the sample files in `bin/samples/` (`--demo`) and works. The binary samples (`sample.png`, `sample.bmp`, `sample.ppm`) are generated locally by `bin/make_samples.py` — demo mode runs it automatically if the files are missing.
 - **Scope is deliberately honest.** These are standard-library tools for local files; the limits section below states exactly what v1 does not do, and the CLI returns clear errors — never fake results — outside that scope.
 - **No account, no network.** Apart from the license check (see Licensing), this connector makes no network calls at all.
 
@@ -26,7 +26,7 @@ Nothing but Muse and Python 3. There is no account, no API key and no credential
 
 ## Try it with no setup: demo mode
 
-Add `--demo` before or after any command to run it against the bundled sample files in `bin/samples/`:
+Add `--demo` before or after any command to run it against the sample files in `bin/samples/`. If the generated samples (`sample.png`, `sample.bmp`, `sample.ppm`) are missing, run `python3 bin/make_samples.py` once — or just use `--demo`, which generates them automatically:
 
 ```text
 python3 bin/image.py --demo info
