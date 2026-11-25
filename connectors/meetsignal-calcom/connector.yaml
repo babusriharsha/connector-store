@@ -1,0 +1,27 @@
+# Cal.com connector for Muse -- descriptor (Plugvana, CALL SNAP SYSTEMS LLC).
+# id: the provider slug; the credential is registered under exactly this
+# name (custom.calcom) through Muse's secure API-access flow.
+id: "custom.calcom"
+title: "MeetSignal for Cal.com"
+description: "Connect a Cal.com account to Muse through the Cal.com API v2: list event types, bookings and schedules, inspect one booking, and cancel a booking with explicit approval. For people who want to ask their Muse 'who is booked with me today?' and get a real answer."
+include_in_prompt: true
+require_auth: true
+aliases:
+  - "Cal.com for Muse"
+  - "connect Cal.com to Muse"
+  - "connect my Cal.com"
+  - "Cal.com bookings in Muse"
+  - "check my Cal.com bookings with Muse"
+  - "Cal.com event types"
+  - "Cal.com schedule in Muse"
+  - "Connect my Cal.com with Plugvana"
+# Auth: An API key (cal_live_...) registered as an api_key entry with bearer_header placement (entry name access_token). Every request also carries the required header cal-api-version: 2024-08-13 (verified against Cal.com's v1-to-v2 migration docs for bookings and event types; some endpoints version separately — see Limits).
+auth_scheme: "api_key"
+auth_entries:
+  - name: "access_token"
+    placement: "bearer_header"
+  - name: "license_key"
+    placement: { query_param: "license_key" }
+    optional: true
+api_hosts:
+  - "api.cal.com"
