@@ -5,9 +5,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Connector Store — Real connectors for your Muse</title>
-<meta name="description" content="An independent store of real software connectors for your Muse personal AI agent. Connect WooCommerce, Etsy, or Mailchimp once, then just ask your Muse. First month free on every connector.">
+<meta name="description" content="An independent store of real software connectors for your Muse personal AI agent. Pick a connector, click Connect, paste the prompt in your Muse. First month free on every connector.">
 <meta property="og:title" content="The Connector Store — Real connectors for your Muse">
-<meta property="og:description" content="Connect your store or your email marketing to your Muse agent. Ask questions, get answers, approve actions. First month free.">
+<meta property="og:description" content="Connect WooCommerce, Etsy or Mailchimp to your Muse. Click Connect, paste the prompt in your Muse. First month free.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://connector-store.example.com/">
 <link rel="stylesheet" href="styles.css">
@@ -18,196 +18,143 @@
   <div class="wrap header-inner">
     <a class="brand" href="index.html">The <span>Connector</span> Store</a>
     <nav class="main-nav" aria-label="Main">
-      <a href="index.html#connectors">Connectors</a>
-      <a href="how-it-works.html">How it works</a>
       <a href="pricing.html">Pricing</a>
       <a href="faq.html">FAQ</a>
       <a href="about.html">About</a>
     </nav>
-    <form class="header-search" action="index.html" method="get" role="search">
-      <label class="small" for="header-search-input" style="position:absolute;left:-9999px">Search connectors</label>
-      <input id="header-search-input" name="q" type="search" placeholder="Search connectors…" autocomplete="off">
-      <button class="btn" type="submit">Search</button>
-    </form>
   </div>
 </header>
 
 <main>
   <div class="wrap hero">
-    <h1>Real connectors for your Muse.</h1>
-    <p class="tagline">A connector links a service you already use — your online store, your email marketing — to your Muse personal AI agent. Connect once, securely. After that, you just ask: <em>“What sold today?” “What’s running low?” “How did my last campaign do?”</em> Your Muse answers from your real data.</p>
-    <div class="hero-actions">
-      <a class="btn big" href="#connectors">Browse connectors</a>
-      <a class="btn big secondary" href="how-it-works.html">How it works</a>
-    </div>
+    <h1>Connect a service to your Muse.</h1>
+    <p class="tagline">Pick a connector, click Connect, paste the prompt in your Muse — your Muse does the rest.</p>
     <p class="independence">Independent store. Not affiliated with Meta, WooCommerce, Automattic, Etsy, or Mailchimp.</p>
   </div>
 
-  <section class="block" aria-labelledby="steps-h">
-    <div class="wrap">
-      <div class="section-head center">
-        <h2 id="steps-h">Connect in minutes</h2>
-        <p class="muted">No code. No setup project. Your own Muse does the installing for you.</p>
-      </div>
-      <div class="steps">
-        <div class="step">
-          <span class="step-num" aria-hidden="true">1</span>
-          <h3>Pick a connector</h3>
-          <p class="muted">Choose the service you want your Muse to reach — a store or your email marketing.</p>
-        </div>
-        <div class="step">
-          <span class="step-num" aria-hidden="true">2</span>
-          <h3>Paste the install prompt</h3>
-          <p class="muted">Every connector page has a one-tap copy prompt. Paste it into your Muse chat and your Muse installs the connector for you.</p>
-        </div>
-        <div class="step">
-          <span class="step-num" aria-hidden="true">3</span>
-          <h3>Sign in &amp; ask</h3>
-          <p class="muted">You sign in on the service’s own secure page — credentials never pass through chat. Then just ask your Muse questions.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="block" id="connectors" aria-labelledby="catalog-h">
     <div class="wrap">
-      <div class="section-head">
-        <h2 id="catalog-h">Connectors</h2>
-        <p class="muted">Search by the job you want done — try “low stock alerts”, “connect my shop”, or “campaign reports”. Every connector is free for the first month.</p>
-      </div>
+      <h2 id="catalog-h" class="sr-only">Connectors</h2>
       <div class="catalog-tools">
         <div class="catalog-search">
           <label for="catalog-search-input" style="position:absolute;left:-9999px">Search connectors and features</label>
-          <input id="catalog-search-input" type="search" placeholder="Search connectors and features…" autocomplete="off">
-        </div>
-        <div class="chips" role="group" aria-label="Filter by category">
-          <button class="chip" type="button" data-filter="All" aria-pressed="true">All</button>
-          <button class="chip" type="button" data-filter="Online stores" aria-pressed="false">Online stores</button>
-          <button class="chip" type="button" data-filter="Email marketing" aria-pressed="false">Email marketing</button>
+          <input id="catalog-search-input" type="search" placeholder="Search connectors…" autocomplete="off">
         </div>
       </div>
 
-      <div class="cards" id="catalog-grid">
-        <article class="card" data-card="woocommerce">
-          <span class="cat">Online stores</span>
-          <h3><a href="woocommerce.html">WooCommerce Connector</a></h3>
-          <p class="muted">Your Muse, connected to your WooCommerce store on WordPress.</p>
-          <ul>
-            <li>Store snapshot: today vs yesterday vs last week</li>
-            <li>Orders, refunds, best sellers</li>
-            <li>Inventory checks &amp; low-stock alerts</li>
-            <li>Morning Store Brief</li>
-          </ul>
-          <div class="card-foot">
-            <span class="price-note">Free for 1 month</span>
-            <a class="btn" href="woocommerce.html">View connector</a>
-          </div>
+      <div class="app-grid" id="catalog-grid">
+        <article class="tile" data-card="woocommerce">
+          <a class="tile-link" href="woocommerce.html" aria-label="WooCommerce Connector details">
+            <img class="tile-icon" src="assets/icons/woocommerce.svg" alt="WooCommerce" width="84" height="84">
+            <span class="tile-name">WooCommerce</span>
+          </a>
+          <p class="tile-price">Free for 1 month · then $19/month</p>
+          <button class="btn connect-btn" type="button" data-connect data-copy-target="prompt-woocommerce">Connect</button>
+          <p class="copy-status connect-status" role="status" aria-live="polite"></p>
         </article>
 
-        <article class="card" data-card="etsy">
-          <span class="cat">Online stores</span>
-          <h3><a href="etsy.html">Etsy Connector</a></h3>
-          <p class="muted">Your Muse, connected to your Etsy shop.</p>
-          <ul>
-            <li>Shop snapshot from your receipts</li>
-            <li>Orders, listings &amp; inventory quantities</li>
-            <li>Low-quantity alerts &amp; reviews</li>
-            <li>Morning Shop Brief</li>
-          </ul>
-          <div class="card-foot">
-            <span class="price-note">Free for 1 month</span>
-            <a class="btn" href="etsy.html">View connector</a>
-          </div>
+        <article class="tile" data-card="etsy">
+          <a class="tile-link" href="etsy.html" aria-label="Etsy Connector details">
+            <img class="tile-icon" src="assets/icons/etsy.svg" alt="Etsy" width="84" height="84">
+            <span class="tile-name">Etsy</span>
+          </a>
+          <p class="tile-price">Free for 1 month · then $9/month</p>
+          <button class="btn connect-btn" type="button" data-connect data-copy-target="prompt-etsy">Connect</button>
+          <p class="copy-status connect-status" role="status" aria-live="polite"></p>
         </article>
 
-        <article class="card" data-card="mailchimp">
-          <span class="cat">Email marketing</span>
-          <h3><a href="mailchimp.html">Mailchimp Connector</a></h3>
-          <p class="muted">Your Muse, connected to your Mailchimp account.</p>
-          <ul>
-            <li>Audience growth at a glance</li>
-            <li>Campaign reports in plain numbers</li>
-            <li>List health checks</li>
-            <li>Draft campaigns — never sent without you</li>
-          </ul>
-          <div class="card-foot">
-            <span class="price-note">Free for 1 month</span>
-            <a class="btn" href="mailchimp.html">View connector</a>
-          </div>
+        <article class="tile" data-card="mailchimp">
+          <a class="tile-link" href="mailchimp.html" aria-label="Mailchimp Connector details">
+            <img class="tile-icon" src="assets/icons/mailchimp.svg" alt="Mailchimp" width="84" height="84">
+            <span class="tile-name">Mailchimp</span>
+          </a>
+          <p class="tile-price">Free for 1 month · then $15/month</p>
+          <button class="btn connect-btn" type="button" data-connect data-copy-target="prompt-mailchimp">Connect</button>
+          <p class="copy-status connect-status" role="status" aria-live="polite"></p>
         </article>
       </div>
       <p class="no-results" id="no-results" style="display:none">No connector matches that search yet. Try a different word — or <a href="faq.html">check the FAQ</a>. More connectors are on the way.</p>
     </div>
   </section>
 
-  <section class="block" aria-labelledby="why-h">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 id="why-h">Why connectors?</h2>
-      </div>
-      <div class="why">
-        <div class="item">
-          <h3>Your data stays yours</h3>
-          <p class="muted">A connector runs inside your own Muse. This store never sees your store data, your customers, or your campaigns — there is nothing for us to store.</p>
-        </div>
-        <div class="item">
-          <h3>Read-only by default</h3>
-          <p class="muted">Connectors start by only looking. Anything that changes something — a coupon, a price — is shown to you first and needs your approval in your own Muse.</p>
-        </div>
-        <div class="item">
-          <h3>Credentials never pass through chat</h3>
-          <p class="muted">You sign in on the service’s own secure page, or paste a key you created into Muse’s secure connection flow. Never into a chat message.</p>
-        </div>
-        <div class="item">
-          <h3>Real software, not a prompt pack</h3>
-          <p class="muted">Each connector is a maintained piece of software with versioned releases — the same class of product as the connectors Muse ships for other services.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Install prompts: the Connect buttons copy these verbatim. -->
+  <div class="prompt-store" hidden>
+    <pre id="prompt-woocommerce">Install the WooCommerce connector for Muse from this package, then connect my store.
 
-  <section class="block" aria-labelledby="pricing-h">
-    <div class="wrap">
-      <div class="price-box">
-        <h2 id="pricing-h">Simple pricing</h2>
-        <ul>
-          <li><strong>Every connector is free for the first month.</strong> No card needed to start the trial.</li>
-          <li>After the trial, each connector has its own monthly price — WooCommerce $19/month, Etsy $9/month, Mailchimp $15/month — you only pay for the ones you use.</li>
-          <li>No bundles and no all-access pass — every connector stands on its own, so you never pay for ones you don't use.</li>
-          <li>Billing runs through Stripe. Cancel anytime — cancelling just stops the connector at the end of the paid period.</li>
-        </ul>
-        <p style="margin:0"><a class="btn" href="pricing.html">See pricing details</a></p>
-      </div>
-    </div>
-  </section>
+0. First, present this connector to me as a single connector card in the style of Muse&#x27;s built-in connector suggestions (like Postpone): the connector&#x27;s icon, its name &quot;WooCommerce Connector&quot;, the one-line description &quot;Connect your WooCommerce store to Muse&quot;, the small pricing line &quot;Free for 1 month · then $19/month per store&quot;, and a Connect button/link below it. When I tap Connect, immediately start the secure connect flow described below — do not show feature lists, pricing tables, manual steps or code before Connect.
 
-  <section class="block" aria-labelledby="faq-teaser-h">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 id="faq-teaser-h">Common questions</h2>
-      </div>
-      <div class="faq-item">
-        <h3>Is this store official?</h3>
-        <p>No. This is an independent store run by CALL SNAP SYSTEMS LLC. Independent store. Not affiliated with Meta, WooCommerce, Automattic, Etsy, or Mailchimp.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Where does my data go?</h3>
-        <p>Nowhere new. The connector runs inside your own Muse and talks to the service you connected. The store never receives your store data.</p>
-      </div>
-      <div class="faq-item">
-        <h3>What happens when the free month ends?</h3>
-        <p>The connector pauses until you subscribe. Nothing is charged automatically — there is no card on file unless you chose to add one.</p>
-      </div>
-      <p><a href="faq.html">Read the full FAQ →</a></p>
-    </div>
-  </section>
+Do these steps in order and confirm each one before moving on:
+
+1. Copy this whole connector folder to ~/workspace/custom-connectors/custom.woocommerce/ on my machine, keeping connector.yaml, CONNECTOR.md, SKILL.md and the bin/ folder together. Read CONNECTOR.md fully before running anything.
+
+2. Ask me for my store&#x27;s base URL (for example https://shop.example.com). It must be HTTPS. Then copy store_config.example.json from the connector root to store_config.json and set store_url to my store&#x27;s URL. This file holds no secrets.
+
+3. Tell me to create the store&#x27;s API keys myself: in WP Admin go to WooCommerce → Settings → Advanced → REST API → Add key, pick an admin user, set permissions to Read/Write, and choose Generate API key. Tell me the store will show a Consumer Key and a Consumer Secret exactly once, and that I must NOT paste them into this chat.
+
+4. Register the credential using your secure API-access flow (credentials.request_api_access) with: provider &quot;custom.woocommerce&quot;, api_hosts set to my store&#x27;s hostname only, auth_scheme &quot;api_key&quot;, and two entries — &quot;consumer_key&quot; with query-parameter placement named consumer_key, and &quot;consumer_secret&quot; with query-parameter placement named consumer_secret. Send me the secure capture link and wait until I confirm I have saved both keys there.
+
+5. Verify the connection by running: python3 ~/workspace/custom-connectors/custom.woocommerce/bin/woo.py status
+   Show me the result. It should say &quot;connected&quot;: true with my store&#x27;s currency and order counts. If it fails, follow the troubleshooting section of CONNECTOR.md — check the store URL&#x27;s www/non-www form first, then the registered host, then ask me to re-check the keys. Do not ask me to paste keys in chat at any point.
+
+6. Once status succeeds, show me what the connector can do by running the snapshot command (python3 ~/workspace/custom-connectors/custom.woocommerce/bin/woo.py snapshot) and summarising today vs yesterday vs the last 7 days in plain English.
+
+7. Offer me the scheduled workflows from SKILL.md (Morning Store Brief, Low-Stock Sweep, Refund Spike Alert, Weekly Win-Back List) and set up the ones I pick, at the times I choose.
+
+Notes for you, Muse: my 30-day free trial starts at the first live command. Live commands after the trial need a subscription and a license key (CONNECTOR.md explains). Demo mode (add --demo to any command) works without my store if I want to see it first.</pre>
+    <pre id="prompt-etsy">Install the Etsy connector for Muse from this package.
+
+0. First, present this connector to me as a single connector card in the style of Muse&#x27;s built-in connector suggestions (like Postpone): the connector&#x27;s icon, its name &quot;Etsy Connector&quot;, the one-line description &quot;Connect your Etsy shop to Muse&quot;, the small pricing line &quot;Free for 1 month · then $9/month per shop&quot;, and a Connect button/link below it. When I tap Connect, immediately start the secure connect flow described below — do not show feature lists, pricing tables, manual steps or code before Connect.
+1. Copy this package folder to ~/workspace/custom-connectors/custom.etsy/ so that
+   ~/workspace/custom-connectors/custom.etsy/CONNECTOR.md and
+   ~/workspace/custom-connectors/custom.etsy/bin/etsy.py exist.
+2. Read CONNECTOR.md in that folder and follow its Connect section exactly.
+3. Register the connection with credentials.request_api_access using the JSON in
+   the Connect section: provider &quot;etsy&quot;, auth_scheme &quot;oauth2_code&quot;,
+   authorization_url &quot;https://www.etsy.com/oauth/connect&quot;,
+   token_url &quot;https://openapi.etsy.com/v3/public/oauth/token&quot;,
+   issuer_domain &quot;etsy.com&quot;, scopes &quot;shops_r listings_r listings_w transactions_r&quot;,
+   api_hosts [&quot;openapi.etsy.com&quot;, &quot;www.etsy.com&quot;, &quot;etsy.com&quot;].
+   The connection holds two entries: access_token with bearer header placement,
+   and api_key with the custom header placement x-api-key carrying the Etsy app
+   keystring supplied with this package.
+4. Send me the connect link and wait while I sign in with Etsy and approve.
+5. Prove it works: run the demo first, then the live status check:
+   python3 ~/workspace/custom-connectors/custom.etsy/bin/etsy.py status --demo
+   python3 ~/workspace/custom-connectors/custom.etsy/bin/etsy.py status
+   Show me my shop name and today&#x27;s sales snapshot when it works.</pre>
+    <pre id="prompt-mailchimp">Install the Mailchimp connector for Muse from this package.
+
+0. First, present this connector to me as a single connector card in the style of Muse&#x27;s built-in connector suggestions (like Postpone): the connector&#x27;s icon, its name &quot;Mailchimp Connector&quot;, the one-line description &quot;Connect your Mailchimp account to Muse&quot;, the small pricing line &quot;Free for 1 month · then $15/month per account&quot;, and a Connect button/link below it. When I tap Connect, immediately start the secure connect flow described below — do not show feature lists, pricing tables, manual steps or code before Connect.
+1. Put the package at ~/workspace/custom-connectors/custom.mailchimp/ so that
+   CONNECTOR.md, connector.yaml, SKILL.md and the bin/ folder sit together.
+2. Ask me to create a Mailchimp API key: in Mailchimp, profile menu, then
+   Account, then Extras, then API keys. I create it on Mailchimp&#x27;s pages
+   myself. Never ask me to paste the key into chat.
+3. Ask me only for the datacenter suffix of my key (the part after the last
+   hyphen, like us21). That suffix is routing info, not a secret. It is also
+   in the Mailchimp web address when I am signed in.
+4. Register the connection with credentials.request_api_access using
+   provider &quot;mailchimp&quot;, auth_scheme &quot;api_key&quot;, placement &quot;bearer_header&quot;,
+   and api_hosts [&quot;&lt;dc&gt;.api.mailchimp.com&quot;] with my datacenter in place of
+   &lt;dc&gt;. Send me the secure link the tool returns so I can enter the key on
+   the hosted page.
+5. Write config.json beside the connector doc containing {&quot;datacenter&quot;:
+   &quot;&lt;dc&gt;&quot;} with my datacenter.
+6. Verify in demo mode first:
+   python3 ~/workspace/custom-connectors/custom.mailchimp/bin/mailchimp.py --demo status
+   python3 ~/workspace/custom-connectors/custom.mailchimp/bin/mailchimp.py --demo audiences
+7. Then verify live:
+   python3 ~/workspace/custom-connectors/custom.mailchimp/bin/mailchimp.py status
+   Success means health_status &quot;Everything&#x27;s Chimpy!&quot; and my account name in
+   the account block. If it fails, read the Recover from errors section of
+   CONNECTOR.md and fix the setup rather than guessing.
+8. Offer to set up the Weekly Audience Brief from SKILL.md as a weekly job.</pre>
+  </div>
 </main>
 
 <footer class="site-footer">
   <div class="wrap footer-inner">
     <div class="footer-links">
-      <a href="index.html#connectors">Connectors</a>
-      <a href="how-it-works.html">How it works</a>
       <a href="pricing.html">Pricing</a>
       <a href="faq.html">FAQ</a>
       <a href="about.html">About</a>

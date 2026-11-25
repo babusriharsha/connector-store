@@ -4,25 +4,38 @@
 (function () {
   "use strict";
 
-  /* ---------- Copy buttons (install prompts) ---------- */
+  /* ---------- Copy buttons (install prompts + front-page Connect) ---------- */
   document.querySelectorAll("[data-copy-target]").forEach(function (btn) {
     btn.addEventListener("click", function () {
       var target = document.getElementById(btn.getAttribute("data-copy-target"));
       var status = btn.parentElement.querySelector(".copy-status");
       if (!target) return;
-      var text = target.innerText;
-      function done(msg) { if (status) status.textContent = msg; }
+      /* Hidden prompt stores have no innerText in some browsers — fall back
+         to textContent so the Connect buttons still copy the full prompt. */
+      var text = target.innerText || target.textContent;
+      var isConnect = btn.hasAttribute("data-connect");
+      var okMsg = isConnect
+        ? "Prompt copied — paste it in your Muse"
+        : "Copied. Now paste it into your Muse chat.";
+      function done(msg) {
+        if (status) status.textContent = msg;
+        if (isConnect && msg === okMsg) {
+          var original = btn.textContent;
+          btn.textContent = "✓ Copied";
+          setTimeout(function () { btn.textContent = original; }, 2600);
+        }
+      }
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(text).then(
-          function () { done("Copied. Now paste it into your Muse chat."); },
+          function () { done(okMsg); },
           function () { fallback(); }
         );
       } else { fallback(); }
       function fallback() {
         var ta = document.createElement("textarea");
         ta.value = text; document.body.appendChild(ta); ta.select();
-        try { document.execCommand("copy"); done("Copied. Now paste it into your Muse chat."); }
-        catch (e) { done("Copy didn't work — select the text above and copy it manually."); }
+        try { document.execCommand("copy"); done(okMsg); }
+        catch (e) { done(isConnect ? "Copy didn't work — open the connector page and copy the prompt from there." : "Copy didn't work — select the text above and copy it manually."); }
         document.body.removeChild(ta);
       }
     });
