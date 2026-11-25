@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""License check for the Mailchimp connector (Connector Store, CALL SNAP SYSTEMS LLC).
+"""License check for the Mailchimp connector (Plugvana, CALL SNAP SYSTEMS LLC).
 
 How licensing works
 -------------------
@@ -79,7 +79,7 @@ SUBSCRIBE_URL = "https://connector-store.example.com/mailchimp"  # TODO: real st
 BOUND_ELSEWHERE_MESSAGE = (
     "This license key is already bound to a different Mailchimp "
     "account. A license covers one account, so it cannot be used for "
-    "this account. Subscribe for this account at the Connector Store "
+    "this account. Subscribe for this account at Plugvana "
     "by CALL SNAP SYSTEMS LLC, or contact support if you believe this "
     "is a mistake."
 )

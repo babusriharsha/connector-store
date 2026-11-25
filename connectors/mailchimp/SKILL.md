@@ -1,6 +1,6 @@
 # Mailchimp Briefs and Alerts
 
-Workflows for the Mailchimp connector (`custom.mailchimp`, see CONNECTOR.md in
+Workflows for ListSignal for Mailchimp (`custom.mailchimp`, see CONNECTOR.md in
 this package). Each workflow is written so another Muse can run it on a
 schedule (a cron job in the user's own Muse) or on demand. All data comes
 from the connector helper:

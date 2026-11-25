@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Mailchimp connector CLI for Muse (Connector Store, CALL SNAP SYSTEMS LLC).
+"""Mailchimp connector CLI for Muse (Plugvana, CALL SNAP SYSTEMS LLC).
 
 Reads and approval-gated draft writes against the Mailchimp Marketing API
 v3.0, through the registered Muse connection `custom.mailchimp`. The API key
