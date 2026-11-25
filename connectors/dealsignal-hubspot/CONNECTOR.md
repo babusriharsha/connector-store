@@ -75,6 +75,10 @@ The scheduled workflow in SKILL.md (Pipeline Morning Brief) is defined in the co
 
 Live use runs on a **30-day free trial** that starts the first day a live command runs (`bin/license_check.py` keeps the date in a local state file). After the trial, live commands refuse politely (exit 3) and print how to subscribe: $19/month per account at Plugvana by CALL SNAP SYSTEMS LLC. Demo mode always works. Subscribers add their license key to the `custom.dealsignal-hubspot` connection (entry `license_key`) or save it with `python3 bin/license_check.py set-key <KEY>`. Validation is cached for 24 hours with a 7-day offline grace period. Validation runs against the live Plugvana license service (plugvana-licenses.vercel.app); the local trial rules gate use only when the service is unreachable. License identity: `shop_hash` is a one-way SHA-256 of the account identity from config.json/env (HUBSPOT_ACCOUNT_IDENTITY), computed locally; when no identity is known the hash is empty rather than blocking a command, and the raw identity is never sent.
 
+## Connector log
+
+Installs, subscription changes and disconnects for this connector are recorded in the user's "My Plugvana Connectors" log chat (see INSTALL.md, "Record the install in the connector log"). The log is append-only: entries survive disconnects, and the log chat is never deleted or archived. Never print a full license key in the log — after subscribing, the entry reads "License key: active (full key is in your checkout email)".
+
 ## Limits and notes
 
 - Live endpoints are documented HubSpot CRM v3 paths, but no live HubSpot portal was available at build time, so response fields beyond the documented results/properties/id shape are unverified live.
