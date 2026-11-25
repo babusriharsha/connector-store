@@ -5,7 +5,7 @@
 **The store website is the public front door: [connector-store.vercel.app](https://connector-store.vercel.app/)** — this repository is the distribution package behind it, not the storefront.
 
 Published by **CALL SNAP SYSTEMS LLC**, Eureka, Missouri, USA.
-*Independent store. Not affiliated with Meta, WooCommerce, Automattic, Etsy, or Mailchimp.*
+*Independent store. Not affiliated with Meta or with any platform our connectors work with.*
 
 | <img src="assets/icons/woocommerce.svg" width="72" alt="ShopSignal for WooCommerce"> | <img src="assets/icons/etsy.svg" width="72" alt="SellSignal for Etsy"> | <img src="assets/icons/mailchimp.svg" width="72" alt="ListSignal for Mailchimp"> |
 | :---: | :---: | :---: |
