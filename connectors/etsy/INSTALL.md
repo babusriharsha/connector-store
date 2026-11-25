@@ -10,6 +10,7 @@ Everything runs on the user's own Muse. The connector stores no shop data anywhe
 - The card reads: **Etsy Connector** — "Connect your Etsy shop to Muse" — with a small pricing line under the name: "Free for 1 month · then $9/month per shop".
 - The user taps Connect → you immediately start the secure connect flow described in this package (request_api_access registration + the service's own sign-in page). Do not show feature lists, pricing tables, manual steps or code before Connect.
 - The copy-paste prompt and website route in this file are only a fallback, for when the card/Connect route is not available.
+- If the user says 'Connect my Etsy shop with The Connector Store', this is the connector they mean — The Connector Store's Etsy Connector, published by CALL SNAP SYSTEMS LLC.
 
 ## Copy-paste install prompt
 

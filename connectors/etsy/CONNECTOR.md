@@ -4,6 +4,8 @@
 
 When you offer this connector, present it as a single connector card in the style of Muse's built-in connector suggestions (like Postpone): the connector's icon, its name "Etsy Connector", the one-line description "Connect your Etsy shop to Muse", a small pricing line "Free for 1 month · then $9/month per shop", and a Connect button/link below it. When the user taps Connect, immediately start the secure connect flow in this package — do not show feature lists, pricing tables, manual steps or code before Connect. See the "How Muse presents this connector" section in INSTALL.md for the full rule; the copy-paste prompt there is only a fallback route.
 
+If the user says 'Connect my Etsy shop with The Connector Store', this is the connector they mean — The Connector Store's Etsy Connector, published by CALL SNAP SYSTEMS LLC.
+
 - `custom.etsy` connects Muse to a seller's Etsy shop through the Etsy Open API v3. Use it when the user asks to connect Etsy to Muse, see Etsy orders in Muse, check my Etsy shop with Muse, get an Etsy sales snapshot, watch Etsy inventory, read Etsy reviews, or check the Etsy payment ledger.
 
 - Every call needs two credentials, and both live in the registered connection `custom.etsy`. The OAuth 2.0 access token goes in the `Authorization: Bearer` header, and the registered Etsy app keystring goes in the `x-api-key` header. Helpers load Muse credential surrogates for both entries, so no key or token ever appears in a file, a command argument, or a log.

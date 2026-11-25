@@ -24,17 +24,17 @@
     {
       id: "woocommerce", name: "WooCommerce Connector", category: "Online stores",
       page: "woocommerce.html",
-      keywords: "woocommerce wordpress wp store shop orders refunds products inventory stock low stock alerts best sellers customers lapsed customers coupons morning store brief connect my shop connect my store sales snapshot revenue"
+      keywords: "woocommerce wordpress wp store shop orders refunds products inventory stock low stock alerts best sellers customers lapsed customers coupons morning store brief connect my shop connect my store connect my woocommerce store with the connector store sales snapshot revenue"
     },
     {
       id: "etsy", name: "Etsy Connector", category: "Online stores",
       page: "etsy.html",
-      keywords: "etsy shop seller receipts orders listings inventory quantities low quantity alerts reviews payment ledger morning shop brief connect my shop connect my etsy sales snapshot"
+      keywords: "etsy shop seller receipts orders listings inventory quantities low quantity alerts reviews payment ledger morning shop brief connect my shop connect my etsy connect my etsy shop with the connector store sales snapshot"
     },
     {
       id: "mailchimp", name: "Mailchimp Connector", category: "Email marketing",
       page: "mailchimp.html",
-      keywords: "mailchimp email marketing audience subscribers growth campaign reports opens clicks bounces top campaigns list health draft campaign newsletter connect mailchimp"
+      keywords: "mailchimp email marketing audience subscribers growth campaign reports opens clicks bounces top campaigns list health draft campaign newsletter connect mailchimp connect my mailchimp account with the connector store"
     }
   ];
 

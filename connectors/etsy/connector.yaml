@@ -1,7 +1,7 @@
 id: "custom.etsy"
 title: "Etsy"
 description: "Connect an Etsy shop to Muse. Check Etsy orders, sales snapshots, listings, inventory levels, reviews and the shop payment ledger, and make approval-gated price and quantity changes. For anyone who asks how to connect Etsy to Muse, check my Etsy shop with Muse, see Etsy orders in Muse, or watch Etsy inventory and reviews."
-aliases: ["Etsy shop", "Etsy seller", "Etsy store", "connect Etsy to Muse", "Etsy orders in Muse", "check my Etsy shop with Muse", "Etsy inventory alerts", "Etsy sales snapshot"]
+aliases: ["Etsy shop", "Etsy seller", "Etsy store", "connect Etsy to Muse", "Etsy orders in Muse", "check my Etsy shop with Muse", "Etsy inventory alerts", "Etsy sales snapshot", "Connect my Etsy shop with The Connector Store"]
 include_in_prompt: true
 require_auth: true
 api_hosts: ["openapi.etsy.com", "www.etsy.com", "etsy.com"]
