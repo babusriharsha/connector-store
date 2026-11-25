@@ -1,0 +1,33 @@
+# PDFSignal connector for Muse -- descriptor.
+#
+# - id: the provider slug (custom.pdfsignal). File tools have no
+#   platform account: require_auth is false and the only connection
+#   entry is the OPTIONAL license_key, used after the free trial.
+# - description: what connector search matches on. The aliases below
+#   carry the phrases owners actually use, so a Muse asked "how do
+#   I connect my files/tools?" finds this connector.
+id: "custom.pdfsignal"
+title: "PDFSignal"
+description: "Connects your PDF tools to Muse — page counts, metadata, text extraction and making simple PDFs from text, on your own files. Local file tools by Plugvana — no account, runs on your own machine."
+include_in_prompt: true
+require_auth: false
+aliases:
+  - "PDFSignal for Muse"
+  - "Connect my PDF tools with Plugvana"
+  - "convert all files in this folder to PDF"
+  - "batch convert to PDF"
+  - "convert every invoice automatically"
+  - "always save my reports as PDF"
+  - "extract text from every PDF in this folder"
+  - "PDF tools for Muse"
+  - "extract text from PDF"
+  - "make a PDF from text"
+  - "PDF page count"
+auth_entries:
+  - name: "license_key"
+    placement: { query_param: "license_key" }
+    optional: true
+# This connector makes no network calls except the license check
+# (bin/license_check.py, whose endpoint host is registered at deploy
+# time). All file processing is local.
+api_hosts: []
