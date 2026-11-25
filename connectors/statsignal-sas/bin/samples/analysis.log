@@ -1,0 +1,30 @@
+1          ;*';*";*/;quit;run;
+2          OPTIONS PAGENO=MIN;
+NOTE: Copyright (c) 2024 SAS Institute Inc. (fictional sample log)
+NOTE: SAS (r) Proprietary Software 9.4 (fictional sample)
+NOTE: This session is executing on the X64 platform.
+LIBNAME out "/data/northgate/out";
+NOTE: Libref OUT was successfully assigned as follows:
+      Engine:        V9
+      Physical Name: /data/northgate/out
+DATA an.cohort;
+    SET out.patients_clean;
+NOTE: There were 128 observations read from the data set OUT.PATIENTS_CLEAN.
+NOTE: The data set AN.COHORT has 128 observations and 9 variables.
+PROC MEANS DATA=out.visits_clean N MEAN;
+WARNING: Variable visit_count has missing values for 4 observations.
+NOTE: There were 342 observations read from the data set OUT.VISITS_CLEAN.
+ERROR: Variable SITE_ID not found on data set OUT.VISITS_CLEAN.
+       The MEANS procedure stopped because of the error above.
+PROC SORT DATA=an.cohort OUT=an.cohort_sorted;
+WARNING: Data set AN.COHORT was not sorted in ascending sequence.
+NOTE: Input data set is already sorted, resorting is unnecessary.
+WARNING: Duplicate BY values were found in AN.COHORT_SORTED.
+NOTE: The data set AN.COHORT_SORTED has 128 observations and 9 variables.
+ERROR: File AN.COHORT_SORTED.DATA does not exist in the reporting library.
+       Check the reporting library assignment before rerunning.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.42 seconds
+      user cpu time       0.11 seconds
+      system cpu time     0.03 seconds
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC (fictional sample footer)

@@ -1,0 +1,1 @@
+{"note":"Fictional demo data. Demo mode operates on bin/samples/ fixtures — the fictional 'Northgate Clinical Analytics' sample estate. No real code, data or logs are included.","samples":["etl_load.sas","analysis.sas","macros.sas","old_report.sas","analysis.log"]}
