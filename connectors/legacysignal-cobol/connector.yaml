@@ -1,0 +1,35 @@
+# LegacySignal for COBOL connector for Muse -- descriptor.
+#
+# - id: the provider slug (custom.legacysignal-cobol). Local file
+#   tools have no platform account: require_auth is false and the
+#   only connection entry is the OPTIONAL license_key, used after
+#   the free trial.
+# - description: what connector search matches on. The aliases below
+#   carry the phrases owners actually use, so a Muse asked "how do
+#   I connect my COBOL codebase?" finds this connector.
+id: "custom.legacysignal-cobol"
+title: "LegacySignal for COBOL"
+description: "Estate inventory, generated documentation and impact analysis for a COBOL codebase — every program, copybook and JCL job mapped, call graphs and DB2 usage laid out, dead code flagged and a modernisation brief drafted, all read-only on your own machine. Local file tools by Plugvana — no account, your code never leaves your machine."
+include_in_prompt: true
+require_auth: false
+aliases:
+  - "LegacySignal for COBOL"
+  - "Connect my COBOL codebase with Plugvana"
+  - "COBOL estate inventory"
+  - "document my COBOL programs"
+  - "copybook impact analysis"
+  - "who calls this program"
+  - "modernize my COBOL"
+  - "JCL job flow"
+  - "DB2 table usage"
+  - "COBOL call graph"
+  - "find dead COBOL programs"
+  - "mainframe code documentation"
+auth_entries:
+  - name: "license_key"
+    placement: { query_param: "license_key" }
+    optional: true
+# This connector makes no network calls except the license check
+# (bin/license_check.py, whose endpoint host is registered at deploy
+# time). All code analysis is local.
+api_hosts: []

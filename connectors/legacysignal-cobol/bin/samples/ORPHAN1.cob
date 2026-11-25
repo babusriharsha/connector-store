@@ -1,0 +1,21 @@
+      * ORPHAN1 - OLD CLEANUP PROGRAM, NOTHING CALLS IT ANY MORE.
+      * KEPT IN THE ESTATE SO DEAD-CODE CHECKS CAN FIND IT.
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. ORPHAN1.
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01  WS-OLD-ID            PIC 9(6).
+       PROCEDURE DIVISION.
+       MAIN-PARA.
+           PERFORM PURGE-OLD
+           STOP RUN.
+       PURGE-OLD.
+           EXEC SQL
+               DELETE FROM PAYMENTS
+                WHERE PAY_DATE < 20000101
+           END-EXEC
+           EXEC SQL
+               UPDATE CUSTOMERS
+                  SET CUST_STATUS = 'INACTIVE'
+                WHERE CUST_ID = :WS-OLD-ID
+           END-EXEC.
