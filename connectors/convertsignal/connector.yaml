@@ -1,0 +1,33 @@
+# ConvertSignal connector for Muse -- descriptor.
+#
+# - id: the provider slug (custom.convertsignal). File tools have no
+#   platform account: require_auth is false and the only connection
+#   entry is the OPTIONAL license_key, used after the free trial.
+# - description: what connector search matches on. The aliases below
+#   carry the phrases owners actually use, so a Muse asked "how do
+#   I connect my files/tools?" finds this connector.
+id: "custom.convertsignal"
+title: "ConvertSignal"
+description: "Connects your document converter to Muse — convert between text, Markdown and HTML, and extract the text from Word (.docx) files, on your own files. Local file tools by Plugvana — no account, runs on your own machine."
+include_in_prompt: true
+require_auth: false
+aliases:
+  - "ConvertSignal for Muse"
+  - "Connect my document converter with Plugvana"
+  - "convert all files in this folder"
+  - "batch convert documents"
+  - "convert every docx automatically"
+  - "always turn my Markdown into HTML"
+  - "convert new files as they arrive"
+  - "document converter for Muse"
+  - "Markdown to HTML"
+  - "docx text extractor"
+  - "convert documents"
+auth_entries:
+  - name: "license_key"
+    placement: { query_param: "license_key" }
+    optional: true
+# This connector makes no network calls except the license check
+# (bin/license_check.py, whose endpoint host is registered at deploy
+# time). All file processing is local.
+api_hosts: []
