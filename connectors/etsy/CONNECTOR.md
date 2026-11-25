@@ -188,6 +188,10 @@ python3 bin/etsy.py set-quantity <listing_id> --quantity 10 --yes
 python3 bin/license_check.py status
 ```
 
+## Connector log
+
+Installs, subscription changes and disconnects for this connector are recorded in the user's "My Plugvana Connectors" log chat (see INSTALL.md, "Record the install in the connector log"). The log is append-only: entries survive disconnects, and the log chat is never deleted or archived. Never print a full license key in the log — after subscribing, the entry reads "License key: active (full key is in your checkout email)".
+
 ## Recover from errors
 
 - An error prints a JSON object with `ok: false`, an `error` code and a plain `message`. Exit code 1 means the command failed. Exit code 3 means the license or trial stopped it.

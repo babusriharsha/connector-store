@@ -95,6 +95,10 @@ Scheduled briefs (the Weekly Cash Brief) are defined in the companion **SKILL.md
 
 Live use runs on a **30-day free trial** that starts the first day a live command runs (`bin/license_check.py` keeps the date in a local state file). After the trial, live commands refuse politely and print how to subscribe; demo mode always works. Subscribers add their license key to the `custom.ledgersignal-sage` connection (entry `license_key`) or save it with `python3 bin/license_check.py set-key <KEY>`. Validation is cached for 24 hours with a 7-day offline grace period. Validation runs against the live Plugvana license service (plugvana-licenses.vercel.app); the local trial rules gate use only when the service is unreachable. One license covers one business: the license check hashes the connected account/business identity from `config.json` locally; the raw identity is never sent.
 
+## Connector log
+
+Installs, subscription changes and disconnects for this connector are recorded in the user's "My Plugvana Connectors" log chat (see INSTALL.md, "Record the install in the connector log"). The log is append-only: entries survive disconnects, and the log chat is never deleted or archived. Never print a full license key in the log — after subscribing, the entry reads "License key: active (full key is in your checkout email)".
+
 ## Limits and notes
 
 - **Endpoint correction (verified 2026-11-24 against developer.sage.com):** in API v3.1 the business resource is `GET /businesses` (and `/businesses/{id}`); there is no v3.1 `GET /business` — earlier drafts of this package said `/business`, and the CLI uses `/businesses`.

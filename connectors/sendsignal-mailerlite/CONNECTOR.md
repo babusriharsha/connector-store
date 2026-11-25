@@ -70,6 +70,10 @@ python3 bin/mailerlite.py status
 
 - Exit code 3 with a `license_inactive` error means the trial ended with no valid license. Show the user the subscribe message from the output. Do not work around it. Demo mode never checks a license.
 
+## Connector log
+
+Installs, subscription changes and disconnects for this connector are recorded in the user's "My Plugvana Connectors" log chat (see INSTALL.md, "Record the install in the connector log"). The log is append-only: entries survive disconnects, and the log chat is never deleted or archived. Never print a full license key in the log — after subscribing, the entry reads "License key: active (full key is in your checkout email)".
+
 ## Commands
 
 - `status` — account summary (total subscribers, groups, campaigns) plus license state: `python3 bin/mailerlite.py status`
