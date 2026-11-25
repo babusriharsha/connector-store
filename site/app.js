@@ -19,6 +19,22 @@
     });
   });
 
+  /* ---------- Mobile navigation toggle ---------- */
+  var navToggle = document.querySelector(".nav-toggle");
+  var siteHeader = document.querySelector(".site-header");
+  if (navToggle && siteHeader) {
+    navToggle.addEventListener("click", function () {
+      var open = siteHeader.classList.toggle("nav-open");
+      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    siteHeader.querySelectorAll(".main-nav a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        siteHeader.classList.remove("nav-open");
+        navToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+
   /* ---------- Home catalog: live search + category chips ---------- */
   var SEARCH_INDEX = [
     {
@@ -27,7 +43,7 @@
       keywords: "woocommerce wordpress wp store shop orders refunds products inventory stock low stock alerts best sellers customers lapsed customers coupons morning store brief connect my shop connect my store connect my woocommerce store with plugvana sales snapshot revenue"
     },
     {
-      id: "etsy", name: "SellSignal for Etsy", category: "Online stores",
+      id: "etsy", name: "SellSignal for Etsy", category: "Online stores", comingSoon: true,
       page: "etsy.html",
       keywords: "etsy shop seller receipts orders listings inventory quantities low quantity alerts reviews payment ledger morning shop brief connect my shop connect my etsy connect my etsy shop with plugvana sales snapshot"
     },
@@ -183,6 +199,14 @@
       var show = (activeFilter === "All" || entry.category === activeFilter) && (q === "" || matches(entry, q));
       card.style.display = show ? "" : "none";
       if (show) visible++;
+    });
+    /* Hide a category section entirely when none of its cards are visible. */
+    grid.querySelectorAll("[data-cat-section]").forEach(function (section) {
+      var anyVisible = Array.prototype.some.call(
+        section.querySelectorAll("[data-card]"),
+        function (c) { return c.style.display !== "none"; }
+      );
+      section.style.display = anyVisible ? "" : "none";
     });
     if (noResults) noResults.style.display = visible === 0 ? "" : "none";
   }

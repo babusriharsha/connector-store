@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Plugvana">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4f46e5"/>
+      <stop offset="1" stop-color="#6d28d9"/>
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" rx="11" fill="url(#g)"/>
+  <path d="M19.5 10v6M28.5 10v6" stroke="#ffffff" stroke-width="3.4" stroke-linecap="round"/>
+  <path d="M14.5 16h19v5.2c0 5.1-4.2 8.8-9.5 8.8s-9.5-3.7-9.5-8.8V16z" fill="#ffffff"/>
+  <path d="M24 30v7.5" stroke="#ffffff" stroke-width="3.4" stroke-linecap="round"/>
+  <circle cx="36.5" cy="11.5" r="2.6" fill="#fbbf24"/>
+</svg>
