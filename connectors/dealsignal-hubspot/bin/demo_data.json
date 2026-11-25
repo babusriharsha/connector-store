@@ -1,0 +1,145 @@
+{
+  "_note": "All data in this file is fictional sample data for --demo mode. People, companies and deals are invented.",
+  "contacts": [
+    {
+      "id": "101",
+      "properties": {
+        "email": "maya.rivera@northwindstudio.example",
+        "firstname": "Maya",
+        "lastname": "Rivera",
+        "company": "Northwind Studio",
+        "phone": "+1-555-0101",
+        "lifecyclestage": "customer",
+        "createdate": "2026-11-01T09:00:00Z",
+        "lastmodifieddate": "2026-11-20T10:00:00Z"
+      }
+    },
+    {
+      "id": "102",
+      "properties": {
+        "email": "tom.okafor@beaconlabs.example",
+        "firstname": "Tom",
+        "lastname": "Okafor",
+        "company": "Beacon Labs",
+        "phone": "+1-555-0102",
+        "lifecyclestage": "lead",
+        "createdate": "2026-11-10T09:00:00Z",
+        "lastmodifieddate": "2026-11-21T10:00:00Z"
+      }
+    },
+    {
+      "id": "103",
+      "properties": {
+        "email": "priya.nair@harborclinic.example",
+        "firstname": "Priya",
+        "lastname": "Nair",
+        "company": "Harbor Clinic",
+        "phone": "+1-555-0103",
+        "lifecyclestage": "opportunity",
+        "createdate": "2026-11-15T09:00:00Z",
+        "lastmodifieddate": "2026-11-22T10:00:00Z"
+      }
+    }
+  ],
+  "companies": [
+    {
+      "id": "201",
+      "properties": {
+        "name": "Northwind Studio",
+        "domain": "northwindstudio.example",
+        "industry": "Design Services",
+        "city": "Austin",
+        "createdate": "2026-10-01T09:00:00Z"
+      }
+    },
+    {
+      "id": "202",
+      "properties": {
+        "name": "Beacon Labs",
+        "domain": "beaconlabs.example",
+        "industry": "Software",
+        "city": "Denver",
+        "createdate": "2026-10-12T09:00:00Z"
+      }
+    },
+    {
+      "id": "203",
+      "properties": {
+        "name": "Harbor Clinic",
+        "domain": "harborclinic.example",
+        "industry": "Healthcare",
+        "city": "Seattle",
+        "createdate": "2026-11-02T09:00:00Z"
+      }
+    }
+  ],
+  "deals": [
+    {
+      "id": "301",
+      "properties": {
+        "dealname": "Northwind Studio - Annual Plan",
+        "amount": "24000",
+        "dealstage": "negotiation",
+        "pipeline": "default",
+        "closedate": "2026-12-15",
+        "createdate": "2026-11-05T09:00:00Z"
+      }
+    },
+    {
+      "id": "302",
+      "properties": {
+        "dealname": "Beacon Labs - Pilot",
+        "amount": "8500",
+        "dealstage": "qualifiedtobuy",
+        "pipeline": "default",
+        "closedate": "2026-12-01",
+        "createdate": "2026-11-12T09:00:00Z"
+      }
+    },
+    {
+      "id": "303",
+      "properties": {
+        "dealname": "Harbor Clinic - Rollout",
+        "amount": "41000",
+        "dealstage": "presentationscheduled",
+        "pipeline": "default",
+        "closedate": "2027-01-10",
+        "createdate": "2026-11-18T09:00:00Z"
+      }
+    }
+  ],
+  "pipelines": {
+    "results": [
+      {
+        "id": "default",
+        "label": "Sales Pipeline",
+        "stages": [
+          {
+            "id": "appointmentscheduled",
+            "label": "Appointment Scheduled"
+          },
+          {
+            "id": "qualifiedtobuy",
+            "label": "Qualified To Buy"
+          },
+          {
+            "id": "presentationscheduled",
+            "label": "Presentation Scheduled"
+          },
+          {
+            "id": "negotiation",
+            "label": "Negotiation"
+          },
+          {
+            "id": "closedwon",
+            "label": "Closed Won"
+          },
+          {
+            "id": "closedlost",
+            "label": "Closed Lost"
+          }
+        ]
+      }
+    ]
+  }
+}
