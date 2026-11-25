@@ -13,7 +13,7 @@
 #   connection's API host (see INSTALL.md, step 3). The placeholder
 #   below documents that requirement; it is replaced per install.
 id: "custom.woocommerce"
-title: "WooCommerce"
+title: "ShopSignal for WooCommerce"
 description: "Connect a WooCommerce store to Muse: check today's sales, orders, refunds, best sellers, low stock and customers, and make approval-gated changes to coupons, prices and stock. For store owners who want to ask their Muse 'what sold today?' and get a real answer from their own store."
 include_in_prompt: true
 require_auth: true
@@ -21,7 +21,7 @@ aliases:
   - "WooCommerce for Muse"
   - "connect WooCommerce to Muse"
   - "connect my WooCommerce store"
-  - "Connect my WooCommerce store with The Connector Store"
+  - "Connect my WooCommerce store with Plugvana"
   - "WooCommerce orders in Muse"
   - "check my WooCommerce store with Muse"
   - "WooCommerce inventory alerts"

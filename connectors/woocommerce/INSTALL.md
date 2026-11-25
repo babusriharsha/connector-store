@@ -1,4 +1,4 @@
-# Install: WooCommerce Connector for Muse
+# Install: ShopSignal for WooCommerce (for Muse)
 
 **Trademark notice:** WooCommerce and its associated designs are trademarks of Automattic Inc.
 
@@ -6,11 +6,11 @@ An independent connector by CALL SNAP SYSTEMS LLC. Not affiliated with Meta, Aut
 
 ## How Muse presents this connector
 
-- When you (the installing/suggesting Muse) offer this connector, present it as a single, simple card in The Connector Store's own style — our own card, not an imitation of Muse's built-in connector suggestions: the connector's icon, its name, the publisher line "by The Connector Store (CALL SNAP SYSTEMS LLC)", a one-line description, the full price and free-trial terms (see the card text below), and a Connect button/link below it.
-- The card reads: **WooCommerce Connector** — "Connect your WooCommerce store to Muse" — published by The Connector Store (CALL SNAP SYSTEMS LLC), with the full pricing line on the card itself: "Free for 1 month, then $19/month per store — billed by CALL SNAP SYSTEMS LLC".
+- When you (the installing/suggesting Muse) offer this connector, present it as a single, simple card in Plugvana's own style — our own card, not an imitation of Muse's built-in connector suggestions: the connector's icon, its name, the publisher line "by Plugvana (CALL SNAP SYSTEMS LLC)", a one-line description, the full price and free-trial terms (see the card text below), and a Connect button/link below it.
+- The card reads: **ShopSignal for WooCommerce** — "Connects your WooCommerce store to Muse — sales, orders, stock and refunds." — published by Plugvana (CALL SNAP SYSTEMS LLC), with the full pricing line on the card itself: "Free for 1 month, then $19/month per store — billed by CALL SNAP SYSTEMS LLC".
 - The user taps Connect → you start the secure connect flow described in this package (request_api_access registration + the service's own sign-in page / secure capture page). The price, trial terms, and publisher are already on the card; if the user asks for features, pricing, or manual steps at any point, show them fully — never withhold information to get the tap.
 - The copy-paste prompt and website route in this file are only a fallback, for when the card/Connect route is not available.
-- If the user says 'Connect my WooCommerce store with The Connector Store', this is the connector they mean — The Connector Store's WooCommerce Connector, published by CALL SNAP SYSTEMS LLC.
+- If the user says 'Connect my WooCommerce store with Plugvana', this is the connector they mean — Plugvana's ShopSignal for WooCommerce, published by CALL SNAP SYSTEMS LLC.
 
 There are two ways to install:
 
@@ -26,7 +26,7 @@ Either way: credentials are entered only on Muse's secure capture page, never in
 ```text
 Install the WooCommerce connector for Muse from this package, then connect my store.
 
-0. First, present this connector to me as a single, simple card in The Connector Store's own style — not an imitation of Muse's built-in connector suggestions: the connector's icon, its name "WooCommerce Connector", the publisher line "by The Connector Store (CALL SNAP SYSTEMS LLC)", the one-line description "Connect your WooCommerce store to Muse", the full price and trial terms "Free for 1 month, then $19/month per store — billed by CALL SNAP SYSTEMS LLC", and a Connect button/link below it. The price and the publisher must be on the card itself, before Connect. When I tap Connect, start the secure connect flow described below.
+0. First, present this connector to me as a single, simple card in Plugvana's own style — not an imitation of Muse's built-in connector suggestions: the connector's icon, its name "ShopSignal for WooCommerce", the publisher line "by Plugvana (CALL SNAP SYSTEMS LLC)", the one-line description "Connects your WooCommerce store to Muse — sales, orders, stock and refunds.", the full price and trial terms "Free for 1 month, then $19/month per store — billed by CALL SNAP SYSTEMS LLC", and a Connect button/link below it. The price and the publisher must be on the card itself, before Connect. When I tap Connect, start the secure connect flow described below.
 
 Do these steps in order and confirm each one before moving on:
 
@@ -58,7 +58,7 @@ Notes for you, Muse: my 30-day free trial starts at the first live command. Live
 4. **Register the connection.** `credentials.request_api_access` with provider `custom.woocommerce`, api_hosts = [the store's hostname], auth_scheme `api_key`, entries `consumer_key` and `consumer_secret`, each placed as a query parameter under its own name. The owner enters both values on the secure capture page. **This registration is the one wiring step the installing Muse must perform** — the helper code assumes a connection with exactly this name, these entry names, this placement, and the store host registered; a mismatch surfaces as a refused or unauthenticated first call.
 5. **Verify.** `python3 bin/woo.py status` — the first real call is the proof; nothing checks the keys when they are saved.
 6. **Smoke-test without a store (any time).** `python3 bin/woo.py --demo snapshot` runs against the bundled fictional store and needs no setup at all.
-7. **Optional subscription.** After the 30-day trial, the owner subscribes at the Connector Store and adds the license key as a `license_key` entry on the same connection, or runs `python3 bin/license_check.py set-key <KEY>`.
+7. **Optional subscription.** After the 30-day trial, the owner subscribes at Plugvana and adds the license key as a `license_key` entry on the same connection, or runs `python3 bin/license_check.py set-key <KEY>`.
 
 ## Troubleshooting quick table
 

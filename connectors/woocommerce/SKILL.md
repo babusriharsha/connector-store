@@ -1,6 +1,6 @@
 # WooCommerce Store Workflows
 
-Scheduled workflows for a store connected through the WooCommerce connector for Muse (`custom.woocommerce`). Each workflow is a set of `woo.py` commands plus a reporting rule. Run them from the connector's `bin/` folder. All output is JSON; translate it into plain English for the owner — never paste raw JSON into a report unless the owner asks.
+Scheduled workflows for a store connected through ShopSignal for WooCommerce (`custom.woocommerce`). Each workflow is a set of `woo.py` commands plus a reporting rule. Run them from the connector's `bin/` folder. All output is JSON; translate it into plain English for the owner — never paste raw JSON into a report unless the owner asks.
 
 Ground rules for every workflow:
 

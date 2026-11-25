@@ -4,7 +4,7 @@
 How licensing works (honest summary)
 ------------------------------------
 This connector runs entirely on the customer's own Muse. Nothing about
-licensing changes that. This module talks to the hosted Connector Store
+licensing changes that. This module talks to the hosted Plugvana
 license server (see ``LICENSE_API_BASE`` below):
 
 * On the first live (non-demo) run, this module POSTs ``/v1/activate``
@@ -91,13 +91,13 @@ OFFLINE_GRACE_DAYS = 7
 BOUND_ELSEWHERE_MESSAGE = (
     "This license key is already bound to a different shop. A license "
     "covers one shop, so it cannot be used for this store. Subscribe "
-    "for this shop at the Connector Store by CALL SNAP SYSTEMS LLC, or "
+    "for this shop at Plugvana by CALL SNAP SYSTEMS LLC, or "
     "contact support if you believe this is a mistake (for example if "
     "you moved your store to a new address)."
 )
 SUBSCRIBE_MESSAGE = (
     "Your 30-day free trial of the WooCommerce connector for Muse has ended. "
-    "To keep using it, subscribe at the Connector Store by CALL SNAP SYSTEMS LLC "
+    "To keep using it, subscribe at Plugvana by CALL SNAP SYSTEMS LLC "
     "(the store page where you installed this connector), then add your license "
     "key to the custom.woocommerce connection and run any command again."
 )
