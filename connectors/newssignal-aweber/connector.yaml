@@ -1,0 +1,10 @@
+# AWeber connector for Muse (Plugvana, CALL SNAP SYSTEMS LLC).
+id: "custom.newssignal-aweber"
+title: "NewsSignal for AWeber"
+description: "Connect AWeber to Muse. Read AWeber audiences, subscriber counts and growth, campaign/broadcast lists and full campaign reports (opens, clicks, bounces, unsubscribes) in plain numbers, with approval-gated writes. Also known as: AWeber for Muse, AWeber campaign reports in Muse, check my AWeber audience with Muse, email marketing reports, newsletter analytics, audience growth, AWeber API."
+include_in_prompt: true
+require_auth: true
+aliases: ["AWeber for Muse", "AWeber campaign reports", "Email marketing", "Newsletter analytics", "Audience growth", "Connect my AWeber with Plugvana"]
+auth_scheme: "oauth2"
+placement: "bearer_header"
+api_hosts: ["api.aweber.com"]

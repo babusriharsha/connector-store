@@ -1,0 +1,4 @@
+{
+  "_comment": "Copy this file to config.json beside CONNECTOR.md after connecting. The account_id is routing info discovered via GET /accounts \u2014 it is not a secret. The OAuth credential lives only in the Muse connection custom.newssignal-aweber.",
+  "account_id": "1234567"
+}

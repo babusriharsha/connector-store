@@ -1,0 +1,96 @@
+{
+  "accounts": [
+    {
+      "id": 1234567,
+      "name": "North Fork Gardening Co.",
+      "total_subscribers": 3560
+    }
+  ],
+  "lists": [
+    {
+      "id": "awlist_01",
+      "name": "Garden Tips Weekly",
+      "subscribers_total": 2890
+    },
+    {
+      "id": "awlist_02",
+      "name": "Seed Club",
+      "subscribers_total": 670
+    }
+  ],
+  "subscribers": [
+    {
+      "id": "asub_01",
+      "email": "ruth.kim@example.com",
+      "name": "Ruth Kim",
+      "status": "active",
+      "open_rate": 0.42,
+      "click_rate": 0.06,
+      "subscribed_at": "2026-08-14"
+    },
+    {
+      "id": "asub_02",
+      "email": "david.ortiz@example.com",
+      "name": "David Ortiz",
+      "status": "active",
+      "open_rate": 0.45,
+      "click_rate": 0.05,
+      "subscribed_at": "2026-08-14"
+    },
+    {
+      "id": "asub_03",
+      "email": "emma.brown@example.com",
+      "name": "Emma Brown",
+      "status": "unsubscribed",
+      "open_rate": 0.0,
+      "click_rate": 0.0,
+      "subscribed_at": "2026-08-14"
+    }
+  ],
+  "broadcasts": [
+    {
+      "id": "bc_01",
+      "name": "November Tips",
+      "subject": "Frost is coming: protect your beds",
+      "status": "sent",
+      "emails_sent": 2820,
+      "open_rate": 0.39,
+      "click_rate": 0.038,
+      "unique_opens": 901,
+      "unique_clicks": 85,
+      "bounces": 23,
+      "unsubscribes": 9,
+      "sent_at": "2026-11-18T15:00:00Z"
+    },
+    {
+      "id": "bc_02",
+      "name": "Seed Club Offer",
+      "subject": "Seed Club: spring pre-orders open",
+      "status": "sent",
+      "emails_sent": 655,
+      "open_rate": 0.46,
+      "click_rate": 0.071,
+      "unique_opens": 247,
+      "unique_clicks": 37,
+      "bounces": 23,
+      "unsubscribes": 9,
+      "sent_at": "2026-11-09T15:00:00Z"
+    }
+  ],
+  "campaigns": [
+    {
+      "id": "fc_01",
+      "name": "Welcome follow-up series",
+      "status": "active",
+      "messages": 4,
+      "subscribers_in_series": 520
+    },
+    {
+      "id": "fc_02",
+      "name": "Re-engagement series",
+      "status": "active",
+      "messages": 3,
+      "subscribers_in_series": 88
+    }
+  ]
+}
