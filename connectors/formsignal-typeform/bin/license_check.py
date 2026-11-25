@@ -57,18 +57,18 @@ import uuid
 from datetime import datetime, timedelta, timezone
 
 # ---------------------------------------------------------------------------
-# OPERATOR: replace this placeholder base URL with the real hosted
-# license service URL before selling subscriptions (deploy time). Until
-# then remote checks fail soft and the local trial rules below are what
-# actually gate live use. Both endpoint URLs are built from this one
-# constant. NOTE (deploy time): the host of LICENSE_API_BASE must be
-# registered in the custom.typeform connection's api_hosts, or Muse
-# will refuse the outbound license requests (and never swap in the real
-# license_key credential on egress).
+# Live license service (Plugvana). Both endpoint URLs are built from
+# this one constant. The host is registered in this connection's
+# api_hosts (connector.yaml), which Muse requires before it will
+# make the outbound license requests. Remote checks fail soft: if
+# the service is unreachable, the local trial rules below are what
+# actually gate live use.
 LICENSE_API_BASE = os.environ.get(
-    "TYPEFORM_LICENSE_API_BASE", "https://licenses.example.com"
-)  # TODO: real license service URL at deploy time
+    "TYPEFORM_LICENSE_API_BASE", "https://plugvana-licenses.vercel.app"
+)
 # ---------------------------------------------------------------------------
+# Monthly plan checkout (Stripe Payment Link). Annual plans are not offered yet.
+SUBSCRIBE_URL = "https://buy.stripe.com/14AdR94Dl5bYce83BPa3u0O"
 
 
 def _check_url() -> str:
@@ -100,6 +100,7 @@ SUBSCRIBE_MESSAGE = (
     "To keep using it, subscribe at Plugvana by CALL SNAP SYSTEMS LLC "
     "(the store page where you installed this connector), then add your license "
     "key to the custom.typeform connection and run any command again."
+    f" Subscribe for $15/month: {SUBSCRIBE_URL}"
 )
 
 STATE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".license_state.json")

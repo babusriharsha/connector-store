@@ -27,4 +27,5 @@ auth_entries:
     placement: { bearer_header: "Authorization" }
     optional: true
 api_hosts:
+  - "plugvana-licenses.vercel.app"
   - "api.accounting.sage.com"

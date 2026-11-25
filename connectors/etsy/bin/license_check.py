@@ -60,7 +60,7 @@ CONNECTOR_VERSION = "1.0.0"
 # the real license_key on egress -- validation would receive the hsurr:
 # surrogate string and fail as an unknown key.
 LICENSE_API_BASE = os.environ.get(
-    "ETSY_LICENSE_API_BASE", "https://licenses.example.com"
+    "ETSY_LICENSE_API_BASE", "https://plugvana-licenses.vercel.app"
 )
 VALIDATION_URL = os.environ.get(
     "ETSY_LICENSE_VALIDATION_URL", LICENSE_API_BASE.rstrip("/") + "/v1/check"
@@ -76,12 +76,14 @@ CACHE_SECONDS = 24 * 60 * 60
 OFFLINE_GRACE_SECONDS = 7 * 24 * 60 * 60
 BOUND_ELSEWHERE_MESSAGE = (
     "This license key is already bound to a different shop. A license "
-    "covers one shop, so it cannot be used for this shop. Subscribe "
-    "for this shop at Plugvana by CALL SNAP SYSTEMS LLC, or "
-    "contact support if you believe this is a mistake."
+    "covers one shop, so it cannot be used for this shop. SellSignal "
+    "for Etsy is coming soon and is not yet available for purchase. "
+    "Contact support if you believe this is a mistake."
 )
 
-SUBSCRIBE_URL = "https://licenses.example.com/subscribe/etsy"  # TODO(publisher)
+# SellSignal for Etsy is not yet available for purchase, so there
+# is no checkout link yet. Annual plans are not offered yet.
+SUBSCRIBE_URL = ""
 
 STATE_DIR = Path(
     os.environ.get(
@@ -423,8 +425,8 @@ def enforce() -> dict:
                 "error": "license_expired",
                 "message": (
                     "The free trial of the Etsy connector for Muse has ended. "
-                    "To keep checking your Etsy shop with Muse, subscribe at "
-                    f"{SUBSCRIBE_URL} and reconnect. Your shop data is untouched "
+                    "SellSignal for Etsy is coming soon and is not yet available "
+                    "for purchase. Your shop data is untouched "
                     "and nothing was sent anywhere."
                 ),
                 "license": result,

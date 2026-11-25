@@ -24,4 +24,5 @@ auth_entries:
     placement: { query_param: "license_key" }
     optional: true
 api_hosts:
+  - "plugvana-licenses.vercel.app"
   - "api.ticktick.com"
