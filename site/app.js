@@ -1,22 +1,73 @@
-/* Plugvana — shared JS: front-page Connect buttons and the
-   home catalog search/filter. There is deliberately NO copying
-   behaviour on this site: connecting happens inside the user's own Muse,
-   so a Connect button simply tells the visitor the one sentence to say.
+/* Plugvana — shared JS: front-page Connect buttons, the
+   home catalog search/filter, and copy buttons for the say-sentence.
+   Connecting happens inside the user's own Muse; the site never shows
+   an install prompt — a Connect button simply tells the visitor the one
+   sentence to say, and the copy button copies that sentence only.
    The search index below mirrors search-index.json (kept inline so search
    also works when the site is opened straight from disk). */
 (function () {
   "use strict";
 
+  /* ---------- Copy-to-clipboard helper ---------- */
+  function copyText(text, btn) {
+    function done() {
+      if (!btn) return;
+      var old = btn.textContent;
+      btn.textContent = "✓ Copied";
+      setTimeout(function () { btn.textContent = old; }, 2000);
+    }
+    function fallback() {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); } catch (e) {}
+      document.body.removeChild(ta);
+      done();
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else {
+      fallback();
+    }
+  }
+
   /* ---------- Front-page Connect buttons: show the sentence to say ---------- */
   document.querySelectorAll("[data-say]").forEach(function (btn) {
     btn.addEventListener("click", function () {
       var say = btn.getAttribute("data-say");
-      var status = btn.parentElement.querySelector(".connect-status");
+      var foot = btn.parentElement;
+      var status = foot.querySelector(".connect-status");
       if (status) status.textContent = "Open your Muse and say: '" + say + "'";
+      var copyBtn = foot.querySelector(".copy-say-btn");
+      if (!copyBtn) {
+        copyBtn = document.createElement("button");
+        copyBtn.type = "button";
+        copyBtn.className = "copy-say-btn";
+        copyBtn.textContent = "Copy the sentence";
+        copyBtn.addEventListener("click", function () { copyText(say, copyBtn); });
+        foot.appendChild(copyBtn);
+      }
       var original = "Connect";
       btn.textContent = "✓ Got it";
       setTimeout(function () { btn.textContent = original; }, 2600);
     });
+  });
+
+  /* ---------- Detail pages: copy button beside the say-sentence ---------- */
+  document.querySelectorAll(".connect-say").forEach(function (p) {
+    var strong = p.querySelector("strong");
+    if (!strong) return;
+    var sentence = strong.textContent.replace(/[“”"]/g, "").trim();
+    if (sentence.indexOf("Connect my") !== 0) return;
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "copy-say-btn";
+    b.textContent = "Copy";
+    b.addEventListener("click", function () { copyText(sentence, b); });
+    p.appendChild(b);
   });
 
   /* ---------- Mobile navigation toggle ---------- */
