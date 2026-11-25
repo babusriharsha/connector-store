@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="NewsSignal for AWeber">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="96" y2="96" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4f46e5"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+  <rect width="96" height="96" rx="20" fill="url(#g)"/>
+  <rect x="26" y="24" width="44" height="48" rx="5" fill="none" stroke="#ffffff" stroke-width="5"/><path d="M36 36h24M36 47h24M36 58h15" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+</svg>
