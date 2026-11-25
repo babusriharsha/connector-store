@@ -1,0 +1,215 @@
+{
+  "_note": "All data in this file is fictional sample data for --demo mode. People, companies and deals are invented.",
+  "persons": [
+    {
+      "id": 11,
+      "name": "Maya Rivera",
+      "email": [
+        {
+          "value": "maya.rivera@northwindstudio.example",
+          "primary": true
+        }
+      ],
+      "phone": [
+        {
+          "value": "+1-555-0101",
+          "primary": true
+        }
+      ],
+      "org_id": {
+        "value": 21,
+        "name": "Northwind Studio"
+      },
+      "add_time": "2026-11-01 09:00:00",
+      "update_time": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 12,
+      "name": "Tom Okafor",
+      "email": [
+        {
+          "value": "tom.okafor@beaconlabs.example",
+          "primary": true
+        }
+      ],
+      "phone": [
+        {
+          "value": "+1-555-0102",
+          "primary": true
+        }
+      ],
+      "org_id": {
+        "value": 22,
+        "name": "Beacon Labs"
+      },
+      "add_time": "2026-11-10 09:00:00",
+      "update_time": "2026-11-21 10:00:00"
+    },
+    {
+      "id": 13,
+      "name": "Priya Nair",
+      "email": [
+        {
+          "value": "priya.nair@harborclinic.example",
+          "primary": true
+        }
+      ],
+      "phone": [
+        {
+          "value": "+1-555-0103",
+          "primary": true
+        }
+      ],
+      "org_id": {
+        "value": 23,
+        "name": "Harbor Clinic"
+      },
+      "add_time": "2026-11-15 09:00:00",
+      "update_time": "2026-11-22 10:00:00"
+    }
+  ],
+  "organizations": [
+    {
+      "id": 21,
+      "name": "Northwind Studio",
+      "address": "100 Fictional Ave, Austin, TX",
+      "add_time": "2026-10-01 09:00:00",
+      "update_time": "2026-11-20 10:00:00"
+    },
+    {
+      "id": 22,
+      "name": "Beacon Labs",
+      "address": "200 Sample St, Denver, CO",
+      "add_time": "2026-10-12 09:00:00",
+      "update_time": "2026-11-21 10:00:00"
+    },
+    {
+      "id": 23,
+      "name": "Harbor Clinic",
+      "address": "300 Demo Blvd, Seattle, WA",
+      "add_time": "2026-11-02 09:00:00",
+      "update_time": "2026-11-22 10:00:00"
+    }
+  ],
+  "deals": [
+    {
+      "id": 31,
+      "title": "Northwind Studio - Annual Plan",
+      "value": 24000,
+      "currency": "USD",
+      "status": "open",
+      "stage_id": 2,
+      "pipeline_id": 1,
+      "person_id": {
+        "value": 11,
+        "name": "Maya Rivera"
+      },
+      "org_id": {
+        "value": 21,
+        "name": "Northwind Studio"
+      },
+      "add_time": "2026-11-05 09:00:00",
+      "update_time": "2026-11-06 09:00:00",
+      "expected_close_date": "2026-12-15"
+    },
+    {
+      "id": 32,
+      "title": "Beacon Labs - Pilot",
+      "value": 8500,
+      "currency": "USD",
+      "status": "open",
+      "stage_id": 1,
+      "pipeline_id": 1,
+      "person_id": {
+        "value": 12,
+        "name": "Tom Okafor"
+      },
+      "org_id": {
+        "value": 22,
+        "name": "Beacon Labs"
+      },
+      "add_time": "2026-11-12 09:00:00",
+      "update_time": "2026-11-21 09:00:00",
+      "expected_close_date": "2026-12-01"
+    },
+    {
+      "id": 33,
+      "title": "Harbor Clinic - Rollout",
+      "value": 41000,
+      "currency": "USD",
+      "status": "won",
+      "stage_id": 4,
+      "pipeline_id": 1,
+      "person_id": {
+        "value": 13,
+        "name": "Priya Nair"
+      },
+      "org_id": {
+        "value": 23,
+        "name": "Harbor Clinic"
+      },
+      "add_time": "2026-11-18 09:00:00",
+      "update_time": "2026-11-22 09:00:00",
+      "expected_close_date": "2027-01-10"
+    }
+  ],
+  "activities": [
+    {
+      "id": 41,
+      "subject": "Call Maya about renewal",
+      "type": "call",
+      "due_date": "2026-11-25",
+      "due_time": "10:00",
+      "done": false,
+      "person_id": 11,
+      "deal_id": 31,
+      "org_id": 21
+    },
+    {
+      "id": 42,
+      "subject": "Send pilot summary to Tom",
+      "type": "email",
+      "due_date": "2026-11-26",
+      "due_time": "09:00",
+      "done": false,
+      "person_id": 12,
+      "deal_id": 32,
+      "org_id": 22
+    },
+    {
+      "id": 43,
+      "subject": "Kickoff meeting with Harbor Clinic",
+      "type": "meeting",
+      "due_date": "2026-11-20",
+      "due_time": "14:00",
+      "done": true,
+      "person_id": 13,
+      "deal_id": 33,
+      "org_id": 23
+    }
+  ],
+  "pipelines": [
+    {
+      "id": 1,
+      "name": "Sales Pipeline",
+      "stages": [
+        {
+          "id": 1,
+          "name": "Lead In"
+        },
+        {
+          "id": 2,
+          "name": "Negotiation"
+        },
+        {
+          "id": 3,
+          "name": "Proposal"
+        },
+        {
+          "id": 4,
+          "name": "Won"
+        }
+      ]
+    }
+  ]
+}
