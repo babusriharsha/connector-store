@@ -58,30 +58,14 @@
 
   <section class="block" aria-labelledby="connect-h">
     <div class="wrap">
-      <h2 id="connect-h">How connecting works</h2>
-      <div class="steps">
-        <div class="step"><span class="step-num" aria-hidden="true">1</span><h3>Copy the install prompt</h3><p class="muted">Use the copy button in the install box below and paste the prompt into your Muse chat. Your Muse installs the connector from our public repository.</p></div>
-        <div class="step"><span class="step-num" aria-hidden="true">2</span><h3>Sign in with Etsy</h3><p class="muted">Your Muse sends you to Etsy’s own secure OAuth sign-in page, where you approve the connection yourself. Your Etsy password never passes through chat — Etsy hands your Muse a limited access token instead.</p></div>
-        <div class="step"><span class="step-num" aria-hidden="true">3</span><h3>Confirm with a live snapshot</h3><p class="muted">Your Muse runs a health check and proves the connection with a live snapshot of your shop. If the numbers match your Etsy dashboard, you’re connected.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" aria-labelledby="install-h">
-    <div class="wrap">
-      <div class="install-box">
-        <h2 id="install-h">Install prompt</h2>
-        <p>Copy this, paste it into your Muse chat, and your Muse handles the rest:</p>
-        <pre id="install-etsy">Install the Etsy Connector from The Connector Store.
-
-1. Fetch the connector package from the store's public repository (The Connector Store — Etsy Connector, latest release) and install it as a custom connector in my workspace, following its CONNECTOR.md exactly.
-2. Start the free 1-month trial activation for this connector and tell me the activation date and the date the trial ends.
-3. Connect my Etsy shop using Etsy's secure OAuth sign-in: send me to Etsy's own sign-in page to approve access. Never ask me to paste my Etsy password or any token into this chat.
-4. Run the connector's health check. If anything fails, tell me in plain words what is wrong and what to fix.
-5. Confirm the connection by showing me a live shop snapshot: sales and orders for the last 7 days from my receipts, my listings with the lowest quantities, and my most recent review.
-6. Ask me whether I want the Morning Shop Brief scheduled, and at what time.</pre>
-        <button class="btn" type="button" data-copy-target="install-etsy">Copy install prompt</button>
-        <p class="copy-status" role="status" aria-live="polite"></p>
+      <h2 id="connect-h">How to connect</h2>
+      <div class="connect-panel">
+        <p class="connect-say">Open your Muse and say: <strong>&ldquo;Connect my Etsy shop&rdquo;</strong></p>
+        <div class="steps">
+          <div class="step"><span class="step-num" aria-hidden="true">1</span><h3>Open your Muse</h3><p class="muted">Start a chat with the Muse personal AI agent you already use — there is nothing to download from this site.</p></div>
+          <div class="step"><span class="step-num" aria-hidden="true">2</span><h3>Say the sentence</h3><p class="muted">Say &ldquo;Connect my Etsy shop&rdquo;. Your Muse finds this connector, and presents it to you as a card with its icon, name and a Connect button.</p></div>
+          <div class="step"><span class="step-num" aria-hidden="true">3</span><h3>Tap Connect &amp; sign in</h3><p class="muted">Tap Connect on the card your Muse shows you, then sign in on Etsy&rsquo;s own secure page (or through Muse&rsquo;s secure connection flow). Your Muse confirms the connection with a live snapshot of your real data.</p></div>
+        </div>
       </div>
     </div>
   </section>

@@ -1,43 +1,21 @@
-/* The Connector Store — shared JS: copy buttons, home catalog search/filter.
+/* The Connector Store — shared JS: front-page Connect buttons and the
+   home catalog search/filter. There is deliberately NO copying
+   behaviour on this site: connecting happens inside the user's own Muse,
+   so a Connect button simply tells the visitor the one sentence to say.
    The search index below mirrors search-index.json (kept inline so search
    also works when the site is opened straight from disk). */
 (function () {
   "use strict";
 
-  /* ---------- Copy buttons (install prompts + front-page Connect) ---------- */
-  document.querySelectorAll("[data-copy-target]").forEach(function (btn) {
+  /* ---------- Front-page Connect buttons: show the sentence to say ---------- */
+  document.querySelectorAll("[data-say]").forEach(function (btn) {
     btn.addEventListener("click", function () {
-      var target = document.getElementById(btn.getAttribute("data-copy-target"));
-      var status = btn.parentElement.querySelector(".copy-status");
-      if (!target) return;
-      /* Hidden prompt stores have no innerText in some browsers — fall back
-         to textContent so the Connect buttons still copy the full prompt. */
-      var text = target.innerText || target.textContent;
-      var isConnect = btn.hasAttribute("data-connect");
-      var okMsg = isConnect
-        ? "Prompt copied — paste it in your Muse"
-        : "Copied. Now paste it into your Muse chat.";
-      function done(msg) {
-        if (status) status.textContent = msg;
-        if (isConnect && msg === okMsg) {
-          var original = btn.textContent;
-          btn.textContent = "✓ Copied";
-          setTimeout(function () { btn.textContent = original; }, 2600);
-        }
-      }
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(
-          function () { done(okMsg); },
-          function () { fallback(); }
-        );
-      } else { fallback(); }
-      function fallback() {
-        var ta = document.createElement("textarea");
-        ta.value = text; document.body.appendChild(ta); ta.select();
-        try { document.execCommand("copy"); done(okMsg); }
-        catch (e) { done(isConnect ? "Copy didn't work — open the connector page and copy the prompt from there." : "Copy didn't work — select the text above and copy it manually."); }
-        document.body.removeChild(ta);
-      }
+      var say = btn.getAttribute("data-say");
+      var status = btn.parentElement.querySelector(".connect-status");
+      if (status) status.textContent = "Open your Muse and say: '" + say + "'";
+      var original = "Connect";
+      btn.textContent = "✓ Got it";
+      setTimeout(function () { btn.textContent = original; }, 2600);
     });
   });
 
@@ -46,17 +24,17 @@
     {
       id: "woocommerce", name: "WooCommerce Connector", category: "Online stores",
       page: "woocommerce.html",
-      keywords: "woocommerce wordpress wp store shop orders refunds products inventory stock low stock alerts best sellers customers lapsed customers coupons morning store brief connect my shop connect my store rest api keys sales snapshot revenue"
+      keywords: "woocommerce wordpress wp store shop orders refunds products inventory stock low stock alerts best sellers customers lapsed customers coupons morning store brief connect my shop connect my store sales snapshot revenue"
     },
     {
       id: "etsy", name: "Etsy Connector", category: "Online stores",
       page: "etsy.html",
-      keywords: "etsy shop seller receipts orders listings inventory quantities low quantity alerts reviews payment ledger morning shop brief connect my shop connect my etsy sales snapshot oauth"
+      keywords: "etsy shop seller receipts orders listings inventory quantities low quantity alerts reviews payment ledger morning shop brief connect my shop connect my etsy sales snapshot"
     },
     {
       id: "mailchimp", name: "Mailchimp Connector", category: "Email marketing",
       page: "mailchimp.html",
-      keywords: "mailchimp email marketing audience subscribers growth campaign reports opens clicks bounces top campaigns list health draft campaign api key newsletter connect mailchimp"
+      keywords: "mailchimp email marketing audience subscribers growth campaign reports opens clicks bounces top campaigns list health draft campaign newsletter connect mailchimp"
     }
   ];
 

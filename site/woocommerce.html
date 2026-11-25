@@ -58,30 +58,14 @@
 
   <section class="block" aria-labelledby="connect-h">
     <div class="wrap">
-      <h2 id="connect-h">How connecting works</h2>
-      <div class="steps">
-        <div class="step"><span class="step-num" aria-hidden="true">1</span><h3>Copy the install prompt</h3><p class="muted">Use the copy button in the install box below and paste the prompt into your Muse chat. Your Muse installs the connector from our public repository.</p></div>
-        <div class="step"><span class="step-num" aria-hidden="true">2</span><h3>Create your store keys</h3><p class="muted">In WP Admin, go to WooCommerce → Settings → Advanced → REST API and create keys for your store. Your Muse tells you exactly which permissions to choose, and you enter the keys through Muse’s secure connection flow — never in chat.</p></div>
-        <div class="step"><span class="step-num" aria-hidden="true">3</span><h3>Confirm with a live snapshot</h3><p class="muted">Your Muse runs a health check and proves the connection with a live snapshot of your store. If it matches your dashboard, you’re connected.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" aria-labelledby="install-h">
-    <div class="wrap">
-      <div class="install-box">
-        <h2 id="install-h">Install prompt</h2>
-        <p>Copy this, paste it into your Muse chat, and your Muse handles the rest:</p>
-        <pre id="install-woocommerce">Install the WooCommerce Connector from The Connector Store.
-
-1. Fetch the connector package from the store's public repository (The Connector Store — WooCommerce Connector, latest release) and install it as a custom connector in my workspace, following its CONNECTOR.md exactly.
-2. Start the free 1-month trial activation for this connector and tell me the activation date and the date the trial ends.
-3. Walk me through connecting my WooCommerce store: tell me how to create REST API keys in WP Admin (WooCommerce → Settings → Advanced → REST API), and have me enter the keys through the secure connection flow — never ask me to paste keys or passwords into this chat.
-4. Run the connector's health check. If anything fails, tell me in plain words what is wrong and what to fix.
-5. Confirm the connection by showing me a live store snapshot: today's revenue, order count, and top product, next to yesterday's numbers.
-6. Ask me whether I want the Morning Store Brief scheduled, and at what time.</pre>
-        <button class="btn" type="button" data-copy-target="install-woocommerce">Copy install prompt</button>
-        <p class="copy-status" role="status" aria-live="polite"></p>
+      <h2 id="connect-h">How to connect</h2>
+      <div class="connect-panel">
+        <p class="connect-say">Open your Muse and say: <strong>&ldquo;Connect my WooCommerce store&rdquo;</strong></p>
+        <div class="steps">
+          <div class="step"><span class="step-num" aria-hidden="true">1</span><h3>Open your Muse</h3><p class="muted">Start a chat with the Muse personal AI agent you already use — there is nothing to download from this site.</p></div>
+          <div class="step"><span class="step-num" aria-hidden="true">2</span><h3>Say the sentence</h3><p class="muted">Say &ldquo;Connect my WooCommerce store&rdquo;. Your Muse finds this connector, and presents it to you as a card with its icon, name and a Connect button.</p></div>
+          <div class="step"><span class="step-num" aria-hidden="true">3</span><h3>Tap Connect &amp; sign in</h3><p class="muted">Tap Connect on the card your Muse shows you, then sign in on WooCommerce&rsquo;s own secure page (or through Muse&rsquo;s secure connection flow). Your Muse confirms the connection with a live snapshot of your real data.</p></div>
+        </div>
       </div>
     </div>
   </section>
