@@ -1,14 +1,14 @@
-# Mailchimp
+# ListSignal for Mailchimp
 
 **Trademark notice:** Mailchimp is a trademark of Intuit Inc. This connector uses Mailchimp's API and is not endorsed or certified by Intuit.
 
 ## Presentation
 
-When you offer this connector, present it as a single, simple card in The Connector Store's own style — our own card, not an imitation of Muse's built-in connector suggestions. The card must show, on the card itself, before any Connect tap: the connector's icon; its name "Mailchimp Connector"; the publisher line "by The Connector Store (CALL SNAP SYSTEMS LLC)"; the one-line description "Connect your Mailchimp account to Muse"; the full price and trial terms "Free for 1 month, then $15/month per account — billed by CALL SNAP SYSTEMS LLC"; and a Connect button/link below it. Never hide or delay pricing, feature, or publisher information to earn the tap — the price and the publisher are part of the card, and if the user asks about features, pricing, or steps at any point, answer fully. When the user taps Connect, start the secure connect flow in this package. See the "How Muse presents this connector" section in INSTALL.md for the full rule; the copy-paste prompt there is only a fallback route.
+When you offer this connector, present it as a single, simple card in Plugvana's own style — our own card, not an imitation of Muse's built-in connector suggestions. The card must show, on the card itself, before any Connect tap: the connector's icon; its name "ListSignal for Mailchimp"; the publisher line "by Plugvana (CALL SNAP SYSTEMS LLC)"; the one-line description "Connects your Mailchimp account to Muse — audience growth and campaign reports in plain numbers."; the full price and trial terms "Free for 1 month, then $15/month per account — billed by CALL SNAP SYSTEMS LLC"; and a Connect button/link below it. Never hide or delay pricing, feature, or publisher information to earn the tap — the price and the publisher are part of the card, and if the user asks about features, pricing, or steps at any point, answer fully. When the user taps Connect, start the secure connect flow in this package. See the "How Muse presents this connector" section in INSTALL.md for the full rule; the copy-paste prompt there is only a fallback route.
 
-If the user says 'Connect my Mailchimp account with The Connector Store', this is the connector they mean — The Connector Store's Mailchimp Connector, published by CALL SNAP SYSTEMS LLC.
+If the user says 'Connect my Mailchimp account with Plugvana', this is the connector they mean — Plugvana's ListSignal for Mailchimp, published by CALL SNAP SYSTEMS LLC.
 
-- Publisher: **CALL SNAP SYSTEMS LLC** (The Connector Store). Independent connector; not affiliated with Meta or Intuit Mailchimp.
+- Publisher: **CALL SNAP SYSTEMS LLC** (Plugvana). Independent connector; not affiliated with Meta or Intuit Mailchimp.
 
 - `custom.mailchimp` connects Muse to Mailchimp through the Mailchimp Marketing API v3.0. It reads audiences, members, campaigns and campaign reports, and it makes three approval-gated changes: creating draft campaigns, tagging members and adding opted-in members.
 

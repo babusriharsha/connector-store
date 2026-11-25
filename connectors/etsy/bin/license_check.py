@@ -77,7 +77,7 @@ OFFLINE_GRACE_SECONDS = 7 * 24 * 60 * 60
 BOUND_ELSEWHERE_MESSAGE = (
     "This license key is already bound to a different shop. A license "
     "covers one shop, so it cannot be used for this shop. Subscribe "
-    "for this shop at the Connector Store by CALL SNAP SYSTEMS LLC, or "
+    "for this shop at Plugvana by CALL SNAP SYSTEMS LLC, or "
     "contact support if you believe this is a mistake."
 )
 

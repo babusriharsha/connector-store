@@ -1,6 +1,6 @@
 # Etsy Shop Workflows
 
-Workflows for a Muse connected to a seller's Etsy shop through the `custom.etsy` connector in this package. Each workflow names the connector commands to run, what to report, and when to stay silent. Schedule them with cron only when the shop owner asks. Commands below assume the connector folder is installed at `~/workspace/custom-connectors/custom.etsy/`; adjust the path to where the package actually lives.
+Workflows for a Muse connected to a seller's Etsy shop through SellSignal for Etsy (the `custom.etsy` connector in this package). Each workflow names the connector commands to run, what to report, and when to stay silent. Schedule them with cron only when the shop owner asks. Commands below assume the connector folder is installed at `~/workspace/custom-connectors/custom.etsy/`; adjust the path to where the package actually lives.
 
 ## Guardrails for every workflow
 
