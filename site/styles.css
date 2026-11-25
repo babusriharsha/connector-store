@@ -358,12 +358,16 @@ section.block{padding:64px 0}
 .price-amount{margin:12px 0 2px;font-size:2.35rem;font-weight:800;letter-spacing:-.02em;line-height:1;color:var(--ink)}
 .price-amount span{font-family:var(--font-body);font-size:.95rem;font-weight:600;color:var(--muted);letter-spacing:0}
 .price-free{
-  align-self:flex-start;background:var(--amber-soft);color:var(--amber-text);
-  border:1px solid #f3dd9a;border-radius:999px;padding:4px 12px;
-  font-size:.78rem;font-weight:700;margin-bottom:13px;
+  align-self:flex-start;background:#fde9bd;color:#6b4400;
+  border:1px solid #e3b93e;border-radius:999px;padding:4px 12px;
+  font-size:.78rem;font-weight:800;margin-bottom:13px;
 }
-.price-foot{margin-top:auto;padding-top:18px;display:flex;flex-direction:column}
-.price-foot .btn{width:100%;text-align:center;padding:12px 18px;font-size:.98rem;border-radius:11px}
+.price-amount-soon{font-size:1.35rem;line-height:1.25;padding:9px 0 5px}
+.price-foot{margin-top:auto;padding-top:18px;display:flex;flex-direction:column;gap:8px}
+.price-foot .btn{width:100%;text-align:center;padding:12px 10px;font-size:.93rem;border-radius:11px;white-space:nowrap}
+.price-foot .badge{text-align:center}
+.btn.is-disabled{background:var(--soft);color:var(--muted);border:1px solid var(--border);box-shadow:none;cursor:default}
+.btn.is-disabled:hover{filter:none;background:var(--soft)}
 
 /* ---------- Detail-page features ---------- */
 .feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
