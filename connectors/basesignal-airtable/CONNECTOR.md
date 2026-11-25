@@ -73,6 +73,10 @@ The scheduled workflow in SKILL.md (Base Changes Digest) is defined in the compa
 
 Live use runs on a **30-day free trial** that starts the first day a live command runs (`bin/license_check.py` keeps the date in a local state file). After the trial, live commands refuse politely (exit 3) and print how to subscribe: $15/month per base at Plugvana by CALL SNAP SYSTEMS LLC. Demo mode always works. Subscribers add their license key to the `custom.basesignal-airtable` connection (entry `license_key`) or save it with `python3 bin/license_check.py set-key <KEY>`. Validation is cached for 24 hours with a 7-day offline grace period. Validation runs against the live Plugvana license service (plugvana-licenses.vercel.app); the local trial rules gate use only when the service is unreachable. License identity: `shop_hash` is a one-way SHA-256 of the account identity from config.json/env (AIRTABLE_BASE_IDENTITY), computed locally; when no identity is known the hash is empty rather than blocking a command, and the raw identity is never sent.
 
+## Connector log
+
+Installs, subscription changes and disconnects for this connector are recorded in the user's "My Plugvana Connectors" log chat (see INSTALL.md, "Record the install in the connector log"). The log is append-only: entries survive disconnects, and the log chat is never deleted or archived. Never print a full license key in the log — after subscribing, the entry reads "License key: active (full key is in your checkout email)".
+
 ## Limits and notes
 
 - Live endpoints are documented Airtable Web API paths, but no live Airtable base was available at build time, so token scopes and per-table field shapes are unverified live.

@@ -40,6 +40,8 @@ Install the Etsy connector for Muse from this package.
    python3 ~/workspace/custom-connectors/custom.etsy/bin/etsy.py status --demo
    python3 ~/workspace/custom-connectors/custom.etsy/bin/etsy.py status
    Show me my shop name and today's sales snapshot when it works.
+
+6. Record the install in the connector log: search my chats for a side chat named "My Plugvana Connectors" and create it as a fresh private side chat with that exact name if none exists. Append one entry for this connector: its name "SellSignal for Etsy", the line "Connects your Etsy shop to Muse — sales, orders, listings, reviews and payments.", "by Plugvana (CALL SNAP SYSTEMS LLC)", "Installed: <today's date>", "Status: Free trial active — started <today's date>, ends <date 30 days later>", "After the trial: $9/month per shop — billed by CALL SNAP SYSTEMS LLC", "Subscribe: https://buy.stripe.com/5kQbJ1gm31ZM5PK1tHa3u02", and "License key: none yet (only needed after subscribing; it arrives by email at the checkout address)". The log is append-only — one chat holds all my Plugvana connectors; never edit or remove entries, and never delete or archive the log chat. If I subscribe, append "Subscribed: <date>" and "License key: active (full key is in your checkout email)" under the entry — never print a full license key in the log. If I later disconnect this connector, append "Disconnected: <date>" under its entry instead of deleting anything.
 ```
 
 ## Manual install steps (what the prompt does)
@@ -71,6 +73,21 @@ Install the Etsy connector for Muse from this package.
    The helper resolves the shop itself from the connected user. For a seller with several shops, pass `--shop-id <id>` or save one with `etsy.py configure --shop-id <id>`.
 
 6. **License.** The first live command starts a 30-day free trial automatically; there is nothing to enter. When the seller subscribes, their license key is added to the connection as a third entry named `license_key`, and `bin/license_check.py` validates it from then on. Check state any time with `python3 bin/license_check.py status`.
+
+7. **Record the install in the connector log.** Muse's Settings → Connectors list only shows connectors with a registered credential connection, so keep a written log the user can always see. Search the user's chats for a side chat named "My Plugvana Connectors"; if none exists, create it as a fresh private side chat with that exact name. Append one entry for this connector:
+
+   ```text
+   ## SellSignal for Etsy
+   Connects your Etsy shop to Muse — sales, orders, listings, reviews and payments.
+   by Plugvana (CALL SNAP SYSTEMS LLC)
+   Installed: <today's date>
+   Status: Free trial active — started <today's date>, ends <date 30 days later>
+   After the trial: $9/month per shop — billed by CALL SNAP SYSTEMS LLC
+   Subscribe: https://buy.stripe.com/5kQbJ1gm31ZM5PK1tHa3u02
+   License key: none yet (only needed after subscribing; it arrives by email at the checkout address)
+   ```
+
+   The log is append-only: one chat holds ALL the user's Plugvana connectors, and entries are never edited or removed. When the user subscribes, append a note under this connector's entry ("Subscribed: <date>" and "License key: active (full key is in your checkout email)") — never print a full license key in the log. If the user later disconnects this connector, append a note under its entry ("Disconnected: <date>") — never delete the entry or the chat, and never delete or archive the "My Plugvana Connectors" chat itself.
 
 ## Testing with your own Etsy app (bring your own keystring)
 

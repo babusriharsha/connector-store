@@ -107,6 +107,12 @@ Live use runs on a **30-day free trial** that starts the first day a live comman
 
 Price: **$29/month, or $290/year** — billed by CALL SNAP SYSTEMS LLC.
 
+When the subscriber adds their license key, also register it as a connection entry through Muse's secure API-access flow (`credentials.request_api_access`) with provider = codesignal-python, api_hosts = ["plugvana-licenses.vercel.app"], auth_scheme = api_key, placement = query_param:license_key — this gives the connector a registered connection so it can appear in the user's Settings → Connectors list. The `set-key` route remains the alternative.
+
+## Connector log
+
+Installs, subscription changes and disconnects for this connector are recorded in the user's "My Plugvana Connectors" log chat (see INSTALL.md, "Record the install in the connector log"). The log is append-only: entries survive disconnects, and the log chat is never deleted or archived. Never print a full license key in the log — after subscribing, the entry reads "License key: active (full key is in your checkout email)".
+
 ## Limits and notes
 
 - Dead code is a heuristic report, not a deletion list. Entry points, plugin hooks, framework callbacks and dynamically-dispatched code can look dead to static analysis.

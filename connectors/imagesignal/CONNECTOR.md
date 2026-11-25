@@ -61,6 +61,12 @@ The scheduled sweep defined in the companion **SKILL.md** in this package (Photo
 
 Live use runs on a **30-day free trial** that starts the first day a live command runs (`bin/license_check.py` keeps the date in a local state file). After the trial, live commands refuse politely and print how to subscribe; demo mode always works. Subscribers add their license key to the `custom.imagesignal` connection (entry `license_key`) or save it with `python3 bin/license_check.py set-key <KEY>`. Validation is cached for 24 hours with a 7-day offline grace period. Validation runs against the live Plugvana license service (plugvana-licenses.vercel.app); the local trial rules gate use only when the service is unreachable. File tools have no shop: the license is bound to a machine identity read from the `IMAGESIGNAL_IDENTITY` environment variable when set, and an empty identity is supported by design.
 
+When the subscriber adds their license key, also register it as a connection entry through Muse's secure API-access flow (`credentials.request_api_access`) with provider = imagesignal, api_hosts = ["plugvana-licenses.vercel.app"], auth_scheme = api_key, placement = query_param:license_key — this gives the connector a registered connection so it can appear in the user's Settings → Connectors list. The `set-key` route remains the alternative.
+
+## Connector log
+
+Installs, subscription changes and disconnects for this connector are recorded in the user's "My Plugvana Connectors" log chat (see INSTALL.md, "Record the install in the connector log"). The log is append-only: entries survive disconnects, and the log chat is never deleted or archived. Never print a full license key in the log — after subscribing, the entry reads "License key: active (full key is in your checkout email)".
+
 ## Limits and notes
 
 - **JPEG is INFO-ONLY in v1.** There is no JPEG codec in the Python standard library, so this tool reads JPEG dimensions but does not resize or convert JPEGs — and says so rather than pretending.
