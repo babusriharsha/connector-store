@@ -1,0 +1,27 @@
+# Typeform connector for Muse -- descriptor (Plugvana, CALL SNAP SYSTEMS LLC).
+# id: the provider slug; the credential is registered under exactly this
+# name (custom.typeform) through Muse's secure API-access flow.
+id: "custom.typeform"
+title: "FormSignal for Typeform"
+description: "Connect a Typeform account to Muse: list forms and workspaces, inspect a form, and summarise its responses (count, completion rate, latest answers trimmed). This is a READ-ONLY connector: Typeform's API is read-side for responses, and this package makes no changes of any kind."
+include_in_prompt: true
+require_auth: true
+aliases:
+  - "Typeform for Muse"
+  - "connect Typeform to Muse"
+  - "connect my Typeform"
+  - "Typeform responses in Muse"
+  - "check my Typeform responses with Muse"
+  - "Typeform completion rate"
+  - "Typeform forms report"
+  - "Connect my Typeform with Plugvana"
+# Auth: A personal access token registered as an api_key entry with bearer_header placement (entry name access_token).
+auth_scheme: "api_key"
+auth_entries:
+  - name: "access_token"
+    placement: "bearer_header"
+  - name: "license_key"
+    placement: { query_param: "license_key" }
+    optional: true
+api_hosts:
+  - "api.typeform.com"
