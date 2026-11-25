@@ -1,1 +1,674 @@
-{"note": "Search index for Plugvana. The same data is inlined in app.js so home-page search works when the site is opened from disk; keep the two in sync.", "products": [{"category": "Online stores", "id": "woocommerce", "keywords": ["woocommerce", "wordpress", "wp", "store", "shop", "connect my shop", "connect my store", "orders", "refunds", "products", "inventory", "low stock alerts", "best sellers", "customers", "lapsed customers", "coupons", "morning store brief", "sales snapshot", "rest api keys", "connect my woocommerce store with plugvana"], "name": "ShopSignal for WooCommerce", "page": "woocommerce.html", "summary": "Ask your Muse about your WooCommerce store: sales snapshots, orders, refunds, inventory and low-stock alerts, best sellers, customers, and a Morning Store Brief."}, {"category": "Online stores", "id": "etsy", "keywords": ["etsy", "shop", "seller", "connect my shop", "connect my etsy", "receipts", "orders", "listings", "inventory", "low quantity alerts", "reviews", "payment ledger", "morning shop brief", "sales snapshot", "oauth", "connect my etsy shop with plugvana"], "name": "SellSignal for Etsy", "page": "etsy.html", "summary": "Ask your Muse about your Etsy shop: shop snapshot from receipts, orders, listings and inventory quantities with low-quantity alerts, reviews, payment ledger, and a Morning Shop Brief."}, {"category": "Email marketing", "id": "mailchimp", "keywords": ["mailchimp", "email marketing", "newsletter", "audience", "subscribers", "growth", "campaign reports", "opens", "clicks", "bounces", "top campaigns", "list health", "draft campaign", "api key", "connect mailchimp", "connect my mailchimp account with plugvana"], "name": "ListSignal for Mailchimp", "page": "mailchimp.html", "summary": "Ask your Muse about your Mailchimp marketing: audience growth, campaign reports (opens, clicks, bounces) in plain numbers, top campaigns, list health checks, and draft campaigns that are never sent without you."}], "questions": [{"page": "how-to-connect-woocommerce-to-muse.html", "phrase": "how to connect woocommerce to Muse"}, {"page": "how-to-connect-etsy-to-muse.html", "phrase": "how to connect etsy to Muse"}, {"page": "how-to-connect-mailchimp-to-muse.html", "phrase": "how to connect mailchimp to Muse"}, {"page": "woocommerce.html", "phrase": "connect my shop"}, {"page": "woocommerce.html", "phrase": "low stock alerts"}, {"page": "etsy.html", "phrase": "low quantity alerts"}, {"page": "mailchimp.html", "phrase": "campaign reports"}]}
+{
+ "note": "Search index for Plugvana. The same data is inlined in app.js so home-page search works when the site is opened from disk; keep the two in sync.",
+ "products": [
+  {
+   "category": "Online stores",
+   "id": "woocommerce",
+   "keywords": [
+    "alerts",
+    "best",
+    "brief",
+    "connect",
+    "coupons",
+    "customers",
+    "inventory",
+    "lapsed",
+    "low",
+    "morning",
+    "my",
+    "orders",
+    "plugvana",
+    "products",
+    "refunds",
+    "revenue",
+    "sales",
+    "sellers",
+    "shop",
+    "snapshot",
+    "stock",
+    "store",
+    "with",
+    "woocommerce",
+    "wordpress",
+    "wp"
+   ],
+   "name": "ShopSignal for WooCommerce",
+   "page": "woocommerce.html",
+   "summary": "Ask your Muse about your WooCommerce store: sales snapshots, orders, refunds, inventory and low-stock alerts, best sellers, customers, and a Morning Store Brief."
+  },
+  {
+   "category": "Online stores",
+   "id": "etsy",
+   "keywords": [
+    "alerts",
+    "brief",
+    "connect",
+    "etsy",
+    "inventory",
+    "ledger",
+    "listings",
+    "low",
+    "morning",
+    "my",
+    "orders",
+    "payment",
+    "plugvana",
+    "quantities",
+    "quantity",
+    "receipts",
+    "reviews",
+    "sales",
+    "seller",
+    "shop",
+    "snapshot",
+    "with"
+   ],
+   "name": "SellSignal for Etsy",
+   "page": "etsy.html",
+   "summary": "Ask your Muse about your Etsy shop: sales snapshots, receipts and orders, listings and inventory, reviews, and a Morning Shop Brief."
+  },
+  {
+   "category": "Email & Audience",
+   "id": "mailchimp",
+   "keywords": [
+    "account",
+    "audience",
+    "bounces",
+    "campaign",
+    "campaigns",
+    "clicks",
+    "connect",
+    "draft",
+    "email",
+    "growth",
+    "health",
+    "list",
+    "mailchimp",
+    "marketing",
+    "my",
+    "newsletter",
+    "opens",
+    "plugvana",
+    "reports",
+    "subscribers",
+    "top",
+    "with"
+   ],
+   "name": "ListSignal for Mailchimp",
+   "page": "mailchimp.html",
+   "summary": "Ask your Muse about your Mailchimp: audience growth, campaign reports with opens and clicks, list health, and draft campaigns with approval."
+  },
+  {
+   "category": "Documents & Files",
+   "id": "pdfsignal",
+   "keywords": [
+    "all",
+    "always",
+    "as",
+    "automatically",
+    "batch",
+    "compress",
+    "convert",
+    "documents",
+    "every",
+    "extract",
+    "files",
+    "folder",
+    "from",
+    "in",
+    "invoice",
+    "merge",
+    "my",
+    "pages",
+    "pdf",
+    "pdfsignal",
+    "reports",
+    "save",
+    "schedule",
+    "split",
+    "text",
+    "this",
+    "to"
+   ],
+   "name": "PDFSignal",
+   "page": "pdfsignal.html",
+   "summary": "Batch PDF work \u2014 extract, inspect and create PDFs across whole folders, or automatically on schedule."
+  },
+  {
+   "category": "Documents & Files",
+   "id": "sheetsignal",
+   "keywords": [
+    "all",
+    "automatically",
+    "batch",
+    "clean",
+    "convert",
+    "csv",
+    "csvs",
+    "data",
+    "dedupe",
+    "download",
+    "every",
+    "excel",
+    "folder",
+    "i",
+    "in",
+    "merge",
+    "new",
+    "schedule",
+    "sheet",
+    "sheetsignal",
+    "spreadsheet",
+    "summary",
+    "this",
+    "xlsx"
+   ],
+   "name": "SheetSignal",
+   "page": "sheetsignal.html",
+   "summary": "Clean, dedupe and merge spreadsheets in batches \u2014 or automatically, every time a new CSV lands."
+  },
+  {
+   "category": "Documents & Files",
+   "id": "imagesignal",
+   "keywords": [
+    "all",
+    "always",
+    "automatically",
+    "batch",
+    "bmp",
+    "compress",
+    "convert",
+    "dimensions",
+    "every",
+    "folder",
+    "image",
+    "images",
+    "imagesignal",
+    "in",
+    "jpeg",
+    "my",
+    "new",
+    "photo",
+    "photos",
+    "pictures",
+    "png",
+    "ppm",
+    "resize",
+    "schedule",
+    "screenshots",
+    "shrink",
+    "this"
+   ],
+   "name": "ImageSignal",
+   "page": "imagesignal.html",
+   "summary": "Resize and convert images in batches \u2014 or automatically, on schedule, with your presets."
+  },
+  {
+   "category": "Documents & Files",
+   "id": "convertsignal",
+   "keywords": [
+    "all",
+    "always",
+    "arrive",
+    "as",
+    "automatically",
+    "batch",
+    "conversion",
+    "convert",
+    "convertisseur",
+    "convertsignal",
+    "documents",
+    "docx",
+    "every",
+    "files",
+    "folder",
+    "html",
+    "in",
+    "into",
+    "markdown",
+    "my",
+    "new",
+    "schedule",
+    "text",
+    "they",
+    "this",
+    "turn",
+    "word"
+   ],
+   "name": "ConvertSignal",
+   "page": "convertsignal.html",
+   "summary": "Convert documents in batches \u2014 or automatically, on schedule, with standing rules."
+  },
+  {
+   "category": "Money & Accounting",
+   "id": "ledgersignal-sage",
+   "keywords": [
+    "accounting",
+    "accounts",
+    "bank",
+    "bookkeeping",
+    "invoices",
+    "ledger",
+    "ledgersignal",
+    "overdue",
+    "sage"
+   ],
+   "name": "LedgerSignal for Sage",
+   "page": "ledgersignal-sage.html",
+   "summary": "Ask your Muse about your Sage Business Cloud Accounting: sales invoices, who is overdue, purchase invoices, bank accounts and your chart of accounts \u2014 plus draft invoices with your approval."
+  },
+  {
+   "category": "Money & Accounting",
+   "id": "booksignal-xero",
+   "keywords": [
+    "accounting",
+    "bank",
+    "bookkeeping",
+    "booksignal",
+    "contacts",
+    "invoices",
+    "loss",
+    "profit",
+    "xero"
+   ],
+   "name": "BookSignal for Xero",
+   "page": "booksignal-xero.html",
+   "summary": "Ask your Muse about your Xero organisation: invoices and overdue amounts, contacts, bank transactions, and a profit & loss for any period \u2014 plus draft invoices with your approval."
+  },
+  {
+   "category": "Money & Accounting",
+   "id": "billsignal-freshbooks",
+   "keywords": [
+    "billsignal",
+    "expenses",
+    "freelancers",
+    "freshbooks",
+    "invoices",
+    "payments",
+    "time",
+    "tracking"
+   ],
+   "name": "BillSignal for FreshBooks",
+   "page": "billsignal-freshbooks.html",
+   "summary": "Ask your Muse about your FreshBooks: outstanding invoices, recent payments, expenses and tracked time \u2014 built for freelancers and small firms, with draft invoices on approval."
+  },
+  {
+   "category": "Money & Accounting",
+   "id": "cashsignal-wave",
+   "keywords": [
+    "accounting",
+    "bookkeeping",
+    "cashsignal",
+    "customers",
+    "free",
+    "invoices",
+    "wave"
+   ],
+   "name": "CashSignal for Wave",
+   "page": "cashsignal-wave.html",
+   "summary": "Ask your Muse about your Wave business: invoices and who is overdue, customers, and your chart of accounts \u2014 friendly pricing for Wave's free-accounting crowd."
+  },
+  {
+   "category": "Customers & Sales",
+   "id": "dealsignal-hubspot",
+   "keywords": [
+    "companies",
+    "contacts",
+    "crm",
+    "deals",
+    "dealsignal",
+    "hubspot",
+    "pipeline",
+    "sales"
+   ],
+   "name": "DealSignal for HubSpot",
+   "page": "dealsignal-hubspot.html",
+   "summary": "Ask your Muse about your HubSpot CRM: contacts and companies, deals by stage, your whole pipeline at a glance, and a Pipeline Morning Brief \u2014 plus new contacts with your approval."
+  },
+  {
+   "category": "Customers & Sales",
+   "id": "pipesignal-pipedrive",
+   "keywords": [
+    "activities",
+    "deals",
+    "organizations",
+    "persons",
+    "pipedrive",
+    "pipeline",
+    "pipesignal",
+    "sales"
+   ],
+   "name": "PipeSignal for Pipedrive",
+   "page": "pipesignal-pipedrive.html",
+   "summary": "Ask your Muse about your Pipedrive: open deals and their value, people and organisations, upcoming activities, and a stalled-deals sweep \u2014 with new activities on approval."
+  },
+  {
+   "category": "Customers & Sales",
+   "id": "clientsignal-zoho",
+   "keywords": [
+    "accounts",
+    "clientsignal",
+    "contacts",
+    "crm",
+    "deals",
+    "leads",
+    "search",
+    "zoho"
+   ],
+   "name": "ClientSignal for Zoho CRM",
+   "page": "clientsignal-zoho.html",
+   "summary": "Ask your Muse about your Zoho CRM: accounts, contacts and deals, full-text search across modules, and a new-leads digest \u2014 with lead creation on approval."
+  },
+  {
+   "category": "Customers & Sales",
+   "id": "basesignal-airtable",
+   "keywords": [
+    "airtable",
+    "bases",
+    "basesignal",
+    "database",
+    "records",
+    "spreadsheet",
+    "tables"
+   ],
+   "name": "BaseSignal for Airtable",
+   "page": "basesignal-airtable.html",
+   "summary": "Ask your Muse about your Airtable bases: list tables, browse and search records, and add records with your approval \u2014 your base, in conversation."
+  },
+  {
+   "category": "Email & Audience",
+   "id": "sendsignal-mailerlite",
+   "keywords": [
+    "automations",
+    "campaigns",
+    "email",
+    "groups",
+    "mailerlite",
+    "newsletter",
+    "sendsignal",
+    "subscribers"
+   ],
+   "name": "SendSignal for MailerLite",
+   "page": "sendsignal-mailerlite.html",
+   "summary": "Ask your Muse about your MailerLite: subscriber growth, groups, campaign performance and automations \u2014 plus a weekly Audience Growth Brief."
+  },
+  {
+   "category": "Email & Audience",
+   "id": "postsignal-kit",
+   "keywords": [
+    "broadcasts",
+    "convertkit",
+    "creators",
+    "email",
+    "forms",
+    "kit",
+    "postsignal",
+    "sequences",
+    "subscribers",
+    "tags"
+   ],
+   "name": "PostSignal for Kit",
+   "page": "postsignal-kit.html",
+   "summary": "Ask your Muse about your Kit account: subscriber counts, tags, forms, sequences and broadcast performance \u2014 the creator email platform, in conversation."
+  },
+  {
+   "category": "Email & Audience",
+   "id": "reachsignal-constantcontact",
+   "keywords": [
+    "business",
+    "campaigns",
+    "constant",
+    "contact",
+    "contacts",
+    "email",
+    "lists",
+    "reachsignal",
+    "small"
+   ],
+   "name": "ReachSignal for Constant Contact",
+   "page": "reachsignal-constantcontact.html",
+   "summary": "Ask your Muse about your Constant Contact: contact growth, your lists, and how email campaigns performed \u2014 with new contacts added only on approval and confirmed opt-in."
+  },
+  {
+   "category": "Email & Audience",
+   "id": "newssignal-aweber",
+   "keywords": [
+    "aweber",
+    "broadcasts",
+    "campaigns",
+    "email",
+    "lists",
+    "newsletter",
+    "newssignal",
+    "subscribers"
+   ],
+   "name": "NewsSignal for AWeber",
+   "page": "newssignal-aweber.html",
+   "summary": "Ask your Muse about your AWeber: lists and subscriber counts, broadcast performance and follow-up campaigns \u2014 with new subscribers on approval and confirmed opt-in only."
+  },
+  {
+   "category": "Work & Scheduling",
+   "id": "boardsignal-trello",
+   "keywords": [
+    "boards",
+    "boardsignal",
+    "cards",
+    "kanban",
+    "lists",
+    "projects",
+    "tasks",
+    "trello"
+   ],
+   "name": "BoardSignal for Trello",
+   "page": "boardsignal-trello.html",
+   "summary": "Ask your Muse about your Trello boards: what's on each board, which cards are stuck, and what's due \u2014 plus a Board Morning Brief and new cards on approval."
+  },
+  {
+   "category": "Work & Scheduling",
+   "id": "tasksignal-monday",
+   "keywords": [
+    "boards",
+    "groups",
+    "items",
+    "management",
+    "monday",
+    "monday.com",
+    "tasksignal",
+    "updates",
+    "work"
+   ],
+   "name": "TaskSignal for monday.com",
+   "page": "tasksignal-monday.html",
+   "summary": "Ask your Muse about your monday.com boards: items and their status, groups, recent updates, and a changes digest \u2014 with new items on approval."
+  },
+  {
+   "category": "Work & Scheduling",
+   "id": "worksignal-clickup",
+   "keywords": [
+    "clickup",
+    "lists",
+    "management",
+    "overdue",
+    "projects",
+    "spaces",
+    "tasks",
+    "work",
+    "worksignal"
+   ],
+   "name": "WorkSignal for ClickUp",
+   "page": "worksignal-clickup.html",
+   "summary": "Ask your Muse about your ClickUp workspace: spaces and lists, tasks by status, what's overdue, and an overdue sweep on schedule \u2014 with new tasks on approval."
+  },
+  {
+   "category": "Work & Scheduling",
+   "id": "donesignal-ticktick",
+   "keywords": [
+    "donesignal",
+    "list",
+    "overdue",
+    "personal",
+    "productivity",
+    "projects",
+    "tasks",
+    "ticktick",
+    "todo"
+   ],
+   "name": "DoneSignal for TickTick",
+   "page": "donesignal-ticktick.html",
+   "summary": "Ask your Muse about your TickTick: today's tasks, what's overdue, project lists, and a morning brief \u2014 with new tasks and completions on your approval."
+  },
+  {
+   "category": "Work & Scheduling",
+   "id": "meetsignal-calcom",
+   "keywords": [
+    "bookings",
+    "cal.com",
+    "calendar",
+    "calendly",
+    "event",
+    "meetsignal",
+    "scheduling",
+    "types"
+   ],
+   "name": "MeetSignal for Cal.com",
+   "page": "meetsignal-calcom.html",
+   "summary": "Ask your Muse about your Cal.com: today's and upcoming bookings, your event types and schedules, and a morning bookings brief \u2014 cancellations only with explicit approval."
+  },
+  {
+   "category": "Work & Scheduling",
+   "id": "formsignal-typeform",
+   "keywords": [
+    "feedback",
+    "forms",
+    "formsignal",
+    "leads",
+    "responses",
+    "surveys",
+    "typeform"
+   ],
+   "name": "FormSignal for Typeform",
+   "page": "formsignal-typeform.html",
+   "summary": "Ask your Muse about your Typeforms: how many responses came in, completion rates, and the latest answers \u2014 a read-only connector with a new-responses digest."
+  },
+  {
+   "category": "Code & Legacy",
+   "id": "legacysignal-cobol",
+   "keywords": [
+    "analysis",
+    "call",
+    "cics",
+    "cobol",
+    "codebase",
+    "connect",
+    "copybook",
+    "db2",
+    "dead",
+    "documentation",
+    "estate",
+    "impact",
+    "inventory",
+    "jcl",
+    "legacy",
+    "legacysignal",
+    "mainframe",
+    "map",
+    "modernisation",
+    "modernization",
+    "my",
+    "plugvana",
+    "with"
+   ],
+   "name": "LegacySignal for COBOL",
+   "page": "legacysignal-cobol.html",
+   "summary": "Know your whole COBOL estate \u2014 full inventory, generated program documentation, call maps, copybook and DB2 usage, impact analysis and modernisation briefs, read-only."
+  },
+  {
+   "category": "Code & Legacy",
+   "id": "codesignal-python",
+   "keywords": [
+    "analysis",
+    "code",
+    "codebase",
+    "codesignal",
+    "complexity",
+    "connect",
+    "coverage",
+    "dead",
+    "dependencies",
+    "docstring",
+    "documentation",
+    "inventory",
+    "map",
+    "my",
+    "plugvana",
+    "python",
+    "repo",
+    "syntax",
+    "tests",
+    "todo",
+    "with"
+   ],
+   "name": "CodeSignal for Python",
+   "page": "codesignal-python.html",
+   "summary": "Repo maps, generated documentation with docstring coverage, dependency inventory, dead code and complexity rankings for Python projects \u2014 read-only."
+  },
+  {
+   "category": "Code & Legacy",
+   "id": "statsignal-sas",
+   "keywords": [
+    "analysis",
+    "codebase",
+    "connect",
+    "dataset",
+    "errors",
+    "estate",
+    "impact",
+    "inventory",
+    "lineage",
+    "log",
+    "macros",
+    "my",
+    "plugvana",
+    "programs",
+    "sas",
+    "scan",
+    "statsignal",
+    "warnings",
+    "with"
+   ],
+   "name": "StatSignal for SAS",
+   "page": "statsignal-sas.html",
+   "summary": "SAS estate inventory, log error digests, dataset lineage and macro documentation across all your programs \u2014 read-only."
+  }
+ ],
+ "questions": [
+  {
+   "page": "how-to-connect-woocommerce-to-muse.html",
+   "phrase": "how to connect woocommerce to Muse"
+  },
+  {
+   "page": "how-to-connect-etsy-to-muse.html",
+   "phrase": "how to connect etsy to Muse"
+  },
+  {
+   "page": "how-to-connect-mailchimp-to-muse.html",
+   "phrase": "how to connect mailchimp to Muse"
+  },
+  {
+   "page": "woocommerce.html",
+   "phrase": "connect my shop"
+  },
+  {
+   "page": "woocommerce.html",
+   "phrase": "low stock alerts"
+  },
+  {
+   "page": "etsy.html",
+   "phrase": "low quantity alerts"
+  },
+  {
+   "page": "mailchimp.html",
+   "phrase": "campaign reports"
+  }
+ ]
+}
