@@ -76,7 +76,7 @@ TRIAL_DAYS = 30
 CACHE_HOURS = 24
 GRACE_DAYS = 7
 # Monthly plan checkout (Stripe Payment Link). Annual plans are not offered yet.
-SUBSCRIBE_URL = "https://buy.stripe.com/28EeVdgm333Qfqka0da3u0C"
+SUBSCRIBE_URL = "https://buy.stripe.com/eVqcN57Hb8TGdye8gS4AU0A"
 BOUND_ELSEWHERE_MESSAGE = (
     "This license key is already bound to a different AWeber "
     "account. A license covers one account, so it cannot be used for "

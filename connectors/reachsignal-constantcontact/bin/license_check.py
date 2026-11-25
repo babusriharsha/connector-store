@@ -76,7 +76,7 @@ TRIAL_DAYS = 30
 CACHE_HOURS = 24
 GRACE_DAYS = 7
 # Monthly plan checkout (Stripe Payment Link). Annual plans are not offered yet.
-SUBSCRIBE_URL = "https://buy.stripe.com/bJe7sLb1JeMy91Wc8la3u0A"
+SUBSCRIBE_URL = "https://buy.stripe.com/3cI7sL7Hb8TG8dUeFg4AU0y"
 BOUND_ELSEWHERE_MESSAGE = (
     "This license key is already bound to a different Constant Contact "
     "account. A license covers one account, so it cannot be used for "

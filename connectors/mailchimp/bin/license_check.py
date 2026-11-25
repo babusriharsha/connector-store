@@ -76,7 +76,7 @@ TRIAL_DAYS = 30
 CACHE_HOURS = 24
 GRACE_DAYS = 7
 # Monthly plan checkout (Stripe Payment Link). Annual plans are not offered yet.
-SUBSCRIBE_URL = "https://buy.stripe.com/eVqdR9d9R0VIdicgoBa3u04"
+SUBSCRIBE_URL = "https://buy.stripe.com/3cIcN55z3d9Wdye2Wy4AU04"
 BOUND_ELSEWHERE_MESSAGE = (
     "This license key is already bound to a different Mailchimp "
     "account. A license covers one account, so it cannot be used for "

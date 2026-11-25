@@ -76,7 +76,7 @@ TRIAL_DAYS = 30
 CACHE_HOURS = 24
 GRACE_DAYS = 7
 # Monthly plan checkout (Stripe Payment Link). Annual plans are not offered yet.
-SUBSCRIBE_URL = "https://buy.stripe.com/fZu28redVcEq1zua0da3u0y"
+SUBSCRIBE_URL = "https://buy.stripe.com/6oUfZh5z36Lybq6ap04AU0w"
 BOUND_ELSEWHERE_MESSAGE = (
     "This license key is already bound to a different Kit "
     "account. A license covers one account, so it cannot be used for "

@@ -68,7 +68,7 @@ LICENSE_API_BASE = os.environ.get(
 )
 # ---------------------------------------------------------------------------
 # Monthly plan checkout (Stripe Payment Link). Annual plans are not offered yet.
-SUBSCRIBE_URL = "https://buy.stripe.com/dRm8wP7PxgUG5PKc8la3u0U"
+SUBSCRIBE_URL = "https://buy.stripe.com/28E5kD0eJc5S3XE9kW4AU0S"
 
 
 def _check_url() -> str:
