@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="TaskSignal for monday.com">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="96" y2="96" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4f46e5"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+  <rect width="96" height="96" rx="20" fill="url(#g)"/>
+  <rect x="24" y="28" width="48" height="12" rx="6" fill="#ffffff"/><rect x="24" y="46" width="34" height="12" rx="6" fill="#ffffff" opacity="0.75"/><rect x="24" y="64" width="42" height="12" rx="6" fill="#ffffff" opacity="0.5" transform="translate(0,-6)"/>
+</svg>
