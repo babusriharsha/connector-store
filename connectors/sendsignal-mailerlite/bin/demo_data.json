@@ -1,0 +1,135 @@
+{
+  "account": {
+    "name": "Harbor Lane Crafts",
+    "plan": "Growing Business",
+    "total_subscribers": 6842
+  },
+  "subscribers": [
+    {
+      "id": "sub_1001",
+      "email": "maya.rivera@example.com",
+      "name": "Maya Rivera",
+      "status": "active",
+      "open_rate": 0.42,
+      "click_rate": 0.06,
+      "subscribed_at": "2026-08-14"
+    },
+    {
+      "id": "sub_1002",
+      "email": "tom.okafor@example.com",
+      "name": "Tom Okafor",
+      "status": "active",
+      "open_rate": 0.51,
+      "click_rate": 0.08,
+      "subscribed_at": "2026-08-14"
+    },
+    {
+      "id": "sub_1003",
+      "email": "lena.fischer@example.com",
+      "name": "Lena Fischer",
+      "status": "unsubscribed",
+      "open_rate": 0.0,
+      "click_rate": 0.0,
+      "subscribed_at": "2026-08-14"
+    },
+    {
+      "id": "sub_1004",
+      "email": "priya.nair@example.com",
+      "name": "Priya Nair",
+      "status": "active",
+      "open_rate": 0.36,
+      "click_rate": 0.04,
+      "subscribed_at": "2026-08-14"
+    }
+  ],
+  "groups": [
+    {
+      "id": "grp_01",
+      "name": "Newsletter",
+      "subscribers_count": 5120,
+      "active_count": 4987
+    },
+    {
+      "id": "grp_02",
+      "name": "Customers",
+      "subscribers_count": 1722,
+      "active_count": 1690
+    }
+  ],
+  "campaigns": [
+    {
+      "id": "cmp_501",
+      "name": "November Sale",
+      "subject": "Harbor Sale: 20% off through Sunday",
+      "status": "sent",
+      "emails_sent": 4200,
+      "open_rate": 0.38,
+      "click_rate": 0.045,
+      "unique_opens": 1308,
+      "unique_clicks": 151,
+      "bounces": 23,
+      "unsubscribes": 9,
+      "sent_at": "2026-11-18T15:00:00Z"
+    },
+    {
+      "id": "cmp_502",
+      "name": "Autumn Newsletter",
+      "subject": "Issue 12: New patterns and a studio tour",
+      "status": "sent",
+      "emails_sent": 5120,
+      "open_rate": 0.31,
+      "click_rate": 0.033,
+      "unique_opens": 1301,
+      "unique_clicks": 135,
+      "bounces": 23,
+      "unsubscribes": 9,
+      "sent_at": "2026-11-11T14:30:00Z"
+    },
+    {
+      "id": "cmp_503",
+      "name": "Holiday Preview",
+      "subject": "First look: the holiday collection",
+      "status": "draft",
+      "emails_sent": 0,
+      "open_rate": 0,
+      "click_rate": 0,
+      "unique_opens": 0,
+      "unique_clicks": 0,
+      "bounces": 23,
+      "unsubscribes": 9,
+      "sent_at": null
+    }
+  ],
+  "automations": [
+    {
+      "id": "aut_01",
+      "name": "Welcome series",
+      "status": "enabled",
+      "steps": 3,
+      "subscribers_in_flow": 412
+    },
+    {
+      "id": "aut_02",
+      "name": "Abandoned cart reminder",
+      "status": "enabled",
+      "steps": 2,
+      "subscribers_in_flow": 97
+    }
+  ],
+  "forms": [
+    {
+      "id": "frm_01",
+      "name": "Homepage popup",
+      "type": "popup",
+      "conversions": 1843,
+      "conversion_rate": 0.041
+    },
+    {
+      "id": "frm_02",
+      "name": "Footer signup",
+      "type": "embedded",
+      "conversions": 926,
+      "conversion_rate": 0.028
+    }
+  ]
+}
