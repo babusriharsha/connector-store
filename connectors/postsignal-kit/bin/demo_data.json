@@ -1,0 +1,129 @@
+{
+  "account": {
+    "id": "acc_9001",
+    "name": "Trailhead Letters",
+    "email": "hello@trailheadletters.example",
+    "total_subscribers": 9214,
+    "plan": "Creator Pro"
+  },
+  "subscribers": [
+    {
+      "id": 7001,
+      "email": "sam.whitaker@example.com",
+      "name": "Sam Whitaker",
+      "status": "active",
+      "open_rate": 0.42,
+      "click_rate": 0.06,
+      "subscribed_at": "2026-08-14"
+    },
+    {
+      "id": 7002,
+      "email": "ana.silva@example.com",
+      "name": "Ana Silva",
+      "status": "active",
+      "open_rate": 0.47,
+      "click_rate": 0.07,
+      "subscribed_at": "2026-08-14"
+    },
+    {
+      "id": 7003,
+      "email": "joe.mensah@example.com",
+      "name": "Joe Mensah",
+      "status": "unsubscribed",
+      "open_rate": 0.0,
+      "click_rate": 0.0,
+      "subscribed_at": "2026-08-14"
+    }
+  ],
+  "tags": [
+    {
+      "id": 2101,
+      "name": "vip",
+      "subscriber_count": 640
+    },
+    {
+      "id": 2102,
+      "name": "workshop-2026",
+      "subscriber_count": 388
+    },
+    {
+      "id": 2103,
+      "name": "free-course",
+      "subscriber_count": 2410
+    }
+  ],
+  "forms": [
+    {
+      "id": 3101,
+      "name": "Landing page \u2014 Trail Guide",
+      "subscriber_count": 3120,
+      "conversions": 2980
+    },
+    {
+      "id": 3102,
+      "name": "Blog inline form",
+      "subscriber_count": 1755,
+      "conversions": 1602
+    }
+  ],
+  "sequences": [
+    {
+      "id": 4101,
+      "name": "Welcome sequence",
+      "total_subscribers": 2210,
+      "emails": 5,
+      "open_rate": 0.44
+    },
+    {
+      "id": 4102,
+      "name": "Course launch sequence",
+      "total_subscribers": 860,
+      "emails": 7,
+      "open_rate": 0.39
+    }
+  ],
+  "broadcasts": [
+    {
+      "id": 5101,
+      "name": "Weekly Letter 48",
+      "subject": "The trail nobody photographs",
+      "status": "sent",
+      "emails_sent": 8900,
+      "open_rate": 0.41,
+      "click_rate": 0.052,
+      "unique_opens": 2992,
+      "unique_clicks": 370,
+      "bounces": 23,
+      "unsubscribes": 9,
+      "sent_at": "2026-11-18T15:00:00Z"
+    },
+    {
+      "id": 5102,
+      "name": "Weekly Letter 47",
+      "subject": "Notes on walking slower",
+      "status": "sent",
+      "emails_sent": 8750,
+      "open_rate": 0.38,
+      "click_rate": 0.047,
+      "unique_opens": 2726,
+      "unique_clicks": 329,
+      "bounces": 23,
+      "unsubscribes": 9,
+      "sent_at": "2026-11-11T13:00:00Z"
+    },
+    {
+      "id": 5103,
+      "name": "December Letter",
+      "subject": "December: a slower calendar (draft)",
+      "status": "draft",
+      "emails_sent": 0,
+      "open_rate": 0,
+      "click_rate": 0,
+      "unique_opens": 0,
+      "unique_clicks": 0,
+      "bounces": 23,
+      "unsubscribes": 9,
+      "sent_at": null
+    }
+  ]
+}

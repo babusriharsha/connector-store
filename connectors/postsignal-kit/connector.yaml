@@ -1,0 +1,17 @@
+# Kit connector for Muse (Plugvana, CALL SNAP SYSTEMS LLC).
+id: "custom.postsignal-kit"
+title: "PostSignal for Kit"
+description: "Connect Kit to Muse. Read Kit audiences, subscriber counts and growth, campaign/broadcast lists and full campaign reports (opens, clicks, bounces, unsubscribes) in plain numbers, with approval-gated writes. Also known as: Kit for Muse, Kit campaign reports in Muse, check my Kit audience with Muse, email marketing reports, newsletter analytics, audience growth, Kit API."
+include_in_prompt: true
+require_auth: true
+aliases: ["Kit for Muse", "Kit campaign reports", "Email marketing", "Newsletter analytics", "Audience growth", "Connect my Kit account with Plugvana"]
+auth_scheme: "api_key"
+# Custom placement: Kit reads the key from the X-Kit-Api-Key header,
+# NOT the standard Authorization header. Register exactly this.
+auth_entries:
+  - name: "api_key"
+    placement: { header: "X-Kit-Api-Key" }
+  - name: "license_key"
+    placement: { header: "X-License-Key" }
+    optional: true
+api_hosts: ["api.kit.com"]
