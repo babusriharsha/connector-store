@@ -1,5 +1,5 @@
 /* ============================================================
-   BRAND: The Connector Store
+   BRAND: Plugvana
    Tagline: "Real connectors for your Muse."
    Design: vibrant indigo/violet SaaS-store look, light theme,
    system font stack, zero external dependencies.
@@ -21,9 +21,12 @@
   --shadow-lg:0 2px 4px rgba(23,26,46,.06),0 18px 42px rgba(76,60,180,.16);
   --radius:20px;
   --max:1120px;
-  --woo:#96588A;
-  --etsy:#F1641E;
-  --mail:#E6A817;
+  /* Per-tile accents: all shades of OUR indigo/violet brand palette.
+     Platform signature colours are deliberately NOT used (trademark /
+     trade-dress hygiene — see LEGAL-AUDIT.md Area 4c). */
+  --woo:#4f46e5;
+  --etsy:#6d28d9;
+  --mail:#7c3aed;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -224,9 +227,9 @@ section.block{padding:46px 0}
 .tile-woocommerce{--tile-accent:var(--woo)}
 .tile-etsy{--tile-accent:var(--etsy)}
 .tile-mailchimp{--tile-accent:var(--mail)}
-.tile-woocommerce:hover{box-shadow:0 2px 4px rgba(23,26,46,.06),0 20px 44px rgba(150,88,138,.3)}
-.tile-etsy:hover{box-shadow:0 2px 4px rgba(23,26,46,.06),0 20px 44px rgba(241,100,30,.3)}
-.tile-mailchimp:hover{box-shadow:0 2px 4px rgba(23,26,46,.06),0 20px 44px rgba(230,168,23,.38)}
+.tile-woocommerce:hover{box-shadow:0 2px 4px rgba(23,26,46,.06),0 20px 44px rgba(79,70,229,.3)}
+.tile-etsy:hover{box-shadow:0 2px 4px rgba(23,26,46,.06),0 20px 44px rgba(109,40,217,.3)}
+.tile-mailchimp:hover{box-shadow:0 2px 4px rgba(23,26,46,.06),0 20px 44px rgba(124,58,237,.3)}
 .tile-link{display:flex;flex-direction:column;align-items:center;gap:12px;color:var(--text)}
 .tile-link:hover{text-decoration:none}
 .tile-icon{
