@@ -27,10 +27,46 @@
 
 <main>
   <div class="hero-band">
-    <div class="wrap hero">
-      <h1>Connect a service to your Muse.</h1>
-      <p class="tagline">Pick a connector, open your Muse, and say one sentence — your Muse finds it, presents it, and installs it when you tap Connect.</p>
-      <p class="independence">Independent store. Not affiliated with Meta or with any platform our connectors work with.</p>
+    <div class="wrap">
+      <div class="hero">
+        <div>
+          <h1>Connect a service to your Muse.</h1>
+          <p class="tagline">Pick a connector, open your Muse, and say one sentence — your Muse finds it, presents it, and installs it when you tap Connect.</p>
+          <div class="hero-actions">
+            <a class="btn big on-dark" href="#connectors">Browse connectors</a>
+            <a class="btn big secondary" href="how-it-works.html">How it works</a>
+          </div>
+          <p class="independence">Independent store. Not affiliated with Meta or with any platform our connectors work with.</p>
+        </div>
+        <img class="hero-art" src="assets/hero-art.svg" alt="Illustration of services connecting into one central hub" width="560" height="440">
+      </div>
+
+      <div class="flow" aria-label="How connecting works in three steps">
+        <div class="flow-step">
+          <div class="flow-top">
+            <span class="flow-glyph" aria-hidden="true"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.5 0-3-.4-4.2-1.1L3 20l1.1-5.3A8.5 8.5 0 1 1 21 11.5z"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="13.5" x2="13.5" y2="13.5"/></svg></span>
+            <h3>Say it</h3>
+            <span class="flow-num">Step 1</span>
+          </div>
+          <p>Open your Muse and say one sentence — the connector&rsquo;s name and your store, nothing to download or paste.</p>
+        </div>
+        <div class="flow-step">
+          <div class="flow-top">
+            <span class="flow-glyph" aria-hidden="true"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M12 8.2c.5 2 .9 2.7 2.9 3.3-2 .6-2.4 1.3-2.9 3.3-.5-2-.9-2.7-2.9-3.3 2-.6 2.4-1.3 2.9-3.3z" fill="currentColor" stroke="none"/></svg></span>
+            <h3>Muse finds it</h3>
+            <span class="flow-num">Step 2</span>
+          </div>
+          <p>Your Muse finds the connector in this store and presents it to you as a card — icon, name, price, Connect button.</p>
+        </div>
+        <div class="flow-step">
+          <div class="flow-top">
+            <span class="flow-glyph" aria-hidden="true"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="8.2 12.4 10.8 15 15.8 9.4"/></svg></span>
+            <h3>It just works</h3>
+            <span class="flow-num">Step 3</span>
+          </div>
+          <p>Tap Connect, sign in once on the service&rsquo;s own secure page, and start asking questions about your real data.</p>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -47,35 +83,85 @@
       <div class="app-grid" id="catalog-grid">
         <article class="tile tile-woocommerce" data-card="woocommerce">
           <a class="tile-link" href="woocommerce.html" aria-label="ShopSignal for WooCommerce details">
-            <img class="tile-icon" src="assets/icons/woocommerce.svg" alt="ShopSignal for WooCommerce" width="96" height="96">
+            <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/woocommerce.svg" alt="ShopSignal for WooCommerce" width="48" height="48"></span>
             <span class="tile-name">ShopSignal for WooCommerce</span>
           </a>
+          <p class="tile-desc">Sales, orders, stock and refunds from your WooCommerce store.</p>
           <p class="tile-price">Free for 1 month · then $19/month</p>
-          <button class="btn connect-btn" type="button" data-say="Connect my WooCommerce store with Plugvana">Connect</button>
-          <p class="connect-status" role="status" aria-live="polite"></p>
+          <div class="tile-foot">
+            <p class="connect-status" role="status" aria-live="polite"></p>
+            <button class="btn connect-btn" type="button" data-say="Connect my WooCommerce store with Plugvana">Connect</button>
+          </div>
         </article>
 
         <article class="tile tile-etsy" data-card="etsy">
           <a class="tile-link" href="etsy.html" aria-label="SellSignal for Etsy details">
-            <img class="tile-icon" src="assets/icons/etsy.svg" alt="SellSignal for Etsy" width="96" height="96">
+            <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/etsy.svg" alt="SellSignal for Etsy" width="48" height="48"></span>
             <span class="tile-name">SellSignal for Etsy</span>
           </a>
+          <p class="tile-desc">Sales, orders, quantities and reviews from your Etsy shop.</p>
           <p class="tile-price">Free for 1 month · then $9/month</p>
-          <button class="btn connect-btn" type="button" data-say="Connect my Etsy shop with Plugvana">Connect</button>
-          <p class="connect-status" role="status" aria-live="polite"></p>
+          <div class="tile-foot">
+            <p class="connect-status" role="status" aria-live="polite"></p>
+            <button class="btn connect-btn" type="button" data-say="Connect my Etsy shop with Plugvana">Connect</button>
+          </div>
         </article>
 
         <article class="tile tile-mailchimp" data-card="mailchimp">
           <a class="tile-link" href="mailchimp.html" aria-label="ListSignal for Mailchimp details">
-            <img class="tile-icon" src="assets/icons/mailchimp.svg" alt="ListSignal for Mailchimp" width="96" height="96">
+            <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/mailchimp.svg" alt="ListSignal for Mailchimp" width="48" height="48"></span>
             <span class="tile-name">ListSignal for Mailchimp</span>
           </a>
+          <p class="tile-desc">Audience growth, campaigns and list health in plain numbers.</p>
           <p class="tile-price">Free for 1 month · then $15/month</p>
-          <button class="btn connect-btn" type="button" data-say="Connect my Mailchimp account with Plugvana">Connect</button>
-          <p class="connect-status" role="status" aria-live="polite"></p>
+          <div class="tile-foot">
+            <p class="connect-status" role="status" aria-live="polite"></p>
+            <button class="btn connect-btn" type="button" data-say="Connect my Mailchimp account with Plugvana">Connect</button>
+          </div>
         </article>
       </div>
       <p class="no-results" id="no-results" style="display:none">No connector matches that search yet. Try a different word — or <a href="faq.html">check the FAQ</a>. More connectors are on the way.</p>
+    </div>
+  </section>
+
+  <section class="block band-white" aria-labelledby="why-h">
+    <div class="wrap">
+      <div class="section-head center">
+        <h2 id="why-h">Why Plugvana</h2>
+        <p>Built for owners who would rather ask a question than open a dashboard.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-item">
+          <span class="why-glyph" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><polyline points="21 3 21 9 15 9"/></svg></span>
+          <h3>Free month, honestly</h3>
+          <p>Every connector is free for its first month. No card to start, and when the month ends it pauses — it never charges silently.</p>
+        </div>
+        <div class="why-item">
+          <span class="why-glyph" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 3 21 8 12 13 3 8 12 3"/><polyline points="3 13 12 18 21 13"/></svg></span>
+          <h3>No bundles, ever</h3>
+          <p>Pay only for the connectors you use. Each one is priced and subscribed to on its own — no all-access pass, no forced bundle.</p>
+        </div>
+        <div class="why-item">
+          <span class="why-glyph" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="9.5" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.2" r="1.4" fill="currentColor" stroke="none"/></svg></span>
+          <h3>Your data stays yours</h3>
+          <p>Connectors run inside your own Muse. This store never receives your orders, customers, or revenue figures — only install and subscription status.</p>
+        </div>
+        <div class="why-item">
+          <span class="why-glyph" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 2.8v5.4c0 4.4-2.9 7.4-7 9.3-4.1-1.9-7-4.9-7-9.3V5.8L12 3z"/><polyline points="9 11.6 11.2 13.8 15.2 9.6"/></svg></span>
+          <h3>Approval before action</h3>
+          <p>Read-only by default. Anything that would change something is shown to you first and runs only after you approve it in your own Muse.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-label="Get started">
+    <div class="wrap">
+      <div class="cta-band">
+        <h2>Ready when your Muse is</h2>
+        <p>Pick a connector and say one sentence. Your first month is free — no card, no commitment, no silent charges.</p>
+        <a class="btn big on-dark" href="#connectors">Browse connectors</a>
+      </div>
     </div>
   </section>
 
