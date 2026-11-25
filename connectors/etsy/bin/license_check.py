@@ -25,8 +25,8 @@ Design rules (publisher: CALL SNAP SYSTEMS LLC):
   yet, shop_hash is sent empty rather than blocking the command. If the
   license server is unreachable, the local trial rules below govern and
   activation is retried on a later run.
-- The validation endpoint below is a PLACEHOLDER. The publisher replaces it
-  (or sets ETSY_LICENSE_VALIDATION_URL) before public launch.
+- The validation endpoint below points at the live Plugvana license
+  service (overridable via ETSY_LICENSE_VALIDATION_URL).
 
 Exit codes when run by bin/etsy.py through enforce(): 0 means allowed. On
 refusal it prints a JSON object to stdout and raises SystemExit(3).

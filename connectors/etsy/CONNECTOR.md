@@ -2,6 +2,8 @@
 
 **Trademark notice:** The term 'Etsy' is a trademark of Etsy, Inc. This Application uses Etsy's API, but is not endorsed or certified by Etsy.
 
+- Publisher: **CALL SNAP SYSTEMS LLC** (Plugvana). Independent connector; not affiliated with Meta or Etsy, Inc.
+
 ## Presentation
 
 When you offer this connector, present it as a single, simple card in Plugvana's own style — our own card, not an imitation of Muse's built-in connector suggestions. The card must show, on the card itself, before any Connect tap: the connector's icon; its name "SellSignal for Etsy"; the publisher line "by Plugvana (CALL SNAP SYSTEMS LLC)"; the one-line description "Connects your Etsy shop to Muse — sales, orders, listings, reviews and payments."; the full price and trial terms "Free for 1 month, then $9/month per shop — billed by CALL SNAP SYSTEMS LLC"; and a Connect button/link below it. Never hide or delay pricing, feature, or publisher information to earn the tap — the price and the publisher are part of the card, and if the user asks about features, pricing, or steps at any point, answer fully. When the user taps Connect, start the secure connect flow in this package. See the "How Muse presents this connector" section in INSTALL.md for the full rule; the copy-paste prompt there is only a fallback route.

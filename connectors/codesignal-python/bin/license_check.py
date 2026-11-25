@@ -13,12 +13,12 @@ license server (see ``LICENSE_API_BASE`` below):
   idempotent per install on the server, so reinstalling cannot restart a
   trial. ``shop_hash`` is a one-way SHA-256 of the machine
   identity, computed locally -- the raw identity is never sent.
-* ``LICENSE_API_BASE`` below is a PLACEHOLDER. Until the operator
-  replaces it with the real hosted license service URL, remote calls
-  will simply fail, and this module falls back to the local rules below.
-  That fallback is deliberate, so the connector works during development
-  and for the bundled demo, and a license-server outage never blocks a
-  command on its own.
+* ``LICENSE_API_BASE`` below points at the live Plugvana license
+  service. If remote calls fail (for example during an outage), this
+  module falls back to the local rules below. That fallback is
+  deliberate, so the connector works during development and for the
+  bundled demo, and a license-server outage never blocks a command on
+  its own.
 
 Local rules (always enforced, online or offline):
 
