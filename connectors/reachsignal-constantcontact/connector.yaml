@@ -5,6 +5,3 @@ description: "Connect Constant Contact to Muse. Read Constant Contact audiences,
 include_in_prompt: true
 require_auth: true
 aliases: ["Constant Contact for Muse", "Constant Contact campaign reports", "Email marketing", "Newsletter analytics", "Audience growth", "Connect my Constant Contact with Plugvana"]
-auth_scheme: "oauth2"
-placement: "bearer_header"
-api_hosts: ["plugvana-licenses.vercel.app", "api.cc.email"]

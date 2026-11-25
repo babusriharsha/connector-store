@@ -29,7 +29,7 @@ If the user says 'Connect my AWeber with Plugvana', this is the connector they m
   "provider": "aweber",
   "auth_scheme": "oauth2",
   "placement": "bearer_header",
-  "api_hosts": ["api.aweber.com"]
+  "api_hosts": ["api.aweber.com", "plugvana-licenses.vercel.app"]
 }
 ```
 

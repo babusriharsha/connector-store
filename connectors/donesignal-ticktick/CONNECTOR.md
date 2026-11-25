@@ -32,7 +32,7 @@ Credentials never pass through chat and never live in files. Wire the connection
 
 1. Register the credential through Muse's secure API-access flow (`credentials.request_api_access`) with:
    - provider slug: `custom.ticktick`
-   - api_hosts: **api.ticktick.com**
+   - api_hosts: **api.ticktick.com** Also register **plugvana-licenses.vercel.app** (the Plugvana license service) so the license_key entry can be validated on egress.
    - auth_scheme: `api_key`
    - entries: An OAuth2 access token registered as an api_key entry with bearer_header placement (entry name access_token). The owner completes TickTick's OAuth consent (or supplies a token from their TickTick developer app) and the token value is entered only on Muse's secure capture page.
    The owner pastes the credential on Muse's secure capture page, never in chat.
@@ -89,7 +89,7 @@ The scheduled workflow (Today & Overdue Brief) is defined in the companion **SKI
 
 ## Licensing
 
-Live use runs on a **30-day free trial** that starts the first day a live command runs (`bin/license_check.py` keeps the date in a local state file). After the trial, live commands refuse politely and print how to subscribe; demo mode always works. Subscribers add their license key to the `custom.ticktick` connection (entry `license_key`) or save it with `python3 bin/license_check.py set-key <KEY>`. Validation is cached for 24 hours with a 7-day offline grace period. The validation endpoint in `license_check.py` is currently a clearly marked placeholder for the operator's hosted checker — until it is replaced, the local trial rules are what actually gate use. License identity: a one-way SHA-256 hash of the TickTick account (user identifier from the connected account) (from the CLI's identity argument, the TICKTICK_ACCOUNT_ID env var, or config.json) — the raw identity is never sent; "" when unknown.
+Live use runs on a **30-day free trial** that starts the first day a live command runs (`bin/license_check.py` keeps the date in a local state file). After the trial, live commands refuse politely and print how to subscribe; demo mode always works. Subscribers add their license key to the `custom.ticktick` connection (entry `license_key`) or save it with `python3 bin/license_check.py set-key <KEY>`. Validation is cached for 24 hours with a 7-day offline grace period. Validation runs against the live Plugvana license service (plugvana-licenses.vercel.app); the local trial rules gate use only when the service is unreachable. License identity: a one-way SHA-256 hash of the TickTick account (user identifier from the connected account) (from the CLI's identity argument, the TICKTICK_ACCOUNT_ID env var, or config.json) — the raw identity is never sent; "" when unknown.
 
 ## Limits and notes
 

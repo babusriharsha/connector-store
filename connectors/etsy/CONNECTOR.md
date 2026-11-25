@@ -38,7 +38,7 @@ python3 bin/etsy.py set-quantity <listing_id> --quantity 10
 
 - Never ship or store the app shared secret. This connector uses the public-client PKCE flow and never needs the secret.
 
-- Replace the placeholder license validation URL in `bin/license_check.py` with the real license service before public launch. Until then the license check runs on its local trial and grace rules.
+- The license validation URL in `bin/license_check.py` points at the live Plugvana license service (plugvana-licenses.vercel.app). The license check also keeps its local trial and grace rules for when the service is unreachable.
 
 - For testing before the publisher app exists, any Etsy app keystring works. Pass it with `--api-key <keystring>` on a command, and the helper uses it instead of the connection entry.
 
@@ -54,7 +54,7 @@ python3 bin/etsy.py set-quantity <listing_id> --quantity 10
   "authorization_url": "https://www.etsy.com/oauth/connect",
   "token_url": "https://openapi.etsy.com/v3/public/oauth/token",
   "scopes": "shops_r listings_r listings_w transactions_r",
-  "api_hosts": ["openapi.etsy.com", "www.etsy.com", "etsy.com"]
+  "api_hosts": ["openapi.etsy.com", "www.etsy.com", "etsy.com", "plugvana-licenses.vercel.app"]
 }
 ```
 

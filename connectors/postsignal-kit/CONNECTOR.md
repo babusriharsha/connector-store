@@ -30,7 +30,7 @@ If the user says 'Connect my Kit account with Plugvana', this is the connector t
   "auth_scheme": "api_key",
   "placement": "header",
   "header_name": "X-Kit-Api-Key",
-  "api_hosts": ["api.kit.com"]
+  "api_hosts": ["api.kit.com", "plugvana-licenses.vercel.app"]
 }
 ```
 
