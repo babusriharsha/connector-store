@@ -11,13 +11,23 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://plugvana.com/etsy.html">
 <link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 </head>
 <body>
 
 <header class="site-header">
   <div class="wrap header-inner">
-    <a class="brand" href="index.html">Plug<span>vana</span></a>
-    <nav class="main-nav" aria-label="Main">
+    <a class="brand" href="index.html" aria-label="Plugvana — home">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="19" height="19"><path d="M9.2 3.2v3.1M14.8 3.2v3.1" stroke="#fff" stroke-width="2.1" stroke-linecap="round"/><path d="M6.7 6.3h10.6v3.3c0 3.1-2.3 5.3-5.3 5.3s-5.3-2.2-5.3-5.3V6.3z" fill="#fff"/><path d="M12 14.9v5.6" stroke="#fff" stroke-width="2.1" stroke-linecap="round"/></svg></span>
+      <span class="brand-word">Plugvana</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation menu">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="main-nav" id="site-nav" aria-label="Main">
       <a href="index.html#connectors">Connectors</a>
       <a href="how-it-works.html">How it works</a>
       <a href="pricing.html">Pricing</a>
@@ -25,7 +35,7 @@
       <a href="about.html">About</a>
     </nav>
     <form class="header-search" action="index.html" method="get" role="search">
-      <label class="small" for="header-search-input" style="position:absolute;left:-9999px">Search connectors</label>
+      <label class="sr-only" for="header-search-input">Search connectors</label>
       <input id="header-search-input" name="q" type="search" placeholder="Search connectors…" autocomplete="off">
       <button class="btn" type="submit">Search</button>
     </form>
@@ -34,9 +44,9 @@
 
 <main>
   <div class="page-hero"><div class="wrap detail-hero">
-    <div class="hero-iconrow"><span class="icon-box"><img src="assets/icons/etsy.svg" alt="SellSignal for Etsy" width="48" height="48"></span><span class="badge">Online stores</span></div>
+    <div class="hero-iconrow"><span class="icon-box"><img src="assets/icons/etsy.svg" alt="SellSignal for Etsy" width="48" height="48"></span><span class="badge">Online stores</span> <span class="badge">Coming soon</span></div>
     <h1 style="margin-top:10px">SellSignal for Etsy</h1>
-    <p class="muted" style="max-width:700px">Connect your Etsy shop to your Muse personal AI agent. Ask “How did my shop do this week?”, “Which listings are running low?”, “What did buyers say?” — and your Muse answers from your real shop data. Looking for steps? See <a href="how-to-connect-etsy-to-muse.html">how to connect Etsy to Muse</a>.</p>
+    <p class="muted" style="max-width:700px"><strong>Coming soon — not yet available.</strong> SellSignal for Etsy is not yet available to connect or buy. When it launches, it will connect your Etsy shop to your Muse personal AI agent, so you can ask “How did my shop do this week?”, “Which listings are running low?”, “What did buyers say?” — and get answers from your real shop data. The features below describe what it will do.</p>
     <p class="independence">Independent store. Not affiliated with Meta or with any platform our connectors work with.</p>
     <p class="small muted" style="max-width:700px"><strong>The term 'Etsy' is a trademark of Etsy, Inc. This Application uses Etsy's API, but is not endorsed or certified by Etsy.</strong></p>
   </div></div>
@@ -59,14 +69,9 @@
 
   <section class="block band-pattern" aria-labelledby="connect-h">
     <div class="wrap">
-      <h2 id="connect-h">How to connect</h2>
+      <h2 id="connect-h">Coming soon</h2>
       <div class="connect-panel">
-        <p class="connect-say">Open your Muse and say: <strong>&ldquo;Connect my Etsy shop with Plugvana&rdquo;</strong></p>
-        <div class="steps">
-          <div class="step"><span class="step-num" aria-hidden="true">1</span><h3>Open your Muse</h3><p class="muted">Start a chat with the Muse personal AI agent you already use — there is nothing to download from this site.</p></div>
-          <div class="step"><span class="step-num" aria-hidden="true">2</span><h3>Say the sentence</h3><p class="muted">Say &ldquo;Connect my Etsy shop with Plugvana&rdquo;. Your Muse finds this connector, and presents it to you as a card with its icon, name and a Connect button.</p></div>
-          <div class="step"><span class="step-num" aria-hidden="true">3</span><h3>Tap Connect &amp; sign in</h3><p class="muted">Tap Connect on the card your Muse shows you, then sign in on Etsy&rsquo;s own secure page (or through Muse&rsquo;s secure connection flow). Your Muse confirms the connection with a live snapshot of your real data.</p></div>
-        </div>
+        <p class="connect-say"><strong>Coming soon — not yet available.</strong> SellSignal for Etsy cannot be connected or purchased yet. We will update this page when it opens.</p>
       </div>
     </div>
   </section>
@@ -80,13 +85,13 @@
             <li>A Muse personal AI agent (the one you already chat with).</li>
             <li>An Etsy shop where you are the owner.</li>
             <li>A minute to approve the connection on Etsy’s sign-in page.</li>
-            <li>No card needed for the free month.</li>
+            <li>Coming soon — not yet available for connection or purchase.</li>
           </ul>
         </div>
         <div class="panel">
           <h3>Pricing</h3>
-          <p><strong>Free for 1 month</strong> from activation — full features, no card required to start.</p>
-          <p style="margin:0">Then a per-connector monthly price. <strong>$9/month per shop</strong> and shown here before subscriptions open. When the trial ends without a subscription, the connector pauses — it never charges silently. See <a href="pricing.html">Pricing</a>.</p>
+          <p><strong>Coming soon — not yet available.</strong></p>
+          <p style="margin:0">SellSignal for Etsy is coming soon and cannot be purchased yet. A planned price of $9/month per shop will be confirmed here when it opens. See <a href="pricing.html">Pricing</a>.</p>
         </div>
       </div>
     </div>
@@ -112,26 +117,46 @@
       <div class="faq-item"><h3>Does Etsy allow this?</h3><p>The connector uses Etsy’s official API with the sign-in approval Etsy provides for connected apps. You grant access yourself, and you can revoke it in your Etsy settings at any time.</p></div>
       <div class="faq-item"><h3>Can it change my listings or prices?</h3><p>No. The SellSignal for Etsy is read-only: snapshots, orders, quantities, reviews, and your ledger. Nothing in your shop is edited.</p></div>
       <div class="faq-item"><h3>What counts as the “shop snapshot”?</h3><p>A summary built from your receipts for the period you ask about — sales total, order count, and top items — compared with the previous period when you ask for a comparison.</p></div>
-      <div class="faq-item"><h3>What happens at the end of the free month?</h3><p>The connector pauses until you subscribe. Your connection stays in place, so subscribing resumes everything instantly.</p></div>
+      <div class="faq-item"><h3>When will SellSignal for Etsy be available?</h3><p>It is coming soon — not yet available. This page will be updated, with connection steps and confirmed pricing, when it opens.</p></div>
       <p><a href="faq.html">More questions in the store FAQ →</a></p>
     </div>
   </section>
 </main>
 
 <footer class="site-footer">
-  <div class="wrap footer-inner">
-    <div class="footer-links">
-      <a href="index.html#connectors">Connectors</a>
-      <a href="how-it-works.html">How it works</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="faq.html">FAQ</a>
-      <a href="about.html">About</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a class="brand brand-light" href="index.html" aria-label="Plugvana — home">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="19" height="19"><path d="M9.2 3.2v3.1M14.8 3.2v3.1" stroke="#fff" stroke-width="2.1" stroke-linecap="round"/><path d="M6.7 6.3h10.6v3.3c0 3.1-2.3 5.3-5.3 5.3s-5.3-2.2-5.3-5.3V6.3z" fill="#fff"/><path d="M12 14.9v5.6" stroke="#fff" stroke-width="2.1" stroke-linecap="round"/></svg></span>
+        <span class="brand-word">Plugvana</span>
+      </a>
+      <p class="footer-tag">Real connectors for your Muse.</p>
+      <p class="small">Plugvana is a product of CALL SNAP SYSTEMS LLC, Eureka, Missouri, USA. © 2026 CALL SNAP SYSTEMS LLC</p>
     </div>
-    <p class="small muted" style="margin:0">Independent store. Not affiliated with Meta or with any platform our connectors work with.</p>
-    <p class="small muted" style="margin:0">Plugvana is a product of CALL SNAP SYSTEMS LLC, Eureka, Missouri, USA. © 2026 CALL SNAP SYSTEMS LLC</p>
-    <p class="small muted" style="margin:0">All platform names mentioned are trademarks of their respective owners and are used descriptively only; no affiliation or endorsement is implied.</p>
+    <nav class="footer-col" aria-label="Connectors">
+      <h4>Connectors</h4>
+      <a href="index.html#connectors">Browse all connectors</a>
+      <a href="woocommerce.html">ShopSignal for WooCommerce</a>
+      <a href="etsy.html">SellSignal for Etsy</a>
+      <a href="mailchimp.html">ListSignal for Mailchimp</a>
+      <a href="pricing.html">Pricing</a>
+    </nav>
+    <nav class="footer-col" aria-label="Company">
+      <h4>Company</h4>
+      <a href="about.html">About</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="faq.html">FAQ</a>
+      <a href="manage.html">Manage subscription</a>
+    </nav>
+    <nav class="footer-col" aria-label="Legal">
+      <h4>Legal</h4>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </nav>
+  </div>
+  <div class="wrap footer-legal">
+    <p class="small">Independent store. Not affiliated with Meta or with any platform our connectors work with.</p>
+    <p class="small">All platform names mentioned are trademarks of their respective owners and are used descriptively only; no affiliation or endorsement is implied.</p>
   </div>
 </footer>
 
