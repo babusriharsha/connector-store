@@ -4,8 +4,7 @@ Copyright © 2026 CALL SNAP SYSTEMS LLC, Eureka, Missouri, USA.
 All rights reserved.
 
 This software — including every connector package in this repository
-(ShopSignal for WooCommerce, SellSignal for Etsy, and ListSignal for
-Mailchimp), their code, documentation, and install scripts — is the
+(the Plugvana connector products listed at plugvana.com: ShopSignal for WooCommerce, SellSignal for Etsy, ListSignal for Mailchimp, PDFSignal, SheetSignal, ImageSignal, ConvertSignal, LedgerSignal for Sage, BookSignal for Xero, BillSignal for FreshBooks, CashSignal for Wave, DealSignal for HubSpot, PipeSignal for Pipedrive, ClientSignal for Zoho CRM, BaseSignal for Airtable, SendSignal for MailerLite, PostSignal for Kit, ReachSignal for Constant Contact, NewsSignal for AWeber, BoardSignal for Trello, TaskSignal for monday.com, WorkSignal for ClickUp, DoneSignal for TickTick, MeetSignal for Cal.com, FormSignal for Typeform, LegacySignal for COBOL, CodeSignal for Python, and StatSignal for SAS), their code, documentation, and install scripts — is the
 proprietary property of CALL SNAP SYSTEMS LLC. It is NOT open source,
 and no open-source license applies to it.
 

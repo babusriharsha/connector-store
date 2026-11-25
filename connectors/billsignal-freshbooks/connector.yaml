@@ -1,0 +1,31 @@
+# BillSignal for FreshBooks connector for Muse -- descriptor.
+# id: the provider slug. The credential for this connector is registered
+# under exactly this name (custom.billsignal-freshbooks) through Muse's secure
+# API-access flow.
+id: "custom.billsignal-freshbooks"
+title: "BillSignal for FreshBooks"
+description: "Connect FreshBooks to Muse: check overdue invoices, list invoices and contacts/customers, review bank accounts and the chart of accounts, and create approval-gated DRAFT invoices. For owners who ask 'Connect my FreshBooks with Plugvana', 'connect FreshBooks to Muse', or 'which of my invoices are overdue?'. Connects your FreshBooks account to Muse — invoices, clients, expenses, payments and tracked time."
+include_in_prompt: true
+require_auth: true
+aliases:
+  - "FreshBooks for Muse"
+  - "connect FreshBooks to Muse"
+  - "Connect my FreshBooks with Plugvana"
+  - "FreshBooks invoices in Muse"
+  - "FreshBooks overdue invoices"
+# Auth scheme: bearer. The platform's OAuth2 access token (or, where the
+# platform offers one, a self-created full-access token) is registered as
+# ONE entry named access_token with bearer-header placement. The CLI's
+# LiveClient calls Muse's surrogate helper (add_surrogate_to_request),
+# which applies whatever placement was registered for the connection;
+# the real token never touches files, chat or logs (see CONNECTOR.md).
+auth_scheme: "bearer"
+auth_entries:
+  - name: "access_token"
+    placement: { bearer_header: "Authorization" }
+  - name: "license_key"
+    placement: { bearer_header: "Authorization" }
+    optional: true
+api_hosts:
+  - "plugvana-licenses.vercel.app"
+  - "api.freshbooks.com"

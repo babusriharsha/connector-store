@@ -1,0 +1,30 @@
+# Trello connector for Muse -- descriptor (Plugvana, CALL SNAP SYSTEMS LLC).
+# id: the provider slug; the credential is registered under exactly this
+# name (custom.trello) through Muse's secure API-access flow.
+id: "custom.trello"
+title: "BoardSignal for Trello"
+description: "Connect a Trello account to Muse: list boards, lists and cards, inspect a card in full, and add cards with approval. For people who want to ask their Muse 'what is on my boards?' and get a real answer from their own Trello."
+include_in_prompt: true
+require_auth: true
+aliases:
+  - "Trello for Muse"
+  - "connect Trello to Muse"
+  - "connect my Trello"
+  - "Trello boards in Muse"
+  - "check my Trello boards with Muse"
+  - "Trello card search"
+  - "Trello board report in Muse"
+  - "Connect my Trello with Plugvana"
+# Auth: API key + user token, each registered as an api_key entry with query-parameter placement (api_key -> query param `key`; token -> query param `token`). The CLI applies both surrogates to the request URL with Muse's url_with_surrogate_query_param helper before the request is created; Muse swaps in the real values only on egress to api.trello.com.
+auth_scheme: "api_key"
+auth_entries:
+  - name: "api_key"
+    placement: { query_param: "key" }
+  - name: "token"
+    placement: { query_param: "token" }
+  - name: "license_key"
+    placement: { query_param: "license_key" }
+    optional: true
+api_hosts:
+  - "plugvana-licenses.vercel.app"
+  - "api.trello.com"

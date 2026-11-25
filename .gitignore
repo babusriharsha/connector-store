@@ -7,3 +7,7 @@ connectors/*/bin/samples/sample.png
 connectors/*/bin/samples/sample.bmp
 connectors/*/bin/samples/sample.ppm
 connectors/*/bin/samples/sample-out.png
+
+# Per-install license state — may contain a real license key; never commit
+.license_state.json
+**/.license_state.json
