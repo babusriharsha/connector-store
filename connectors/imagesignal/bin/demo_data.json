@@ -1,0 +1,8 @@
+{
+  "note": "Fictional demo data. Demo mode operates on bin/samples/ fixtures.",
+  "samples": [
+    "sample.png",
+    "sample.bmp",
+    "sample.ppm"
+  ]
+}

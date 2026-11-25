@@ -1,0 +1,193 @@
+#!/usr/bin/env python3
+"""ImageSignal CLI — local image tools, stdlib only.
+
+info: PNG, BMP, GIF, JPEG (dimensions via SOF marker scan), PPM.
+resize/convert: PNG (8-bit, colour types 0/2/6, non-interlaced),
+BMP (24-bit), PPM (P6/P3). JPEG is info-only in v1 — no JPEG codec
+in the standard library, and this tool does not pretend otherwise.
+"""
+from __future__ import annotations
+import json, os, struct, sys, zlib
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import license_check
+BIN = os.path.dirname(os.path.abspath(__file__)); SAMPLES = os.path.join(BIN, "samples")
+
+def emit(p, code=0):
+    print(json.dumps(p, indent=2, default=str)); raise SystemExit(code)
+def err(m): emit({"ok": False, "error": m}, 1)
+
+def sniff(path):
+    if not os.path.isfile(path): err(f"file not found: {path}")
+    d = open(path, "rb").read()
+    if d[:8] == b"\x89PNG\r\n\x1a\n": return "png", d
+    if d[:2] == b"BM": return "bmp", d
+    if d[:6] in (b"GIF87a", b"GIF89a"): return "gif", d
+    if d[:2] == b"\xff\xd8": return "jpeg", d
+    if d[:2] in (b"P6", b"P3"): return "ppm", d
+    err(f"unrecognised image format: {path}")
+
+def info_of(path):
+    fmt, d = sniff(path)
+    w = h = None; extra = {}
+    if fmt == "png":
+        w, h = struct.unpack(">II", d[16:24]); extra = {"bit_depth": d[24], "color_type": d[25], "interlaced": d[28]}
+    elif fmt == "bmp":
+        w, h = struct.unpack("<ii", d[18:26]); h = abs(h); extra = {"bits_per_pixel": struct.unpack("<H", d[28:30])[0]}
+    elif fmt == "gif":
+        w, h = struct.unpack("<HH", d[6:10])
+    elif fmt == "jpeg":
+        i = 2
+        while i < len(d) - 9:
+            if d[i] != 0xFF: i += 1; continue
+            marker = d[i + 1]
+            if marker in (0xC0, 0xC1, 0xC2):
+                h, w = struct.unpack(">HH", d[i + 5:i + 9]); break
+            if marker in (0xD8, 0xD9) or 0xD0 <= marker <= 0xD7: i += 2; continue
+            length = struct.unpack(">H", d[i + 2:i + 4])[0]; i += 2 + length
+        if w is None: err("no SOF marker found in JPEG")
+    elif fmt == "ppm":
+        parts = d.split(None, 4)
+        w, h = int(parts[1]), int(parts[2]); extra = {"max_value": int(parts[3]), "variant": parts[0].decode()}
+    return {"ok": True, "file": path, "format": fmt, "width": w, "height": h, "size_bytes": len(d), **extra}
+
+# ---- pixel codecs (return width, height, channels, bytearray RGB(A)) ----
+def decode_png(d):
+    assert d[:8] == b"\x89PNG\r\n\x1a\n"
+    w, h = struct.unpack(">II", d[16:24]); bitd, ctype, inter = d[24], d[25], d[28]
+    if bitd != 8 or inter != 0 or ctype not in (0, 2, 6): err(f"unsupported PNG for pixel ops: bit_depth={bitd} color_type={ctype} interlaced={inter} (v1: 8-bit non-interlaced types 0/2/6)")
+    ch = {0: 1, 2: 3, 6: 4}[ctype]
+    idat = b""; pos = 8
+    while pos < len(d):
+        ln, typ = struct.unpack(">I", d[pos:pos + 4])[0], d[pos + 4:pos + 8]
+        if typ == b"IDAT": idat += d[pos + 8:pos + 8 + ln]
+        pos += 12 + ln
+    raw = zlib.decompress(idat); stride = w * ch; out = bytearray(w * h * ch); prev = bytearray(stride)
+    p = 0
+    for y in range(h):
+        filt = raw[p]; p += 1; line = bytearray(raw[p:p + stride]); p += stride
+        for x in range(stride):
+            a = line[x - ch] if x >= ch else 0; b = prev[x]; c = prev[x - ch] if x >= ch else 0
+            if filt == 1: line[x] = (line[x] + a) & 0xFF
+            elif filt == 2: line[x] = (line[x] + b) & 0xFF
+            elif filt == 3: line[x] = (line[x] + (a + b) // 2) & 0xFF
+            elif filt == 4:
+                pp = a + b - c; pa, pb, pc = abs(pp - a), abs(pp - b), abs(pp - c)
+                pr = a if (pa <= pb and pa <= pc) else (b if pb <= pc else c)
+                line[x] = (line[x] + pr) & 0xFF
+        out[y * stride:(y + 1) * stride] = line; prev = line
+    if ch == 1:  # expand gray to RGB
+        rgb = bytearray(w * h * 3)
+        for i, v in enumerate(out): rgb[i * 3:i * 3 + 3] = bytes([v, v, v])
+        return w, h, 3, rgb
+    return w, h, ch, out
+
+def encode_png(w, h, ch, px):
+    ctype = {3: 2, 4: 6}[ch]; stride = w * ch
+    raw = b"".join(b"\x00" + bytes(px[y * stride:(y + 1) * stride]) for y in range(h))
+    def chunk(typ, data):
+        c = struct.pack(">I", len(data)) + typ + data
+        return c + struct.pack(">I", zlib.crc32(typ + data) & 0xFFFFFFFF)
+    ihdr = struct.pack(">IIBBBBB", w, h, 8, ctype, 0, 0, 0)
+    return b"\x89PNG\r\n\x1a\n" + chunk(b"IHDR", ihdr) + chunk(b"IDAT", zlib.compress(bytes(raw))) + chunk(b"IEND", b"")
+
+def decode_bmp(d):
+    off = struct.unpack("<I", d[10:14])[0]; w, h = struct.unpack("<ii", d[18:26])
+    bpp = struct.unpack("<H", d[28:30])[0]
+    if bpp != 24: err(f"unsupported BMP for pixel ops: {bpp}bpp (v1: 24-bit)")
+    top_down = h < 0; h = abs(h); row = ((w * 3 + 3) // 4) * 4; out = bytearray(w * h * 3)
+    for y in range(h):
+        sy = y if top_down else h - 1 - y
+        for x in range(w):
+            b, g, r = d[off + sy * row + x * 3: off + sy * row + x * 3 + 3]
+            out[(y * w + x) * 3:(y * w + x) * 3 + 3] = bytes([r, g, b])
+    return w, h, 3, out
+
+def encode_bmp(w, h, px):
+    row = ((w * 3 + 3) // 4) * 4; img = bytearray(row * h)
+    for y in range(h):
+        sy = h - 1 - y
+        for x in range(w):
+            r, g, b = px[(y * w + x) * 3:(y * w + x) * 3 + 3]
+            img[sy * row + x * 3: sy * row + x * 3 + 3] = bytes([b, g, r])
+    hdr = b"BM" + struct.pack("<IHHI", 54 + len(img), 0, 0, 54) + struct.pack("<IiiHHIIiiII", 40, w, h, 1, 24, 0, len(img), 2835, 2835, 0, 0)
+    return hdr + bytes(img)
+
+def decode_ppm(d):
+    parts = d.split(None, 4); variant = parts[0]; w, h, mx = int(parts[1]), int(parts[2]), int(parts[3])
+    # header is 4 whitespace-separated tokens; payload follows the 4th token's whitespace
+    idx = 0; tokens = 0
+    while tokens < 4:
+        while d[idx:idx + 1].isspace(): idx += 1
+        while idx < len(d) and not d[idx:idx + 1].isspace(): idx += 1
+        tokens += 1
+    idx += 1
+    if variant == b"P6": return w, h, 3, bytearray(d[idx:idx + w * h * 3])
+    vals = list(map(int, d[idx:].split())); return w, h, 3, bytearray(vals)
+
+def encode_ppm(w, h, px): return f"P6\n{w} {h}\n255\n".encode() + bytes(px)
+
+def load_pixels(path):
+    fmt, d = sniff(path)
+    if fmt == "png": return decode_png(d)
+    if fmt == "bmp": return decode_bmp(d)
+    if fmt == "ppm": return decode_ppm(d)
+    err(f"{fmt} pixel operations are not supported in v1 (info only)")
+
+def save_pixels(path, w, h, ch, px):
+    ext = os.path.splitext(path)[1].lower()
+    if ch == 4 and ext != ".png": err("RGBA output must be .png")
+    if ext == ".png": data = encode_png(w, h, ch, px)
+    elif ext == ".bmp":
+        if ch == 4: err("BMP output needs RGB; convert from an RGB source")
+        data = encode_bmp(w, h, px)
+    elif ext == ".ppm":
+        if ch == 4: err("PPM output needs RGB")
+        data = encode_ppm(w, h, px)
+    else: err(f"unsupported output format: {ext} (v1 writes .png/.bmp/.ppm)")
+    open(path, "wb").write(data)
+
+def resize(px, w, h, ch, nw, nh):
+    out = bytearray(nw * nh * ch)
+    for y in range(nh):
+        sy = min(h - 1, y * h // nh)
+        for x in range(nw):
+            sx = min(w - 1, x * w // nw)
+            out[(y * nw + x) * ch:(y * nw + x) * ch + ch] = px[(sy * w + sx) * ch:(sy * w + sx) * ch + ch]
+    return out
+
+def flag(argv, name): return argv[argv.index(name) + 1] if name in argv else None
+
+def main(argv):
+    demo = "--demo" in argv; argv = [a for a in argv if a != "--demo"]
+    if not demo: license_check.enforce()
+    if len(argv) < 2: err("usage: image.py [--demo] info|resize|convert|batch-info ...")
+    cmd = argv[1]
+    files = [a for i, a in enumerate(argv[2:], start=2) if not a.startswith("--") and argv[i - 1] not in ("--width", "--height", "--out")]
+    if cmd == "info":
+        path = files[0] if files else (os.path.join(SAMPLES, "sample.png") if demo else err("info needs a file"))
+        emit(info_of(path))
+    elif cmd == "batch-info":
+        d = files[0] if files else (SAMPLES if demo else err("batch-info needs a directory"))
+        if not os.path.isdir(d): err(f"not a directory: {d}")
+        results = []
+        for name in sorted(os.listdir(d)):
+            p = os.path.join(d, name)
+            if not os.path.isfile(p): continue
+            try: results.append(info_of(p))
+            except SystemExit: results.append({"file": p, "ok": False, "error": "unrecognised or unsupported"})
+        emit({"ok": True, "directory": d, "images": [r for r in results if r.get("ok")], "skipped": [r["file"] for r in results if not r.get("ok")],
+              "total_bytes": sum(r.get("size_bytes", 0) for r in results if r.get("ok"))})
+    elif cmd in ("resize", "convert"):
+        path = files[0] if files else (os.path.join(SAMPLES, "sample.png") if demo else err(f"{cmd} needs a file"))
+        outp = flag(argv, "--out") or (os.path.join(SAMPLES, "sample-out.png") if demo else err(f"{cmd} needs --out"))
+        w, h, ch, px = load_pixels(path)
+        nw, nh = w, h
+        if cmd == "resize":
+            nw = int(flag(argv, "--width") or w); nh = int(flag(argv, "--height") or h)
+            px = resize(px, w, h, ch, nw, nh)
+        save_pixels(outp, nw, nh, ch, px)
+        emit({"ok": True, "command": cmd, "source": path, "created": outp, "width": nw, "height": nh, "size_bytes": os.path.getsize(outp)})
+    else: err(f"unknown command: {cmd}")
+
+if __name__ == "__main__":
+    main(sys.argv)

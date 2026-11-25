@@ -1,0 +1,33 @@
+# ImageSignal connector for Muse -- descriptor.
+#
+# - id: the provider slug (custom.imagesignal). File tools have no
+#   platform account: require_auth is false and the only connection
+#   entry is the OPTIONAL license_key, used after the free trial.
+# - description: what connector search matches on. The aliases below
+#   carry the phrases owners actually use, so a Muse asked "how do
+#   I connect my files/tools?" finds this connector.
+id: "custom.imagesignal"
+title: "ImageSignal"
+description: "Connects your image tools to Muse — image dimensions and info, resizing and converting PNG, BMP and PPM files, on your own files. Local file tools by Plugvana — no account, runs on your own machine."
+include_in_prompt: true
+require_auth: false
+aliases:
+  - "ImageSignal for Muse"
+  - "Connect my image tools with Plugvana"
+  - "resize all photos in this folder"
+  - "batch resize images"
+  - "resize every new photo automatically"
+  - "convert all images in this folder"
+  - "always shrink my screenshots"
+  - "image tools for Muse"
+  - "resize image"
+  - "convert PNG to BMP"
+  - "image size checker"
+auth_entries:
+  - name: "license_key"
+    placement: { query_param: "license_key" }
+    optional: true
+# This connector makes no network calls except the license check
+# (bin/license_check.py, whose endpoint host is registered at deploy
+# time). All file processing is local.
+api_hosts: []
