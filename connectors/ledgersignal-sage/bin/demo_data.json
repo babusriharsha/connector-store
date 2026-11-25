@@ -1,0 +1,121 @@
+{
+  "business": {
+    "id": "demo-biz-1",
+    "name": "Bluebird Bakery LLC (DEMO)",
+    "legal_name": "Bluebird Bakery LLC",
+    "country": "US",
+    "currency": "USD",
+    "note": "All data in this file is fictional sample data for --demo mode."
+  },
+  "contacts": [
+    {
+      "id": "c-101",
+      "name": "Maple Street Cafe (fictional)",
+      "contact_type_id": "CUSTOMER",
+      "email": "hello@maplestreetcafe.example"
+    },
+    {
+      "id": "c-102",
+      "name": "Northwind Flour Mills (fictional)",
+      "contact_type_id": "SUPPLIER",
+      "email": "ap@northwindflour.example"
+    },
+    {
+      "id": "c-103",
+      "name": "Juniper Events Co (fictional)",
+      "contact_type_id": "CUSTOMER",
+      "email": "events@juniperevents.example"
+    }
+  ],
+  "sales_invoices": [
+    {
+      "id": "si-1001",
+      "invoice_number": "INV-1001",
+      "contact_id": "c-101",
+      "contact_name": "Maple Street Cafe (fictional)",
+      "date": "2026-10-01",
+      "due_date": "2026-10-15",
+      "status": "unpaid",
+      "total_amount": 1240.0,
+      "outstanding_amount": 1240.0
+    },
+    {
+      "id": "si-1002",
+      "invoice_number": "INV-1002",
+      "contact_id": "c-103",
+      "contact_name": "Juniper Events Co (fictional)",
+      "date": "2026-11-10",
+      "due_date": "2026-12-10",
+      "status": "unpaid",
+      "total_amount": 860.5,
+      "outstanding_amount": 860.5
+    },
+    {
+      "id": "si-1003",
+      "invoice_number": "INV-1003",
+      "contact_id": "c-101",
+      "contact_name": "Maple Street Cafe (fictional)",
+      "date": "2026-09-01",
+      "due_date": "2026-09-15",
+      "status": "paid",
+      "total_amount": 975.0,
+      "outstanding_amount": 0
+    }
+  ],
+  "purchase_invoices": [
+    {
+      "id": "pi-2001",
+      "invoice_number": "BILL-501",
+      "contact_id": "c-102",
+      "contact_name": "Northwind Flour Mills (fictional)",
+      "date": "2026-11-05",
+      "due_date": "2026-12-05",
+      "status": "unpaid",
+      "total_amount": 2310.0,
+      "outstanding_amount": 2310.0
+    }
+  ],
+  "bank_accounts": [
+    {
+      "id": "ba-1",
+      "name": "Main Checking (fictional)",
+      "account_number_last4": "4821",
+      "balance": 18452.33
+    },
+    {
+      "id": "ba-2",
+      "name": "Savings Reserve (fictional)",
+      "account_number_last4": "9034",
+      "balance": 7500.0
+    }
+  ],
+  "ledger_accounts": [
+    {
+      "id": "la-4000",
+      "name": "Sales Revenue",
+      "nominal_code": "4000",
+      "ledger_account_type_id": "REVENUE"
+    },
+    {
+      "id": "la-5000",
+      "name": "Cost of Goods Sold",
+      "nominal_code": "5000",
+      "ledger_account_type_id": "COST_OF_SALES"
+    },
+    {
+      "id": "la-7000",
+      "name": "Rent Expense",
+      "nominal_code": "7000",
+      "ledger_account_type_id": "EXPENSE"
+    }
+  ],
+  "journals": [
+    {
+      "id": "j-1",
+      "date": "2026-11-01",
+      "description": "Monthly rent accrual (fictional)",
+      "total_debit": 1800.0,
+      "total_credit": 1800.0
+    }
+  ]
+}
