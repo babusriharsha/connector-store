@@ -11,17 +11,34 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://plugvana.com/">
 <link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 </head>
 <body>
 
 <header class="site-header">
   <div class="wrap header-inner">
-    <a class="brand" href="index.html">Plug<span>vana</span></a>
-    <nav class="main-nav" aria-label="Main">
+    <a class="brand" href="index.html" aria-label="Plugvana — home">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="19" height="19"><path d="M9.2 3.2v3.1M14.8 3.2v3.1" stroke="#fff" stroke-width="2.1" stroke-linecap="round"/><path d="M6.7 6.3h10.6v3.3c0 3.1-2.3 5.3-5.3 5.3s-5.3-2.2-5.3-5.3V6.3z" fill="#fff"/><path d="M12 14.9v5.6" stroke="#fff" stroke-width="2.1" stroke-linecap="round"/></svg></span>
+      <span class="brand-word">Plugvana</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation menu">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="main-nav" id="site-nav" aria-label="Main">
+      <a href="index.html#connectors">Connectors</a>
+      <a href="how-it-works.html">How it works</a>
       <a href="pricing.html">Pricing</a>
       <a href="faq.html">FAQ</a>
       <a href="about.html">About</a>
     </nav>
+    <form class="header-search" action="index.html" method="get" role="search">
+      <label class="sr-only" for="header-search-input">Search connectors</label>
+      <input id="header-search-input" name="q" type="search" placeholder="Search connectors…" autocomplete="off">
+      <button class="btn" type="submit">Search</button>
+    </form>
   </div>
 </header>
 
@@ -29,46 +46,68 @@
   <div class="hero-band">
     <div class="wrap">
       <div class="hero">
-        <div>
+        <div class="hero-copy">
+          <p class="hero-eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>The independent connector store for Muse</p>
           <h1>Connect a service to your Muse.</h1>
           <p class="tagline">Pick a connector, open your Muse, and say one sentence — your Muse finds it, presents it, and installs it when you tap Connect.</p>
           <div class="hero-actions">
-            <a class="btn big on-dark" href="#connectors">Browse connectors</a>
-            <a class="btn big secondary" href="how-it-works.html">How it works</a>
+            <a class="btn big" href="#connectors">Browse connectors</a>
+            <a class="btn big ghost" href="how-it-works.html">How it works</a>
           </div>
           <p class="independence">Independent store. Not affiliated with Meta or with any platform our connectors work with.</p>
         </div>
-        <img class="hero-art" src="assets/hero-art.svg" alt="Illustration of services connecting into one central hub" width="560" height="440">
-      </div>
-
-      <div class="flow" aria-label="How connecting works in three steps">
-        <div class="flow-step">
-          <div class="flow-top">
-            <span class="flow-glyph" aria-hidden="true"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.5 0-3-.4-4.2-1.1L3 20l1.1-5.3A8.5 8.5 0 1 1 21 11.5z"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="13.5" x2="13.5" y2="13.5"/></svg></span>
-            <h3>Say it</h3>
-            <span class="flow-num">Step 1</span>
+        <div class="chat-mock" role="img" aria-label="Example of a Muse conversation: you say 'Connect my WooCommerce store with Plugvana' and Muse presents the ShopSignal for WooCommerce connector card with a Connect button">
+          <div class="chat-head">
+            <span class="chat-avatar" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15"><path fill="#fff" d="M12 3c.8 4.3 2.1 6.1 6.1 7.2-4 1.1-5.3 2.9-6.1 7.2-.8-4.3-2.1-6.1-6.1-7.2C9.9 9.1 11.2 7.3 12 3z"/></svg></span>
+            <span class="chat-title">Muse</span>
+            <span class="chat-head-note">just now</span>
           </div>
-          <p>Open your Muse and say one sentence — the connector&rsquo;s name and your store, nothing to download or paste.</p>
-        </div>
-        <div class="flow-step">
-          <div class="flow-top">
-            <span class="flow-glyph" aria-hidden="true"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M12 8.2c.5 2 .9 2.7 2.9 3.3-2 .6-2.4 1.3-2.9 3.3-.5-2-.9-2.7-2.9-3.3 2-.6 2.4-1.3 2.9-3.3z" fill="currentColor" stroke="none"/></svg></span>
-            <h3>Muse finds it</h3>
-            <span class="flow-num">Step 2</span>
+          <div class="chat-body">
+            <p class="chat-bubble user">Connect my WooCommerce store with Plugvana</p>
+            <p class="chat-bubble muse">Found it — here’s the connector for your store:</p>
+            <div class="chat-card">
+              <div class="chat-card-top">
+                <span class="chat-card-icon"><img src="assets/icons/woocommerce.svg" alt="" width="48" height="48"></span>
+                <div class="chat-card-name">ShopSignal for WooCommerce<span>by Plugvana</span></div>
+              </div>
+              <p class="chat-card-desc">Sales, orders, stock and refunds from your WooCommerce store.</p>
+              <div class="chat-card-foot">
+                <span class="chat-card-price">Free for 1 month · then $19/month</span>
+                <span class="btn chat-connect">Connect</span>
+              </div>
+            </div>
+            <p class="chat-note">Tap Connect, sign in once on WooCommerce’s own secure page — done.</p>
           </div>
-          <p>Your Muse finds the connector in this store and presents it to you as a card — icon, name, price, Connect button.</p>
-        </div>
-        <div class="flow-step">
-          <div class="flow-top">
-            <span class="flow-glyph" aria-hidden="true"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="8.2 12.4 10.8 15 15.8 9.4"/></svg></span>
-            <h3>It just works</h3>
-            <span class="flow-num">Step 3</span>
-          </div>
-          <p>Tap Connect, sign in once on the service&rsquo;s own secure page, and start asking questions about your real data.</p>
         </div>
       </div>
     </div>
   </div>
+
+  <section class="block band-white" aria-labelledby="steps-h">
+    <div class="wrap">
+      <div class="section-head center">
+        <h2 id="steps-h">How connecting works</h2>
+        <p>No downloads and no setup wizards — your Muse does the installing.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="step-num" aria-hidden="true">1</span>
+          <h3>Say it</h3>
+          <p class="muted">Open your Muse and say one sentence — the connector’s name and your store, nothing to download or paste.</p>
+        </div>
+        <div class="step">
+          <span class="step-num" aria-hidden="true">2</span>
+          <h3>Muse finds it</h3>
+          <p class="muted">Your Muse finds the connector in this store and presents it to you as a card — icon, name, price, Connect button.</p>
+        </div>
+        <div class="step">
+          <span class="step-num" aria-hidden="true">3</span>
+          <h3>It just works</h3>
+          <p class="muted">Tap Connect, sign in once on the service’s own secure page, and start asking questions about your real data.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="block" id="connectors" aria-labelledby="catalog-h">
     <div class="wrap">
@@ -78,386 +117,417 @@
           <label for="catalog-search-input" style="position:absolute;left:-9999px">Search connectors and features</label>
           <input id="catalog-search-input" type="search" placeholder="Search connectors…" autocomplete="off">
         </div>
+        <div class="chips" role="group" aria-label="Filter connectors by category">
+          <button class="chip" type="button" data-filter="All" aria-pressed="true">All</button>
+          <button class="chip" type="button" data-filter="Online stores" aria-pressed="false">Online stores</button>
+          <button class="chip" type="button" data-filter="Documents &amp; Files" aria-pressed="false">Documents &amp; Files</button>
+          <button class="chip" type="button" data-filter="Money &amp; Accounting" aria-pressed="false">Money &amp; Accounting</button>
+          <button class="chip" type="button" data-filter="Customers &amp; Sales" aria-pressed="false">Customers &amp; Sales</button>
+          <button class="chip" type="button" data-filter="Email &amp; Audience" aria-pressed="false">Email &amp; Audience</button>
+          <button class="chip" type="button" data-filter="Work &amp; Scheduling" aria-pressed="false">Work &amp; Scheduling</button>
+          <button class="chip" type="button" data-filter="Code &amp; Legacy" aria-pressed="false">Code &amp; Legacy</button>
+        </div>
       </div>
 
-      <div class="app-grid" id="catalog-grid">
-        <div class="catalog-group"><h3>Online stores</h3></div>
+      <div id="catalog-grid">
+        <section class="catalog-cat" data-cat-section aria-label="Online stores">
+          <div class="catalog-cat-head"><h3>Online stores</h3><span class="catalog-cat-rule" aria-hidden="true"></span><span class="catalog-cat-count">2 connectors</span></div>
+          <div class="app-grid">
+            <article class="tile tile-woocommerce" data-card="woocommerce">
+                      <a class="tile-link" href="woocommerce.html" aria-label="ShopSignal for WooCommerce details">
+                        <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/woocommerce.svg" alt="ShopSignal for WooCommerce" width="48" height="48"></span>
+                        <span class="tile-name">ShopSignal for WooCommerce</span>
+                      </a>
+                      <p class="tile-desc">Sales, orders, stock and refunds from your WooCommerce store.</p>
+                      <p class="tile-price">Free for 1 month · then $19/month</p>
+                      <div class="tile-foot">
+                        <p class="connect-status" role="status" aria-live="polite"></p>
+                        <button class="btn connect-btn" type="button" data-say="Connect my WooCommerce store with Plugvana">Connect</button>
+                      </div>
+                    </article>
 
-        <article class="tile tile-woocommerce" data-card="woocommerce">
-          <a class="tile-link" href="woocommerce.html" aria-label="ShopSignal for WooCommerce details">
-            <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/woocommerce.svg" alt="ShopSignal for WooCommerce" width="48" height="48"></span>
-            <span class="tile-name">ShopSignal for WooCommerce</span>
-          </a>
-          <p class="tile-desc">Sales, orders, stock and refunds from your WooCommerce store.</p>
-          <p class="tile-price">Free for 1 month · then $19/month</p>
-          <div class="tile-foot">
-            <p class="connect-status" role="status" aria-live="polite"></p>
-            <button class="btn connect-btn" type="button" data-say="Connect my WooCommerce store with Plugvana">Connect</button>
+            <article class="tile tile-etsy" data-card="etsy">
+                      <a class="tile-link" href="etsy.html" aria-label="SellSignal for Etsy details">
+                        <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/etsy.svg" alt="SellSignal for Etsy" width="48" height="48"></span>
+                        <span class="tile-name">SellSignal for Etsy</span>
+                      </a>
+                      <p class="tile-desc">Sales, orders, quantities and reviews from your Etsy shop.</p>
+                      <p class="tile-price">Coming soon</p>
+                      <div class="tile-foot">
+                        <p class="connect-status" role="status" aria-live="polite"></p>
+                        <span class="badge">Coming soon</span>
+                      </div>
+                    </article>
           </div>
-        </article>
+        </section>
 
-        <article class="tile tile-etsy" data-card="etsy">
-          <a class="tile-link" href="etsy.html" aria-label="SellSignal for Etsy details">
-            <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/etsy.svg" alt="SellSignal for Etsy" width="48" height="48"></span>
-            <span class="tile-name">SellSignal for Etsy</span>
-          </a>
-          <p class="tile-desc">Sales, orders, quantities and reviews from your Etsy shop.</p>
-          <p class="tile-price">Free for 1 month · then $9/month</p>
-          <div class="tile-foot">
-            <p class="connect-status" role="status" aria-live="polite"></p>
-            <button class="btn connect-btn" type="button" data-say="Connect my Etsy shop with Plugvana">Connect</button>
+        <section class="catalog-cat" data-cat-section aria-label="Documents & Files">
+          <div class="catalog-cat-head"><h3>Documents & Files</h3><span class="catalog-cat-rule" aria-hidden="true"></span><span class="catalog-cat-count">4 connectors</span></div>
+          <div class="app-grid">
+            <article class="tile" data-card="pdfsignal">
+                      <a class="tile-link" href="pdfsignal.html" aria-label="PDFSignal details">
+                        <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/pdfsignal.svg" alt="PDFSignal" width="48" height="48"></span>
+                        <span class="tile-name">PDFSignal</span>
+                      </a>
+                      <p class="tile-desc">Batch PDF work — extract, inspect and create PDFs across whole folders, or automatically on schedule.</p>
+                      <p class="tile-price">Free for 1 month · then $5/month</p>
+                      <div class="tile-foot">
+                        <p class="connect-status" role="status" aria-live="polite"></p>
+                        <button class="btn connect-btn" type="button" data-say="Connect my PDF tools with Plugvana">Connect</button>
+                      </div>
+                    </article>
+
+            <article class="tile" data-card="sheetsignal">
+                      <a class="tile-link" href="sheetsignal.html" aria-label="SheetSignal details">
+                        <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/sheetsignal.svg" alt="SheetSignal" width="48" height="48"></span>
+                        <span class="tile-name">SheetSignal</span>
+                      </a>
+                      <p class="tile-desc">Clean, dedupe and merge spreadsheets in batches — or automatically, every time a new CSV lands.</p>
+                      <p class="tile-price">Free for 1 month · then $5/month</p>
+                      <div class="tile-foot">
+                        <p class="connect-status" role="status" aria-live="polite"></p>
+                        <button class="btn connect-btn" type="button" data-say="Connect my spreadsheet tools with Plugvana">Connect</button>
+                      </div>
+                    </article>
+
+            <article class="tile" data-card="imagesignal">
+                      <a class="tile-link" href="imagesignal.html" aria-label="ImageSignal details">
+                        <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/imagesignal.svg" alt="ImageSignal" width="48" height="48"></span>
+                        <span class="tile-name">ImageSignal</span>
+                      </a>
+                      <p class="tile-desc">Resize and convert images in batches — or automatically, on schedule, with your presets.</p>
+                      <p class="tile-price">Free for 1 month · then $5/month</p>
+                      <div class="tile-foot">
+                        <p class="connect-status" role="status" aria-live="polite"></p>
+                        <button class="btn connect-btn" type="button" data-say="Connect my image tools with Plugvana">Connect</button>
+                      </div>
+                    </article>
+
+            <article class="tile" data-card="convertsignal">
+                      <a class="tile-link" href="convertsignal.html" aria-label="ConvertSignal details">
+                        <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/convertsignal.svg" alt="ConvertSignal" width="48" height="48"></span>
+                        <span class="tile-name">ConvertSignal</span>
+                      </a>
+                      <p class="tile-desc">Convert documents in batches — or automatically, on schedule, with standing rules.</p>
+                      <p class="tile-price">Free for 1 month · then $5/month</p>
+                      <div class="tile-foot">
+                        <p class="connect-status" role="status" aria-live="polite"></p>
+                        <button class="btn connect-btn" type="button" data-say="Connect my document converter with Plugvana">Connect</button>
+                      </div>
+                    </article>
           </div>
-        </article>
+        </section>
 
-        <div class="catalog-group"><h3>Documents & Files</h3></div>
+        <section class="catalog-cat" data-cat-section aria-label="Money & Accounting">
+          <div class="catalog-cat-head"><h3>Money & Accounting</h3><span class="catalog-cat-rule" aria-hidden="true"></span><span class="catalog-cat-count">4 connectors</span></div>
+          <div class="app-grid">
+            <article class="tile" data-card="ledgersignal-sage">
+                      <a class="tile-link" href="ledgersignal-sage.html" aria-label="LedgerSignal for Sage details">
+                        <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/ledgersignal-sage.svg" alt="LedgerSignal for Sage" width="48" height="48"></span>
+                        <span class="tile-name">LedgerSignal for Sage</span>
+                      </a>
+                      <p class="tile-desc">Invoices, overdue payments and bank accounts from Sage.</p>
+                      <p class="tile-price">Free for 1 month · then $19/month</p>
+                      <div class="tile-foot">
+                        <p class="connect-status" role="status" aria-live="polite"></p>
+                        <button class="btn connect-btn" type="button" data-say="Connect my Sage accounting with Plugvana">Connect</button>
+                      </div>
+                    </article>
 
-        <article class="tile" data-card="pdfsignal">
-          <a class="tile-link" href="pdfsignal.html" aria-label="PDFSignal details">
-            <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/pdfsignal.svg" alt="PDFSignal" width="48" height="48"></span>
-            <span class="tile-name">PDFSignal</span>
-          </a>
-          <p class="tile-desc">Batch PDF work — extract, inspect and create PDFs across whole folders, or automatically on schedule.</p>
-          <p class="tile-price">Free for 1 month · then $5/month</p>
-          <div class="tile-foot">
-            <p class="connect-status" role="status" aria-live="polite"></p>
-            <button class="btn connect-btn" type="button" data-say="Connect my PDF tools with Plugvana">Connect</button>
+            <article class="tile" data-card="booksignal-xero">
+                      <a class="tile-link" href="booksignal-xero.html" aria-label="BookSignal for Xero details">
+                        <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/booksignal-xero.svg" alt="BookSignal for Xero" width="48" height="48"></span>
+                        <span class="tile-name">BookSignal for Xero</span>
+                      </a>
+                      <p class="tile-desc">Invoices, contacts, bank summary and profit & loss from Xero.</p>
+                      <p class="tile-price">Free for 1 month · then $19/month</p>
+                      <div class="tile-foot">
+                        <p class="connect-status" role="status" aria-live="polite"></p>
+                        <button class="btn connect-btn" type="button" data-say="Connect my Xero with Plugvana">Connect</button>
+                      </div>
+                    </article>
+
+            <article class="tile" data-card="billsignal-freshbooks">
+                      <a class="tile-link" href="billsignal-freshbooks.html" aria-label="BillSignal for FreshBooks details">
+                        <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/billsignal-freshbooks.svg" alt="BillSignal for FreshBooks" width="48" height="48"></span>
+                        <span class="tile-name">BillSignal for FreshBooks</span>
+                      </a>
+                      <p class="tile-desc">Invoices, expenses, payments and time from FreshBooks.</p>
+                      <p class="tile-price">Free for 1 month · then $15/month</p>
+                      <div class="tile-foot">
+                        <p class="connect-status" role="status" aria-live="polite"></p>
+                        <button class="btn connect-btn" type="button" data-say="Connect my FreshBooks with Plugvana">Connect</button>
+                      </div>
+                    </article>
+
+            <article class="tile" data-card="cashsignal-wave">
+                      <a class="tile-link" href="cashsignal-wave.html" aria-label="CashSignal for Wave details">
+                        <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/cashsignal-wave.svg" alt="CashSignal for Wave" width="48" height="48"></span>
+                        <span class="tile-name">CashSignal for Wave</span>
+                      </a>
+                      <p class="tile-desc">Invoices, customers and accounts from your Wave business.</p>
+                      <p class="tile-price">Free for 1 month · then $9/month</p>
+                      <div class="tile-foot">
+                        <p class="connect-status" role="status" aria-live="polite"></p>
+                        <button class="btn connect-btn" type="button" data-say="Connect my Wave accounting with Plugvana">Connect</button>
+                      </div>
+                    </article>
           </div>
-        </article>
+        </section>
 
-        <article class="tile" data-card="sheetsignal">
-          <a class="tile-link" href="sheetsignal.html" aria-label="SheetSignal details">
-            <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/sheetsignal.svg" alt="SheetSignal" width="48" height="48"></span>
-            <span class="tile-name">SheetSignal</span>
-          </a>
-          <p class="tile-desc">Clean, dedupe and merge spreadsheets in batches — or automatically, every time a new CSV lands.</p>
-          <p class="tile-price">Free for 1 month · then $5/month</p>
-          <div class="tile-foot">
-            <p class="connect-status" role="status" aria-live="polite"></p>
-            <button class="btn connect-btn" type="button" data-say="Connect my spreadsheet tools with Plugvana">Connect</button>
+        <section class="catalog-cat" data-cat-section aria-label="Customers & Sales">
+          <div class="catalog-cat-head"><h3>Customers & Sales</h3><span class="catalog-cat-rule" aria-hidden="true"></span><span class="catalog-cat-count">4 connectors</span></div>
+          <div class="app-grid">
+            <article class="tile" data-card="dealsignal-hubspot">
+                      <a class="tile-link" href="dealsignal-hubspot.html" aria-label="DealSignal for HubSpot details">
+                        <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/dealsignal-hubspot.svg" alt="DealSignal for HubSpot" width="48" height="48"></span>
+                        <span class="tile-name">DealSignal for HubSpot</span>
+                      </a>
+                      <p class="tile-desc">Contacts, companies and deal pipeline from HubSpot CRM.</p>
+                      <p class="tile-price">Free for 1 month · then $19/month</p>
+                      <div class="tile-foot">
+                        <p class="connect-status" role="status" aria-live="polite"></p>
+                        <button class="btn connect-btn" type="button" data-say="Connect my HubSpot with Plugvana">Connect</button>
+                      </div>
+                    </article>
+
+            <article class="tile" data-card="pipesignal-pipedrive">
+                      <a class="tile-link" href="pipesignal-pipedrive.html" aria-label="PipeSignal for Pipedrive details">
+                        <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/pipesignal-pipedrive.svg" alt="PipeSignal for Pipedrive" width="48" height="48"></span>
+                        <span class="tile-name">PipeSignal for Pipedrive</span>
+                      </a>
+                      <p class="tile-desc">Deals, people, organisations and activities from Pipedrive.</p>
+                      <p class="tile-price">Free for 1 month · then $15/month</p>
+                      <div class="tile-foot">
+                        <p class="connect-status" role="status" aria-live="polite"></p>
+                        <button class="btn connect-btn" type="button" data-say="Connect my Pipedrive with Plugvana">Connect</button>
+                      </div>
+                    </article>
+
+            <article class="tile" data-card="clientsignal-zoho">
+                      <a class="tile-link" href="clientsignal-zoho.html" aria-label="ClientSignal for Zoho CRM details">
+                        <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/clientsignal-zoho.svg" alt="ClientSignal for Zoho CRM" width="48" height="48"></span>
+                        <span class="tile-name">ClientSignal for Zoho CRM</span>
+                      </a>
+                      <p class="tile-desc">Accounts, contacts, deals and search from Zoho CRM.</p>
+                      <p class="tile-price">Free for 1 month · then $15/month</p>
+                      <div class="tile-foot">
+                        <p class="connect-status" role="status" aria-live="polite"></p>
+                        <button class="btn connect-btn" type="button" data-say="Connect my Zoho CRM with Plugvana">Connect</button>
+                      </div>
+                    </article>
+
+            <article class="tile" data-card="basesignal-airtable">
+                      <a class="tile-link" href="basesignal-airtable.html" aria-label="BaseSignal for Airtable details">
+                        <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/basesignal-airtable.svg" alt="BaseSignal for Airtable" width="48" height="48"></span>
+                        <span class="tile-name">BaseSignal for Airtable</span>
+                      </a>
+                      <p class="tile-desc">Browse bases, tables and records from Airtable in conversation.</p>
+                      <p class="tile-price">Free for 1 month · then $15/month</p>
+                      <div class="tile-foot">
+                        <p class="connect-status" role="status" aria-live="polite"></p>
+                        <button class="btn connect-btn" type="button" data-say="Connect my Airtable with Plugvana">Connect</button>
+                      </div>
+                    </article>
           </div>
-        </article>
+        </section>
 
-        <article class="tile" data-card="imagesignal">
-          <a class="tile-link" href="imagesignal.html" aria-label="ImageSignal details">
-            <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/imagesignal.svg" alt="ImageSignal" width="48" height="48"></span>
-            <span class="tile-name">ImageSignal</span>
-          </a>
-          <p class="tile-desc">Resize and convert images in batches — or automatically, on schedule, with your presets.</p>
-          <p class="tile-price">Free for 1 month · then $5/month</p>
-          <div class="tile-foot">
-            <p class="connect-status" role="status" aria-live="polite"></p>
-            <button class="btn connect-btn" type="button" data-say="Connect my image tools with Plugvana">Connect</button>
+        <section class="catalog-cat" data-cat-section aria-label="Email & Audience">
+          <div class="catalog-cat-head"><h3>Email & Audience</h3><span class="catalog-cat-rule" aria-hidden="true"></span><span class="catalog-cat-count">5 connectors</span></div>
+          <div class="app-grid">
+            <article class="tile tile-mailchimp" data-card="mailchimp">
+                      <a class="tile-link" href="mailchimp.html" aria-label="ListSignal for Mailchimp details">
+                        <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/mailchimp.svg" alt="ListSignal for Mailchimp" width="48" height="48"></span>
+                        <span class="tile-name">ListSignal for Mailchimp</span>
+                      </a>
+                      <p class="tile-desc">Audience growth, campaigns and list health in plain numbers.</p>
+                      <p class="tile-price">Free for 1 month · then $15/month</p>
+                      <div class="tile-foot">
+                        <p class="connect-status" role="status" aria-live="polite"></p>
+                        <button class="btn connect-btn" type="button" data-say="Connect my Mailchimp account with Plugvana">Connect</button>
+                      </div>
+                    </article>
+
+            <article class="tile" data-card="sendsignal-mailerlite">
+                      <a class="tile-link" href="sendsignal-mailerlite.html" aria-label="SendSignal for MailerLite details">
+                        <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/sendsignal-mailerlite.svg" alt="SendSignal for MailerLite" width="48" height="48"></span>
+                        <span class="tile-name">SendSignal for MailerLite</span>
+                      </a>
+                      <p class="tile-desc">Subscribers, groups, campaigns and automations from MailerLite.</p>
+                      <p class="tile-price">Free for 1 month · then $15/month</p>
+                      <div class="tile-foot">
+                        <p class="connect-status" role="status" aria-live="polite"></p>
+                        <button class="btn connect-btn" type="button" data-say="Connect my MailerLite with Plugvana">Connect</button>
+                      </div>
+                    </article>
+
+            <article class="tile" data-card="postsignal-kit">
+                      <a class="tile-link" href="postsignal-kit.html" aria-label="PostSignal for Kit details">
+                        <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/postsignal-kit.svg" alt="PostSignal for Kit" width="48" height="48"></span>
+                        <span class="tile-name">PostSignal for Kit</span>
+                      </a>
+                      <p class="tile-desc">Subscribers, tags, forms, sequences and broadcasts from Kit.</p>
+                      <p class="tile-price">Free for 1 month · then $15/month</p>
+                      <div class="tile-foot">
+                        <p class="connect-status" role="status" aria-live="polite"></p>
+                        <button class="btn connect-btn" type="button" data-say="Connect my Kit account with Plugvana">Connect</button>
+                      </div>
+                    </article>
+
+            <article class="tile" data-card="reachsignal-constantcontact">
+                      <a class="tile-link" href="reachsignal-constantcontact.html" aria-label="ReachSignal for Constant Contact details">
+                        <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/reachsignal-constantcontact.svg" alt="ReachSignal for Constant Contact" width="48" height="48"></span>
+                        <span class="tile-name">ReachSignal for Constant Contact</span>
+                      </a>
+                      <p class="tile-desc">Contacts, lists and email campaign results from Constant Contact.</p>
+                      <p class="tile-price">Free for 1 month · then $15/month</p>
+                      <div class="tile-foot">
+                        <p class="connect-status" role="status" aria-live="polite"></p>
+                        <button class="btn connect-btn" type="button" data-say="Connect my Constant Contact with Plugvana">Connect</button>
+                      </div>
+                    </article>
+
+            <article class="tile" data-card="newssignal-aweber">
+                      <a class="tile-link" href="newssignal-aweber.html" aria-label="NewsSignal for AWeber details">
+                        <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/newssignal-aweber.svg" alt="NewsSignal for AWeber" width="48" height="48"></span>
+                        <span class="tile-name">NewsSignal for AWeber</span>
+                      </a>
+                      <p class="tile-desc">Lists, subscribers, broadcasts and campaigns from AWeber.</p>
+                      <p class="tile-price">Free for 1 month · then $15/month</p>
+                      <div class="tile-foot">
+                        <p class="connect-status" role="status" aria-live="polite"></p>
+                        <button class="btn connect-btn" type="button" data-say="Connect my AWeber with Plugvana">Connect</button>
+                      </div>
+                    </article>
           </div>
-        </article>
+        </section>
 
-        <article class="tile" data-card="convertsignal">
-          <a class="tile-link" href="convertsignal.html" aria-label="ConvertSignal details">
-            <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/convertsignal.svg" alt="ConvertSignal" width="48" height="48"></span>
-            <span class="tile-name">ConvertSignal</span>
-          </a>
-          <p class="tile-desc">Convert documents in batches — or automatically, on schedule, with standing rules.</p>
-          <p class="tile-price">Free for 1 month · then $5/month</p>
-          <div class="tile-foot">
-            <p class="connect-status" role="status" aria-live="polite"></p>
-            <button class="btn connect-btn" type="button" data-say="Connect my document converter with Plugvana">Connect</button>
+        <section class="catalog-cat" data-cat-section aria-label="Work & Scheduling">
+          <div class="catalog-cat-head"><h3>Work & Scheduling</h3><span class="catalog-cat-rule" aria-hidden="true"></span><span class="catalog-cat-count">6 connectors</span></div>
+          <div class="app-grid">
+            <article class="tile" data-card="boardsignal-trello">
+                      <a class="tile-link" href="boardsignal-trello.html" aria-label="BoardSignal for Trello details">
+                        <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/boardsignal-trello.svg" alt="BoardSignal for Trello" width="48" height="48"></span>
+                        <span class="tile-name">BoardSignal for Trello</span>
+                      </a>
+                      <p class="tile-desc">Boards, lists and cards from Trello, in conversation.</p>
+                      <p class="tile-price">Free for 1 month · then $9/month</p>
+                      <div class="tile-foot">
+                        <p class="connect-status" role="status" aria-live="polite"></p>
+                        <button class="btn connect-btn" type="button" data-say="Connect my Trello with Plugvana">Connect</button>
+                      </div>
+                    </article>
+
+            <article class="tile" data-card="tasksignal-monday">
+                      <a class="tile-link" href="tasksignal-monday.html" aria-label="TaskSignal for monday.com details">
+                        <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/tasksignal-monday.svg" alt="TaskSignal for monday.com" width="48" height="48"></span>
+                        <span class="tile-name">TaskSignal for monday.com</span>
+                      </a>
+                      <p class="tile-desc">Boards, items, groups and updates from monday.com.</p>
+                      <p class="tile-price">Free for 1 month · then $15/month</p>
+                      <div class="tile-foot">
+                        <p class="connect-status" role="status" aria-live="polite"></p>
+                        <button class="btn connect-btn" type="button" data-say="Connect my monday.com with Plugvana">Connect</button>
+                      </div>
+                    </article>
+
+            <article class="tile" data-card="worksignal-clickup">
+                      <a class="tile-link" href="worksignal-clickup.html" aria-label="WorkSignal for ClickUp details">
+                        <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/worksignal-clickup.svg" alt="WorkSignal for ClickUp" width="48" height="48"></span>
+                        <span class="tile-name">WorkSignal for ClickUp</span>
+                      </a>
+                      <p class="tile-desc">Spaces, lists and tasks from ClickUp — including what's overdue.</p>
+                      <p class="tile-price">Free for 1 month · then $15/month</p>
+                      <div class="tile-foot">
+                        <p class="connect-status" role="status" aria-live="polite"></p>
+                        <button class="btn connect-btn" type="button" data-say="Connect my ClickUp with Plugvana">Connect</button>
+                      </div>
+                    </article>
+
+            <article class="tile" data-card="donesignal-ticktick">
+                      <a class="tile-link" href="donesignal-ticktick.html" aria-label="DoneSignal for TickTick details">
+                        <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/donesignal-ticktick.svg" alt="DoneSignal for TickTick" width="48" height="48"></span>
+                        <span class="tile-name">DoneSignal for TickTick</span>
+                      </a>
+                      <p class="tile-desc">Projects, today's tasks and overdue items from TickTick.</p>
+                      <p class="tile-price">Free for 1 month · then $5/month</p>
+                      <div class="tile-foot">
+                        <p class="connect-status" role="status" aria-live="polite"></p>
+                        <button class="btn connect-btn" type="button" data-say="Connect my TickTick with Plugvana">Connect</button>
+                      </div>
+                    </article>
+
+            <article class="tile" data-card="meetsignal-calcom">
+                      <a class="tile-link" href="meetsignal-calcom.html" aria-label="MeetSignal for Cal.com details">
+                        <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/meetsignal-calcom.svg" alt="MeetSignal for Cal.com" width="48" height="48"></span>
+                        <span class="tile-name">MeetSignal for Cal.com</span>
+                      </a>
+                      <p class="tile-desc">Event types, bookings and schedules from Cal.com.</p>
+                      <p class="tile-price">Free for 1 month · then $9/month</p>
+                      <div class="tile-foot">
+                        <p class="connect-status" role="status" aria-live="polite"></p>
+                        <button class="btn connect-btn" type="button" data-say="Connect my Cal.com with Plugvana">Connect</button>
+                      </div>
+                    </article>
+
+            <article class="tile" data-card="formsignal-typeform">
+                      <a class="tile-link" href="formsignal-typeform.html" aria-label="FormSignal for Typeform details">
+                        <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/formsignal-typeform.svg" alt="FormSignal for Typeform" width="48" height="48"></span>
+                        <span class="tile-name">FormSignal for Typeform</span>
+                      </a>
+                      <p class="tile-desc">Forms and response summaries from Typeform — read-only by design.</p>
+                      <p class="tile-price">Free for 1 month · then $15/month</p>
+                      <div class="tile-foot">
+                        <p class="connect-status" role="status" aria-live="polite"></p>
+                        <button class="btn connect-btn" type="button" data-say="Connect my Typeform with Plugvana">Connect</button>
+                      </div>
+                    </article>
           </div>
-        </article>
+        </section>
 
-        <div class="catalog-group"><h3>Money & Accounting</h3></div>
+        <section class="catalog-cat" data-cat-section aria-label="Code & Legacy">
+          <div class="catalog-cat-head"><h3>Code &amp; Legacy</h3><span class="catalog-cat-rule" aria-hidden="true"></span><span class="catalog-cat-count">3 connectors</span></div>
+          <div class="app-grid">
+            <article class="tile" data-card="legacysignal-cobol">
+                      <a class="tile-link" href="legacysignal-cobol.html" aria-label="LegacySignal for COBOL details">
+                        <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/legacysignal-cobol.svg" alt="LegacySignal for COBOL" width="48" height="48"></span>
+                        <span class="tile-name">LegacySignal for COBOL</span>
+                      </a>
+                      <p class="tile-desc">Full COBOL estate inventory, generated documentation and impact analysis — read-only, your code never leaves your machine.</p>
+                      <p class="tile-price">Free for 1 month · then $49/month</p>
+                      <div class="tile-foot">
+                        <p class="connect-status" role="status" aria-live="polite"></p>
+                        <button class="btn connect-btn" type="button" data-say="Connect my COBOL codebase with Plugvana">Connect</button>
+                      </div>
+                    </article>
 
-        <article class="tile" data-card="ledgersignal-sage">
-          <a class="tile-link" href="ledgersignal-sage.html" aria-label="LedgerSignal for Sage details">
-            <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/ledgersignal-sage.svg" alt="LedgerSignal for Sage" width="48" height="48"></span>
-            <span class="tile-name">LedgerSignal for Sage</span>
-          </a>
-          <p class="tile-desc">Invoices, overdue payments and bank accounts from Sage.</p>
-          <p class="tile-price">Free for 1 month · then $19/month</p>
-          <div class="tile-foot">
-            <p class="connect-status" role="status" aria-live="polite"></p>
-            <button class="btn connect-btn" type="button" data-say="Connect my Sage accounting with Plugvana">Connect</button>
+            <article class="tile" data-card="codesignal-python">
+                      <a class="tile-link" href="codesignal-python.html" aria-label="CodeSignal for Python details">
+                        <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/codesignal-python.svg" alt="CodeSignal for Python" width="48" height="48"></span>
+                        <span class="tile-name">CodeSignal for Python</span>
+                      </a>
+                      <p class="tile-desc">Repo maps, generated docs, dead code and complexity reports for Python projects — read-only, on your machine.</p>
+                      <p class="tile-price">Free for 1 month · then $29/month</p>
+                      <div class="tile-foot">
+                        <p class="connect-status" role="status" aria-live="polite"></p>
+                        <button class="btn connect-btn" type="button" data-say="Connect my Python codebase with Plugvana">Connect</button>
+                      </div>
+                    </article>
+
+            <article class="tile" data-card="statsignal-sas">
+                      <a class="tile-link" href="statsignal-sas.html" aria-label="StatSignal for SAS details">
+                        <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/statsignal-sas.svg" alt="StatSignal for SAS" width="48" height="48"></span>
+                        <span class="tile-name">StatSignal for SAS</span>
+                      </a>
+                      <p class="tile-desc">SAS program inventory, log error digests and dataset lineage across your whole estate — read-only.</p>
+                      <p class="tile-price">Free for 1 month · then $39/month</p>
+                      <div class="tile-foot">
+                        <p class="connect-status" role="status" aria-live="polite"></p>
+                        <button class="btn connect-btn" type="button" data-say="Connect my SAS codebase with Plugvana">Connect</button>
+                      </div>
+                    </article>
           </div>
-        </article>
-
-        <article class="tile" data-card="booksignal-xero">
-          <a class="tile-link" href="booksignal-xero.html" aria-label="BookSignal for Xero details">
-            <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/booksignal-xero.svg" alt="BookSignal for Xero" width="48" height="48"></span>
-            <span class="tile-name">BookSignal for Xero</span>
-          </a>
-          <p class="tile-desc">Invoices, contacts, bank summary and profit & loss from Xero.</p>
-          <p class="tile-price">Free for 1 month · then $19/month</p>
-          <div class="tile-foot">
-            <p class="connect-status" role="status" aria-live="polite"></p>
-            <button class="btn connect-btn" type="button" data-say="Connect my Xero with Plugvana">Connect</button>
-          </div>
-        </article>
-
-        <article class="tile" data-card="billsignal-freshbooks">
-          <a class="tile-link" href="billsignal-freshbooks.html" aria-label="BillSignal for FreshBooks details">
-            <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/billsignal-freshbooks.svg" alt="BillSignal for FreshBooks" width="48" height="48"></span>
-            <span class="tile-name">BillSignal for FreshBooks</span>
-          </a>
-          <p class="tile-desc">Invoices, expenses, payments and time from FreshBooks.</p>
-          <p class="tile-price">Free for 1 month · then $15/month</p>
-          <div class="tile-foot">
-            <p class="connect-status" role="status" aria-live="polite"></p>
-            <button class="btn connect-btn" type="button" data-say="Connect my FreshBooks with Plugvana">Connect</button>
-          </div>
-        </article>
-
-        <article class="tile" data-card="cashsignal-wave">
-          <a class="tile-link" href="cashsignal-wave.html" aria-label="CashSignal for Wave details">
-            <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/cashsignal-wave.svg" alt="CashSignal for Wave" width="48" height="48"></span>
-            <span class="tile-name">CashSignal for Wave</span>
-          </a>
-          <p class="tile-desc">Invoices, customers and accounts from your Wave business.</p>
-          <p class="tile-price">Free for 1 month · then $9/month</p>
-          <div class="tile-foot">
-            <p class="connect-status" role="status" aria-live="polite"></p>
-            <button class="btn connect-btn" type="button" data-say="Connect my Wave accounting with Plugvana">Connect</button>
-          </div>
-        </article>
-
-        <div class="catalog-group"><h3>Customers & Sales</h3></div>
-
-        <article class="tile" data-card="dealsignal-hubspot">
-          <a class="tile-link" href="dealsignal-hubspot.html" aria-label="DealSignal for HubSpot details">
-            <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/dealsignal-hubspot.svg" alt="DealSignal for HubSpot" width="48" height="48"></span>
-            <span class="tile-name">DealSignal for HubSpot</span>
-          </a>
-          <p class="tile-desc">Contacts, companies and deal pipeline from HubSpot CRM.</p>
-          <p class="tile-price">Free for 1 month · then $19/month</p>
-          <div class="tile-foot">
-            <p class="connect-status" role="status" aria-live="polite"></p>
-            <button class="btn connect-btn" type="button" data-say="Connect my HubSpot with Plugvana">Connect</button>
-          </div>
-        </article>
-
-        <article class="tile" data-card="pipesignal-pipedrive">
-          <a class="tile-link" href="pipesignal-pipedrive.html" aria-label="PipeSignal for Pipedrive details">
-            <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/pipesignal-pipedrive.svg" alt="PipeSignal for Pipedrive" width="48" height="48"></span>
-            <span class="tile-name">PipeSignal for Pipedrive</span>
-          </a>
-          <p class="tile-desc">Deals, people, organisations and activities from Pipedrive.</p>
-          <p class="tile-price">Free for 1 month · then $15/month</p>
-          <div class="tile-foot">
-            <p class="connect-status" role="status" aria-live="polite"></p>
-            <button class="btn connect-btn" type="button" data-say="Connect my Pipedrive with Plugvana">Connect</button>
-          </div>
-        </article>
-
-        <article class="tile" data-card="clientsignal-zoho">
-          <a class="tile-link" href="clientsignal-zoho.html" aria-label="ClientSignal for Zoho CRM details">
-            <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/clientsignal-zoho.svg" alt="ClientSignal for Zoho CRM" width="48" height="48"></span>
-            <span class="tile-name">ClientSignal for Zoho CRM</span>
-          </a>
-          <p class="tile-desc">Accounts, contacts, deals and search from Zoho CRM.</p>
-          <p class="tile-price">Free for 1 month · then $15/month</p>
-          <div class="tile-foot">
-            <p class="connect-status" role="status" aria-live="polite"></p>
-            <button class="btn connect-btn" type="button" data-say="Connect my Zoho CRM with Plugvana">Connect</button>
-          </div>
-        </article>
-
-        <article class="tile" data-card="basesignal-airtable">
-          <a class="tile-link" href="basesignal-airtable.html" aria-label="BaseSignal for Airtable details">
-            <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/basesignal-airtable.svg" alt="BaseSignal for Airtable" width="48" height="48"></span>
-            <span class="tile-name">BaseSignal for Airtable</span>
-          </a>
-          <p class="tile-desc">Browse bases, tables and records from Airtable in conversation.</p>
-          <p class="tile-price">Free for 1 month · then $15/month</p>
-          <div class="tile-foot">
-            <p class="connect-status" role="status" aria-live="polite"></p>
-            <button class="btn connect-btn" type="button" data-say="Connect my Airtable with Plugvana">Connect</button>
-          </div>
-        </article>
-
-        <div class="catalog-group"><h3>Email & Audience</h3></div>
-
-        <article class="tile tile-mailchimp" data-card="mailchimp">
-          <a class="tile-link" href="mailchimp.html" aria-label="ListSignal for Mailchimp details">
-            <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/mailchimp.svg" alt="ListSignal for Mailchimp" width="48" height="48"></span>
-            <span class="tile-name">ListSignal for Mailchimp</span>
-          </a>
-          <p class="tile-desc">Audience growth, campaigns and list health in plain numbers.</p>
-          <p class="tile-price">Free for 1 month · then $15/month</p>
-          <div class="tile-foot">
-            <p class="connect-status" role="status" aria-live="polite"></p>
-            <button class="btn connect-btn" type="button" data-say="Connect my Mailchimp account with Plugvana">Connect</button>
-          </div>
-        </article>
-
-        <article class="tile" data-card="sendsignal-mailerlite">
-          <a class="tile-link" href="sendsignal-mailerlite.html" aria-label="SendSignal for MailerLite details">
-            <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/sendsignal-mailerlite.svg" alt="SendSignal for MailerLite" width="48" height="48"></span>
-            <span class="tile-name">SendSignal for MailerLite</span>
-          </a>
-          <p class="tile-desc">Subscribers, groups, campaigns and automations from MailerLite.</p>
-          <p class="tile-price">Free for 1 month · then $15/month</p>
-          <div class="tile-foot">
-            <p class="connect-status" role="status" aria-live="polite"></p>
-            <button class="btn connect-btn" type="button" data-say="Connect my MailerLite with Plugvana">Connect</button>
-          </div>
-        </article>
-
-        <article class="tile" data-card="postsignal-kit">
-          <a class="tile-link" href="postsignal-kit.html" aria-label="PostSignal for Kit details">
-            <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/postsignal-kit.svg" alt="PostSignal for Kit" width="48" height="48"></span>
-            <span class="tile-name">PostSignal for Kit</span>
-          </a>
-          <p class="tile-desc">Subscribers, tags, forms, sequences and broadcasts from Kit.</p>
-          <p class="tile-price">Free for 1 month · then $15/month</p>
-          <div class="tile-foot">
-            <p class="connect-status" role="status" aria-live="polite"></p>
-            <button class="btn connect-btn" type="button" data-say="Connect my Kit account with Plugvana">Connect</button>
-          </div>
-        </article>
-
-        <article class="tile" data-card="reachsignal-constantcontact">
-          <a class="tile-link" href="reachsignal-constantcontact.html" aria-label="ReachSignal for Constant Contact details">
-            <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/reachsignal-constantcontact.svg" alt="ReachSignal for Constant Contact" width="48" height="48"></span>
-            <span class="tile-name">ReachSignal for Constant Contact</span>
-          </a>
-          <p class="tile-desc">Contacts, lists and email campaign results from Constant Contact.</p>
-          <p class="tile-price">Free for 1 month · then $15/month</p>
-          <div class="tile-foot">
-            <p class="connect-status" role="status" aria-live="polite"></p>
-            <button class="btn connect-btn" type="button" data-say="Connect my Constant Contact with Plugvana">Connect</button>
-          </div>
-        </article>
-
-        <article class="tile" data-card="newssignal-aweber">
-          <a class="tile-link" href="newssignal-aweber.html" aria-label="NewsSignal for AWeber details">
-            <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/newssignal-aweber.svg" alt="NewsSignal for AWeber" width="48" height="48"></span>
-            <span class="tile-name">NewsSignal for AWeber</span>
-          </a>
-          <p class="tile-desc">Lists, subscribers, broadcasts and campaigns from AWeber.</p>
-          <p class="tile-price">Free for 1 month · then $15/month</p>
-          <div class="tile-foot">
-            <p class="connect-status" role="status" aria-live="polite"></p>
-            <button class="btn connect-btn" type="button" data-say="Connect my AWeber with Plugvana">Connect</button>
-          </div>
-        </article>
-
-        <div class="catalog-group"><h3>Work & Scheduling</h3></div>
-
-        <article class="tile" data-card="boardsignal-trello">
-          <a class="tile-link" href="boardsignal-trello.html" aria-label="BoardSignal for Trello details">
-            <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/boardsignal-trello.svg" alt="BoardSignal for Trello" width="48" height="48"></span>
-            <span class="tile-name">BoardSignal for Trello</span>
-          </a>
-          <p class="tile-desc">Boards, lists and cards from Trello, in conversation.</p>
-          <p class="tile-price">Free for 1 month · then $9/month</p>
-          <div class="tile-foot">
-            <p class="connect-status" role="status" aria-live="polite"></p>
-            <button class="btn connect-btn" type="button" data-say="Connect my Trello with Plugvana">Connect</button>
-          </div>
-        </article>
-
-        <article class="tile" data-card="tasksignal-monday">
-          <a class="tile-link" href="tasksignal-monday.html" aria-label="TaskSignal for monday.com details">
-            <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/tasksignal-monday.svg" alt="TaskSignal for monday.com" width="48" height="48"></span>
-            <span class="tile-name">TaskSignal for monday.com</span>
-          </a>
-          <p class="tile-desc">Boards, items, groups and updates from monday.com.</p>
-          <p class="tile-price">Free for 1 month · then $15/month</p>
-          <div class="tile-foot">
-            <p class="connect-status" role="status" aria-live="polite"></p>
-            <button class="btn connect-btn" type="button" data-say="Connect my monday.com with Plugvana">Connect</button>
-          </div>
-        </article>
-
-        <article class="tile" data-card="worksignal-clickup">
-          <a class="tile-link" href="worksignal-clickup.html" aria-label="WorkSignal for ClickUp details">
-            <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/worksignal-clickup.svg" alt="WorkSignal for ClickUp" width="48" height="48"></span>
-            <span class="tile-name">WorkSignal for ClickUp</span>
-          </a>
-          <p class="tile-desc">Spaces, lists and tasks from ClickUp — including what's overdue.</p>
-          <p class="tile-price">Free for 1 month · then $15/month</p>
-          <div class="tile-foot">
-            <p class="connect-status" role="status" aria-live="polite"></p>
-            <button class="btn connect-btn" type="button" data-say="Connect my ClickUp with Plugvana">Connect</button>
-          </div>
-        </article>
-
-        <article class="tile" data-card="donesignal-ticktick">
-          <a class="tile-link" href="donesignal-ticktick.html" aria-label="DoneSignal for TickTick details">
-            <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/donesignal-ticktick.svg" alt="DoneSignal for TickTick" width="48" height="48"></span>
-            <span class="tile-name">DoneSignal for TickTick</span>
-          </a>
-          <p class="tile-desc">Projects, today's tasks and overdue items from TickTick.</p>
-          <p class="tile-price">Free for 1 month · then $5/month</p>
-          <div class="tile-foot">
-            <p class="connect-status" role="status" aria-live="polite"></p>
-            <button class="btn connect-btn" type="button" data-say="Connect my TickTick with Plugvana">Connect</button>
-          </div>
-        </article>
-
-        <article class="tile" data-card="meetsignal-calcom">
-          <a class="tile-link" href="meetsignal-calcom.html" aria-label="MeetSignal for Cal.com details">
-            <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/meetsignal-calcom.svg" alt="MeetSignal for Cal.com" width="48" height="48"></span>
-            <span class="tile-name">MeetSignal for Cal.com</span>
-          </a>
-          <p class="tile-desc">Event types, bookings and schedules from Cal.com.</p>
-          <p class="tile-price">Free for 1 month · then $9/month</p>
-          <div class="tile-foot">
-            <p class="connect-status" role="status" aria-live="polite"></p>
-            <button class="btn connect-btn" type="button" data-say="Connect my Cal.com with Plugvana">Connect</button>
-          </div>
-        </article>
-
-        <article class="tile" data-card="formsignal-typeform">
-          <a class="tile-link" href="formsignal-typeform.html" aria-label="FormSignal for Typeform details">
-            <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/formsignal-typeform.svg" alt="FormSignal for Typeform" width="48" height="48"></span>
-            <span class="tile-name">FormSignal for Typeform</span>
-          </a>
-          <p class="tile-desc">Forms and response summaries from Typeform — read-only by design.</p>
-          <p class="tile-price">Free for 1 month · then $15/month</p>
-          <div class="tile-foot">
-            <p class="connect-status" role="status" aria-live="polite"></p>
-            <button class="btn connect-btn" type="button" data-say="Connect my Typeform with Plugvana">Connect</button>
-          </div>
-        </article>
-
-        <div class="catalog-group"><h3>Code &amp; Legacy</h3></div>
-
-        <article class="tile" data-card="legacysignal-cobol">
-          <a class="tile-link" href="legacysignal-cobol.html" aria-label="LegacySignal for COBOL details">
-            <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/legacysignal-cobol.svg" alt="LegacySignal for COBOL" width="48" height="48"></span>
-            <span class="tile-name">LegacySignal for COBOL</span>
-          </a>
-          <p class="tile-desc">Full COBOL estate inventory, generated documentation and impact analysis — read-only, your code never leaves your machine.</p>
-          <p class="tile-price">Free for 1 month · then $49/month</p>
-          <div class="tile-foot">
-            <p class="connect-status" role="status" aria-live="polite"></p>
-            <button class="btn connect-btn" type="button" data-say="Connect my COBOL codebase with Plugvana">Connect</button>
-          </div>
-        </article>
-
-        <article class="tile" data-card="codesignal-python">
-          <a class="tile-link" href="codesignal-python.html" aria-label="CodeSignal for Python details">
-            <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/codesignal-python.svg" alt="CodeSignal for Python" width="48" height="48"></span>
-            <span class="tile-name">CodeSignal for Python</span>
-          </a>
-          <p class="tile-desc">Repo maps, generated docs, dead code and complexity reports for Python projects — read-only, on your machine.</p>
-          <p class="tile-price">Free for 1 month · then $29/month</p>
-          <div class="tile-foot">
-            <p class="connect-status" role="status" aria-live="polite"></p>
-            <button class="btn connect-btn" type="button" data-say="Connect my Python codebase with Plugvana">Connect</button>
-          </div>
-        </article>
-
-        <article class="tile" data-card="statsignal-sas">
-          <a class="tile-link" href="statsignal-sas.html" aria-label="StatSignal for SAS details">
-            <span class="tile-iconbox"><img class="tile-icon" src="assets/icons/statsignal-sas.svg" alt="StatSignal for SAS" width="48" height="48"></span>
-            <span class="tile-name">StatSignal for SAS</span>
-          </a>
-          <p class="tile-desc">SAS program inventory, log error digests and dataset lineage across your whole estate — read-only.</p>
-          <p class="tile-price">Free for 1 month · then $39/month</p>
-          <div class="tile-foot">
-            <p class="connect-status" role="status" aria-live="polite"></p>
-            <button class="btn connect-btn" type="button" data-say="Connect my SAS codebase with Plugvana">Connect</button>
-          </div>
-        </article>
+        </section>
       </div>
       <p class="no-results" id="no-results" style="display:none">No connector matches that search yet. Try a different word — or <a href="faq.html">check the FAQ</a>. More connectors are on the way.</p>
     </div>
@@ -507,17 +577,39 @@
 </main>
 
 <footer class="site-footer">
-  <div class="wrap footer-inner">
-    <div class="footer-links">
-      <a href="pricing.html">Pricing</a>
-      <a href="faq.html">FAQ</a>
-      <a href="about.html">About</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a class="brand brand-light" href="index.html" aria-label="Plugvana — home">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="19" height="19"><path d="M9.2 3.2v3.1M14.8 3.2v3.1" stroke="#fff" stroke-width="2.1" stroke-linecap="round"/><path d="M6.7 6.3h10.6v3.3c0 3.1-2.3 5.3-5.3 5.3s-5.3-2.2-5.3-5.3V6.3z" fill="#fff"/><path d="M12 14.9v5.6" stroke="#fff" stroke-width="2.1" stroke-linecap="round"/></svg></span>
+        <span class="brand-word">Plugvana</span>
+      </a>
+      <p class="footer-tag">Real connectors for your Muse.</p>
+      <p class="small">Plugvana is a product of CALL SNAP SYSTEMS LLC, Eureka, Missouri, USA. © 2026 CALL SNAP SYSTEMS LLC</p>
     </div>
-    <p class="small muted" style="margin:0">Independent store. Not affiliated with Meta or with any platform our connectors work with.</p>
-    <p class="small muted" style="margin:0">Plugvana is a product of CALL SNAP SYSTEMS LLC, Eureka, Missouri, USA. © 2026 CALL SNAP SYSTEMS LLC</p>
-    <p class="small muted" style="margin:0">All platform names mentioned are trademarks of their respective owners and are used descriptively only; no affiliation or endorsement is implied.</p>
+    <nav class="footer-col" aria-label="Connectors">
+      <h4>Connectors</h4>
+      <a href="index.html#connectors">Browse all connectors</a>
+      <a href="woocommerce.html">ShopSignal for WooCommerce</a>
+      <a href="etsy.html">SellSignal for Etsy</a>
+      <a href="mailchimp.html">ListSignal for Mailchimp</a>
+      <a href="pricing.html">Pricing</a>
+    </nav>
+    <nav class="footer-col" aria-label="Company">
+      <h4>Company</h4>
+      <a href="about.html">About</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="faq.html">FAQ</a>
+      <a href="manage.html">Manage subscription</a>
+    </nav>
+    <nav class="footer-col" aria-label="Legal">
+      <h4>Legal</h4>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </nav>
+  </div>
+  <div class="wrap footer-legal">
+    <p class="small">Independent store. Not affiliated with Meta or with any platform our connectors work with.</p>
+    <p class="small">All platform names mentioned are trademarks of their respective owners and are used descriptively only; no affiliation or endorsement is implied.</p>
   </div>
 </footer>
 
