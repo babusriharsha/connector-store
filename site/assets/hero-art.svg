@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 440" role="img" aria-label="Illustration of services connecting into one central hub">
+  <defs>
+    <linearGradient id="hub" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#818cf8"/>
+      <stop offset="1" stop-color="#c084fc"/>
+    </linearGradient>
+    <linearGradient id="hubFace" x1="220" y1="160" x2="340" y2="280" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6366f1"/>
+      <stop offset="1" stop-color="#9333ea"/>
+    </linearGradient>
+  </defs>
+
+  <!-- connector paths -->
+  <g fill="none" stroke="rgba(255,255,255,.42)" stroke-width="2" stroke-dasharray="5 7" stroke-linecap="round">
+    <path d="M232 178 Q160 130 122 112"/>
+    <path d="M328 172 Q390 118 442 102"/>
+    <path d="M338 232 Q400 262 440 288"/>
+    <path d="M224 240 Q150 282 118 306"/>
+    <path d="M280 282 Q280 322 280 356"/>
+  </g>
+
+  <!-- orbit rings -->
+  <circle cx="280" cy="220" r="96" fill="none" stroke="rgba(255,255,255,.20)" stroke-width="1.5" stroke-dasharray="2 8"/>
+  <circle cx="280" cy="220" r="138" fill="none" stroke="rgba(255,255,255,.10)" stroke-width="1.5"/>
+
+  <!-- scattered sparkles -->
+  <g fill="rgba(255,255,255,.5)">
+    <circle cx="180" cy="60" r="3"/>
+    <circle cx="392" cy="180" r="2.5"/>
+    <circle cx="168" cy="356" r="2.5"/>
+    <circle cx="420" cy="356" r="3"/>
+    <circle cx="64" cy="200" r="2.5"/>
+    <circle cx="498" cy="168" r="2.5"/>
+  </g>
+
+  <!-- node: signal bars (top left) -->
+  <g>
+    <rect x="80" y="76" width="56" height="56" rx="14" fill="rgba(255,255,255,.14)" stroke="rgba(255,255,255,.38)"/>
+    <g stroke="#ffffff" stroke-width="4" stroke-linecap="round">
+      <line x1="98" y1="108" x2="98" y2="118"/>
+      <line x1="108" y1="100" x2="108" y2="118"/>
+      <line x1="118" y1="92" x2="118" y2="118"/>
+    </g>
+  </g>
+
+  <!-- node: envelope (top right) -->
+  <g>
+    <rect x="424" y="68" width="56" height="56" rx="14" fill="rgba(255,255,255,.14)" stroke="rgba(255,255,255,.38)"/>
+    <g fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="437" y="86" width="30" height="21" rx="3"/>
+      <polyline points="438,89 452,100 466,89"/>
+    </g>
+  </g>
+
+  <!-- node: list (right) -->
+  <g>
+    <rect x="436" y="268" width="56" height="56" rx="14" fill="rgba(255,255,255,.14)" stroke="rgba(255,255,255,.38)"/>
+    <g fill="#ffffff">
+      <circle cx="449" cy="286" r="2.4"/>
+      <circle cx="449" cy="296" r="2.4"/>
+      <circle cx="449" cy="306" r="2.4"/>
+    </g>
+    <g stroke="#ffffff" stroke-width="3" stroke-linecap="round">
+      <line x1="459" y1="286" x2="479" y2="286"/>
+      <line x1="459" y1="296" x2="479" y2="296"/>
+      <line x1="459" y1="306" x2="473" y2="306"/>
+    </g>
+  </g>
+
+  <!-- node: chart (bottom left) -->
+  <g>
+    <rect x="84" y="292" width="56" height="56" rx="14" fill="rgba(255,255,255,.14)" stroke="rgba(255,255,255,.38)"/>
+    <polyline points="97,332 107,318 116,324 129,306" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="129" cy="306" r="3" fill="#ffffff"/>
+  </g>
+
+  <!-- node: star (bottom centre) -->
+  <g>
+    <rect x="252" y="352" width="56" height="56" rx="14" fill="rgba(255,255,255,.14)" stroke="rgba(255,255,255,.38)"/>
+    <path d="M280 366l4.1 8.4 9.3 1.3-6.7 6.6 1.6 9.2-8.3-4.4-8.3 4.4 1.6-9.2-6.7-6.6 9.3-1.3z" fill="#ffffff"/>
+  </g>
+
+  <!-- central hub -->
+  <rect x="212" y="152" width="136" height="136" rx="32" fill="url(#hub)" opacity=".35"/>
+  <rect x="220" y="160" width="120" height="120" rx="28" fill="url(#hubFace)" stroke="rgba(255,255,255,.45)"/>
+  <path d="M280 190c2.7 14.6 7.2 20.9 21 25-13.8 4.1-18.3 10.4-21 25-2.7-14.6-7.2-20.9-21-25 13.8-4.1 18.3-10.4 21-25z" fill="#ffffff"/>
+  <circle cx="280" cy="215" r="4" fill="#c7d2fe"/>
+</svg>
