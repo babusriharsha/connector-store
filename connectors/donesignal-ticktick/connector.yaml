@@ -1,0 +1,27 @@
+# TickTick connector for Muse -- descriptor (Plugvana, CALL SNAP SYSTEMS LLC).
+# id: the provider slug; the credential is registered under exactly this
+# name (custom.ticktick) through Muse's secure API-access flow.
+id: "custom.ticktick"
+title: "DoneSignal for TickTick"
+description: "Connect a TickTick account to Muse through the TickTick Open API: list projects, read a project's tasks and completed tasks, and add or complete tasks with approval. For people who want to ask their Muse 'what is on my list today?' and get a real answer."
+include_in_prompt: true
+require_auth: true
+aliases:
+  - "TickTick for Muse"
+  - "connect TickTick to Muse"
+  - "connect my TickTick"
+  - "TickTick tasks in Muse"
+  - "check my TickTick with Muse"
+  - "TickTick today list"
+  - "TickTick overdue tasks"
+  - "Connect my TickTick with Plugvana"
+# Auth: An OAuth2 access token registered as an api_key entry with bearer_header placement (entry name access_token). The owner completes TickTick's OAuth consent (or supplies a token from their TickTick developer app) and the token value is entered only on Muse's secure capture page.
+auth_scheme: "api_key"
+auth_entries:
+  - name: "access_token"
+    placement: "bearer_header"
+  - name: "license_key"
+    placement: { query_param: "license_key" }
+    optional: true
+api_hosts:
+  - "api.ticktick.com"
